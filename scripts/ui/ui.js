@@ -119,17 +119,17 @@ function jumbotron(){
 function thumbnail(contents){
 	var th = $.parseHTML("<div class='col-xs-4 col-lg-2'></div>");
 	$(th).attr("style", "text-align:center; padding-bottom:10px;");
-	var img = $.parseHTML("<img />");
-	var title = $.parseHTML("<div></div>");
+	var img = $.parseHTML("<a href='#'><img /></a>");
+	var title = $.parseHTML("<div><a href='#'></a></div>");
 	
 	var imgSrc = $(contents).find("thumbnail").text();
 	var thumbTitle = $(contents).find("title").text();
 	
 	thumbTitle = cutStr(thumbTitle, 16);
 	
-	$(img).attr("src", imgSrc);
-	$(img).attr("style", "width:120px; margin-left:auto; margin-right:auto; margin-bottom:5px;");
-	$(title).append(thumbTitle);
+	$(img).find("img").attr("src", imgSrc);
+	$(img).find("img").attr("style", "width:120px; margin-left:auto; margin-right:auto; margin-bottom:5px;");
+	$(title).find("a").append(thumbTitle);
 	
 	$(th).append(img);
 	$(th).append(title);
