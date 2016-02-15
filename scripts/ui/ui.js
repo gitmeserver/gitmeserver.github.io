@@ -80,6 +80,14 @@ function container(){
  * contents 영역 구성
  */
 function contents(){
+	channelIndex(null);
+}
+
+function contents(channelIndex){
+	contents(channelIndex);
+}
+
+function contents(channelIndex){
 	
 	var col = $.parseHTML("<div class='col-xs-12 col-sm-9'></div>");
 	var row = $.parseHTML("<div class='row'></div>");
@@ -90,10 +98,16 @@ function contents(){
 	var contentsList = $(xml).find("contents"); 
 	var contentsSize = $(contentsList).size();
 	
-	for(var i=0; i<contentsSize; i++){
-		var thumb = $(thumbnail(contentsList[i])).clone();
+	if(channelIndex != null){
+		var thumb = $(thumbnail(contentsList[channelIndex])).clone();
 		$(row).append(thumb);
+	}else{
+		for(var i=0; i<contentsSize; i++){
+			var thumb = $(thumbnail(contentsList[i])).clone();
+			$(row).append(thumb);
+		}
 	}
+	
 	
 	return col;
 }
@@ -158,6 +172,7 @@ function menu(){
 		$(it).click(function(){
 			$(".list-group-item").removeClass("active");
 			$(this).addClass("active");
+			contents(i);
 		});
 		$(listGroup).append(it);
 	}
