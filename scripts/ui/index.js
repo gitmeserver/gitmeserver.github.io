@@ -107,9 +107,9 @@ function thumbnail(contents, channelFileNo){
 	$(th).attr("style", "text-align:center; padding-bottom:10px;");
 	
 	var imgA = $.parseHTML("<a href='contents.html?contentsId=" + contentsId + "&amp;channelFileNo=" + channelFileNo + "'></a>");
-	var img = $.parseHTML("<img />");
+	var img = $.parseHTML("<img class='img-responsive' />");
 	$(img).attr("src", imgSrc);
-	$(img).attr("style", "width:110px; margin-left:auto; margin-right:auto; margin-bottom:5px;");
+	$(img).attr("style", "margin-left:auto; margin-right:auto; margin-bottom:5px;");
 	$(imgA).append(img);
 	
 	var title = $.parseHTML("<a href='contents.html?contentsId=" + contentsId + "&amp;channelFileNo=" + channelFileNo + "'></a>");
