@@ -68,8 +68,8 @@ function topArea(){
 	$(button).append(srOnly);
 	$(button).append($(iconBar).clone()).append($(iconBar).clone()).append($(iconBar).clone());
 	
-	$(navbarHeader).append(button);
 	$(navbarHeader).append(navbarBrand);
+	$(navbarHeader).append(button);
 				
 	$(container).append(navbarHeader);
 	
