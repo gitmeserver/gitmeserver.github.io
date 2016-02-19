@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+.site-wrapper {
+	display:block !important;	
+}
+
 #siteName {
 	color:#fff !important;
 }
