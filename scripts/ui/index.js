@@ -103,7 +103,7 @@ function thumbnail(contents, channelFileNo){
 	var contentsId = $(contents).find("contentsId").text();
 	var thumbTitle = $(contents).find("title").text();
 	
-	var th = $.parseHTML("<div class='cont col-xs-6 col-lg-2'></div>");
+	var th = $.parseHTML("<div class='cont col-xs-4 col-lg-2'></div>");
 	$(th).attr("style", "text-align:center; padding-bottom:10px;");
 	
 	var imgA = $.parseHTML("<a href='contents.html?contentsId=" + contentsId + "&amp;channelFileNo=" + channelFileNo + "'></a>");
