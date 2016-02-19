@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+#siteName {
+	color:#fff !important;
+}
+
+body {
+	text-align:left !important;
+}
+
+.list-group-item {
+	background-color: #222 !important;
+    border-color: #191919 !important;	
+}
