@@ -19,6 +19,7 @@ h1 {
 	margin-right:1px !important;	
 }
 
-#thumbnail {
-	
+.pager li.active a {
+	background-color:#233 !important;
 }
+
