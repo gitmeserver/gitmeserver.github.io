@@ -222,10 +222,17 @@ function pager(curPage){
 	for(var i=first; i<=last; i++){
 		var li = $.parseHTML("<li></li>");
 		var a = $.parseHTML("<a></a>");
+		
+		if(i == curPage){
+			$(li).addClass("active");
+		}
+		
 		$(a).attr("href", "#");
 		$(a).text(i);
 		$(a).click(function(){
 			list($(this).text());
+			$(".pager li").removeClass("active");
+			$(this).parent().addClass("active");
 			return false;
 		});
 		$(li).append(a);
