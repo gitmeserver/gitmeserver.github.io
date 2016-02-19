@@ -113,7 +113,7 @@ function thumbnail(contents, channelFileNo){
 	$(imgA).append(img);
 	
 	var title = $.parseHTML("<a href='contents.html?contentsId=" + contentsId + "&amp;channelFileNo=" + channelFileNo + "'></a>");
-	thumbTitle = cutStr(thumbTitle, 12);
+	thumbTitle = cutStr(thumbTitle, 16);
 	$(title).append(thumbTitle);
 	$(title).attr("style", "display:block;");
 	
