@@ -39,7 +39,8 @@ var Channel = $Class({
 		$(item).click(function(){
 			$(".list-group-item").removeClass("active");
 			$(this).addClass("active");
-			onCreateIndexContents($(this).attr("id"));
+			channelId = $(this).attr("id");
+			onCreateIndexContents();
 		});
 		
 		return item;
@@ -117,9 +118,13 @@ var Contents = $Class({
     	return th;
     },
     
-    checkChannel : function(ch){
-    	if(this.channelId.match(ch)){
-    		return true;
+    check : function(ch, searchWord){
+    	if(searchWord == undefined || -1 < this.title.indexOf(searchWord)){
+    		if(ch.match("all") || this.channelId.match(ch)){
+    			return true;
+    		}else{
+    			return false;
+    		}
     	}else{
     		return false;
     	}

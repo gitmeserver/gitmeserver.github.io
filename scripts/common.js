@@ -1,5 +1,7 @@
 var channels;
 var contents;
+var channelId = "all";
+var searchWord;
 
 /**
  * UI를 구성하는 스크립트 
@@ -117,7 +119,7 @@ function requestContents(channelFileNo){
 			
 		}
 		, error: function(xhr, status, error) {
-			onCreateIndexContents("all");
+			onCreateIndexContents();
 		}
 	});
 	
@@ -139,38 +141,6 @@ $.extend({
 		return $.getUrlVars()[name];
 	}
 });
-
-/**
- * 상단영역 생성 
- */
-function topArea(){
-	
-	var nav = $.parseHTML("<nav class='navbar navbar-fixed-top navbar-inverse'></nav>");
-		var container = $.parseHTML("<div class='container'></div>");
-			var navbarHeader = $.parseHTML("<div class='navbar-header'></div>");
-	
-				var button = $.parseHTML("<button type='button' class='navbar-toggle collapsed btn btn-primary btn-xs' data-toggle='offcanvas' aria-expanded='false' aria-controls='navbar'></button>");
-					var srOnly = $.parseHTML("<span class='sr-only'>Toggle navigation</span>");
-					var iconBar = $.parseHTML("<span class='icon-bar'></span>");
-	
-				var navbarBrand = $.parseHTML("<a id='siteName' class='navbar-brand' href='index.html'>홈페이지 이름을 정해주세요!</a>");
-	
-	$(button).click(function(){
-	    $('.row-offcanvas').toggleClass('active')
-	});
-	$(button).append(srOnly);
-	$(button).append($(iconBar).clone()).append($(iconBar).clone()).append($(iconBar).clone());
-	
-	$(navbarHeader).append(navbarBrand);
-	$(navbarHeader).append(button);
-				
-	$(container).append(navbarHeader);
-	
-	$(nav).append(container);
-	
-	return nav;
-				
-}
 
 function cutStr(str, limit){  
    var tmpStr = str;  
