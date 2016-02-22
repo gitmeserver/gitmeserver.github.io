@@ -16,3 +16,26 @@ body {
 	background-color: #222 !important;
     border-color: #191919 !important;	
 }
+
+h3 {
+	border-bottom:2px solid #fff !important;	
+	padding-bottom:5px !important;
+}
+
+#list .list-group-item {
+	color:#fff !important;
+}
+
+.pager a {
+	background-color: #222 !important;
+    border-color: #191919 !important;
+}
+
+.pager li {
+	margin-left:1px !important;
+	margin-right:1px !important;	
+}
+
+.pager li.active a {
+	background-color:#233 !important;
+}
