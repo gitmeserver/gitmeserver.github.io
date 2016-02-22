@@ -40,7 +40,7 @@ var Channel = $Class({
 			$(".list-group-item").removeClass("active");
 			$(this).addClass("active");
 			channelId = $(this).attr("id");
-			onCreateIndexContents();
+			onCreateIndex();
 		});
 		
 		return item;
@@ -50,36 +50,20 @@ var Channel = $Class({
 
 var Contents = $Class({
     
-	$init : function(channelId, contentsId, directoryPath, title, thumbnail){
+	$init : function(channelId, title, thumbnail, description, episodeFiles){
 		this.channelId = channelId;
-		this.contentsId = contentsId;
-		this.directoryPath = directoryPath;
         this.title = title;
         this.thumbnail = thumbnail;
+        this.description = description;
+        this.episodeFiles = episodeFiles;
     }, 
 
     getChannelId : function(){
-    	return this.cannelId;
+    	return this.channelId;
     },
     
     setChannelId : function(channelId){
     	this.channelId = channelId;
-    },
-    
-    getContentsId : function(){
-    	return this.contentsId;
-    },
-    
-    setContentsId : function(contentsId){
-    	this.contentsId = contentsId;
-    },
-    
-    getDirectoryPath : function(){
-    	return this.directoryPath;
-    },
-    
-    setDirectoryPath : function(){
-    	this.directoryPath = directoryPath;
     },
     
     getTitle : function(){
@@ -98,19 +82,55 @@ var Contents = $Class({
     	this.thumbnail = thumbnail;
     },
     
+    getDescription : function(){
+    	return this.description;
+    },
+    
+    setDescription : function(description){
+    	this.description = description;
+    },
+    
+    getEpisodeFiles : function(){
+    	return this.episodeFiles;
+    },
+    
+    setEpisodeFiles : function(episodeFiles){
+    	this.episodeFiles = episodeFiles;
+    },
+    
     makeThumbnail : function(){
+    	
+    	var chId = this.channelId;
+        var ti = this.title;
+        var thumb = this.thumbnail;
+        var desc = this.description;
+        var epiFiles = this.episodeFiles;
+    	
+        if(!(-1 < thumb.indexOf("http://")) && !(-1 < thumb.indexOf("https://"))){
+        	thumb = THUMBNAIL_URL.replace("{thumbnail_file_name}", thumb); 
+        }
+        
     	var th = $.parseHTML("<div class='cont col-xs-4 col-sm-3 col-lg-2'></div>");
     	$(th).attr("style", "text-align:center; padding-bottom:10px;");
     	
-    	var imgA = $.parseHTML("<a href='contents.html?contentsId=" + this.contentsId + "'></a>");
+    	var imgA = $.parseHTML("<a href='#'></a>");
     	var img = $.parseHTML("<img class='img-responsive' />");
-    	$(img).attr("src", this.thumbnail);
+    	$(img).attr("src", thumb);
     	$(img).attr("style", "margin-left:auto; margin-right:auto; margin-bottom:5px;");
     	$(imgA).append(img);
     	
-    	var t = $.parseHTML("<a href='contents.html?contentsId=" + this.contentsId + "'></a>");
-    	$(t).append(cutStr(this.title, 12));
+    	var t = $.parseHTML("<a href='#'></a>");
+    	$(t).append($.cutStr(this.title, 12));
     	$(t).attr("style", "display:block;");
+    	
+    	var clickFunc = function(){
+    		selectedContents = new Contents(chId, ti, thumb, desc, epiFiles);
+    		requestContents();
+    		return false;
+    	};
+    	
+    	$(imgA).click(clickFunc);
+    	$(t).click(clickFunc);
     	
     	$(th).append(imgA);
     	$(th).append(t);
@@ -129,5 +149,32 @@ var Contents = $Class({
     		return false;
     	}
     }
+    
+});
+
+
+var Episode = $Class({
+    
+	$init : function(episodeTitle, episodeUrl){ 
+        this.episodeTitle = episodeTitle;
+		this.episodeUrl = episodeUrl;
+    }, 
+    
+    getEpisodeTitle : function(){
+    	return this.episodeTitle;
+    },
+    
+    setEpisodeTitle : function(episodeTitle){
+    	this.episodeTitle = episodeTitle;
+    },
+    
+    getEpisodeUrl : function(){
+    	return this.episodeUrl;
+    },
+    
+    setEpisodeUrl : function(episodeUrl){
+    	this.episodeUrl = episodeUrl;
+    }
+    
     
 });
