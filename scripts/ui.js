@@ -14,6 +14,7 @@ function beforeOnCreateLayout(){
 	// 채널 목록 레이아웃 생성 
 	$("#offCanvas").append(channelArea);
 	
+	// 데이터 로딩중 스피너
 	$("#contentsArea").append("<div style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span style='margin-top:20px;display:block;'>미디어 정보를 로딩중입니다...</span></div>");
 	
 	// 검색영역 생성 
@@ -140,7 +141,9 @@ function onCreateIndex(){
 function requestContents(){
 	
 	$("#contentsArea").empty();
-	$("#contentsArea").append("<div style='text-align:center; margin-top:100px;'><img src='http://localhost:8080/gitmeserver/img/ajax-loader.gif' /><span style='margin-top:10px;display:block;'>미디어 정보를 로딩중입니다...</span></div>");
+	
+	// 데이터 로딩중 스피너
+	$("#contentsArea").append("<div style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span style='margin-top:20px;display:block;'>미디어 정보를 로딩중입니다...</span></div>");
 	
 	requestEpisodeList(0);
 	
