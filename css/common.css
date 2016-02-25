@@ -17,9 +17,20 @@ body {
     border-color: #191919 !important;	
 }
 
-h3 {
+#contentsArea div h3 {
 	border-bottom:2px solid #fff !important;	
 	padding-bottom:5px !important;
+}
+
+#contentsArea #subject {
+	border-bottom:2px solid #fff !important;	
+	padding-bottom:5px !important;
+	margin-bottom:10px;
+}
+
+#contentsArea #subject h3 {
+	border-bottom:none !important;	
+	padding-bottom:none !important;
 }
 
 #list .list-group-item {
@@ -38,4 +49,22 @@ h3 {
 
 .pager li.active a {
 	background-color:#233 !important;
+}
+
+#controll {
+	margin-top:10px;
+}
+
+.float-right {
+	float:right;
+}
+
+.clear-both-padding {
+	padding-left:0px;
+	padding-right:0px;
+}
+
+#save,
+#backward {
+	margin-right:5px;
 }
