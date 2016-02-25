@@ -110,6 +110,7 @@ var Contents = $Class({
     makeThumbnail : function(){
     	
     	var chId = this.channelId;
+    	var contId = this.contentsId;
         var ti = this.title;
         var thumb = this.thumbnail;
         var desc = this.description;
@@ -133,7 +134,7 @@ var Contents = $Class({
     	$(t).attr("style", "display:block;");
     	
     	var clickFunc = function(){
-    		selectedContents = new Contents(chId, ti, thumb, desc, epiFiles);
+    		selectedContents = new Contents(chId, contId, ti, thumb, desc, epiFiles);
     		requestContentsEpisode();
     		return false;
     	};
