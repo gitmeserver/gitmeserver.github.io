@@ -24,12 +24,12 @@
 
 .windows8 .wBall .wInnerBall{
 	position: absolute;
-	width: 8px;
-	height: 8px;
+	width: 10px;
+	height: 10px;
 	background: rgb(0,0,0);
 	left:0px;
 	top:0px;
-	border-radius: 8px;
+	border-radius: 10px;
 }
 
 .windows8 #wBall_1 {
