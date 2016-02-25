@@ -40,9 +40,9 @@ function save(){
 	var src = v.src;
 	var currentTime = v.currentTime;
 	
-	var result =  $.cookie(src, currentTime, { expires: d });
+	$.cookie(src, currentTime, { expires: d });
 	
-	console.log(result);
+	modal("저장되었습니다.");
 	
 }
 
