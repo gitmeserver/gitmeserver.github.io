@@ -40,7 +40,10 @@ function save(){
 	var src = v.src;
 	var currentTime = v.currentTime;
 	
-	$.cookie(src, currentTime, { expires: d });
+	var result =  $.cookie(src, currentTime, { expires: d });
+	
+	console.log(result);
+	
 }
 
 function modal(message){
