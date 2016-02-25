@@ -41,8 +41,14 @@ function save(){
 	var currentTime = v.currentTime;
 	
 	$.cookie(src, currentTime, { expires: d });
-	
-	alert("저장되었습니다.");
+}
+
+function modal(message){
+	$("body").append("<div class='modal fade bs-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'>" + message + "</div></div></div>");
+	$(".modal").on('hidden.bs.modal', function (e) {
+		  console.log("1234");
+	});
+	$(".modal").modal();
 }
 
 function previous(){
