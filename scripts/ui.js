@@ -1,4 +1,73 @@
 /**
+ * 콘텐츠 영역 생성전에 기본 레이아웃을 구성한다. 
+ */
+function beforeOnCreateLayout(){
+	
+	var container = $.parseHTML("<div class='container'><div id='offCanvas' class='row row-offcanvas row-offcanvas-right'></div></div>");
+	var contentsArea = $.parseHTML("<div id='contentsArea' class='col-xs-12 col-sm-9'></div>");
+	var channelArea = $.parseHTML("<div class='col-xs-6 col-sm-3 sidebar-offcanvas' id='sidebar'><div id='searchArea' class='input-group btn'></div><div class='list-group'></div></div>");
+	
+	$("body").append(container);
+	
+	// 콘텐츠 영역 레이아웃 생성
+	$("#offCanvas").append(contentsArea);
+	// 채널 목록 레이아웃 생성 
+	$("#offCanvas").append(channelArea);
+	
+	$("#contentsArea").append("<div style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span style='margin-top:20px;display:block;'>미디어 정보를 로딩중입니다...</span></div>");
+	
+	// 검색영역 생성 
+	searchArea();
+	
+	// 채널 목록 생성 
+	createChannel();
+	
+	// 콘텐츠 생성 
+	requestChannels(0);
+	
+}
+
+/**
+ * 검색 영영 생성 
+ */
+function searchArea(){
+	var input = $("#searchArea");
+	$(input).attr("style", "padding:0px !important; padding-bottom:6px !important");
+	var searchInput = $.parseHTML("<input id='searchWord' type='text' class='form-control' placeholder='Search for...' />");
+	$(searchInput).keyup(function(){
+		searchWord = $(this).val();
+		onCreateIndex();
+	});
+	var searchButton = $.parseHTML("<button class='btn btn-default' type='button'>검색</button>");
+	$(searchButton).click(function(){
+		searchWord = $("#searchWord").val();
+		onCreateIndex();
+	});
+	
+	$(input).append($.parseHTML("<span id='searchButton' class='input-group-btn'></span>"));
+	$(input).find("#searchButton").append(searchButton);
+	$(input).append(searchInput);
+	
+}
+
+/**
+ * 채널 목록을 생성한다. 
+ */
+function createChannel(){
+
+	var listGroup = $("div.list-group");
+	
+	var all = new Channel("all", "전체").makeChannel();
+	$(all).addClass("active");
+	$(listGroup).append(all);
+	
+	for(var i=0; i<channels.length; i++){
+		$(listGroup).append(channels[i].makeChannel());
+	}
+	
+}
+
+/**
  * 상단영역 생성 
  */
 function topArea(){
