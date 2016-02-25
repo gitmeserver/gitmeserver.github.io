@@ -25,6 +25,9 @@ var episodeMap;
 // 콘텐츠의 에피소드 목록 
 var episodeList;
 
+// 현재 선택되어진 에피소드 
+var selectedEpisode;
+
 /**
  * UI를 구성하는 스크립트 
  */
@@ -94,7 +97,9 @@ function requestChannels(channelFileNo){
 	var channelFileName = channelFiles[channelFileNo];
 	
 	if(channelFileName == undefined || channelFileName == "" || channelFileName == null){
+		$("#spinner").remove();
 		onCreateIndex();
+		
 		return;
 	}
 	

@@ -125,7 +125,7 @@ var Contents = $Class({
     	
     	var clickFunc = function(){
     		selectedContents = new Contents(chId, ti, thumb, desc, epiFiles);
-    		requestContents();
+    		requestContentsEpisode();
     		return false;
     	};
     	

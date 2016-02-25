@@ -15,7 +15,7 @@ function beforeOnCreateLayout(){
 	$("#offCanvas").append(channelArea);
 	
 	// 데이터 로딩중 스피너
-	$("#contentsArea").append("<div style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span style='margin-top:20px;display:block;'>미디어 정보를 로딩중입니다...</span></div>");
+	$("#contentsArea").append("<div id='spinner' style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span style='margin-top:20px;display:block;'>미디어 정보를 로딩중입니다...</span></div>");
 	
 	// 검색영역 생성 
 	searchArea();
@@ -138,18 +138,16 @@ function onCreateIndex(){
 }
 
 
-function requestContents(){
+function requestContentsEpisode(){
 	
 	$("#contentsArea").empty();
 	
 	// 데이터 로딩중 스피너
-	$("#contentsArea").append("<div style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span style='margin-top:20px;display:block;'>미디어 정보를 로딩중입니다...</span></div>");
+	$("#contentsArea").append("<div id='spinner' style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span style='margin-top:20px;display:block;'>미디어 정보를 로딩중입니다...</span></div>");
 	
 	requestEpisodeList(0);
 	
 }
-
-
 
 function onCreateContents(){
 	
@@ -164,18 +162,20 @@ function onCreateContents(){
 		}
 	}
 	
-	$("#contentsArea").empty();
+	$("#spinner").remove();
+	
+	$("#contentsArea").append("<div id='detail'></div>");
 	
 	details();
 	
-	$("#contentsArea").append($.parseHTML("<div class='col-xs-12'><hr /></div>"));
+	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><hr /></div>"));
 	
-	$("#contentsArea").append($.parseHTML("<div class='col-xs-12'><div id='list' class='list-group'></div><nav><ul class='pager'></ul></nav></div>"));
+	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><div id='list' class='list-group'></div><nav><ul class='pager'></ul></nav></div>"));
 	
 	list(1);
 	pager(1);
 	
-	$("#contentsArea").append($.parseHTML("<div class='col-xs-12'><hr /><footer><p>&copy; Created by DevY</p></footer></div>"));
+	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><hr /><footer><p>&copy; Created by DevY</p></footer></div>"));
 }
 
 function details(){
@@ -196,9 +196,41 @@ function details(){
 	$(text).append(h1);
 	$(text).append(p);
 	
-	$("#contentsArea").append(thumb);
-	$("#contentsArea").append(text);
+	$("#detail").append(thumb);
+	$("#detail").append(text);
 	
+}
+
+function video(episodeTitle, episodeUrl){
+	
+	$("#detail").empty();
+	$("#detail").append("<div id='video'><div id='subject'><h3></h3><span></span></div><div class='embed-responsive embed-responsive-16by9'><video controls='true' autoplay='true' class='embed-responsive-item'></video></div><div id='controll'><div class='float-right'><button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button><button id='previous' type='button' class='glyphicon glyphicon-eye-open btn btn-default btn-lg'></button></div><span><button id='backward' class='glyphicon glyphicon-step-backward btn btn-default btn-lg' type='button'></button><button id='forward' class='glyphicon glyphicon-step-forward btn btn-default btn-lg' type='button'></button></span></div></div>");
+	
+	var title = $("#video #subject h3");
+	var subTitle = $("#video #subject span");
+	var videoSrc = $("#video video");
+	
+	$(title).text(selectedContents.getTitle());
+	$(subTitle).text(episodeTitle);
+	$(videoSrc).attr("src", episodeUrl);
+	
+	$("#backward").click(function(){
+		backward();
+	});
+	
+	$("#forward").click(function(){
+		forward();
+	});
+	
+	$("#save").click(function(){
+		save();
+	});
+	
+	$("#previous").click(function(){
+		previous();
+	});
+	
+	return false;
 }
 
 var itemSize = 5;
@@ -223,8 +255,15 @@ function list(page){
 		var episodeUrl = episodeList[i].getEpisodeUrl();
 		
 		var item = $(listItem).clone();
+		$(item).attr("title", title);
 		$(item).attr("href", episodeUrl);
 		$(item).text(title);
+		
+		$(item).click(function(){
+			video($(this).attr("title"), $(this).attr("href"));
+			return false;
+		});
+		
 		$("#list").append(item);
 	}
 	
