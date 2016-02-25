@@ -42,16 +42,8 @@ function save(){
 	
 	$.cookie(src, currentTime, { expires: d });
 	
-	modal("저장되었습니다.");
+	$.modal("저장되었습니다.");
 	
-}
-
-function modal(message){
-	$("body").append("<div class='modal fade bs-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'>" + message + "</div></div></div>");
-	$(".modal").on('hidden.bs.modal', function (e) {
-		  console.log("1234");
-	});
-	$(".modal").modal();
 }
 
 function previous(){

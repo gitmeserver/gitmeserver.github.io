@@ -254,6 +254,17 @@ $.extend({
 			return 2;  
 		else  
 			return 1;
+	},
+	
+	modal : function(message){
+		$("body").append("<div class='modal fade bs-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog modal-sm'><div class='modal-content'>" + message + "</div></div></div>");
+		$(".modal").on('hidden.bs.modal', function (e) {
+			$(".modal").detach();
+		});
+		$(".modal").click(function(){
+			$(".modal").detach();
+		});
+		$(".modal").modal();
 	}
 	
 });  
