@@ -50,8 +50,9 @@ var Channel = $Class({
 
 var Contents = $Class({
     
-	$init : function(channelId, title, thumbnail, description, episodeFiles){
+	$init : function(channelId, contentsId, title, thumbnail, description, episodeFiles){
 		this.channelId = channelId;
+		this.contentsId = contentsId;
         this.title = title;
         this.thumbnail = thumbnail;
         this.description = description;
@@ -64,6 +65,14 @@ var Contents = $Class({
     
     setChannelId : function(channelId){
     	this.channelId = channelId;
+    },
+    
+    getContentsId : function(){
+		return this.contentsId;
+    },
+    
+    setContentsId : function(contentsId){
+    	this.contentsId = contentsId;
     },
     
     getTitle : function(){

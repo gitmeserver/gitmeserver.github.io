@@ -115,7 +115,8 @@ function requestChannels(channelFileNo){
 			var contentsList = $($.parseXML(data)).find("contents");
 			
 			for(var i=0; i<contentsList.length; i++){
-				var channelId = $(contentsList[i]).find("channelId").text();
+				var channelId = $(contentsList[i]).attr("channelId");
+				var contentsId = $(contentsList[i]).attr("contentsId");
 				var title = $(contentsList[i]).find("title").text();
 				var thumbnail = $(contentsList[i]).find("thumbnail").text();
 				var description = $(contentsList[i]).find("description").text();
@@ -126,7 +127,7 @@ function requestChannels(channelFileNo){
 					eFiles.push($(episodeFiles[j]).text());
 				}
 				
-				var c = new Contents(channelId, title, thumbnail, description, eFiles);
+				var c = new Contents(channelId, contentsId, title, thumbnail, description, eFiles);
 				contents.push(c);
 			}
 			
