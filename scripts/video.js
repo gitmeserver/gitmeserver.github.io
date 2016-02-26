@@ -57,7 +57,8 @@ function save(){
 			var deck = new Deck(selectedContents, selectedEpisode, currentTime);
 			if(key.match(dKey)){
 				console.log("match");
-				deckList.splice(i+1, 0, deck);
+				var index = i + 1;
+				deckList.splice(index, 0, deck);
 			}else{
 				console.log("no match");
 				deckList.push(deck);
