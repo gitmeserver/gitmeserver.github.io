@@ -40,6 +40,10 @@ function save(){
 	var src = v.src;
 	var currentTime = v.currentTime;
 	
+	var json = $.parseJSON(selectedContents);
+	console.log(json);
+	
+	
 	if(document.cookie.split(";").length < 20){
 		$.cookie(src, currentTime, { expires: d });
 		$.modal("저장되었습니다.");
