@@ -103,7 +103,7 @@ function requestChannels(channelFileNo){
 		return;
 	}
 	
-	var url = CHANNELS_PATH_URL.replace("{channel_file_name}", channelFileName);
+	var url = CHANNELS_PATH_URL.replace("{channel_file_path}", channelFileName);
 
 	$.ajax({
 		type: 'get'
