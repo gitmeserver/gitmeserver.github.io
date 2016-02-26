@@ -110,7 +110,35 @@ function main(){
 	$("#searchWord").val("");
 	$(".list-group-item").removeClass("active");
 	$("#all").addClass("active");
-	onCreateIndex();
+	onCreateMain();
+}
+
+/**
+ * index 화면 Contents 구성
+ */
+function onCreateMain(){
+	
+	$("#contentsArea").empty();
+	
+	$("#contentsArea").append("<div id='searching' style='text-align:right; margin-bottom:10px;'></div>");
+	if(searchWord != undefined && searchWord != "" && searchWord != null){
+		$("#searching").show();
+		$("#searching").text("'" + searchWord + "' 검색중...");
+	}else{
+		$("#searching").hide();
+	}
+	
+	var contentsListRow = $.parseHTML("<div id='contentsList' class='row'></div>");
+	$("#contentsArea").append(contentsListRow);
+	
+	for(var i=0; i<deckList.length; i++){
+//		if(contentsList[i].check(channelId, searchWord)){
+//			$("#contentsList").append(contentsList[i].makeThumbnail());
+//		}
+		$("#contentsList").append(deckList[i].getContents().makeThumbnail());
+	}
+	
+	$("#contentsArea").append($.parseHTML("<hr /><footer><p>&copy; Created by DevY</p></footer>"));
 }
 
 /**
@@ -131,11 +159,10 @@ function onCreateIndex(){
 	var contentsListRow = $.parseHTML("<div id='contentsList' class='row'></div>");
 	$("#contentsArea").append(contentsListRow);
 	
-	for(var i=0; i<deckList.length; i++){
-//		if(contentsList[i].check(channelId, searchWord)){
-//			$("#contentsList").append(contentsList[i].makeThumbnail());
-//		}
-		$("#contentsList").append(deckList[i].getContents().makeThumbnail());
+	for(var i=0; i<contentsList.length; i++){
+		if(contentsList[i].check(channelId, searchWord)){
+			$("#contentsList").append(contentsList[i].makeThumbnail());
+		}
 	}
 	
 	$("#contentsArea").append($.parseHTML("<hr /><footer><p>&copy; Created by DevY</p></footer>"));
