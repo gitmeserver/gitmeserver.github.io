@@ -1,3 +1,6 @@
+var contentsRequestMessage = "콘텐츠 목록을 로딩중입니다...";
+var episodeRequestMessage = "에피소드 목록을 로딩중입니다...";
+
 /**
  * 콘텐츠 영역 생성전에 기본 레이아웃을 구성한다. 
  */
@@ -15,7 +18,7 @@ function beforeOnCreateLayout(){
 	$("#offCanvas").append(channelArea);
 	
 	// 데이터 로딩중 스피너
-	$("#contentsArea").append("<div id='spinner' style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span style='margin-top:20px;display:block;'>미디어 정보를 로딩중입니다...</span></div>");
+	$("#contentsArea").append("<div id='spinner' style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span id='contentsRequestMessage' style='margin-top:20px;display:block;'>" + contentsRequestMessage + "</span></div>");
 	
 	// 검색영역 생성 
 	searchArea();
@@ -143,7 +146,7 @@ function requestContentsEpisode(){
 	$("#contentsArea").empty();
 	
 	// 데이터 로딩중 스피너
-	$("#contentsArea").append("<div id='spinner' style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span style='margin-top:20px;display:block;'>미디어 정보를 로딩중입니다...</span></div>");
+	$("#contentsArea").append("<div id='spinner' style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span id='episodeRequestMessage' style='margin-top:20px;display:block;'>" + episodeRequestMessage + "</span></div>");
 	
 	requestEpisode(0);
 	

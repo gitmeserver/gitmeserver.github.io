@@ -19,7 +19,7 @@ var searchWord;
 // 현재 선택되어진 콘텐츠 
 var selectedContents;
 
-// 로드된 에피소드 목록 
+// 로딩된 에피소드 목록 
 var episodeMap;
 
 // 콘텐츠의 에피소드 목록 
@@ -95,6 +95,8 @@ function onInit(){
  */
 function requestContents(contentsFileNo){
 	
+	$("#contentsRequestMessage").text(contentsRequestMessage + " (" + (contentsFileNo + 1) + "/" + contentsFiles.length + ")");
+	
 	var contentsFileName = contentsFiles[contentsFileNo];
 	
 	if(contentsFileName == undefined || contentsFileName == "" || contentsFileName == null){
@@ -148,6 +150,8 @@ function requestEpisode(episodeFileNo){
 	var eFiles = selectedContents.getEpisodeFiles();
 	var eFile = eFiles[episodeFileNo];
 
+	$("#episodeRequestMessage").text(episodeRequestMessage + " (" + (episodeFileNo + 1) + "/" + eFiles.length + ")");
+	
 	// 모든 파일을 로드했으면 에피소드 목록 화면을 출력한다. 
 	if(eFiles.length == episodeFileNo){
 		onCreateContents();
@@ -157,7 +161,7 @@ function requestEpisode(episodeFileNo){
 	// 이미 데이터가 존재하면 다음 에피소드 파일을 로드한다. 
 	if(episodeMap[eFile] != undefined){
 		episodeFileNo = episodeFileNo + 1;
-		requestEpisodeList(episodeFileNo);
+		requestEpisode(episodeFileNo);
 		return;
 	}
 
