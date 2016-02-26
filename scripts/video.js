@@ -55,12 +55,13 @@ function save(){
 			var dContents = deckList[i].getContents();
 			var dKey = dContents.getChannelId() + "_" + dContents.getContentsId();
 			var deck = new Deck(selectedContents, selectedEpisode, currentTime);
+			console.log(i);
 			if(key.match(dKey)){
-				console.log("match");
+//				console.log("match");
 				var index = i + 1;
 				deckList.splice(index, 0, deck);
 			}else{
-				console.log("no match");
+//				console.log("no match");
 				deckList.push(deck);
 			}
 		}
