@@ -33,6 +33,7 @@ var selectedEpisode;
  */
 $(document).ready(function(){
 	
+	
 	console.log("cookie size : " + document.cookie.length);
 	
 	var c = document.cookie.split(";");
