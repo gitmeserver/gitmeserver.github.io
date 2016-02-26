@@ -22,9 +22,6 @@ var episodeMap;
 // 콘텐츠의 에피소드 목록 
 var episodeList;
 
-// 감상중인 콘텐츠, 에피소드 목록
-var deckList;
-
 //현재 선택되어진 콘텐츠 
 var selectedContents;
 
@@ -137,12 +134,6 @@ function requestContents(contentsFileNo){
 				var c = new Contents(channelId, contentsId, title, thumbnail, description, eFiles);
 				contentsList.push(c);
 				
-				var key = channelId + "_" + contentsId;
-				if($.cookie(key) != undefined){
-					var json = $.cookie(key);
-					var deck = $.jsonToDeck(json);
-					deckList.push(deck);
-				}
 			}
 			
 			contentsFileNo = contentsFileNo + 1;

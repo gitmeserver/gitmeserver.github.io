@@ -132,12 +132,17 @@ function onCreateMain(){
 	
 	var contentsListRow = $.parseHTML("<div id='contentsList' class='row'></div>");
 	$("#contentsArea").append(contentsListRow);
+
+	var deckList = document.cookie.split(";");
 	
-	for(var i=0; i<deckList.length; i++){
-//		if(contentsList[i].check(channelId, searchWord)){
-//			$("#contentsList").append(contentsList[i].makeThumbnail());
-//		}
-		$("#contentsList").append(deckList[i].getContents().makeThumbnail());
+	for(var i=0; i<contentsList.length; i++){
+		var key = contentsList[i].getChannelId() + "_" + contentsList[i].getContentsId();
+		if($.cookie(key) != undefined){
+			var json = $.cookie(key);
+			var deck = $.jsonToDeck(json);
+			$("#contentsList").append(deck.getContents().makeThumbnail());
+		}
+		
 	}
 	
 	$("#contentsArea").append($.parseHTML("<hr /><footer><p>&copy; Created by DevY</p></footer>"));
