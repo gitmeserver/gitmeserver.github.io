@@ -191,7 +191,7 @@ function requestEpisode(episodeFileNo){
 				onCreateContents();
 				return;
 			}else{
-				requestEpisodeList(episodeFileNo);
+				requestEpisode(episodeFileNo);
 			}
 		}
 		, error: function(xhr, status, error) {
