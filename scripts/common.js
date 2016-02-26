@@ -33,14 +33,6 @@ var selectedEpisode;
  */
 $(document).ready(function(){
 	
-	
-	console.log("cookie size : " + document.cookie.length);
-	
-	var c = document.cookie.split(";");
-	for(var i=0; i<c.length; i++){
-		console.log(c[i]);
-	}
-	
 	// 채널 정보 초기화 
 	channels = [];
 	

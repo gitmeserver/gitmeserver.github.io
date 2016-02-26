@@ -1,5 +1,5 @@
 /**
- * 
+ * 비디오 관련 스크립트 
  */
 
 function play(){
@@ -40,9 +40,12 @@ function save(){
 	var src = v.src;
 	var currentTime = v.currentTime;
 	
-	$.cookie(src, currentTime, { expires: d });
-	
-	$.modal("저장되었습니다.");
+	if(document.cookie.split(";").length < 20){
+		$.cookie(src, currentTime, { expires: d });
+		$.modal("저장되었습니다.");
+	}else{
+		$.modal("20개이하만 저장가능합니다.");
+	}
 	
 }
 

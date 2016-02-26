@@ -154,17 +154,6 @@ function requestContentsEpisode(){
 
 function onCreateContents(){
 	
-//	episodeList = [];
-//	
-//	var eFiles = selectedContents.getEpisodeFiles();
-//	
-//	for(var i=0; i<eFiles.length; i++){
-//		var eList = episodeMap[eFiles[i]];
-//		for(var j=0; j<eList.length; j++){
-//			episodeList.push(eList[j]);
-//		}
-//	}
-	
 	$("#spinner").remove();
 	
 	$("#contentsArea").append("<div id='detail'></div>");
