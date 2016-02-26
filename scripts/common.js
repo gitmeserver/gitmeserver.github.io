@@ -66,9 +66,9 @@ function onInit(){
 				channels.push(channel);
 			}
 			
-			var channelFileList = $(data).find("channelFile");
-			for(var i=0; i<channelFileList.length; i++){
-				var contentsFileName = $(channelFileList[i]).text();
+			var contentsFileList = $(data).find("contentsFile");
+			for(var i=0; i<contentsFileList.length; i++){
+				var contentsFileName = $(contentsFileList[i]).text();
 				contentsFiles.push(contentsFileName);
 			}
 
