@@ -131,10 +131,11 @@ function onCreateIndex(){
 	var contentsListRow = $.parseHTML("<div id='contentsList' class='row'></div>");
 	$("#contentsArea").append(contentsListRow);
 	
-	for(var i=0; i<contentsList.length; i++){
-		if(contentsList[i].check(channelId, searchWord)){
-			$("#contentsList").append(contentsList[i].makeThumbnail());
-		}
+	for(var i=0; i<deckList.length; i++){
+//		if(contentsList[i].check(channelId, searchWord)){
+//			$("#contentsList").append(contentsList[i].makeThumbnail());
+//		}
+		$("#contentsList").append(deckList[i].getContents().makeThumbnail());
 	}
 	
 	$("#contentsArea").append($.parseHTML("<hr /><footer><p>&copy; Created by DevY</p></footer>"));
