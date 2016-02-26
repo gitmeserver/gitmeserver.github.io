@@ -64,7 +64,6 @@ function onInit(){
 				var channelName = $(channelList[i]).attr("channelName");
 				var channel = new Channel(channelId, channelName);
 				channels.push(channel);
-				console.log(i);
 			}
 			
 			var channelFileList = $(data).find("channelFile");
@@ -159,7 +158,7 @@ function requestEpisode(episodeFileNo){
 	}
 	
 	// 이미 데이터가 존재하면 다음 에피소드 파일을 로드한다. 
-	if(episodeMap[eFile] != undefined){
+	if(episodeMap[selectedContents.getContentsId] != undefined){
 		episodeFileNo = episodeFileNo + 1;
 		requestEpisode(episodeFileNo);
 		return;
@@ -177,17 +176,15 @@ function requestEpisode(episodeFileNo){
 			data = $(data).find("episode");
 			var size = data.length;
 
-			var episode = [];
+			episodeMap[selectedContents.getContentsId()] = [];
 			
 			for(var i=0; i<size; i++){
 				var episodeTitle = $(data[i]).find("episodeTitle").text();
 				var episodeUrl = $(data[i]).find("episodeUrl").text();
 				
 				var epi = new Episode(episodeTitle, episodeUrl);
-				episode.push(epi);
+				episodeMap[selectedContents.getContentsId()].push(epi);
 			}
-			
-			episodeMap[eFile] = episode;
 			
 			episodeFileNo = episodeFileNo + 1;
 			

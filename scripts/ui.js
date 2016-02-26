@@ -154,16 +154,16 @@ function requestContentsEpisode(){
 
 function onCreateContents(){
 	
-	episodeList = [];
-	
-	var eFiles = selectedContents.getEpisodeFiles();
-	
-	for(var i=0; i<eFiles.length; i++){
-		var eList = episodeMap[eFiles[i]];
-		for(var j=0; j<eList.length; j++){
-			episodeList.push(eList[j]);
-		}
-	}
+//	episodeList = [];
+//	
+//	var eFiles = selectedContents.getEpisodeFiles();
+//	
+//	for(var i=0; i<eFiles.length; i++){
+//		var eList = episodeMap[eFiles[i]];
+//		for(var j=0; j<eList.length; j++){
+//			episodeList.push(eList[j]);
+//		}
+//	}
 	
 	$("#spinner").remove();
 	
@@ -241,7 +241,7 @@ var pageSize = 5;
 
 function list(page){
 	
-	var episodeTotalSize = episodeList.length;
+	var episodeTotalSize = episodeMap[selectedContents.getContentsId()].length;
 	
 	var end = page * itemSize;
 	var start = end - itemSize;
@@ -254,8 +254,8 @@ function list(page){
 	
 	for(var i=start; i<end; i++){
 		var listItem = $.parseHTML("<a class='list-group-item' href='#'></a>");
-		var title = episodeList[i].getEpisodeTitle();
-		var episodeUrl = episodeList[i].getEpisodeUrl();
+		var title = episodeMap[selectedContents.getContentsId()][i].getEpisodeTitle();
+		var episodeUrl = episodeMap[selectedContents.getContentsId()][i].getEpisodeUrl();
 		
 		var item = $(listItem).clone();
 		$(item).attr("title", title);
@@ -276,7 +276,7 @@ function pager(curPage){
 	
 	$(".pager").empty();
 	
-	var total = episodeList.length;
+	var total = episodeMap[selectedContents.getContentsId()].length;
 	
 	/**
      * 총 페이지 수 계산
