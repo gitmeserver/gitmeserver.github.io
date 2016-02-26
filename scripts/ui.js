@@ -120,6 +120,8 @@ function onCreateMain(){
 	
 	$("#contentsArea").empty();
 	
+	$("#contentsArea").append("<h2>감상중</h2>");
+	
 	$("#contentsArea").append("<div id='searching' style='text-align:right; margin-bottom:10px;'></div>");
 	if(searchWord != undefined && searchWord != "" && searchWord != null){
 		$("#searching").show();
