@@ -193,7 +193,7 @@ function details(){
 	
 }
 
-function video(episodeTitle, episodeUrl){
+function video(){
 	
 	$("#detail").empty();
 	$("#detail").append("<div id='video'><div id='subject'><h3></h3><span></span></div><div class='embed-responsive embed-responsive-16by9'><video controls='true' autoplay='true' class='embed-responsive-item'></video></div><div id='controll'><div class='float-right'><button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button><button id='previous' type='button' class='glyphicon glyphicon-eye-open btn btn-default btn-lg'></button></div><span><button id='backward' class='glyphicon glyphicon-step-backward btn btn-default btn-lg' type='button'></button><button id='forward' class='glyphicon glyphicon-step-forward btn btn-default btn-lg' type='button'></button></span></div></div>");
@@ -203,8 +203,8 @@ function video(episodeTitle, episodeUrl){
 	var videoSrc = $("#video video");
 	
 	$(title).text(selectedContents.getTitle());
-	$(subTitle).text(episodeTitle);
-	$(videoSrc).attr("src", episodeUrl);
+	$(subTitle).text(selectedEpisode.getEpisodeTitle());
+	$(videoSrc).attr("src", selectedEpisode.getEpisodeUrl());
 	
 	$("#backward").click(function(){
 		backward();
@@ -243,16 +243,16 @@ function list(page){
 	
 	for(var i=start; i<end; i++){
 		var listItem = $.parseHTML("<a class='list-group-item' href='#'></a>");
-		var title = episodeMap[selectedContents.getContentsId()][i].getEpisodeTitle();
-		var episodeUrl = episodeMap[selectedContents.getContentsId()][i].getEpisodeUrl();
+		var episode = episodeMap[selectedContents.getContentsId()][i];
 		
 		var item = $(listItem).clone();
-		$(item).attr("title", title);
-		$(item).attr("href", episodeUrl);
-		$(item).text(title);
+		$(item).attr("title", episode.getEpisodeTitle());
+		$(item).attr("href", episode.getEpisodeUrl());
+		$(item).text(episode.getEpisodeTitle());
 		
 		$(item).click(function(){
-			video($(this).attr("title"), $(this).attr("href"));
+			selectedEpisode = episode;
+			video();
 			return false;
 		});
 		

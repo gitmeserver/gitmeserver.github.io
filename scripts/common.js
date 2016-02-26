@@ -7,23 +7,23 @@ var channels;
 // 채널 파일 목록 
 var contentsFiles;
 
-// 콘텐츠 목록 
-var contentsList;
-
 // 현재 채널 아이디 
 var channelId = "all";
 
 // 검색 단어 
 var searchWord;
 
-// 현재 선택되어진 콘텐츠 
-var selectedContents;
+//콘텐츠 목록 
+var contentsList;
 
-// 로딩된 에피소드 목록 
+// 로딩된 에피소드 목록, key : contentsId, return episodeList  
 var episodeMap;
 
 // 콘텐츠의 에피소드 목록 
 var episodeList;
+
+//현재 선택되어진 콘텐츠 
+var selectedContents;
 
 // 현재 선택되어진 에피소드 
 var selectedEpisode;
@@ -268,6 +268,39 @@ $.extend({
 			$(".modal").detach();
 		});
 		$(".modal").modal();
+	},
+	
+	deckToJson : function(deck){
+		return $.toJSON(deck);
+	},
+	
+	jsonToDeck : function(json){
+		
+		var d = $.evalJSON(json);
+		
+		// Contents
+		this.channelId = d.contents.channelId;
+		this.contentsId = d.contents.contentsId;
+        this.title = d.contents.title;
+        this.thumbnail = d.contents.thumbnail;
+        this.description = d.contents.description;
+        this.episodeFiles = d.contents.episodeFiles;
+        
+        var contents = new Contents(this.channelId, this.contentsId, this.title, this.thumbnail, this.description, this.episodeFiles);
+        
+        // Episode
+        this.episodeTitle = d.episode.episodeTitle;
+		this.episodeUrl = d.episode.episodeUrl;
+		
+		var episode = new Episode(this.episodeTitle, this.episodeUrl);
+		
+		// currentTime
+		this.currentTime = d.currentTime;
+		
+		var deck = new Deck(contents, episode, this.currentTime);
+		
+		return deck;
+		
 	}
 	
 });  

@@ -7,8 +7,8 @@ var $Class = function(oClassMember) {
     }
     ClassOrigin.prototype = oClassMember;
     ClassOrigin.prototype.constructor = ClassOrigin;
-    return ClassOrigin
-}
+    return ClassOrigin;
+};
 
 var Channel = $Class({
     
@@ -186,6 +186,38 @@ var Episode = $Class({
     	this.episodeUrl = episodeUrl;
     }
     
-    
 });
 
+var Deck = $Class({
+    
+	$init : function(contents, episode, currentTime){
+		this.contents = contents;
+		this.episode = episode;
+		this.currentTime = currentTime;
+    }, 
+    
+    getContents : function(){
+    	return this.contents;
+    },
+    
+    setContents : function(contents){
+    	this.contents = contents;
+    },
+    
+    getEpisode : function(){
+    	return this.episode;
+    },
+    
+    setEpisode : function(episode){
+    	this.episode = episode;
+    },
+    
+    getCurrentTime : function(){
+    	return this.currentTime;
+    },
+    
+    setCurrentTime : function(currentTime){
+    	this.currentTime = currentTime;
+    }
+    
+});

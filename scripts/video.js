@@ -40,12 +40,16 @@ function save(){
 	var src = v.src;
 	var currentTime = v.currentTime;
 	
-	var json = $.parseJSON(selectedContents);
-	console.log(json);
+	var key = selectedContents.getChannelId() + "_" + selectedContents.getContentsId();
 	
+	var deck = new Deck(selectedContents, selectedEpisode, currentTime);
+	var json = $.deckToJson(deck);
 	
 	if(document.cookie.split(";").length < 20){
-		$.cookie(src, currentTime, { expires: d });
+		if($.cookie(key) != undefined){
+			$.removeCookie(key);
+		}
+		$.cookie(key, json, { expires: d });
 		$.modal("저장되었습니다.");
 	}else{
 		$.modal("20개이하만 저장가능합니다.");
