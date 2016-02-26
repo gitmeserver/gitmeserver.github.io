@@ -24,7 +24,7 @@ function beforeOnCreateLayout(){
 	createChannel();
 	
 	// 콘텐츠 생성 
-	requestChannels(0);
+	requestContents(0);
 	
 }
 

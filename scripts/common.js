@@ -5,7 +5,7 @@
 var channels;
 
 // 채널 파일 목록 
-var channelFiles;
+var contentsFiles;
 
 // 콘텐츠 목록 
 var contents;
@@ -37,7 +37,7 @@ $(document).ready(function(){
 	channels = [];
 	
 	// 채널 파일 목록 
-	channelFiles = [];
+	contentsFiles = [];
 	
 	// 콘텐츠 정보 초기화 
 	contents = [];
@@ -68,8 +68,8 @@ function onInit(){
 			
 			var channelFileList = $(data).find("channelFile");
 			for(var i=0; i<channelFileList.length; i++){
-				var channelFileName = $(channelFileList[i]).text();
-				channelFiles.push(channelFileName);
+				var contentsFileName = $(channelFileList[i]).text();
+				contentsFiles.push(contentsFileName);
 			}
 
 			// 상단 영역 삽입 
@@ -92,18 +92,18 @@ function onInit(){
 /**
  * 콘텐츠 정보를 다운받는다.
  */
-function requestChannels(channelFileNo){
+function requestContents(contentsFileNo){
 	
-	var channelFileName = channelFiles[channelFileNo];
+	var contentsFileName = contentsFiles[contentsFileNo];
 	
-	if(channelFileName == undefined || channelFileName == "" || channelFileName == null){
+	if(contentsFileName == undefined || contentsFileName == "" || contentsFileName == null){
 		$("#spinner").remove();
 		onCreateIndex();
 		
 		return;
 	}
 	
-	var url = CHANNELS_PATH_URL.replace("{channel_file_path}", channelFileName);
+	var url = CONTENTS_URL.replace("{contents_file_path}", contentsFileName);
 
 	$.ajax({
 		type: 'get'
@@ -131,8 +131,8 @@ function requestChannels(channelFileNo){
 				contents.push(c);
 			}
 			
-			channelFileNo = channelFileNo + 1;
-			requestChannels(channelFileNo);
+			contentsFileNo = contentsFileNo + 1;
+			requestContents(contentsFileNo);
 			
 		}
 		, error: function(xhr, status, error) {
@@ -160,7 +160,7 @@ function requestEpisodeList(episodeFileNo){
 		return;
 	}
 
-	var url = EPISODE_FILE_URL.replace("{episode_file_path}", eFile);
+	var url = EPISODE_URL.replace("{episode_file_path}", eFile);
 	
 	$.ajax({
 		type: 'get'

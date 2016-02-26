@@ -117,7 +117,7 @@ var Contents = $Class({
         var epiFiles = this.episodeFiles;
     	
         if(!(-1 < thumb.indexOf("http://")) && !(-1 < thumb.indexOf("https://"))){
-        	thumb = THUMBNAIL_URL.replace("{thumbnail_file_name}", thumb); 
+        	thumb = THUMBNAIL_URL.replace("{thumbnail_file_path}", thumb); 
         }
         
     	var th = $.parseHTML("<div class='cont col-xs-4 col-sm-3 col-lg-2'></div>");
