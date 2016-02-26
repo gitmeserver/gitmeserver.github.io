@@ -50,6 +50,19 @@ function save(){
 			$.removeCookie(key);
 		}
 		$.cookie(key, json, { expires: d });
+		
+		for(var i=0; i<deckList.length; i++){
+			var dContents = deckList[i].getContents();
+			var dKey = dContents.getChannelId() + "_" + dContents.getContentsId();
+			if(key.match(dKey)){
+				deckList[i].setContents(selectedContents);
+				deckList[i].setEpisode(selectedEpisode);
+			}else{
+				var deck = new Deck(selectedContents, selectedEpisode, currentTime);
+				deckList.push(deck);
+			}
+		}
+		
 		$.modal("저장되었습니다.");
 	}else{
 		$.modal("20개이하만 저장가능합니다.");
