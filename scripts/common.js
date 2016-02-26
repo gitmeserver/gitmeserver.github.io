@@ -106,7 +106,7 @@ function requestContents(contentsFileNo){
 	
 	if(contentsFileName == undefined || contentsFileName == "" || contentsFileName == null){
 		$("#spinner").remove();
-		onCreateIndex();
+		onCreateMain();
 		return;
 	}
 	
@@ -144,8 +144,6 @@ function requestContents(contentsFileNo){
 					deckList.push(deck);
 				}
 			}
-			
-			console.log(deckList.length);
 			
 			contentsFileNo = contentsFileNo + 1;
 			requestContents(contentsFileNo);
