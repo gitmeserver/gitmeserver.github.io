@@ -35,6 +35,10 @@ $(document).ready(function(){
 	
 	console.log("cookie size : " + document.cookie.length);
 	
+	for(var i=0; i<document.cookie.size; i++){
+		console.log("" + document.cookie[i]);
+	}
+	
 	// 채널 정보 초기화 
 	channels = [];
 	
