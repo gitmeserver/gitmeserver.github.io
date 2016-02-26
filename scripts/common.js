@@ -8,7 +8,7 @@ var channels;
 var contentsFiles;
 
 // 콘텐츠 목록 
-var contents;
+var contentsList;
 
 // 현재 채널 아이디 
 var channelId = "all";
@@ -40,7 +40,7 @@ $(document).ready(function(){
 	contentsFiles = [];
 	
 	// 콘텐츠 정보 초기화 
-	contents = [];
+	contentsList = [];
 	
 	// 콘텐츠의 에피소드 정보 초기화 
 	episodeMap = [];
@@ -64,6 +64,7 @@ function onInit(){
 				var channelName = $(channelList[i]).attr("channelName");
 				var channel = new Channel(channelId, channelName);
 				channels.push(channel);
+				console.log(i);
 			}
 			
 			var channelFileList = $(data).find("channelFile");
@@ -112,15 +113,15 @@ function requestContents(contentsFileNo){
 		, success: function(data) {
 
 			data = data.replace(/&/gi, "&amp;");
-			var contentsList = $($.parseXML(data)).find("contents");
+			var cList = $($.parseXML(data)).find("contents");
 			
-			for(var i=0; i<contentsList.length; i++){
-				var channelId = $(contentsList[i]).attr("channelId");
-				var contentsId = $(contentsList[i]).attr("contentsId");
-				var title = $(contentsList[i]).find("title").text();
-				var thumbnail = $(contentsList[i]).find("thumbnail").text();
-				var description = $(contentsList[i]).find("description").text();
-				var episodeFiles = $(contentsList[i]).find("episodeFile");
+			for(var i=0; i<cList.length; i++){
+				var channelId = $(cList[i]).attr("channelId");
+				var contentsId = $(cList[i]).attr("contentsId");
+				var title = $(cList[i]).find("title").text();
+				var thumbnail = $(cList[i]).find("thumbnail").text();
+				var description = $(cList[i]).find("description").text();
+				var episodeFiles = $(cList[i]).find("episodeFile");
 				
 				var eFiles = [];
 				for(var j=0; j<episodeFiles.length; j++){
@@ -128,7 +129,7 @@ function requestContents(contentsFileNo){
 				}
 				
 				var c = new Contents(channelId, contentsId, title, thumbnail, description, eFiles);
-				contents.push(c);
+				contentsList.push(c);
 			}
 			
 			contentsFileNo = contentsFileNo + 1;
@@ -142,7 +143,7 @@ function requestContents(contentsFileNo){
 	
 }
 
-function requestEpisodeList(episodeFileNo){
+function requestEpisode(episodeFileNo){
 	
 	var eFiles = selectedContents.getEpisodeFiles();
 	var eFile = eFiles[episodeFileNo];

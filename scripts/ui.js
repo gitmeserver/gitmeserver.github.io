@@ -125,12 +125,12 @@ function onCreateIndex(){
 		$("#searching").hide();
 	}
 	
-	var contentsList = $.parseHTML("<div id='contentsList' class='row'></div>");
-	$("#contentsArea").append(contentsList);
+	var contentsListRow = $.parseHTML("<div id='contentsList' class='row'></div>");
+	$("#contentsArea").append(contentsListRow);
 	
-	for(var i=0; i<contents.length; i++){
-		if(contents[i].check(channelId, searchWord)){
-			$("#contentsList").append(contents[i].makeThumbnail());
+	for(var i=0; i<contentsList.length; i++){
+		if(contentsList[i].check(channelId, searchWord)){
+			$("#contentsList").append(contentsList[i].makeThumbnail());
 		}
 	}
 	
@@ -145,7 +145,7 @@ function requestContentsEpisode(){
 	// 데이터 로딩중 스피너
 	$("#contentsArea").append("<div id='spinner' style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span style='margin-top:20px;display:block;'>미디어 정보를 로딩중입니다...</span></div>");
 	
-	requestEpisodeList(0);
+	requestEpisode(0);
 	
 }
 
