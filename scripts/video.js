@@ -54,11 +54,10 @@ function save(){
 		for(var i=0; i<deckList.length; i++){
 			var dContents = deckList[i].getContents();
 			var dKey = dContents.getChannelId() + "_" + dContents.getContentsId();
+			var deck = new Deck(selectedContents, selectedEpisode, currentTime);
 			if(key.match(dKey)){
-				deckList[i].setContents(selectedContents);
-				deckList[i].setEpisode(selectedEpisode);
+				deckList.splice((i+1), 1, deck);
 			}else{
-				var deck = new Deck(selectedContents, selectedEpisode, currentTime);
 				deckList.push(deck);
 			}
 		}
