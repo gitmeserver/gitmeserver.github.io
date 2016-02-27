@@ -221,7 +221,7 @@ function requestContentsEpisode(page){
 
 function onCreateContents(page){
 	
-	console.log(page);
+	console.log("onCreateContents >> " + page);
 	
 	$("#spinner").remove();
 	
