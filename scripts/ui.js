@@ -155,6 +155,8 @@ function onRecommended(){
 
 function onDeck(){
 	
+	$("#deck").empty();
+	
 	var deckList = document.cookie.split(";");
 	var deckSize = 0;
 	
