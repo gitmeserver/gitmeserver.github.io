@@ -74,11 +74,8 @@ function save(){
 function previous(){
 	var v = $("#video video")[0];
 	var src = v.src;
-	
 	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
-	
 	var deck = $.jsonToDeck($.cookie(key));
-	
 	v.currentTime = deck.currentTime;
 }
 
