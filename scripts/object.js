@@ -237,8 +237,11 @@ var Deck = $Class({
     	var reco = this.contents.isRecommended();
         var ti = this.contents.getTitle();
         var thumb = this.contents.getThumbnail();
-        var desc = this.episode.getDescription();
+        var desc = this.contents.getDescription();
         var epiFiles = this.episode.getEpisodeFiles();
+        
+        var eTitle = this.episode.getEpisodeTitle();
+		var eUrl = this.episode.getEpisodeUrl();
     	
         if(!(-1 < thumb.indexOf("http://")) && !(-1 < thumb.indexOf("https://"))){
         	thumb = THUMBNAIL_URL.replace("{thumbnail_file_path}", thumb); 
