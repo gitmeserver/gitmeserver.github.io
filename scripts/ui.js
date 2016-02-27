@@ -120,7 +120,7 @@ function onCreateMain(){
 	
 	$("#contentsArea").empty();
 	
-$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff; margin-top:0px !important;'>추천하는 콘텐츠<span class='glyphicon glyphicon-thumbs-up btn-lg' aria-hidden='true'></span></h3>");
+	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff; margin-top:0px !important;'>추천하는 콘텐츠<span class='glyphicon glyphicon-thumbs-up btn-lg' aria-hidden='true'></span></h3>");
 	
 	var recommendedArea = $.parseHTML("<div id='recommended' class='row'></div>");
 	$("#contentsArea").append(recommendedArea);
