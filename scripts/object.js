@@ -260,7 +260,8 @@ var Deck = $Class({
     	$(ended).click(function(){
     		var key = $.deckKey(chId, contId);
     		$(this).parent().detach();
-    		$.removeCookie(key)
+    		$.removeCookie(key);
+    		onRecommended();
     	});
     	
     	var t = $.parseHTML("<a href='#'></a>");

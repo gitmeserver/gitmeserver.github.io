@@ -120,10 +120,20 @@ function onCreateMain(){
 	
 	$("#contentsArea").empty();
 	
+$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff; margin-top:0px !important;'>추천하는 콘텐츠<span class='glyphicon glyphicon-thumbs-up btn-lg' aria-hidden='true'></span></h3>");
+	
+	var recommendedArea = $.parseHTML("<div id='recommended' class='row'></div>");
+	$("#contentsArea").append(recommendedArea);
 	onRecommended();
 	
+	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff;'>감상중<span class='glyphicon glyphicon-facetime-video btn-lg' aria-hidden='true'></span></h3>");
+	var deckArea = $.parseHTML("<div id='deck' class='row'></div>");
+	$("#contentsArea").append(deckArea);
 	onDeck();
 
+	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff;'>나중에 보기<span class='glyphicon glyphicon-check btn-lg' aria-hidden='true'></span></h3>");
+	var watchAfterArea = $.parseHTML("<div id='watchAfter' class='row'></div>");
+	$("#contentsArea").append(watchAfterArea);
 	watchAfter();
 	
 	$("#contentsArea").append($.parseHTML("<hr /><footer><p>&copy; Created by DevY</p></footer>"));
@@ -131,11 +141,8 @@ function onCreateMain(){
 }
 
 function onRecommended(){
-
-	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff; margin-top:0px !important;'>추천하는 콘텐츠<span class='glyphicon glyphicon-thumbs-up btn-lg' aria-hidden='true'></span></h3>");
 	
-	var recommendedArea = $.parseHTML("<div id='recommended' class='row'></div>");
-	$("#contentsArea").append(recommendedArea);
+	$("#recommended").empty();
 	
 	for(var i=0; i<recommendedList.length; i++){
 		$("#recommended").append(recommendedList[i].makeThumbnail());
@@ -147,11 +154,6 @@ function onRecommended(){
 }
 
 function onDeck(){
-	
-	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff;'>감상중<span class='glyphicon glyphicon-facetime-video btn-lg' aria-hidden='true'></span></h3>");
-	
-	var deckArea = $.parseHTML("<div id='deck' class='row'></div>");
-	$("#contentsArea").append(deckArea);
 	
 	var deckList = document.cookie.split(";");
 	var deckSize = 0;
@@ -173,11 +175,6 @@ function onDeck(){
 }
 
 function watchAfter(){
-	
-	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff;'>나중에 보기<span class='glyphicon glyphicon-check btn-lg' aria-hidden='true'></span></h3>");
-	
-	var watchAfterArea = $.parseHTML("<div id='watchAfter' class='row'></div>");
-	$("#contentsArea").append(watchAfterArea);
 	
 	$("#watchAfter").append("<p style='text-align:center; padding:30px 0px;'>나중에보기에 콘텐츠가 없습니다.</p>");
 	
