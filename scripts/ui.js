@@ -225,7 +225,7 @@ function onCreateContents(page){
 	
 	$("#contentsArea").append("<div id='detail'></div>");
 	
-	if(page == "video"){
+	if(-1 < page.indexOf("video")){
 		console.log("video");
 		video();
 	}else{
