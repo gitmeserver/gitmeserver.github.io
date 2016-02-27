@@ -277,9 +277,9 @@ var Deck = $Class({
     	
     	$(imgA).click(clickFunc);
     	$(t).click(clickFunc);
-    	
-    	$(th).append(imgA);
+
     	$(th).append(ended);
+    	$(th).append(imgA);
     	$(th).append(t);
     	
     	return th;
