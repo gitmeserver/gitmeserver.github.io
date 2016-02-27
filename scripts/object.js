@@ -257,6 +257,9 @@ var Deck = $Class({
     	$(imgA).append(img);
     	
     	var ended = $.parseHTML("<a class='ended glyphicon glyphicon-remove' href='#'></a>");
+    	$(ended).click(function(){
+    		console.log(ti);
+    	});
     	
     	var t = $.parseHTML("<a href='#'></a>");
     	$(t).append($.cutStr(ti, 12));
