@@ -293,6 +293,8 @@ function video(){
 		previous();
 	});
 	
+	isDeck();
+	
 	return false;
 }
 
