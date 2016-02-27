@@ -267,7 +267,7 @@ function details(){
 function video(){
 	
 	$("#detail").empty();
-	$("#detail").append("<div id='video'><div id='subject'><h3></h3><span></span></div><div class='embed-responsive embed-responsive-16by9'><video controls='true' autoplay='true' class='embed-responsive-item'></video></div><div id='controll'><div class='float-right'><button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button><button id='previous' type='button' class='glyphicon glyphicon-facetime-video btn btn-default btn-lg'></button></div><span><button id='backward' class='glyphicon glyphicon-step-backward btn btn-default btn-lg' type='button'></button><button id='forward' class='glyphicon glyphicon-step-forward btn btn-default btn-lg' type='button'></button></span></div></div>");
+	$("#detail").append("<div id='video'><div id='subject'><h3></h3><span></span></div><div class='embed-responsive embed-responsive-16by9'><video controls='true' autoplay='true' class='embed-responsive-item'></video></div><div id='controll'><div class='float-right'><button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button><button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default btn-lg'></button></div><span><button id='backward' class='glyphicon glyphicon-step-backward btn btn-default btn-lg' type='button'></button><button id='forward' class='glyphicon glyphicon-step-forward btn btn-default btn-lg' type='button'></button></span></div></div>");
 	
 	var title = $("#video #subject h3");
 	var subTitle = $("#video #subject span");
@@ -294,6 +294,17 @@ function video(){
 	});
 	
 	return false;
+}
+
+function isDeck(){
+	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
+	var deck = $.cookie(key);
+	
+	if(deck != undefined){
+		$("#previous").show();
+	}else(){
+		$("#previous").hide();
+	}
 }
 
 var itemSize = 5;
