@@ -238,7 +238,7 @@ var Deck = $Class({
         var ti = this.contents.getTitle();
         var thumb = this.contents.getThumbnail();
         var desc = this.contents.getDescription();
-        var epiFiles = this.episode.getEpisodeFiles();
+        var epiFiles = this.contents.getEpisodeFiles();
         
         var eTitle = this.episode.getEpisodeTitle();
 		var eUrl = this.episode.getEpisodeUrl();
