@@ -261,7 +261,7 @@ var Deck = $Class({
     		var key = $.deckKey(chId, contId);
     		$(this).parent().detach();
     		$.removeCookie(key);
-    		onRecommended();
+    		onDeck();
     	});
     	
     	var t = $.parseHTML("<a href='#'></a>");
