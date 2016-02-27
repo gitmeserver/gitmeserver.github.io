@@ -75,3 +75,16 @@ body {
 	color:#333;
 }
 
+.ended {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #000;
+    margin-top: -40px;
+    z-index: 1;
+    position: relative;
+    opacity: .8;
+    color: #fff;
+    width: 50px;
+}
+
