@@ -65,6 +65,9 @@ function save(){
 		}
 		$.cookie(key, json, { expires: d });
 		$.modal("저장되었습니다.");
+		
+		isDeck();
+		
 	}else{
 		$.modal(totalDeck + "개이하만 저장가능합니다.");
 	}
