@@ -304,6 +304,14 @@ $.extend({
 		
 		return deck;
 		
+	},
+	
+	deckKey : function(channelId, contentsId){
+		return "d" + "_" + selectedContents.getChannelId() + "_" + selectedContents.getContentsId();
+	},
+	
+	watchAfterKey : function(channelId, contentsId){
+		return "w" + "_" + selectedContents.getChannelId() + "_" + selectedContents.getContentsId();
 	}
 	
 });  

@@ -120,15 +120,16 @@ function onCreateMain(){
 	
 	$("#contentsArea").empty();
 	
-	$("#contentsArea").append("<div id='searching' style='text-align:right; margin-bottom:10px;'></div>");
-	if(searchWord != undefined && searchWord != "" && searchWord != null){
-		$("#searching").show();
-		$("#searching").text("'" + searchWord + "' 검색중...");
-	}else{
-		$("#searching").hide();
-	}
+	onDeck();
 
-	$("#contentsArea").append("<h2>감상중</h2>");
+	watchAfter();
+	
+	$("#contentsArea").append($.parseHTML("<footer><p>&copy; Created by DevY</p></footer>"));
+	
+}
+
+function onDeck(){
+	$("#contentsArea").append("<h3>감상중<span class='glyphicon glyphicon-facetime-video btn-lg' aria-hidden='true'></span></h3>");
 	
 	var contentsListRow = $.parseHTML("<div id='contentsList'></div>");
 	$("#contentsArea").append(contentsListRow);
@@ -147,11 +148,16 @@ function onCreateMain(){
 	}
 
 	if(deckSize == 0){
-		onCreateIndex();
-	}else{
-		$("#contentsArea").append($.parseHTML("<hr /><footer><p>&copy; Created by DevY</p></footer>"));
+		
 	}
 	
+	$("#contentsArea").append("<hr />");
+}
+
+function watchAfter(){
+	$("#contentsArea").append("<h3>나중에 보기<span class='glyphicon glyphicon-check btn-lg' aria-hidden='true'></span></h3>");
+	
+	$("#contentsArea").append("<hr />");
 }
 
 /**

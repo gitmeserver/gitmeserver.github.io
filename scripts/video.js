@@ -2,6 +2,11 @@
  * 비디오 관련 스크립트 
  */
 
+var totalDeck = 10;
+var prefixDeck = "deck";
+var totalWatchAfter = 10;
+var prefixWatchAfter = "watchafter";
+
 function play(){
 	var v = $("#video video")[0];
 	v.play();
@@ -40,19 +45,19 @@ function save(){
 	var src = v.src;
 	var currentTime = v.currentTime;
 	
-	var key = selectedContents.getChannelId() + "_" + selectedContents.getContentsId();
+	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
 	
 	var deck = new Deck(selectedContents, selectedEpisode, currentTime);
 	var json = $.deckToJson(deck);
 	
-	if(document.cookie.split(";").length < 20){
+	if(document.cookie.split(";").length < totalDeck){
 		if($.cookie(key) != undefined){
 			$.removeCookie(key);
 		}
 		$.cookie(key, json, { expires: d });
 		$.modal("저장되었습니다.");
 	}else{
-		$.modal("20개이하만 저장가능합니다.");
+		$.modal(totalDeck + "개이하만 저장가능합니다.");
 	}
 	
 }
