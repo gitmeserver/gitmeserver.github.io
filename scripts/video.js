@@ -55,11 +55,13 @@ function save(){
 	
 	for(var i=0; i<c.length; i++){
 		if(-1 < c[i].indexOf("deck")){
+			console.log(i);
 			dSize = dSize + 1; 
 		}
 	}
 	
 	if(dSize < totalDeck){
+		console.log("true");
 		if($.cookie(key) != undefined){
 			$.removeCookie(key);
 		}
