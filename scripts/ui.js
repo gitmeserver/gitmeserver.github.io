@@ -126,7 +126,7 @@ function onCreateMain(){
 
 	watchAfter();
 	
-	$("#contentsArea").append($.parseHTML("<footer><p>&copy; Created by DevY</p></footer>"));
+	$("#contentsArea").append($.parseHTML("<hr /><footer><p>&copy; Created by DevY</p></footer>"));
 	
 }
 
