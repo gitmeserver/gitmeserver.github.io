@@ -259,7 +259,7 @@ var Deck = $Class({
     	var ended = $.parseHTML("<a class='ended' href='#'></a>");
     	
     	var t = $.parseHTML("<a href='#'></a>");
-    	$(t).append($.cutStr(this.title, 12));
+    	$(t).append($.cutStr(ti, 12));
     	$(t).attr("style", "display:block;");
     	
     	var clickFunc = function(){
