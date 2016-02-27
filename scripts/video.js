@@ -77,7 +77,9 @@ function previous(){
 	
 	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
 	
-	v.currentTime = $.cookie(key);
+	var deck = $.jsonToDeck($.cookie(key));
+	
+	v.currentTime = deck.currentTime;
 }
 
 
