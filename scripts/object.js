@@ -232,13 +232,13 @@ var Deck = $Class({
     
     makeDeck : function(){
     	
-    	var chId = this.contents.channelId;
-    	var contId = this.contents.contentsId;
-    	var reco = this.contents.recommended;
-        var ti = this.contents.title;
-        var thumb = this.contents.thumbnail;
-        var desc = this.episode.description;
-        var epiFiles = this.episode.episodeFiles;
+    	var chId = this.contents.getChannelId();
+    	var contId = this.contents.getContentsId();
+    	var reco = this.contents.getRecommended();
+        var ti = this.contents.getTitle();
+        var thumb = this.contents.getThumbnail();
+        var desc = this.episode.getDescription();
+        var epiFiles = this.episode.getEpisodeFiles();
     	
         if(!(-1 < thumb.indexOf("http://")) && !(-1 < thumb.indexOf("https://"))){
         	thumb = THUMBNAIL_URL.replace("{thumbnail_file_path}", thumb); 
@@ -254,7 +254,6 @@ var Deck = $Class({
     	$(imgA).append(img);
     	
     	var ended = $.parseHTML("<a class='ended' href='#'></a>");
-    	
     	
     	var t = $.parseHTML("<a href='#'></a>");
     	$(t).append($.cutStr(this.title, 12));
