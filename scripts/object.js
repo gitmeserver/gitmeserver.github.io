@@ -270,7 +270,9 @@ var Deck = $Class({
     	
     	var clickFunc = function(){
     		selectedContents = new Contents(chId, contId, reco, ti, thumb, desc, epiFiles);
+    		selectedEpisode = new Episode(eTitle, eUrl);
     		requestContentsEpisode();
+    		video();
     		return false;
     	};
     	
