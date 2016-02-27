@@ -40,7 +40,7 @@ function forward(){
 }
 
 function save(){
-	var d = 365 * 99;
+	var d = 30;
 	var v = $("#video video")[0];
 	var src = v.src;
 	var currentTime = v.currentTime;
@@ -50,7 +50,15 @@ function save(){
 	var deck = new Deck(selectedContents, selectedEpisode, currentTime);
 	var json = $.deckToJson(deck);
 	
-	if(document.cookie.split(";").length < totalDeck){
+	var dSize = 0;
+	
+	for(var i=0; i<document.cookie.split(";").length; i++){
+		if(-1 < document.cookie[i].indexOf("deck")){
+			dSize = dSize + 1; 
+		}
+	}
+	
+	if(dSize < totalDeck){
 		if($.cookie(key) != undefined){
 			$.removeCookie(key);
 		}
