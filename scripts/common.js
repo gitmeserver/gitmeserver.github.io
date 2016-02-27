@@ -307,11 +307,11 @@ $.extend({
 	},
 	
 	deckKey : function(channelId, contentsId){
-		return "d" + "_" + selectedContents.getChannelId() + "_" + selectedContents.getContentsId();
+		return "d" + "_" + channelId + "_" + contentsId;
 	},
 	
 	watchAfterKey : function(channelId, contentsId){
-		return "w" + "_" + selectedContents.getChannelId() + "_" + selectedContents.getContentsId();
+		return "w" + "_" + channelId + "_" + contentsId;
 	}
 	
 });  
