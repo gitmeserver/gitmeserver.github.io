@@ -234,7 +234,7 @@ var Deck = $Class({
     	
     	var chId = this.contents.getChannelId();
     	var contId = this.contents.getContentsId();
-    	var reco = this.contents.getRecommended();
+    	var reco = this.contents.isRecommended();
         var ti = this.contents.getTitle();
         var thumb = this.contents.getThumbnail();
         var desc = this.episode.getDescription();
