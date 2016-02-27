@@ -51,9 +51,10 @@ function save(){
 	var json = $.deckToJson(deck);
 	
 	var dSize = 0;
+	var c = document.cookie.split(";");
 	
-	for(var i=0; i<document.cookie.split(";").length; i++){
-		if(-1 < document.cookie[i].indexOf("deck")){
+	for(var i=0; i<c.length; i++){
+		if(-1 < c[i].indexOf("deck")){
 			dSize = dSize + 1; 
 		}
 	}
