@@ -50,9 +50,10 @@ var Channel = $Class({
 
 var Contents = $Class({
     
-	$init : function(channelId, contentsId, title, thumbnail, description, episodeFiles){
+	$init : function(channelId, contentsId, recommended, title, thumbnail, description, episodeFiles){
 		this.channelId = channelId;
 		this.contentsId = contentsId;
+		this.recommended = recommended;
         this.title = title;
         this.thumbnail = thumbnail;
         this.description = description;
@@ -73,6 +74,14 @@ var Contents = $Class({
     
     setContentsId : function(contentsId){
     	this.contentsId = contentsId;
+    },
+    
+    isRecommended : function(){
+    	return this.recommended;
+    },
+    
+    setRecommended : function(recommended){
+    	this.recommended = recommended;
     },
     
     getTitle : function(){
@@ -111,6 +120,7 @@ var Contents = $Class({
     	
     	var chId = this.channelId;
     	var contId = this.contentsId;
+    	var reco = this.recommended;
         var ti = this.title;
         var thumb = this.thumbnail;
         var desc = this.description;
@@ -134,7 +144,7 @@ var Contents = $Class({
     	$(t).attr("style", "display:block;");
     	
     	var clickFunc = function(){
-    		selectedContents = new Contents(chId, contId, ti, thumb, desc, epiFiles);
+    		selectedContents = new Contents(chId, contId, reco, ti, thumb, desc, epiFiles);
     		requestContentsEpisode();
     		return false;
     	};

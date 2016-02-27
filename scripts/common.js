@@ -13,6 +13,9 @@ var channelId = "all";
 // 검색 단어 
 var searchWord;
 
+// 추천 콘텐츠 목록 
+var recommendedList;
+
 //콘텐츠 목록 
 var contentsList;
 
@@ -38,6 +41,9 @@ $(document).ready(function(){
 	
 	// 채널 파일 목록 
 	contentsFiles = [];
+
+	// 추천 콘텐츠 목록 
+	recommendedList = [];
 	
 	// 콘텐츠 정보 초기화 
 	contentsList = [];
@@ -121,6 +127,7 @@ function requestContents(contentsFileNo){
 			for(var i=0; i<cList.length; i++){
 				var channelId = $(cList[i]).attr("channelId");
 				var contentsId = $(cList[i]).attr("contentsId");
+				var recommended = $(cList[i]).attr("recommended");
 				var title = $(cList[i]).find("title").text();
 				var thumbnail = $(cList[i]).find("thumbnail").text();
 				var description = $(cList[i]).find("description").text();
@@ -131,8 +138,12 @@ function requestContents(contentsFileNo){
 					eFiles.push($(episodeFiles[j]).text());
 				}
 				
-				var c = new Contents(channelId, contentsId, title, thumbnail, description, eFiles);
+				var c = new Contents(channelId, contentsId, recommended, title, thumbnail, description, eFiles);
 				contentsList.push(c);
+				
+				if(recommended){
+					recommendedList.push(c);
+				}
 				
 			}
 			
@@ -284,12 +295,13 @@ $.extend({
 		// Contents
 		this.channelId = d.contents.channelId;
 		this.contentsId = d.contents.contentsId;
+		this.recommended = d.contents.recommended;
         this.title = d.contents.title;
         this.thumbnail = d.contents.thumbnail;
         this.description = d.contents.description;
         this.episodeFiles = d.contents.episodeFiles;
         
-        var contents = new Contents(this.channelId, this.contentsId, this.title, this.thumbnail, this.description, this.episodeFiles);
+        var contents = new Contents(this.channelId, this.contentsId, this.recommended, this.title, this.thumbnail, this.description, this.episodeFiles);
         
         // Episode
         this.episodeTitle = d.episode.episodeTitle;

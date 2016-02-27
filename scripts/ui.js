@@ -120,6 +120,8 @@ function onCreateMain(){
 	
 	$("#contentsArea").empty();
 	
+	onRecommended();
+	
 	onDeck();
 
 	watchAfter();
@@ -128,12 +130,29 @@ function onCreateMain(){
 	
 }
 
-function onDeck(){
-	$("#contentsArea").append("<h3>감상중<span class='glyphicon glyphicon-facetime-video btn-lg' aria-hidden='true'></span></h3>");
-	
-	var deckArea = $.parseHTML("<div id='deck'></div>");
-	$("#contentsArea").append(deckArea);
+function onRecommended(){
 
+	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff;'>추천하는 콘텐츠<span class='glyphicon glyphicon-thumbs-up btn-lg' aria-hidden='true'></span></h3>");
+	
+	var recommendedArea = $.parseHTML("<div id='recommended' class='row'></div>");
+	$("#contentsArea").append(recommendedArea);
+	
+	for(var i=0; i<recommendedList.length; i++){
+		$("#recommended").append(recommendedList[i].makeThumbnail());
+	}
+	
+	if(recommendedList.length == 0){
+		$("#recommended").append("<p style='text-align:center; padding:30px 0px;'>추천하는 콘텐츠가 없습니다.</p>");
+	}
+}
+
+function onDeck(){
+	
+	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff;'>감상중<span class='glyphicon glyphicon-facetime-video btn-lg' aria-hidden='true'></span></h3>");
+	
+	var deckArea = $.parseHTML("<div id='deck' class='row'></div>");
+	$("#contentsArea").append(deckArea);
+	
 	var deckList = document.cookie.split(";");
 	var deckSize = 0;
 	
@@ -148,19 +167,22 @@ function onDeck(){
 	}
 
 	if(deckSize == 0){
-		
+		$("#deck").append("<p style='text-align:center; padding:30px 0px;'>감상중인 콘텐츠가 없습니다.</p>");
 	}
 	
-	$("#contentsArea").append("<hr />");
+//	$("#contentsArea").append("<hr />");
 }
 
 function watchAfter(){
-	$("#contentsArea").append("<h3>나중에 보기<span class='glyphicon glyphicon-check btn-lg' aria-hidden='true'></span></h3>");
 	
-	var watchAfterArea = $.parseHTML("<div id='watchAfter'></div>");
+	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff;'>나중에 보기<span class='glyphicon glyphicon-check btn-lg' aria-hidden='true'></span></h3>");
+	
+	var watchAfterArea = $.parseHTML("<div id='watchAfter' class='row'></div>");
 	$("#contentsArea").append(watchAfterArea);
 	
-	$("#contentsArea").append("<hr />");
+	$("#watchAfter").append("<p style='text-align:center; padding:30px 0px;'>위시리스트에 콘텐츠가 없습니다.</p>");
+	
+//	$("#contentsArea").append("<hr />");
 }
 
 /**
