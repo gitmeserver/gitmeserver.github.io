@@ -131,19 +131,19 @@ function onCreateMain(){
 function onDeck(){
 	$("#contentsArea").append("<h3>감상중<span class='glyphicon glyphicon-facetime-video btn-lg' aria-hidden='true'></span></h3>");
 	
-	var contentsListRow = $.parseHTML("<div id='contentsList'></div>");
-	$("#contentsArea").append(contentsListRow);
+	var deckArea = $.parseHTML("<div id='deck'></div>");
+	$("#contentsArea").append(deckArea);
 
 	var deckList = document.cookie.split(";");
 	var deckSize = 0;
 	
 	for(var i=0; i<contentsList.length; i++){
-		var key = contentsList[i].getChannelId() + "_" + contentsList[i].getContentsId();
+		var key = $.deckKey(contentsList[i].getChannelId(), contentsList[i].getContentsId());
 		if($.cookie(key) != undefined){
 			deckSize = deckSize + 1;
 			var json = $.cookie(key);
 			var deck = $.jsonToDeck(json);
-			$("#contentsList").append(deck.getContents().makeThumbnail());
+			$("#deck").append(deck.getContents().makeThumbnail());
 		}
 	}
 
@@ -156,6 +156,9 @@ function onDeck(){
 
 function watchAfter(){
 	$("#contentsArea").append("<h3>나중에 보기<span class='glyphicon glyphicon-check btn-lg' aria-hidden='true'></span></h3>");
+	
+	var watchAfterArea = $.parseHTML("<div id='watchAfter'></div>");
+	$("#contentsArea").append(watchAfterArea);
 	
 	$("#contentsArea").append("<hr />");
 }
