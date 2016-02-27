@@ -74,5 +74,12 @@ function save(){
 function previous(){
 	var v = $("#video video")[0];
 	var src = v.src;
-	v.currentTime = $.cookie(src);
+	
+	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
+	
+	v.currentTime = $.cookie(key);
 }
+
+
+
+
