@@ -210,6 +210,8 @@ function onCreateIndex(){
 
 function requestContentsEpisode(page){
 	
+	console.log(page);
+	
 	$("#contentsArea").empty();
 	
 	// 데이터 로딩중 스피너
