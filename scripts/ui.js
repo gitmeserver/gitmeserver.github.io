@@ -132,7 +132,7 @@ function onCreateMain(){
 
 function onRecommended(){
 
-	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff;'>추천하는 콘텐츠<span class='glyphicon glyphicon-thumbs-up btn-lg' aria-hidden='true'></span></h3>");
+	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff; margin-top:0px !important;'>추천하는 콘텐츠<span class='glyphicon glyphicon-thumbs-up btn-lg' aria-hidden='true'></span></h3>");
 	
 	var recommendedArea = $.parseHTML("<div id='recommended' class='row'></div>");
 	$("#contentsArea").append(recommendedArea);
@@ -162,7 +162,7 @@ function onDeck(){
 			deckSize = deckSize + 1;
 			var json = $.cookie(key);
 			var deck = $.jsonToDeck(json);
-			$("#deck").append(deck.getContents().makeThumbnail());
+			$("#deck").append(deck.makeDeck());
 		}
 	}
 
@@ -170,7 +170,6 @@ function onDeck(){
 		$("#deck").append("<p style='text-align:center; padding:30px 0px;'>감상중인 콘텐츠가 없습니다.</p>");
 	}
 	
-//	$("#contentsArea").append("<hr />");
 }
 
 function watchAfter(){
@@ -180,9 +179,8 @@ function watchAfter(){
 	var watchAfterArea = $.parseHTML("<div id='watchAfter' class='row'></div>");
 	$("#contentsArea").append(watchAfterArea);
 	
-	$("#watchAfter").append("<p style='text-align:center; padding:30px 0px;'>위시리스트에 콘텐츠가 없습니다.</p>");
+	$("#watchAfter").append("<p style='text-align:center; padding:30px 0px;'>나중에보기에 콘텐츠가 없습니다.</p>");
 	
-//	$("#contentsArea").append("<hr />");
 }
 
 /**

@@ -228,6 +228,52 @@ var Deck = $Class({
     
     setCurrentTime : function(currentTime){
     	this.currentTime = currentTime;
-    }
+    },
+    
+    makeDeck : function(){
+    	
+    	var chId = this.contents.channelId;
+    	var contId = this.contents.contentsId;
+    	var reco = this.contents.recommended;
+        var ti = this.contents.title;
+        var thumb = this.contents.thumbnail;
+        var desc = this.episode.description;
+        var epiFiles = this.episode.episodeFiles;
+    	
+        if(!(-1 < thumb.indexOf("http://")) && !(-1 < thumb.indexOf("https://"))){
+        	thumb = THUMBNAIL_URL.replace("{thumbnail_file_path}", thumb); 
+        }
+        
+    	var th = $.parseHTML("<div class='cont col-xs-4 col-sm-3 col-lg-2'></div>");
+    	$(th).attr("style", "text-align:center; padding-bottom:10px;");
+    	
+    	var imgA = $.parseHTML("<a href='#'></a>");
+    	var img = $.parseHTML("<img class='img-responsive' />");
+    	$(img).attr("src", thumb);
+    	$(img).attr("style", "margin-left:auto; margin-right:auto; margin-bottom:5px;");
+    	$(imgA).append(img);
+    	
+    	var ended = $.parseHTML("<a class='ended' href='#'></a>");
+    	
+    	
+    	var t = $.parseHTML("<a href='#'></a>");
+    	$(t).append($.cutStr(this.title, 12));
+    	$(t).attr("style", "display:block;");
+    	
+    	var clickFunc = function(){
+    		selectedContents = new Contents(chId, contId, reco, ti, thumb, desc, epiFiles);
+    		requestContentsEpisode();
+    		return false;
+    	};
+    	
+    	$(imgA).click(clickFunc);
+    	$(t).click(clickFunc);
+    	
+    	$(th).append(imgA);
+    	$(th).append(ended);
+    	$(th).append(t);
+    	
+    	return th;
+    },
     
 });

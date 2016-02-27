@@ -54,21 +54,17 @@ function save(){
 	var c = document.cookie.split(";");
 	
 	for(var i=0; i<c.length; i++){
-		console.log(c[i]);
 		if(-1 < c[i].indexOf(prefixDeck)){
-			console.log(i);
 			dSize = dSize + 1; 
 		}
 	}
 	
 	if(dSize < totalDeck){
-		console.log("true");
 		if($.cookie(key) != undefined){
 			$.removeCookie(key);
 		}
 		$.cookie(key, json, { expires: d });
 		$.modal("저장되었습니다.");
-		console.log(document.cookie.split(";").length);
 	}else{
 		$.modal(totalDeck + "개이하만 저장가능합니다.");
 	}
