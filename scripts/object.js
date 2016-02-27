@@ -256,7 +256,7 @@ var Deck = $Class({
     	$(img).attr("style", "margin-left:auto; margin-right:auto; margin-bottom:5px;");
     	$(imgA).append(img);
     	
-    	var ended = $.parseHTML("<a class='ended' href='#'></a>");
+    	var ended = $.parseHTML("<a class='ended glyphicon glyphicon-remove' href='#'></a>");
     	
     	var t = $.parseHTML("<a href='#'></a>");
     	$(t).append($.cutStr(ti, 12));
