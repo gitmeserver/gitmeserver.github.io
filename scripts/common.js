@@ -160,8 +160,6 @@ function requestContents(contentsFileNo){
 
 function requestEpisode(episodeFileNo, page){
 	
-	console.log(page);
-	
 	var eFiles = selectedContents.getEpisodeFiles();
 	var eFile = eFiles[episodeFileNo];
 
