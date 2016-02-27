@@ -120,8 +120,6 @@ function onCreateMain(){
 	
 	$("#contentsArea").empty();
 	
-	$("#contentsArea").append("<h2>감상중</h2>");
-	
 	$("#contentsArea").append("<div id='searching' style='text-align:right; margin-bottom:10px;'></div>");
 	if(searchWord != undefined && searchWord != "" && searchWord != null){
 		$("#searching").show();
@@ -129,23 +127,31 @@ function onCreateMain(){
 	}else{
 		$("#searching").hide();
 	}
+
+	$("#contentsArea").append("<h2>감상중</h2>");
 	
-	var contentsListRow = $.parseHTML("<div id='contentsList' class='row'></div>");
+	var contentsListRow = $.parseHTML("<div id='contentsList'></div>");
 	$("#contentsArea").append(contentsListRow);
 
 	var deckList = document.cookie.split(";");
+	var deckSize = 0;
 	
 	for(var i=0; i<contentsList.length; i++){
 		var key = contentsList[i].getChannelId() + "_" + contentsList[i].getContentsId();
 		if($.cookie(key) != undefined){
+			deckSize = deckSize + 1;
 			var json = $.cookie(key);
 			var deck = $.jsonToDeck(json);
 			$("#contentsList").append(deck.getContents().makeThumbnail());
 		}
-		
+	}
+
+	if(deckSize == 0){
+		onCreateIndex();
+	}else{
+		$("#contentsArea").append($.parseHTML("<hr /><footer><p>&copy; Created by DevY</p></footer>"));
 	}
 	
-	$("#contentsArea").append($.parseHTML("<hr /><footer><p>&copy; Created by DevY</p></footer>"));
 }
 
 /**
