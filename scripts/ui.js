@@ -302,7 +302,7 @@ function isDeck(){
 	
 	if(deck != undefined){
 		$("#previous").show();
-	}else(){
+	}else{
 		$("#previous").hide();
 	}
 }
