@@ -77,14 +77,15 @@ body {
 
 .ended {
     display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #000;
-    margin-top: -40px;
+    margin-top: -45px;
     z-index: 1;
     position: relative;
     opacity: .8;
     color: #fff;
-    width: 50px;
+    width: 40px;
+    float: right;
 }
 
