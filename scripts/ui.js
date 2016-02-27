@@ -225,6 +225,8 @@ function onCreateContents(page){
 	
 	$("#contentsArea").append("<div id='detail'></div>");
 	
+	console.log(page);
+	
 	if(-1 < page.indexOf("video")){
 		console.log("video");
 		video();
