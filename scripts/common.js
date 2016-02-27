@@ -319,11 +319,11 @@ $.extend({
 	},
 	
 	deckKey : function(channelId, contentsId){
-		return "d" + "_" + channelId + "_" + contentsId;
+		return prefixDeck + "_" + channelId + "_" + contentsId;
 	},
 	
 	watchAfterKey : function(channelId, contentsId){
-		return "w" + "_" + channelId + "_" + contentsId;
+		return prefixWatchAfter + "_" + channelId + "_" + contentsId;
 	}
 	
 });  

@@ -3,9 +3,9 @@
  */
 
 var totalDeck = 10;
-var prefixDeck = "deck";
+var prefixDeck = "devy_deck";
 var totalWatchAfter = 10;
-var prefixWatchAfter = "watchafter";
+var prefixWatchAfter = "devy_watchafter";
 
 function play(){
 	var v = $("#video video")[0];
@@ -55,7 +55,7 @@ function save(){
 	
 	for(var i=0; i<c.length; i++){
 		console.log(c[i]);
-		if(-1 < c[i].indexOf("deck")){
+		if(-1 < c[i].indexOf(prefixDeck)){
 			console.log(i);
 			dSize = dSize + 1; 
 		}
