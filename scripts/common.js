@@ -167,7 +167,6 @@ function requestEpisode(episodeFileNo, page){
 	
 	// 모든 파일을 로드했으면 에피소드 목록 화면을 출력한다. 
 	if(eFiles.length == episodeFileNo){
-		console.log("end >> " + page);
 		onCreateContents(page);
 		return;
 	}
@@ -204,7 +203,7 @@ function requestEpisode(episodeFileNo, page){
 			episodeFileNo = episodeFileNo + 1;
 			
 			if(episodeFileNo == eFiles.length){
-				onCreateContents();
+				onCreateContents(page);
 				return;
 			}else{
 				requestEpisode(episodeFileNo, page);

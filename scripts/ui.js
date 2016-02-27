@@ -221,17 +221,13 @@ function requestContentsEpisode(page){
 
 function onCreateContents(page){
 	
-	console.log("onCreateContents >> " + page);
-	
 	$("#spinner").remove();
 	
 	$("#contentsArea").append("<div id='detail'></div>");
 	
 	if(-1 < page.indexOf("video")){
-		console.log("video");
 		video();
 	}else{
-		console.log("detail");
 		details();
 	}
 	
