@@ -258,8 +258,9 @@ var Deck = $Class({
     	
     	var ended = $.parseHTML("<a class='ended glyphicon glyphicon-remove' href='#'></a>");
     	$(ended).click(function(){
-    		console.log(ti);
+    		var key = $.deckKey(chId, contId);
     		$(this).parent().detach();
+    		$.removeCookie(key)
     	});
     	
     	var t = $.parseHTML("<a href='#'></a>");
