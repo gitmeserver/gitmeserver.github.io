@@ -226,8 +226,10 @@ function onCreateContents(page){
 	$("#contentsArea").append("<div id='detail'></div>");
 	
 	if(page == "video"){
+		console.log("video");
 		video();
 	}else{
+		console.log("detail");
 		details();
 	}
 	
