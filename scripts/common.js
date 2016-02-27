@@ -158,7 +158,7 @@ function requestContents(contentsFileNo){
 	
 }
 
-function requestEpisode(episodeFileNo){
+function requestEpisode(episodeFileNo, page){
 	
 	var eFiles = selectedContents.getEpisodeFiles();
 	var eFile = eFiles[episodeFileNo];
@@ -167,14 +167,14 @@ function requestEpisode(episodeFileNo){
 	
 	// 모든 파일을 로드했으면 에피소드 목록 화면을 출력한다. 
 	if(eFiles.length == episodeFileNo){
-		onCreateContents();
+		onCreateContents(page);
 		return;
 	}
 	
 	// 이미 데이터가 존재하면 다음 에피소드 파일을 로드한다. 
 	if(episodeMap[selectedContents.getContentsId] != undefined){
 		episodeFileNo = episodeFileNo + 1;
-		requestEpisode(episodeFileNo);
+		requestEpisode(episodeFileNo, page);
 		return;
 	}
 
@@ -206,7 +206,7 @@ function requestEpisode(episodeFileNo){
 				onCreateContents();
 				return;
 			}else{
-				requestEpisode(episodeFileNo);
+				requestEpisode(episodeFileNo, page);
 			}
 		}
 		, error: function(xhr, status, error) {

@@ -208,24 +208,28 @@ function onCreateIndex(){
 }
 
 
-function requestContentsEpisode(){
+function requestContentsEpisode(page){
 	
 	$("#contentsArea").empty();
 	
 	// 데이터 로딩중 스피너
 	$("#contentsArea").append("<div id='spinner' style='text-align:center; margin-top:100px;'><div class='windows8'><div class='wBall' id='wBall_1'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_2'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_3'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_4'><div class='wInnerBall'></div></div><div class='wBall' id='wBall_5'><div class='wInnerBall'></div></div></div><span id='episodeRequestMessage' style='margin-top:20px;display:block;'>" + episodeRequestMessage + "</span></div>");
 	
-	requestEpisode(0);
+	requestEpisode(0, page);
 	
 }
 
-function onCreateContents(){
+function onCreateContents(page){
 	
 	$("#spinner").remove();
 	
 	$("#contentsArea").append("<div id='detail'></div>");
 	
-	details();
+	if(page.match("video")){
+		video();
+	}else{
+		details();
+	}
 	
 	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><hr /></div>"));
 	

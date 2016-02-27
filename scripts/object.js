@@ -145,7 +145,7 @@ var Contents = $Class({
     	
     	var clickFunc = function(){
     		selectedContents = new Contents(chId, contId, reco, ti, thumb, desc, epiFiles);
-    		requestContentsEpisode();
+    		requestContentsEpisode("detail");
     		return false;
     	};
     	
@@ -271,8 +271,7 @@ var Deck = $Class({
     	var clickFunc = function(){
     		selectedContents = new Contents(chId, contId, reco, ti, thumb, desc, epiFiles);
     		selectedEpisode = new Episode(eTitle, eUrl);
-    		requestContentsEpisode();
-    		video();
+    		requestContentsEpisode("video");
     		return false;
     	};
     	
