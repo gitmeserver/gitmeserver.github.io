@@ -67,7 +67,6 @@ function save(){
 		$.modal("저장되었습니다.");
 		
 		isDeck();
-		
 	}else{
 		$.modal(totalDeck + "개이하만 저장가능합니다.");
 	}
