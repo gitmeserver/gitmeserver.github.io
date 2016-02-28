@@ -386,7 +386,9 @@ function isDeck(){
 	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
 	var deck = $.cookie(key);
 	
-	if(deck != undefined){
+	var dEpisode = deck.getEpisode();
+	
+	if(deck != undefined && selectedEpisode.getEpisodeTitle().match(dEpisode.getEpisodeTitle())){
 		$("#previous").show();
 	}else{
 		$("#previous").hide();
