@@ -268,13 +268,13 @@ function details(){
 	$(h1).text(title);
 
 	$(text).append(h1);
+
+	if(genre != undefined && 0 < genre.length){
+		$(text).append("<span style='float:right;'>" + genre + "</span>");
+	}
 	
 	if(year != undefined && 0 < year.length){
 		$(text).append($.parseHTML("<div class='year'>" + year + "</div>"));
-	}
-	
-	if(genre != undefined && 0 < genre.length){
-		$(text).append("<span style='float:right;'>" + genre + "</span>");
 	}
 	
 	$("#detail").append(thumb);
