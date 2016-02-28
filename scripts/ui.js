@@ -275,8 +275,6 @@ function video(){
 	var subTitle = $("#video #subject span");
 	var videoSrc = $("#video video");
 	
-	console.log(title + subTitle);
-	
 	$(title).text(selectedContents.getTitle());
 	$(subTitle).text(selectedEpisode.getEpisodeTitle());
 	$(videoSrc).attr("src", selectedEpisode.getEpisodeUrl());
@@ -332,17 +330,14 @@ function list(page){
 	for(var i=start; i<end; i++){
 		var listItem = $.parseHTML("<a class='list-group-item' href='#'></a>");
 		var episode = episodeMap[selectedContents.getContentsId()][i];
-
-		var eTitle = episode.getEpisodeTitle();
-		vae eUrl = episode.getEpisodeUrl();
 		
 		var item = $(listItem).clone();
-		$(item).attr("title", eTitle);
-		$(item).attr("href", eUrl);
-		$(item).text(eTitle);
+		$(item).attr("title", episode.getEpisodeTitle());
+		$(item).attr("href", episode.getEpisodeUrl());
+		$(item).text(episode.getEpisodeTitle());
 		
 		$(item).click(function(){
-			selectedEpisode = new Episode(eTitle, eUrl);
+			selectedEpisode = new Episode($(this).getAttr("title"), $(this).getAttr("href"));
 			video();
 			return false;
 		});
