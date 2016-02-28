@@ -286,6 +286,12 @@ var Contents = $Class({
     	$(img).attr("style", "margin-left:auto; margin-right:auto; margin-bottom:5px;");
     	$(imgA).append(img);
     	
+    	var ended = $.parseHTML("<a class='ended glyphicon glyphicon-remove' href='#'></a>");
+    	$(ended).click(function(){
+    		console.log("1234");
+    		onWatchAfter();
+    	});
+    	
     	var t = $.parseHTML("<a href='#'></a>");
     	$(t).append($.cutStr(this.title, 12));
     	$(t).attr("style", "display:block;");
@@ -316,6 +322,7 @@ var Contents = $Class({
     	$(imgA).click(clickFunc);
     	$(t).click(clickFunc);
     	
+    	$(th).append(ended);
     	$(th).append(imgA);
     	$(th).append(t);
     	
