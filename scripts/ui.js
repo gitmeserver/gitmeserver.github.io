@@ -284,6 +284,8 @@ function details(){
 	$("#detail").append(thumb);
 	$("#detail").append(text);
 	
+	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><hr /></div>"));
+	
 	$("#contentsArea").append("<div id='info' class='col-xs-12 clear-both-padding'></div>");
 	
 	if(runningTime != undefined && 0 < runningTime.length){
