@@ -371,6 +371,7 @@ function video(){
 	
 	$("#save").click(function(){
 		save();
+		list(1);
 	});
 	
 	$("#previous").click(function(){
