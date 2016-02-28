@@ -393,6 +393,7 @@ function isDeck(){
 	}else{
 		$("#previous").hide();
 	}
+	return false;
 }
 
 var itemSize = 5;
