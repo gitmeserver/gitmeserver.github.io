@@ -268,6 +268,10 @@ function details(){
 	$(h1).text(title);
 
 	$(text).append(h1);
+	
+	if(runningTime != undefined && 0 < runningTime.length){
+		$(text).append("<div style='text-align:right;'>" + runningTime + "</div>");
+	}
 
 	if(genre != undefined && 0 < genre.length){
 		$(text).append("<div style='text-align:right;'>" + genre + "</div>");
@@ -283,10 +287,6 @@ function details(){
 	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><hr /></div>"));
 	
 	$("#contentsArea").append("<div id='info' class='col-xs-12'></div>");
-	
-	if(runningTime != undefined && 0 < runningTime.length){
-		$("#info").append("<div>" + runningTime + "</div><br /><br />");
-	}
 	
 	if(directors != undefined && 0 < directors.length){
 		$("#info").append("<div>연출 " + directors + "</div>");
