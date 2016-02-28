@@ -384,7 +384,7 @@ function video(){
 
 function isDeck(){
 	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
-	var deck = $.cookie(key);
+	var deck = $.jsonToDeck($.cookie(key));
 	
 	if(deck != undefined && selectedEpisode.getEpisodeTitle().match(dEpisode.getEpisodeTitle())){
 		var dEpisode = deck.getEpisode();
