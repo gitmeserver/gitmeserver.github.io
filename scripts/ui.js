@@ -248,6 +248,17 @@ function details(){
 	var thumbUrl = selectedContents.getThumbnail();
 	var title = selectedContents.getTitle();
 	
+	/* 추가 */
+	var year = "";
+	var direcotors = "";
+	var actors = "";
+	var runningTime = "";
+	var subtitles = "";
+	var genre = "";
+	var audioLang = "";
+	/* 추가 */
+	
+	
 	var thumb = $.parseHTML("<div class='col-xs-5 col-md-3'></div>");
 	var thumbImg = $.parseHTML("<img id='thumbnail' class='img-responsive img-rounded' />");
 	$(thumbImg).attr("src", thumbUrl);

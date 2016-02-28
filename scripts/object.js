@@ -50,7 +50,7 @@ var Channel = $Class({
 
 var Contents = $Class({
     
-	$init : function(channelId, contentsId, recommended, title, thumbnail, description, episodeFiles){
+	$init : function(channelId, contentsId, recommended, title, thumbnail, description, episodeFiles, year, derectors, actors, runningTime, subtitle, audioLang, genre){
 		this.channelId = channelId;
 		this.contentsId = contentsId;
 		this.recommended = recommended;
@@ -58,6 +58,13 @@ var Contents = $Class({
         this.thumbnail = thumbnail;
         this.description = description;
         this.episodeFiles = episodeFiles;
+        this.year = year;
+        this.directors = directors;
+        this.actors = actors;
+        this.runningTime = runningTime;
+        this.subtitle = subtitle;
+        this.audioLang = audioLang;
+        this.genre = genre;
     }, 
 
     getChannelId : function(){
@@ -116,6 +123,62 @@ var Contents = $Class({
     	this.episodeFiles = episodeFiles;
     },
     
+    getYear : function(){
+    	return this.year;
+    },
+    
+    setYear : function(year){
+    	this.year = year;
+    },
+    
+    getDirectors : function(){
+    	return this.directors;
+    },
+    
+    setDirectors : function(directors){
+    	this.directors = directors;
+    },
+    
+    getActors : function(){
+    	return this.actors;
+    },
+    
+    setActors : function(actors){
+    	this.actors = actors;
+    },
+    
+    getRunningTime : function(){
+    	return this.runningTime;
+    },
+    
+    setRunningTime : function(runningTime){
+    	this.runningTime = runningTime;
+    },
+    
+    getSubtitle : function(){
+    	return this.subtitle;
+    },
+    
+    setSubTitle : function(subtitle){
+    	this.subtitle = subtitle;
+    },
+    
+    getAudioLang : function(){
+    	return this.audioLang;
+    },
+    
+    setAudioLang : function(audioLang){
+    	this.audioLang = audioLang;
+    },
+    
+    getGenre : function(){
+    	return this.genre;
+    },
+    
+    setGenre : function(genre){
+    	this.genre = genre;
+    },
+    
     makeThumbnail : function(){
     	
     	var chId = this.channelId;
@@ -125,6 +188,13 @@ var Contents = $Class({
         var thumb = this.thumbnail;
         var desc = this.description;
         var epiFiles = this.episodeFiles;
+        var cYear = this.year;
+        var cDirectors = this.directors;
+        var cActors = this.actors;
+        var cRunningTime = this.runningTime;
+        var cSubtitle = this.subtitle;
+        var cAudioLang = this.audioLang;
+        var cGenre = this.genre;
     	
         if(!(-1 < thumb.indexOf("http://")) && !(-1 < thumb.indexOf("https://"))){
         	thumb = THUMBNAIL_URL.replace("{thumbnail_file_path}", thumb); 
@@ -144,7 +214,7 @@ var Contents = $Class({
     	$(t).attr("style", "display:block;");
     	
     	var clickFunc = function(){
-    		selectedContents = new Contents(chId, contId, reco, ti, thumb, desc, epiFiles);
+    		selectedContents = new Contents(chId, contId, reco, ti, thumb, desc, epiFiles, cYear, cDirectors, cActors, cRunningTime, cSubtitle, cAudioLang, cGenre);
     		requestContentsEpisode("detail");
     		return false;
     	};
@@ -239,6 +309,13 @@ var Deck = $Class({
         var thumb = this.contents.getThumbnail();
         var desc = this.contents.getDescription();
         var epiFiles = this.contents.getEpisodeFiles();
+        var cYear = this.year;
+        var cDirectors = this.directors;
+        var cActors = this.actors;
+        var cRunningTime = this.runningTime;
+        var cSubtitle = this.subtitle;
+        var cAudioLang = this.audioLang;
+        var cGenre = this.genre;
         
         var eTitle = this.episode.getEpisodeTitle();
 		var eUrl = this.episode.getEpisodeUrl();
@@ -269,7 +346,7 @@ var Deck = $Class({
     	$(t).attr("style", "display:block;");
     	
     	var clickFunc = function(){
-    		selectedContents = new Contents(chId, contId, reco, ti, thumb, desc, epiFiles);
+    		selectedContents = new Contents(chId, contId, reco, ti, thumb, desc, epiFiles, cYear, cDirectors, cActors, cRunningTime, cSubtitle, cAudioLang, cGenre);
     		selectedEpisode = new Episode(eTitle, eUrl);
     		requestContentsEpisode("video");
     		return false;

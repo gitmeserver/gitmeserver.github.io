@@ -141,7 +141,15 @@ function requestContents(contentsFileNo){
 					eFiles.push($(episodeFiles[j]).text());
 				}
 				
-				var c = new Contents(channelId, contentsId, recommended, title, thumbnail, description, eFiles);
+				var year = $(cList[i]).find("year").text();
+		        var directors = $(cList[i]).find("directors").text();
+		        var actors = $(cList[i]).find("actors").text();
+		        var runningTime = $(cList[i]).find("runningTime").text();
+		        var subtitle = $(cList[i]).find("subtitle").text();
+		        var audioLang = $(cList[i]).find("audioLang").text();
+		        var genre = $(cList[i]).find("genre").text();
+				
+				var c = new Contents(channelId, contentsId, recommended, title, thumbnail, description, eFiles, year, directors, actors, runningTime, subtitle, audioLang, genre);
 				contentsList.push(c);
 				
 				if(recommended){
@@ -303,8 +311,30 @@ $.extend({
         this.thumbnail = d.contents.thumbnail;
         this.description = d.contents.description;
         this.episodeFiles = d.contents.episodeFiles;
+        this.year = d.contents.year;
+        this.directors = d.contents.directors;
+        this.actors = d.contents.actors;
+        this.runningTime = d.contents.runningTime;
+        this.subtitle = d.contents.subtitle;
+        this.audioLang = d.contents.audioLang;
+        this.genre = d.contents.genre;
         
-        var contents = new Contents(this.channelId, this.contentsId, this.recommended, this.title, this.thumbnail, this.description, this.episodeFiles);
+        var contents = new Contents(
+        		this.channelId, 
+        		this.contentsId, 
+        		this.recommended, 
+        		this.title, 
+        		this.thumbnail, 
+        		this.description, 
+        		this.episodeFiles,
+        		this.year,
+        		this.directors,
+        		this.actors,
+        		this.runningTime,
+        		this.subtitle,
+        		this.audioLang,
+        		this.genre
+        );
         
         // Episode
         this.episodeTitle = d.episode.episodeTitle;
