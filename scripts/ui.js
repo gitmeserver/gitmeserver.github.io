@@ -286,7 +286,9 @@ function details(){
 	$("#detail").append(thumb);
 	$("#detail").append(text);
 	
-	$("#contentsArea").append("<div id='info' class='col-xs-12'><hr /><a href='#' title='more' style='display:block; padding:10px 0px; text-align:center;'>더보기</a></div>");
+	$("#contentsArea").append($.parseHTML("<div id='info_line' class='col-xs-12 clear-both-padding'><hr /></div>"));
+	
+	$("#contentsArea").append("<div id='info' class='col-xs-12'><a href='#' title='more' style='display:block; padding:10px 0px; text-align:center;'>더보기</a></div>");
 	
 	$("#info a").click(function(){
 		$("#info .more_info").toggle();
@@ -331,6 +333,7 @@ function video(){
 	
 	$("#detail").empty();
 	$("#info").detach();
+	$("#info_line").detach();
 	$("#detail").append("<div id='video'><div id='subject'><h3></h3><span></span></div><div class='embed-responsive embed-responsive-16by9'><video controls='true' autoplay='true' class='embed-responsive-item'></video></div><div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
 	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button>");
