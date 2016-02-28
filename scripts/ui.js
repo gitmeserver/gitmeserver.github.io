@@ -389,9 +389,7 @@ function isDeck(){
 	var dEpisode = deck.getEpisode();
 	
 	if(deck != undefined && selectedEpisode.getEpisodeTitle().match(dEpisode.getEpisodeTitle())){
-		
 		console.log(selectedEpisode.getEpisodeTitle().match(dEpisode.getEpisodeTitle()));
-		
 		$("#previous").show();
 	}else{
 		$("#previous").hide();
