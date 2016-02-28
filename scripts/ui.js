@@ -281,7 +281,7 @@ function details(){
 		$(text).append("<div style='text-align:right;'>" + year + "</div>");
 	}
 	
-	$(text).append("<button id='afterWatchBtn' type='button' class='glyphicon glyphicon-check btn btn-default'><span style='padding-left:5px; display:block; margin-top:-2px;'>나중에보기</span></button>");
+	$(text).append("<button id='afterWatchBtn' type='button' class='glyphicon glyphicon-check btn btn-default'><span style='padding-left:5px; float:right; margin-top:-2px;'>나중에보기</span></button>");
 	
 	$("#detail").append(thumb);
 	$("#detail").append(text);
