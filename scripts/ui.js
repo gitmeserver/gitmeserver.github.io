@@ -289,7 +289,11 @@ function details(){
 	$("#contentsArea").append("<div id='info' class='col-xs-12'><a href='#' style='display:block; padding:10px 0px; text-align:center;'>더보기</a></div>");
 	
 	$("#info a").click(function(){
-		$("#info .more_info").toggle();
+		var t = $("#info .more_info").toggle();
+		
+		console.log(t);
+		
+		$(this).text("숨기기");
 	});
 	
 	if(directors != undefined && 0 < directors.length){
