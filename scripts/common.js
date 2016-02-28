@@ -383,7 +383,7 @@ $.extend({
 		return prefixWatchAfter + "_" + channelId + "_" + contentsId;
 	},
 	
-	addAfterWatch : function(contentsId){
+	addWatchAfter : function(contentsId){
 		var watchAfterList = $.cookie("watchAfterList");
 		if(watchAfterList == undefined){
 			watchAfeterList = contentsId;
