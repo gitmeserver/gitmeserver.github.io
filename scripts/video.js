@@ -64,7 +64,7 @@ function save(){
 			$.removeCookie(key);
 		}
 		$.cookie(key, json, { expires: d });
-		$.modal("저장되었습니다.");
+		$.modal("감상중인 콘텐츠에 저장되었습니다.");
 		
 		isDeck();
 	}else{
