@@ -302,23 +302,23 @@ function details(){
 	});
 	
 	if(directors != undefined && 0 < directors.length){
-		$("#info").append("<div>연출 " + directors + "</div>");
+		$("#info").append("<div>연출 - " + directors + "</div>");
 	}
 	
 	if(actors != undefined && 0 < actors.length){
-		$("#info").append("<div style='padding-bottom:30px;'>출연 " + actors + "</div>");
+		$("#info").append("<div style='padding-bottom:30px;'>출연 - " + actors + "</div>");
 	}
 	
 	if(nation != undefined && 0 < nation.length){
-		$("#info").append("<div class='more_info' style='padding-bottom:10px; display:none;'>국가 " + nation + "</div>");
+		$("#info").append("<div class='more_info' style='padding-bottom:10px; display:none;'>국가 - " + nation + "</div>");
 	}
 	
 	if(subtitle != undefined && 0 < subtitle.length){
-		$("#info").append("<div class='more_info' style='padding-bottom:10px; display:none;'>자막 " + subtitle + "</div>");
+		$("#info").append("<div class='more_info' style='padding-bottom:10px; display:none;'>자막 - " + subtitle + "</div>");
 	}
 	
 	if(audioLang != undefined && 0 < audioLang.length){
-		$("#info").append("<div class='more_info' style='padding-bottom:10px; display:none;'>오디오언어 " + audioLang + "</div>");
+		$("#info").append("<div class='more_info' style='padding-bottom:10px; display:none;'>오디오언어 - " + audioLang + "</div>");
 	}
 	
 	if(description != undefined && 0 < description.length){
