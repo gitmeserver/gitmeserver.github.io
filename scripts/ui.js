@@ -255,6 +255,7 @@ function details(){
 	var subtitle = selectedContents.getSubtitle();
 	var genre = selectedContents.getGenre();
 	var audioLang = selectedContents.getAudioLang();
+	var description = selectedContents.getDescription();
 	
 	var thumb = $.parseHTML("<div class='col-xs-5 col-md-3'></div>");
 	var thumbImg = $.parseHTML("<img id='thumbnail' class='img-responsive img-rounded' />");
@@ -278,6 +279,7 @@ function details(){
 	$("#detail").append("<div>자막 : " + subtitle + "</div>");
 	$("#detail").append("<div>장르 : " + genre + "</div>");
 	$("#detail").append("<div>오디오 언어 : " + audioLang + "</div>");
+	$("#detail").append("<div>설명 : " + description + "</div>");
 	
 }
 
