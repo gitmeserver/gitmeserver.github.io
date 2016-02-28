@@ -247,7 +247,7 @@ function details(){
 	
 	var thumbUrl = selectedContents.getThumbnail();
 	var title = selectedContents.getTitle();
-	var recommended = selectedContents.getRecommended();
+	var recommended = selectedContents.isRecommended();
 	var year = selectedContents.getYear();
 	var direcotors = selectedContents.getDirectors();
 	var actors = selectedContents.getActors();
