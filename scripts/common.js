@@ -392,7 +392,7 @@ $.extend({
 			var list = watchAfterList.split(",");
 			for(var i=0; i<list.length; i++){
 				if(list[i].match(contentsId)){
-					console.log("exist");
+					$.modal("이미 나중에보기에 등록되었습니다.");
 					return;
 				}
 			}
@@ -400,7 +400,6 @@ $.extend({
 			$.cookie("watchAfterList", watchAfterList);
 		}
 		
-		console.log($.cookie("watchAfterList"));
 	},
 	
 	removeAfterWatch : function(contentsId){
