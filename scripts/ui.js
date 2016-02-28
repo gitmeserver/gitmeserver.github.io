@@ -438,7 +438,7 @@ function list(page){
 		// 현재 시청중인 에피소드를 표시 
 		if(selectedEpisode != undefined){
 			if(selectedEpisode.getEpisodeTitle().match(episode.getEpisodeTitle())){
-				$(item).append("<span style='margin-left:5px;' class='glyphicon glyphicon-facetime-video'></span>");
+				$(item).append("<span style='margin-left:5px;' class='glyphicon glyphicon-eye-open'></span>");
 			}
 		}
 		
@@ -451,7 +451,7 @@ function list(page){
 		
 		$(item).click(function(){
 			$("#list .list-group-item .glyphicon-facetime-video").detach();
-			$(this).append("<span style='margin-left:5px;' class='glyphicon glyphicon-facetime-video'></span>");
+			$(this).append("<span style='margin-left:5px;' class='glyphicon glyphicon-eye-open'></span>");
 			selectedEpisode = new Episode($(this).attr("title"), $(this).attr("href"));
 			video();
 			return false;
