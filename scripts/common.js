@@ -384,6 +384,7 @@ $.extend({
 	},
 	
 	addWatchAfter : function(contentsId){
+		contsole.log(contentsId);
 		var watchAfterList = $.cookie("watchAfterList");
 		if(watchAfterList == undefined){
 			watchAfeterList = contentsId;
