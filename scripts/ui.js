@@ -451,7 +451,7 @@ function list(page){
 		
 		// 에피소드를 클릭하면 현재 시청중인 에피소드를 표시하고 해당 동영상을 재생한다.
 		$(item).click(function(){
-			$("#list .list-group-item .glyphicon-facetime-video").detach();
+			$("#list .list-group-item .glyphicon-eye-open").detach();
 			$(this).append("<span style='margin-left:5px;' class='glyphicon glyphicon-eye-open'></span>");
 			selectedEpisode = new Episode($(this).attr("title"), $(this).attr("href"));
 			video();
