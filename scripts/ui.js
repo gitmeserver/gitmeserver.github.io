@@ -277,6 +277,9 @@ function details(){
 		$(".year").append("<div style='float:right;'>" + nation + "</div>");
 	}
 	
+	if(genre != undefined && 0 < genre.length){
+		$("#info").append("<div>" + genre + "</div>");
+	}
 	
 	if(directors != undefined && 0 < directors.length){
 		$(text).append($.parseHTML("<div class='directors'>연출 " + directors + "</div>"));
@@ -299,10 +302,6 @@ function details(){
 	
 	if(subtitle != undefined && 0 < subtitle.length){
 		$("#info").append("<div>자막 : " + subtitle + "</div>");
-	}
-	
-	if(genre != undefined && 0 < genre.length){
-		$("#info").append("<div>장르 : " + genre + "</div>");
 	}
 	
 	if(audioLang != undefined && 0 < audioLang.length){
