@@ -274,7 +274,7 @@ function details(){
 	}
 	
 	if(year != undefined && 0 < year.length){
-		$(text).append($.parseHTML("<div class='year'>" + year + "</div>"));
+		$(text).append($.parseHTML("<div style='float:right;'>" + year + "</div>"));
 	}
 	
 	$("#detail").append(thumb);
@@ -289,15 +289,15 @@ function details(){
 	}
 	
 	if(directors != undefined && 0 < directors.length){
-		$("#info").append("<div class='directors'>연출 " + directors + "</div>");
+		$("#info").append("<div>연출 " + directors + "</div>");
 	}
 	
 	if(actors != undefined && 0 < actors.length){
-		$("#info").append("<div class='directors'>출연 " + actors + "</div><br /><br />");
+		$("#info").append("<div>출연 " + actors + "</div><br /><br />");
 	}
 	
 	if(nation != undefined && 0 < nation.length){
-		$("#info").append("<div style='float:right;'>국가 " + nation + "</div><br />");
+		$("#info").append("<div>국가 " + nation + "</div><br />");
 	}
 	
 	if(subtitle != undefined && 0 < subtitle.length){
