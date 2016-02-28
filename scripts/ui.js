@@ -285,7 +285,7 @@ function details(){
 	$("#contentsArea").append("<div id='info' class='col-xs-12'></div>");
 	
 	if(runningTime != undefined && 0 < runningTime.length){
-		$("#info").append("<div>" + runningTime + "<br /></div>");
+		$("#info").append("<div>" + runningTime + "</div><br /><br />");
 	}
 	
 	if(directors != undefined && 0 < directors.length){
