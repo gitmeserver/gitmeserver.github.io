@@ -273,7 +273,7 @@ function details(){
 	$("#detail").append(thumb);
 	$("#detail").append(text);
 	
-	$("#detail").append("<div id='info' class='row'></div>");
+	$("#contentsArea").append("<div id='info' class='row'></div>");
 	$("#info").append("<div>연도 : " + year + "</div>");
 	$("#info").append("<div>감독 : " + directors + "</div>");
 	$("#info").append("<div>배우 : " + actors + "</div>");
