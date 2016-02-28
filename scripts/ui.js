@@ -337,7 +337,7 @@ function list(page){
 		$(item).text(episode.getEpisodeTitle());
 		
 		$(item).click(function(){
-			selectedEpisode = new Episode($(this).getAttr("title"), $(this).getAttr("href"));
+			selectedEpisode = new Episode($(this).attr("title"), $(this).attr("href"));
 			video();
 			return false;
 		});
