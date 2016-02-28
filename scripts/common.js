@@ -399,6 +399,11 @@ $.extend({
 	
 	removeWatchAfter : function(contentsId){
 		var watchAfterList = $.cookie("watchAfterList");
+		
+		if(watchAfterList.split(",").length == 1){
+			$.removeCookie("watchAfterList");
+		}
+		
 		// 맨 앞의 contentsId 제거  
 		watchAfterList = watchAfterList.replace(contentsId + ",", "");
 		
