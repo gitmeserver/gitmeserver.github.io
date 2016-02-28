@@ -50,7 +50,7 @@ var Channel = $Class({
 
 var Contents = $Class({
     
-	$init : function(channelId, contentsId, recommended, title, thumbnail, description, episodeFiles, year, derectors, actors, runningTime, subtitle, audioLang, genre){
+	$init : function(channelId, contentsId, recommended, title, thumbnail, description, episodeFiles, year, directors, actors, runningTime, subtitle, audioLang, genre){
 		this.channelId = channelId;
 		this.contentsId = contentsId;
 		this.recommended = recommended;
