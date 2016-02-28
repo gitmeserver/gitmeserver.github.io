@@ -181,6 +181,8 @@ function onDeck(){
 
 function onWatchAfter(){
 	
+	$("#watchAfter").empty();
+	
 	var watchAfterCookie = $.cookie("watchAfterList");
 	
 	if($.cookie("watchAfterList") != undefined){
