@@ -441,6 +441,10 @@ function list(page){
 			}
 		}
 		
+		if(selectedEpisode.getEpisodeTitle().match(episode.getEpisodeTitle())){
+			$(item).append("<span style='margin-left:5px;' class='glyphicon glyphicon-facetime-video'></span>");
+		}
+		
 		$(item).click(function(){
 			selectedEpisode = new Episode($(this).attr("title"), $(this).attr("href"));
 			video();
