@@ -37,6 +37,7 @@ var Channel = $Class({
     	var item = $.parseHTML("<a href='#' class='list-group-item'>" + this.channelName + "</a>");
 		$(item).attr("id", this.channelId);
 		$(item).click(function(){
+			initSelected();
 			$(".list-group-item").removeClass("active");
 			$(this).addClass("active");
 			channelId = $(this).attr("id");
@@ -224,6 +225,7 @@ var Contents = $Class({
     	$(t).attr("style", "display:block;");
     	
     	var clickFunc = function(){
+    		initSelected();
     		selectedContents = new Contents(
     				chId, 
     				contId, 

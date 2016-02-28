@@ -58,6 +58,11 @@ $(document).ready(function(){
 	
 });
 
+function initSelected(){
+	selectedContents = undefined;
+	selectedEpisode = undefined;
+}
+
 function onInit(){
 	$.ajax({
 		type: 'get'

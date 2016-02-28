@@ -39,11 +39,13 @@ function searchArea(){
 	$(input).attr("style", "padding:0px !important; padding-bottom:6px !important");
 	var searchInput = $.parseHTML("<input id='searchWord' type='text' class='form-control' placeholder='Search for...' />");
 	$(searchInput).keyup(function(){
+		initSelected();
 		searchWord = $(this).val();
 		onCreateIndex();
 	});
 	var searchButton = $.parseHTML("<button class='btn btn-default' type='button'>검색</button>");
 	$(searchButton).click(function(){
+		initSelected()
 		searchWord = $("#searchWord").val();
 		onCreateIndex();
 	});
@@ -88,7 +90,7 @@ function topArea(){
 					
 	$(navbarBrand).click(main);
 	$(button).click(function(){
-	    $('.row-offcanvas').toggleClass('active')
+	    $('.row-offcanvas').toggleClass('active');
 	});
 	$(button).append(srOnly);
 	$(button).append($(iconBar).clone()).append($(iconBar).clone()).append($(iconBar).clone());
@@ -105,6 +107,7 @@ function topArea(){
 }
 
 function main(){
+	initSelected();
 	channelId = "all";
 	searchWord = "";
 	$("#searchWord").val("");
