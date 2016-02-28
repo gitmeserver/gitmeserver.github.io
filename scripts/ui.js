@@ -274,7 +274,7 @@ function details(){
 	}
 	
 	if(year != undefined && 0 < year.length){
-		$(text).append($.parseHTML("<div style='float:right;'>" + year + "</div>"));
+		$(text).append("<div style='float:right;'>" + year + "</div>");
 	}
 	
 	$("#detail").append(thumb);
