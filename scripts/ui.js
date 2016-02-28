@@ -298,9 +298,11 @@ function details(){
 		if($(this).attr("title").match("more")){
 			$(this).text("숨기기");
 			$(this).attr("title", "hide");
+			$(this).css("margin-bottom", "10px");
 		}else{
 			$(this).text("더보기");
 			$(this).attr("title", "more");
+			$(this).css("margin-bottom", "0px");
 		}
 		
 	});
@@ -336,7 +338,7 @@ function details(){
 	}
 	
 	if(moreCount == 0){
-		$("#info").append("<div class='more_info' style='display:none;'>추가된 정보가 없습니다.</div>");
+		$("#info").append("<div class='more_info' style='display:none; text-align:center;'>추가된 정보가 없습니다.</div>");
 	}
 	
 }
