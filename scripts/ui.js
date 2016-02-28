@@ -270,11 +270,11 @@ function details(){
 	$(text).append(h1);
 
 	if(genre != undefined && 0 < genre.length){
-		$(text).append("<div style='float:right;'>" + genre + "</div>");
+		$(text).append("<div style='text-align:right;'>" + genre + "</div>");
 	}
 	
 	if(year != undefined && 0 < year.length){
-		$(text).append("<div style='float:right;'>" + year + "</div>");
+		$(text).append("<div style='text-align:right;'>" + year + "</div>");
 	}
 	
 	$("#detail").append(thumb);
