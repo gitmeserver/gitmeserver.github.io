@@ -256,7 +256,7 @@ var Contents = $Class({
     	return th;
     },
     
-    makeAfterWatch : function(){
+    makeWatchAfter : function(){
     	var chId = this.channelId;
     	var contId = this.contentsId;
     	var reco = this.recommended;
