@@ -285,13 +285,34 @@ function details(){
 	$("#detail").append(text);
 	
 	$("#contentsArea").append("<div id='info' class='col-xs-12 clear-both-padding'></div>");
-	$("#info").append("<div>출연 : " + actors + "</div>");
-	$("#info").append("<div>시간 : " + runningTime + "</div>");
-	$("#info").append("<div>자막 : " + subtitle + "</div>");
-	$("#info").append("<div>장르 : " + genre + "</div>");
-	$("#info").append("<div>오디오 언어 : " + audioLang + "</div>");
-	$("#info").append("<div>국가 : " + nation + "</div>");
-	$("#info").append("<div>" + description + "</div>");
+	
+	if(actors != undefined){
+		$("#info").append("<div>출연 : " + actors + "</div>");
+	}
+	
+	if(runningTime != undefined){
+		$("#info").append("<div>시간 : " + runningTime + "</div>");
+	}
+	
+	if(subtitle != undefined){
+		$("#info").append("<div>자막 : " + subtitle + "</div>");
+	}
+	
+	if(genre != undefined){
+		$("#info").append("<div>장르 : " + genre + "</div>");
+	}
+	
+	if(audioLang != undefined){
+		$("#info").append("<div>오디오 언어 : " + audioLang + "</div>");
+	}
+	
+	if(nation != undefined){
+		$("#info").append("<div>국가 : " + nation + "</div>");
+	}
+	
+	if(description != undefined){
+		$("#info").append("<div>" + description + "</div>");
+	}
 	
 }
 
