@@ -293,11 +293,11 @@ function details(){
 	});
 	
 	if(directors != undefined && 0 < directors.length){
-		$("#info").append("<div class='more_info'>연출 " + directors + "</div>");
+		$("#info").append("<div>연출 " + directors + "</div>");
 	}
 	
 	if(actors != undefined && 0 < actors.length){
-		$("#info").append("<div class='more_info' style='padding-bottom:30px;'>출연 " + actors + "</div>");
+		$("#info").append("<div style='padding-bottom:30px;'>출연 " + actors + "</div>");
 	}
 	
 	if(nation != undefined && 0 < nation.length){
