@@ -186,7 +186,7 @@ var Contents = $Class({
     
     setNation : function(nation){
     	this.nation = nation;
-    }
+    },
     
     makeThumbnail : function(){
     	
