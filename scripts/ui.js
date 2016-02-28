@@ -269,8 +269,10 @@ function details(){
 
 	$(text).append(h1);
 	
+	$(text).append("<button id='afterWatchBtn' type='button' class='glyphicon glyphicon-check btn btn-default'><span style='padding-left:5px; float:right; margin-top:-2px;'>나중에보기</span></button>");
+	
 	if(runningTime != undefined && 0 < runningTime.length){
-		$(text).append("<div style='text-align:right;'>" + runningTime + "</div>");
+		$(text).append("<div style='text-align:right; margin-top:10px;'>" + runningTime + "</div>");
 	}
 
 	if(genre != undefined && 0 < genre.length){
@@ -280,8 +282,6 @@ function details(){
 	if(year != undefined && 0 < year.length){
 		$(text).append("<div style='text-align:right;'>" + year + "</div>");
 	}
-	
-	$(text).append("<button id='afterWatchBtn' type='button' class='glyphicon glyphicon-check btn btn-default'><span style='padding-left:5px; float:right; margin-top:-2px;'>나중에보기</span></button>");
 	
 	$("#detail").append(thumb);
 	$("#detail").append(text);
