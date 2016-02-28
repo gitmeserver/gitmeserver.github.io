@@ -306,6 +306,8 @@ function details(){
 		$("#info").append("<div>오디오 언어 : " + audioLang + "</div>");
 	}
 	
+	console.log("nation >>>>>> " + nation);
+	
 	if(nation != undefined){
 		$("#info").append("<div>국가 : " + nation + "</div>");
 	}
