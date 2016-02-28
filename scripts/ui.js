@@ -332,6 +332,7 @@ function details(){
 function video(){
 	
 	$("#detail").empty();
+	$("#info").detach();
 	$("#detail").append("<div id='video'><div id='subject'><h3></h3><span></span></div><div class='embed-responsive embed-responsive-16by9'><video controls='true' autoplay='true' class='embed-responsive-item'></video></div><div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
 	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button>");
