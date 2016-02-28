@@ -247,17 +247,14 @@ function details(){
 	
 	var thumbUrl = selectedContents.getThumbnail();
 	var title = selectedContents.getTitle();
-	
-	/* 추가 */
-	var year = "";
-	var direcotors = "";
-	var actors = "";
-	var runningTime = "";
-	var subtitles = "";
-	var genre = "";
-	var audioLang = "";
-	/* 추가 */
-	
+	var recommended = selectedContents.getRecommended();
+	var year = selectedContents.getYear();
+	var direcotors = selectedContents.getDirectors();
+	var actors = selectedContents.getActors();
+	var runningTime = selectedContents.getRunningTime();
+	var subtitle = selectedContents.getSubtitle();
+	var genre = selectedContents.getGenre();
+	var audioLang = selectedContents.getAudioLang();
 	
 	var thumb = $.parseHTML("<div class='col-xs-5 col-md-3'></div>");
 	var thumbImg = $.parseHTML("<img id='thumbnail' class='img-responsive img-rounded' />");
@@ -274,6 +271,13 @@ function details(){
 	
 	$("#detail").append(thumb);
 	$("#detail").append(text);
+	$("#detail").append("<div>연도 : " + year + "</div>");
+	$("#detail").append("<div>감독 : " + directors + "</div>");
+	$("#detail").append("<div>배우 : " + actors + "</div>");
+	$("#detail").append("<div>시간 : " + runningTime + "</div>");
+	$("#detail").append("<div>자막 : " + subtitle + "</div>");
+	$("#detail").append("<div>장르 : " + genre + "</div>");
+	$("#detail").append("<div>오디오 언어 : " + audioLang + "</div>");
 	
 }
 
