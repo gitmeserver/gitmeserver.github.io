@@ -273,6 +273,11 @@ function details(){
 		$(text).append($.parseHTML("<div class='year'>" + year + "</div>"));
 	}
 	
+	if(nation != undefined && 0 < nation.length){
+		$(".year").append("<div style='float:right;'>" + nation + "</div>");
+	}
+	
+	
 	if(directors != undefined && 0 < directors.length){
 		$(text).append($.parseHTML("<div class='directors'>연출 " + directors + "</div>"));
 	}
@@ -289,7 +294,7 @@ function details(){
 	$("#contentsArea").append("<div id='info' class='col-xs-12'></div>");
 	
 	if(runningTime != undefined && 0 < runningTime.length){
-		$("#info").append("<div>시간 : " + runningTime + "</div>");
+		$("#info").append("<div>" + runningTime + "<br /></div>");
 	}
 	
 	if(subtitle != undefined && 0 < subtitle.length){
@@ -302,10 +307,6 @@ function details(){
 	
 	if(audioLang != undefined && 0 < audioLang.length){
 		$("#info").append("<div>오디오 언어 : " + audioLang + "</div>");
-	}
-	
-	if(nation != undefined && 0 < nation.length){
-		$("#info").append("<div>국가 : " + nation + "</div>");
 	}
 	
 	if(description != undefined && 0 < description.length){
