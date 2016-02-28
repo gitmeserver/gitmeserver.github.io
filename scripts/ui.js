@@ -308,7 +308,7 @@ function details(){
 	
 	console.log("nation >>>>>> " + nation);
 	
-	if(nation != undefined && nation.match("")){
+	if(nation != undefined && !nation.match("")){
 		$("#info").append("<div>국가 : " + nation + "</div>");
 	}
 	
