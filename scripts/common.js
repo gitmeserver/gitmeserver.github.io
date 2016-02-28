@@ -395,9 +395,8 @@ $.extend({
 				}
 			}
 			watchAfterList = watchAfterList + "," + contentsId;
-			$.cookie("watchAfterList", watchAfterList);
 		}
-		
+		$.cookie("watchAfterList", watchAfterList);
 	},
 	
 	removeWatchAfter : function(contentsId){
