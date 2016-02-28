@@ -290,7 +290,7 @@ function details(){
 	
 	$("#contentsArea").append($.parseHTML("<div id='info_line' class='col-xs-12 clear-both-padding'><hr /></div>"));
 	
-	$("#contentsArea").append("<div id='info' class='col-xs-12'><button title='more' class='btn btn-default' style='display:block; text-align:center; margin:10px auto;'>더보기</button></div>");
+	$("#contentsArea").append("<div id='info' class='col-xs-12'><button title='more' class='btn btn-default' style='display:block; text-align:center; margin:0px auto; margin-bottom:10px;'>더보기</button></div>");
 	
 	$("#info button").click(function(){
 		$("#info .more_info").toggle();
