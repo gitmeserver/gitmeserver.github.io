@@ -286,14 +286,19 @@ function details(){
 	
 	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><hr /></div>"));
 	
-	$("#contentsArea").append("<div id='info' class='col-xs-12'><a href='#' style='display:block; padding:10px 0px; text-align:center;'>더보기</a></div>");
+	$("#contentsArea").append("<div id='info' class='col-xs-12'><a href='#' title='more' style='display:block; padding:10px 0px; text-align:center;'>더보기</a></div>");
 	
 	$("#info a").click(function(){
-		var t = $("#info .more_info").toggle();
+		$("#info .more_info").toggle();
 		
-		console.log(t);
+		if($(this).attr("title").match("more")){
+			$(this).text("숨기기");
+			$(this).attr("title", "hide");
+		}else{
+			$(this).text("더보기");
+			$(this).attr("title", "more");
+		}
 		
-		$(this).text("숨기기");
 	});
 	
 	if(directors != undefined && 0 < directors.length){
