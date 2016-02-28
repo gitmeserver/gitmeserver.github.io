@@ -400,11 +400,10 @@ $.extend({
 	removeWatchAfter : function(contentsId){
 		var watchAfterList = $.cookie("watchAfterList");
 		
-		console.log(watchAfterList.indexOf(","));
-		
-//		if(watchAfterList.indexOf(",")){
-//			$.removeCookie("watchAfterList");
-//		}
+		if(watchAfterList.indexOf(",") < 0){
+			$.removeCookie("watchAfterList");
+			return;
+		}
 		
 		// 맨 앞의 contentsId 제거  
 		watchAfterList = watchAfterList.replace(contentsId + ",", "");
