@@ -264,7 +264,7 @@ function details(){
 	$(thumb).append(thumbImg);
 	
 	var text = $.parseHTML("<div class='col-xs-7 col-md-9'></div>");
-	var h1 = $.parseHTML("<h3></h3>");
+	var h1 = $.parseHTML("<h3 style='margin-top:10px !important;'></h3>");
 	$(h1).text(title);
 
 	$(text).append(h1);
@@ -281,7 +281,7 @@ function details(){
 		$(text).append("<div style='text-align:right;'>" + year + "</div>");
 	}
 	
-	$(text).append("<button id='afterWatchBtn' type='button' class='glyphicon glyphicon-check btn btn-default'><span style='padding-left:5px;'>나중에보기</span></button>");
+	$(text).append("<button id='afterWatchBtn' type='button' class='glyphicon glyphicon-check btn btn-default'><span style='padding-left:5px; display:block; margin-top:-2px;'>나중에보기</span></button>");
 	
 	$("#detail").append(thumb);
 	$("#detail").append(text);
