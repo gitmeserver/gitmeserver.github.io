@@ -380,6 +380,8 @@ $.extend({
 	},
 	
 	addWatchAfter : function(contentsId){
+		console.log(contentsId);
+		
 		var watchAfterList = $.cookie("watchAfterList");
 		if(watchAfterList == undefined){
 			watchAfterList = contentsId;
