@@ -394,9 +394,10 @@ $.extend({
 			}
 			watchAfterList = watchAfterList + "," + contentsId;
 		}
+		
 		$.cookie("watchAfterList", watchAfterList);
 	},
-	
+	$.modal("나중에보기에 등록되었습니다.");
 	removeWatchAfter : function(contentsId){
 		var watchAfterList = $.cookie("watchAfterList");
 		
