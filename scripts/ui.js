@@ -273,7 +273,11 @@ function details(){
 	}
 	
 	if(directors != undefined){
-		$(text).append($.parseHTML("<div class='directors'>" + directors + "</div>"));
+		$(text).append($.parseHTML("<div class='directors'>연출 " + directors + "</div>"));
+	}
+	
+	if(actors != undefined){
+		$(text).append($.parseHTML("<div class='directors'>출연 " + actors + "</div>"));
 	}
 	
 	$("#detail").append(thumb);
