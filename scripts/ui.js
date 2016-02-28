@@ -270,7 +270,7 @@ function details(){
 	$(text).append(h1);
 
 	if(genre != undefined && 0 < genre.length){
-		$(text).append("<span style='float:right;'>" + genre + "</span>");
+		$(text).append("<span style='float:right; margin-left:10px;'>" + genre + "</span>");
 	}
 	
 	if(year != undefined && 0 < year.length){
