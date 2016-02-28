@@ -437,7 +437,7 @@ function list(page){
 		
 		if(savedEpisode != undefined){
 			if(savedEpisode.getEpisodeTitle().match(episode.getEpisodeTitle())){
-				$(item).append("<span class='glyphicon glyphicon-facetime-video'></span>");
+				$(item).append("<span style='margin-left:10px;' class='glyphicon glyphicon-facetime-video'></span>");
 			}
 		}
 		
