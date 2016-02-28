@@ -288,7 +288,7 @@ var Contents = $Class({
     	
     	var ended = $.parseHTML("<a class='ended glyphicon glyphicon-remove' href='#'></a>");
     	$(ended).click(function(){
-    		console.log("1234");
+    		$.removeWatchAfter(chId);
     		onWatchAfter();
     	});
     	

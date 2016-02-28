@@ -399,6 +399,7 @@ $.extend({
 	},
 	
 	removeAfterWatch : function(contentsId){
+		console.log(contentsId);
 		var watchAfterList = $.cookie("watchAfterList");
 		
 	}
