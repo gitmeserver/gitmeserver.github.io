@@ -276,8 +276,8 @@ function details(){
 	
 	$(text).append("<button id='watchAfterBtn' type='button' class='glyphicon glyphicon-check btn btn-default'><span style='padding-left:5px; float:right; margin-top:-2px;'>나중에보기</span></button>");
 	$("#watchAfterBtn").click(function(){
-		console.log("나중에보기 " + selectedContents.getContentsId());
-		$.addWatchAfter(selectedContents.getContentsId());
+		console.log("나중에보기");
+//		$.addWatchAfter(selectedContents.getContentsId());
 	});
 	
 	
