@@ -269,15 +269,15 @@ function details(){
 
 	$(text).append(h1);
 	
-	if(year != undefined && !(0 < year.length)){
+	if(year != undefined && 0 < year.length){
 		$(text).append($.parseHTML("<div class='year'>" + year + "</div>"));
 	}
 	
-	if(directors != undefined && !(0 < directors.length)){
+	if(directors != undefined && 0 < directors.length){
 		$(text).append($.parseHTML("<div class='directors'>연출 " + directors + "</div>"));
 	}
 	
-	if(actors != undefined && !(0 < actors.length)){
+	if(actors != undefined && 0 < actors.length){
 		$(text).append($.parseHTML("<div class='directors'>출연 " + actors + "</div>"));
 	}
 	
@@ -286,27 +286,27 @@ function details(){
 	
 	$("#contentsArea").append("<div id='info' class='col-xs-12 clear-both-padding'></div>");
 	
-	if(runningTime != undefined && !(0 < runningTime.length)){
+	if(runningTime != undefined && 0 < runningTime.length){
 		$("#info").append("<div>시간 : " + runningTime + "</div>");
 	}
 	
-	if(subtitle != undefined && !(0 < subtitle.length)){
+	if(subtitle != undefined && 0 < subtitle.length){
 		$("#info").append("<div>자막 : " + subtitle + "</div>");
 	}
 	
-	if(genre != undefined && !(0 < genre.length)){
+	if(genre != undefined && 0 < genre.length){
 		$("#info").append("<div>장르 : " + genre + "</div>");
 	}
 	
-	if(audioLang != undefined && !(0 < audioLang.length)){
+	if(audioLang != undefined && 0 < audioLang.length){
 		$("#info").append("<div>오디오 언어 : " + audioLang + "</div>");
 	}
 	
-	if(nation != undefined && !(0 < nation.length)){
+	if(nation != undefined && 0 < nation.length){
 		$("#info").append("<div>국가 : " + nation + "</div>");
 	}
 	
-	if(description != undefined && !(0 < description.length)){
+	if(description != undefined && 0 < description.length){
 		$("#info").append("<div>" + description + "</div>");
 	}
 	
