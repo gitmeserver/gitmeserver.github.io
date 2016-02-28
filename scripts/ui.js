@@ -286,7 +286,7 @@ function details(){
 	
 	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><hr /></div>"));
 	
-	$("#contentsArea").append("<div id='info' class='col-xs-12'><a href='#' style='display:block; height:height:30px;'></a></div>");
+	$("#contentsArea").append("<div id='info' class='col-xs-12'><a href='#' style='display:block; height:height:30px;'>더보기</a></div>");
 	
 	if(directors != undefined && 0 < directors.length){
 		$("#info").append("<div>연출 " + directors + "</div>");
