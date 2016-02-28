@@ -435,14 +435,14 @@ function list(page){
 		$(item).attr("href", episode.getEpisodeUrl());
 		$(item).text(episode.getEpisodeTitle());
 		
+		if(selectedEpisode.getEpisodeTitle().match(episode.getEpisodeTitle())){
+			$(item).append("<span style='margin-left:5px;' class='glyphicon glyphicon-facetime-video'></span>");
+		}
+		
 		if(savedEpisode != undefined){
 			if(savedEpisode.getEpisodeTitle().match(episode.getEpisodeTitle())){
 				$(item).append("<span style='margin-left:5px;' class='glyphicon glyphicon-floppy-disk'></span>");
 			}
-		}
-		
-		if(selectedEpisode.getEpisodeTitle().match(episode.getEpisodeTitle())){
-			$(item).append("<span style='margin-left:5px;' class='glyphicon glyphicon-facetime-video'></span>");
 		}
 		
 		$(item).click(function(){
