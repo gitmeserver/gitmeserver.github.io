@@ -384,11 +384,12 @@ $.extend({
 	},
 	
 	addWatchAfter : function(contentsId){
-		console.log(contentsId);
 		var watchAfterList = $.cookie("watchAfterList");
 		if(watchAfterList == undefined){
+			console.log("undefined");
 			watchAfeterList = contentsId;
 		}else{
+			console.log("not undefined");
 			watchAfeterList = watchAfeterList + "," + contentsId;
 		}
 		$.cookie("watchAfterList", watchAfterList);
