@@ -148,8 +148,25 @@ function requestContents(contentsFileNo){
 		        var subtitle = $(cList[i]).find("subtitle").text();
 		        var audioLang = $(cList[i]).find("audioLang").text();
 		        var genre = $(cList[i]).find("genre").text();
-				
-				var c = new Contents(channelId, contentsId, recommended, title, thumbnail, description, eFiles, year, directors, actors, runningTime, subtitle, audioLang, genre);
+		        var nation = $(cList[i]).find("nation").text();
+		        
+				var c = new Contents(
+						channelId, 
+						contentsId, 
+						recommended, 
+						title, 
+						thumbnail, 
+						description, 
+						eFiles, 
+						year, 
+						directors, 
+						actors, 
+						runningTime, 
+						subtitle, 
+						audioLang, 
+						genre, 
+						nation
+					);
 				contentsList.push(c);
 				
 				if(recommended){
@@ -318,6 +335,7 @@ $.extend({
         this.subtitle = d.contents.subtitle;
         this.audioLang = d.contents.audioLang;
         this.genre = d.contents.genre;
+        this.nation = d.contents.nation;
         
         var contents = new Contents(
         		this.channelId, 
@@ -333,7 +351,8 @@ $.extend({
         		this.runningTime,
         		this.subtitle,
         		this.audioLang,
-        		this.genre
+        		this.genre,
+        		this.nation,
         );
         
         // Episode

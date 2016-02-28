@@ -50,7 +50,7 @@ var Channel = $Class({
 
 var Contents = $Class({
     
-	$init : function(channelId, contentsId, recommended, title, thumbnail, description, episodeFiles, year, directors, actors, runningTime, subtitle, audioLang, genre){
+	$init : function(channelId, contentsId, recommended, title, thumbnail, description, episodeFiles, year, directors, actors, runningTime, subtitle, audioLang, genre, nation){
 		this.channelId = channelId;
 		this.contentsId = contentsId;
 		this.recommended = recommended;
@@ -65,6 +65,7 @@ var Contents = $Class({
         this.subtitle = subtitle;
         this.audioLang = audioLang;
         this.genre = genre;
+        this.nation = nation;
     }, 
 
     getChannelId : function(){
@@ -179,6 +180,14 @@ var Contents = $Class({
     	this.genre = genre;
     },
     
+    getNation : function(){
+    	return this.nation;
+    },
+    
+    setNation : function(nation){
+    	this.nation = nation;
+    }
+    
     makeThumbnail : function(){
     	
     	var chId = this.channelId;
@@ -195,6 +204,7 @@ var Contents = $Class({
         var cSubtitle = this.subtitle;
         var cAudioLang = this.audioLang;
         var cGenre = this.genre;
+        var cNation = this.nation;
     	
         if(!(-1 < thumb.indexOf("http://")) && !(-1 < thumb.indexOf("https://"))){
         	thumb = THUMBNAIL_URL.replace("{thumbnail_file_path}", thumb); 
@@ -214,7 +224,23 @@ var Contents = $Class({
     	$(t).attr("style", "display:block;");
     	
     	var clickFunc = function(){
-    		selectedContents = new Contents(chId, contId, reco, ti, thumb, desc, epiFiles, cYear, cDirectors, cActors, cRunningTime, cSubtitle, cAudioLang, cGenre);
+    		selectedContents = new Contents(
+    				chId, 
+    				contId, 
+    				reco, 
+    				ti, 
+    				thumb, 
+    				desc, 
+    				epiFiles, 
+    				cYear, 
+    				cDirectors, 
+    				cActors, 
+    				cRunningTime, 
+    				cSubtitle, 
+    				cAudioLang, 
+    				cGenre, 
+    				cNation
+    			);
     		requestContentsEpisode("detail");
     		return false;
     	};
@@ -316,6 +342,7 @@ var Deck = $Class({
         var cSubtitle = this.subtitle;
         var cAudioLang = this.audioLang;
         var cGenre = this.genre;
+        var cNation = this.nation;
         
         var eTitle = this.episode.getEpisodeTitle();
 		var eUrl = this.episode.getEpisodeUrl();
@@ -346,7 +373,23 @@ var Deck = $Class({
     	$(t).attr("style", "display:block;");
     	
     	var clickFunc = function(){
-    		selectedContents = new Contents(chId, contId, reco, ti, thumb, desc, epiFiles, cYear, cDirectors, cActors, cRunningTime, cSubtitle, cAudioLang, cGenre);
+    		selectedContents = new Contents(
+    				chId, 
+    				contId, 
+    				reco, 
+    				ti, 
+    				thumb, 
+    				desc, 
+    				epiFiles, 
+    				cYear, 
+    				cDirectors, 
+    				cActors, 
+    				cRunningTime, 
+    				cSubtitle, 
+    				cAudioLang, 
+    				cGenre, 
+    				cNation
+    			);
     		selectedEpisode = new Episode(eTitle, eUrl);
     		requestContentsEpisode("video");
     		return false;
