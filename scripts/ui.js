@@ -274,11 +274,12 @@ function details(){
 
 	$(text).append(h1);
 
-	$("#watchAfterBtn").click(function(){
+	var watchAfterBtn = $.parseHTML("<button id='watchAfterBtn' type='button' class='glyphicon glyphicon-check btn btn-default'><span style='padding-left:5px; float:right; margin-top:-2px;'>나중에보기</span></button>");
+	$(watchAfterBtn).click(function(){
 		console.log("나중에보기");
 		$.addWatchAfter(selectedContents.getContentsId());
 	});
-	$(text).append("<button id='watchAfterBtn' type='button' class='glyphicon glyphicon-check btn btn-default'><span style='padding-left:5px; float:right; margin-top:-2px;'>나중에보기</span></button>");
+	$(text).append(watchAfterBtn);
 	
 	if(runningTime != undefined && 0 < runningTime.length){
 		$(text).append("<div style='margin-top:15px;'>" + runningTime + "</div>");
