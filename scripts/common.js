@@ -399,8 +399,19 @@ $.extend({
 	},
 	
 	removeWatchAfter : function(contentsId){
-		console.log(contentsId);
-		var watchAfterList = $.cookie("watchAfterList");
+		$.removeCookie("watchAfterList");
+		
+//		var watchAfterList = $.cookie("watchAfterList");
+//		// 맨 앞의 contentsId 제거  
+//		watchAfterList = watchAfterList.replace(contentsId + ",");
+//		
+//		// 중간 부분 contentsId 제거 
+//		watchAfterList = watchAfterList.replace("," + contentsId + ",");
+//		
+//		// 맨 뒤의 contentsId 제거 
+//		watchAfterList = watchAfterList.replace("," + contentsId);
+//		
+//		console.log(watchAfterList);
 		
 	}
 	
