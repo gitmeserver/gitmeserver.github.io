@@ -330,14 +330,17 @@ function list(page){
 	for(var i=start; i<end; i++){
 		var listItem = $.parseHTML("<a class='list-group-item' href='#'></a>");
 		var episode = episodeMap[selectedContents.getContentsId()][i];
+
+		var eTitle = episode.getEpisodeTitle();
+		vae eUrl = episode.getEpisodeUrl();
 		
 		var item = $(listItem).clone();
-		$(item).attr("title", episode.getEpisodeTitle());
-		$(item).attr("href", episode.getEpisodeUrl());
-		$(item).text(episode.getEpisodeTitle());
+		$(item).attr("title", eTitle);
+		$(item).attr("href", eUrl);
+		$(item).text(eTitle);
 		
 		$(item).click(function(){
-			selectedEpisode = episode;
+			selectedEpisode = new Episode(eTitle, eUrl);
 			video();
 			return false;
 		});
