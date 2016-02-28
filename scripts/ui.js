@@ -280,6 +280,7 @@ function details(){
 		$.addWatchAfter(selectedContents.getContentsId());
 	});
 	
+	
 	if(runningTime != undefined && 0 < runningTime.length){
 		$(text).append("<div style='margin-top:15px;'>" + runningTime + "</div>");
 	}
