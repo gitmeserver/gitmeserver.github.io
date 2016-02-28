@@ -265,23 +265,25 @@ function details(){
 	var text = $.parseHTML("<div class='col-xs-7 col-md-9'></div>");
 	var h1 = $.parseHTML("<h3></h3>");
 	$(h1).text(title);
-	var p = $.parseHTML("<p></p>");
 
 	$(text).append(h1);
-	$(text).append(p);
+	if(year != undefined){
+		$(text).append($.parseHTML("<div class='year'>" + year + "</div>"));
+	}
+	
 	
 	$("#detail").append(thumb);
 	$("#detail").append(text);
 	
-	$("#contentsArea").append("<div id='info' class='row'></div>");
+	$("#contentsArea").append("<div id='info' class='col-xs-12 clear-both-padding'></div>");
 	$("#info").append("<div>연도 : " + year + "</div>");
-	$("#info").append("<div>감독 : " + directors + "</div>");
-	$("#info").append("<div>배우 : " + actors + "</div>");
+	$("#info").append("<div>연출 : " + directors + "</div>");
+	$("#info").append("<div>출연 : " + actors + "</div>");
 	$("#info").append("<div>시간 : " + runningTime + "</div>");
 	$("#info").append("<div>자막 : " + subtitle + "</div>");
 	$("#info").append("<div>장르 : " + genre + "</div>");
 	$("#info").append("<div>오디오 언어 : " + audioLang + "</div>");
-	$("#info").append("<div>설명 : " + description + "</div>");
+	$("#info").append("<div>" + description + "</div>");
 	
 }
 
