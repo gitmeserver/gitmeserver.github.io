@@ -288,9 +288,9 @@ function details(){
 	
 	$("#contentsArea").append($.parseHTML("<div id='info_line' class='col-xs-12 clear-both-padding'><hr /></div>"));
 	
-	$("#contentsArea").append("<div id='info' class='col-xs-12'><a href='#' title='more' style='display:block; padding:10px 0px; text-align:center;'>더보기</a></div>");
+	$("#contentsArea").append("<div id='info' class='col-xs-12'><button title='more' class='btn btn-default' style='display:block; padding:10px 0px; text-align:center;'>더보기</button></div>");
 	
-	$("#info a").click(function(){
+	$("#info button").click(function(){
 		$("#info .more_info").toggle();
 		
 		if($(this).attr("title").match("more")){
