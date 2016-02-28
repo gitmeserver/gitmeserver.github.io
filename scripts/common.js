@@ -386,13 +386,19 @@ $.extend({
 	addWatchAfter : function(contentsId){
 		var watchAfterList = $.cookie("watchAfterList");
 		if(watchAfterList == undefined){
-			console.log("undefined");
 			watchAfterList = contentsId;
 		}else{
-			console.log("not undefined");
+			
+			var list = watchAfterList.split(",");
+			for(var i=0; i<list.length; i++){
+				if(list[i].match(contentsId)){
+					console.log("exist");
+					return;
+				}
+			}
 			watchAfterList = watchAfterList + "," + contentsId;
+			$.cookie("watchAfterList", watchAfterList);
 		}
-		$.cookie("watchAfterList", watchAfterList);
 		
 		console.log($.cookie("watchAfterList"));
 	},
