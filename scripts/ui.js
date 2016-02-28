@@ -288,28 +288,32 @@ function details(){
 	
 	$("#contentsArea").append("<div id='info' class='col-xs-12'><a href='#' style='display:block; height:height:30px;'>더보기</a></div>");
 	
+	$("#info a").click(function(){
+		$("#info .more_info").toggle();
+	});
+	
 	if(directors != undefined && 0 < directors.length){
-		$("#info").append("<div>연출 " + directors + "</div>");
+		$("#info").append("<div class='more_info'>연출 " + directors + "</div>");
 	}
 	
 	if(actors != undefined && 0 < actors.length){
-		$("#info").append("<div>출연 " + actors + "</div><br /><br />");
+		$("#info").append("<div class='more_info'>출연 " + actors + "</div><br /><br />");
 	}
 	
 	if(nation != undefined && 0 < nation.length){
-		$("#info").append("<div>국가 " + nation + "</div><br />");
+		$("#info").append("<div class='more_info'>국가 " + nation + "</div><br />");
 	}
 	
 	if(subtitle != undefined && 0 < subtitle.length){
-		$("#info").append("<div>자막 " + subtitle + "</div><br />");
+		$("#info").append("<div class='more_info'>자막 " + subtitle + "</div><br />");
 	}
 	
 	if(audioLang != undefined && 0 < audioLang.length){
-		$("#info").append("<div>오디오언어 " + audioLang + "</div><br />");
+		$("#info").append("<div class='more_info'>오디오언어 " + audioLang + "</div><br />");
 	}
 	
 	if(description != undefined && 0 < description.length){
-		$("#info").append("<div>" + description + "</div>");
+		$("#info").append("<div class='more_info'>" + description + "</div>");
 	}
 	
 }
