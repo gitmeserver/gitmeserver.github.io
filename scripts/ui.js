@@ -435,12 +435,14 @@ function list(page){
 		$(item).attr("href", episode.getEpisodeUrl());
 		$(item).text(episode.getEpisodeTitle());
 		
+		// 현재 시청중인 에피소드를 표시 
 		if(selectedEpisode != undefined){
 			if(selectedEpisode.getEpisodeTitle().match(episode.getEpisodeTitle())){
 				$(item).append("<span style='margin-left:5px;' class='glyphicon glyphicon-facetime-video'></span>");
 			}
 		}
 		
+		// 저장되어 있는 에피소드를 표시 
 		if(savedEpisode != undefined){
 			if(savedEpisode.getEpisodeTitle().match(episode.getEpisodeTitle())){
 				$(item).append("<span style='margin-left:5px;' class='glyphicon glyphicon-floppy-disk'></span>");
