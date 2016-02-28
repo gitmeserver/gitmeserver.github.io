@@ -414,7 +414,6 @@ $.extend({
 		// 맨 뒤의 contentsId 제거 
 		watchAfterList = watchAfterList.replace("," + contentsId, "");
 		
-		console.log(watchAfterList);
 		$.cookie("watchAfterList", watchAfterList);
 	}
 	
