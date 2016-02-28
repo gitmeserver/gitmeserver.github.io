@@ -286,7 +286,7 @@ function details(){
 	
 	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><hr /></div>"));
 	
-	$("#contentsArea").append("<div id='info' class='col-xs-12 clear-both-padding'></div>");
+	$("#contentsArea").append("<div id='info' class='col-xs-12'></div>");
 	
 	if(runningTime != undefined && 0 < runningTime.length){
 		$("#info").append("<div>시간 : " + runningTime + "</div>");
