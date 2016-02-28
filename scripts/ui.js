@@ -267,17 +267,19 @@ function details(){
 	$(h1).text(title);
 
 	$(text).append(h1);
+	
 	if(year != undefined){
 		$(text).append($.parseHTML("<div class='year'>" + year + "</div>"));
 	}
 	
+	if(directors != undefined){
+		$(text).append($.parseHTML("<div class='directors'>" + directors + "</div>"));
+	}
 	
 	$("#detail").append(thumb);
 	$("#detail").append(text);
 	
 	$("#contentsArea").append("<div id='info' class='col-xs-12 clear-both-padding'></div>");
-	$("#info").append("<div>연도 : " + year + "</div>");
-	$("#info").append("<div>연출 : " + directors + "</div>");
 	$("#info").append("<div>출연 : " + actors + "</div>");
 	$("#info").append("<div>시간 : " + runningTime + "</div>");
 	$("#info").append("<div>자막 : " + subtitle + "</div>");
