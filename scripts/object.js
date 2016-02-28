@@ -320,7 +320,7 @@ var Contents = $Class({
     	$(th).append(t);
     	
     	return th;
-    }
+    },
     
     check : function(ch, searchWord){
     	if(searchWord == undefined || -1 < this.title.indexOf(searchWord)){
