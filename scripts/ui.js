@@ -385,10 +385,12 @@ function video(){
 function isDeck(){
 	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
 	var deck = $.jsonToDeck($.cookie(key));
-	var dEpisode = deck.getEpisode();
 	
-	if(deck != undefined && selectedEpisode.getEpisodeTitle().match(dEpisode.getEpisodeTitle())){
-		$("#previous").show();
+	if(deck != undefined){
+		var dEpisode = deck.getEpisode();
+		if(selectedEpisode.getEpisodeTitle().match(dEpisode.getEpisodeTitle())){
+			$("#previous").show();
+		}
 	}else{
 		$("#previous").hide();
 	}
