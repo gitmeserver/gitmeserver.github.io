@@ -381,6 +381,23 @@ $.extend({
 	
 	watchAfterKey : function(channelId, contentsId){
 		return prefixWatchAfter + "_" + channelId + "_" + contentsId;
+	},
+	
+	addAfterWatch : function(contentsId){
+		var watchAfterList = $.cookie("watchAfterList");
+		if(watchAfterList == undefined){
+			watchAfeterList = contentsId;
+		}else{
+			watchAfeterList = watchAfeterList + "," + contentsId;
+		}
+		$.cookie("watchAfterList", watchAfterList);
+		
+		console.log($.cookie("watchAfterList"));
+	},
+	
+	removeAfterWatch : function(contentsId){
+		var watchAfterList = $.cookie("watchAfterList");
+		
 	}
 	
 });  
