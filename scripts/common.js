@@ -92,8 +92,10 @@ function onInit(){
 			
 		}
 		, error: function(xhr, status, error) {
-			alert(error); 
-			beforeOnCreateLayout();
+			console.log("error");
+		}
+		, ajaxError: function(xhr, status, error) {
+			console.log("ajaxError");
 		}
 	});
 }
