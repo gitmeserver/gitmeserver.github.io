@@ -379,10 +379,6 @@ $.extend({
 		return prefixDeck + "_" + channelId + "_" + contentsId;
 	},
 	
-	watchAfterKey : function(channelId, contentsId){
-		return prefixWatchAfter + "_" + channelId + "_" + contentsId;
-	},
-	
 	addWatchAfter : function(contentsId){
 		var watchAfterList = $.cookie("watchAfterList");
 		if(watchAfterList == undefined){

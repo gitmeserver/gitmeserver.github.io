@@ -190,7 +190,7 @@ function onWatchAfter(){
 			for(var i=0; i<contentsList.length; i++){
 				for(var j=0; j<watchAfterList.length; j++){
 					if(contentsList[i].getContentsId() == watchAfterList[j]){
-						$("#watchAfter").append(contentsList[i].makeThumbnail());
+						$("#watchAfter").append(contentsList[i].makeWatchAfter());
 					}
 				}
 			}
