@@ -338,7 +338,7 @@ function details(){
 	}
 	
 	if(moreCount == 0){
-		$("#info").append("<div class='more_info' style='display:none; text-align:center;'>추가된 정보가 없습니다.</div>");
+		$("#info").append("<div class='more_info' style='display:none; text-align:center; padding:30px 0px;'>추가된 정보가 없습니다.</div>");
 	}
 	
 }
