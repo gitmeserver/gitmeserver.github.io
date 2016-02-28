@@ -297,15 +297,15 @@ function details(){
 	}
 	
 	if(nation != undefined && 0 < nation.length){
-		$("#info").append("<div style='float:right;'>" + nation + "</div>");
+		$("#info").append("<div style='float:right;'>국가 " + nation + "</div>");
 	}
 	
 	if(subtitle != undefined && 0 < subtitle.length){
-		$("#info").append("<div>자막 : " + subtitle + "</div>");
+		$("#info").append("<div>자막 " + subtitle + "</div>");
 	}
 	
 	if(audioLang != undefined && 0 < audioLang.length){
-		$("#info").append("<div>오디오 언어 : " + audioLang + "</div>");
+		$("#info").append("<div>오디오언어 " + audioLang + "</div>");
 	}
 	
 	if(description != undefined && 0 < description.length){
