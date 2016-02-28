@@ -451,7 +451,7 @@ function list(page){
 		
 		$(item).click(function(){
 			$("#list .list-group-item .glyphicon-facetime-video").detach();
-			$(item).append("<span style='margin-left:5px;' class='glyphicon glyphicon-facetime-video'></span>");
+			$(this).append("<span style='margin-left:5px;' class='glyphicon glyphicon-facetime-video'></span>");
 			selectedEpisode = new Episode($(this).attr("title"), $(this).attr("href"));
 			video();
 			return false;
