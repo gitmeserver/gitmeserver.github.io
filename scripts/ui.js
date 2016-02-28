@@ -137,7 +137,7 @@ function onCreateMain(){
 	$("#contentsArea").append("<h3 style='border-bottom:2px solid #fff;'>나중에 보기<span class='glyphicon glyphicon-check btn-lg' aria-hidden='true'></span></h3>");
 	var watchAfterArea = $.parseHTML("<div id='watchAfter' class='row'></div>");
 	$("#contentsArea").append(watchAfterArea);
-	watchAfter();
+	onWatchAfter();
 	
 	$("#contentsArea").append($.parseHTML("<hr /><footer><p>&copy; Created by DevY</p></footer>"));
 	
@@ -179,9 +179,29 @@ function onDeck(){
 	
 }
 
-function watchAfter(){
+function onWatchAfter(){
 	
-	$("#watchAfter").append("<p style='text-align:center; padding:30px 0px;'>나중에보기에 콘텐츠가 없습니다.</p>");
+	var watchAfterCookie = $.cookie("watchAfterList");
+	
+	if($.cookie("watchAfterList") != undefined){
+		
+		var watchAfterList = $.cookie("watchAfterList").split(",");
+		if(0 < watchAfterList.length){
+			for(var i=0; i<contentsList.length; i++){
+				for(var j=0; j<watchAfterList.length; j++){
+					if(contentsList[i].getContentsId() == watchAfterList[j]){
+						$("#watchAfter").append(contentsList[i].makeThumbnail());
+					}
+				}
+			}
+		}else{
+			$("#watchAfter").append("<p style='text-align:center; padding:30px 0px;'>나중에보기에 콘텐츠가 없습니다.</p>");
+		}
+		
+	}else{
+		$("#watchAfter").append("<p style='text-align:center; padding:30px 0px;'>나중에보기에 콘텐츠가 없습니다.</p>");
+	}
+	
 	
 }
 
