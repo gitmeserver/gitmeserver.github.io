@@ -352,7 +352,7 @@ $.extend({
         		this.subtitle,
         		this.audioLang,
         		this.genre,
-        		this.nation,
+        		this.nation
         );
         
         // Episode
