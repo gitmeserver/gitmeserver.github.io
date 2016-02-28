@@ -398,7 +398,7 @@ $.extend({
 		
 	},
 	
-	removeAfterWatch : function(contentsId){
+	removeWatchAfter : function(contentsId){
 		console.log(contentsId);
 		var watchAfterList = $.cookie("watchAfterList");
 		
