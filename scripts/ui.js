@@ -272,14 +272,16 @@ function details(){
 	
 	$("#detail").append(thumb);
 	$("#detail").append(text);
-	$("#detail").append("<div>연도 : " + year + "</div>");
-	$("#detail").append("<div>감독 : " + directors + "</div>");
-	$("#detail").append("<div>배우 : " + actors + "</div>");
-	$("#detail").append("<div>시간 : " + runningTime + "</div>");
-	$("#detail").append("<div>자막 : " + subtitle + "</div>");
-	$("#detail").append("<div>장르 : " + genre + "</div>");
-	$("#detail").append("<div>오디오 언어 : " + audioLang + "</div>");
-	$("#detail").append("<div>설명 : " + description + "</div>");
+	
+	$("#detail").append("<div id='info' class='row'></div>");
+	$("#info").append("<div>연도 : " + year + "</div>");
+	$("#info").append("<div>감독 : " + directors + "</div>");
+	$("#info").append("<div>배우 : " + actors + "</div>");
+	$("#info").append("<div>시간 : " + runningTime + "</div>");
+	$("#info").append("<div>자막 : " + subtitle + "</div>");
+	$("#info").append("<div>장르 : " + genre + "</div>");
+	$("#info").append("<div>오디오 언어 : " + audioLang + "</div>");
+	$("#info").append("<div>설명 : " + description + "</div>");
 	
 }
 
