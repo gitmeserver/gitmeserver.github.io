@@ -235,7 +235,7 @@ function onCreateContents(page){
 	
 	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><hr /></div>"));
 	
-	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><div id='list' class='list-group'></div><nav><ul class='pager'></ul></nav></div>"));
+	$("#contentsArea").append($.parseHTML("<div class='col-xs-12 clear-both-padding'><div id='list' title='0' class='list-group'></div><nav><ul class='pager'></ul></nav></div>"));
 	
 	list(1);
 	pager(1);
@@ -371,7 +371,7 @@ function video(){
 	
 	$("#save").click(function(){
 		save();
-		list(1);
+		list($("#list").attr("title"));
 	});
 	
 	$("#previous").click(function(){
@@ -406,6 +406,8 @@ var itemSize = 5;
 var pageSize = 5;
 
 function list(page){
+	
+	$("#list").attr("title", page);
 	
 	var savedEpisode;
 	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
