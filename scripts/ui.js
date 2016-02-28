@@ -274,7 +274,7 @@ function details(){
 	}
 	
 	if(genre != undefined && 0 < genre.length){
-		$(".year").append("<span style='float:right;'>" + genre + "</span>");
+		$("div .year").append("<span style='float:right;'>" + genre + "</span>");
 	}
 	
 	$("#detail").append(thumb);
