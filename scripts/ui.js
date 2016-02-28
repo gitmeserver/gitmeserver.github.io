@@ -275,6 +275,8 @@ function video(){
 	var subTitle = $("#video #subject span");
 	var videoSrc = $("#video video");
 	
+	console.log(title + subTitle);
+	
 	$(title).text(selectedContents.getTitle());
 	$(subTitle).text(selectedEpisode.getEpisodeTitle());
 	$(videoSrc).attr("src", selectedEpisode.getEpisodeUrl());
