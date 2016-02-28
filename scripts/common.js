@@ -387,10 +387,10 @@ $.extend({
 		var watchAfterList = $.cookie("watchAfterList");
 		if(watchAfterList == undefined){
 			console.log("undefined");
-			watchAfeterList = contentsId;
+			watchAfterList = contentsId;
 		}else{
 			console.log("not undefined");
-			watchAfeterList = watchAfeterList + "," + contentsId;
+			watchAfterList = watchAfterList + "," + contentsId;
 		}
 		$.cookie("watchAfterList", watchAfterList);
 		
