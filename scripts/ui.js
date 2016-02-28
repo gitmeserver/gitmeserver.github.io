@@ -273,11 +273,11 @@ function details(){
 		$(text).append($.parseHTML("<div class='year'>" + year + "</div>"));
 	}
 	
-	if(directors != undefined){
+	if(directors != undefined && !directors.match("")){
 		$(text).append($.parseHTML("<div class='directors'>연출 " + directors + "</div>"));
 	}
 	
-	if(actors != undefined){
+	if(actors != undefined && !actors.match("")){
 		$(text).append($.parseHTML("<div class='directors'>출연 " + actors + "</div>"));
 	}
 	
@@ -286,33 +286,31 @@ function details(){
 	
 	$("#contentsArea").append("<div id='info' class='col-xs-12 clear-both-padding'></div>");
 	
-	if(actors != undefined){
+	if(actors != undefined && !actors.match("")){
 		$("#info").append("<div>출연 : " + actors + "</div>");
 	}
 	
-	if(runningTime != undefined){
+	if(runningTime != undefined && !runningTime.match("")){
 		$("#info").append("<div>시간 : " + runningTime + "</div>");
 	}
 	
-	if(subtitle != undefined){
+	if(subtitle != undefined && !subtitle.match("")){
 		$("#info").append("<div>자막 : " + subtitle + "</div>");
 	}
 	
-	if(genre != undefined){
+	if(genre != undefined && !genre.match("")){
 		$("#info").append("<div>장르 : " + genre + "</div>");
 	}
 	
-	if(audioLang != undefined){
+	if(audioLang != undefined && !audioLang.match("")){
 		$("#info").append("<div>오디오 언어 : " + audioLang + "</div>");
 	}
-	
-	console.log("nation >>>>>> " + nation);
 	
 	if(nation != undefined && !nation.match("")){
 		$("#info").append("<div>국가 : " + nation + "</div>");
 	}
 	
-	if(description != undefined){
+	if(description != undefined && !description.match("")){
 		$("#info").append("<div>" + description + "</div>");
 	}
 	
