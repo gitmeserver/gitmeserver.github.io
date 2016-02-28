@@ -249,7 +249,7 @@ function details(){
 	var title = selectedContents.getTitle();
 	var recommended = selectedContents.isRecommended();
 	var year = selectedContents.getYear();
-	var direcotors = selectedContents.getDirectors();
+	var directors = selectedContents.getDirectors();
 	var actors = selectedContents.getActors();
 	var runningTime = selectedContents.getRunningTime();
 	var subtitle = selectedContents.getSubtitle();
