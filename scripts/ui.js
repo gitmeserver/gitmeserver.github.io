@@ -406,6 +406,14 @@ var pageSize = 5;
 
 function list(page){
 	
+	var savedEpisode;
+	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
+	
+	if($.cookie(key) != undefined){
+		deck = $.jsonToDeck($.cookie(key));
+		savedEpisode = deck.getEpisode();
+	}
+	
 	var episodeTotalSize = episodeMap[selectedContents.getContentsId()].length;
 	
 	var end = page * itemSize;
@@ -425,6 +433,12 @@ function list(page){
 		$(item).attr("title", episode.getEpisodeTitle());
 		$(item).attr("href", episode.getEpisodeUrl());
 		$(item).text(episode.getEpisodeTitle());
+		
+		if(savedEpisode != undefined){
+			if(svaedEpisode.getEpisodeTitle().match(episode.getEpisodeTitle())){
+				$(item).append("<span class='glyphicon glyphicon-facetime-video'></span>");
+			}
+		}
 		
 		$(item).click(function(){
 			selectedEpisode = new Episode($(this).attr("title"), $(this).attr("href"));
