@@ -256,15 +256,15 @@ var Contents = $Class({
     	return th;
     },
     
-makeDeck : function(){
+    makeDeck : function(){
     	
-    	var chId = this.contents.getChannelId();
-    	var contId = this.contents.getContentsId();
-    	var reco = this.contents.isRecommended();
-        var ti = this.contents.getTitle();
-        var thumb = this.contents.getThumbnail();
-        var desc = this.contents.getDescription();
-        var epiFiles = this.contents.getEpisodeFiles();
+    	var chId = this.channelId;
+    	var contId = this.contentsId;
+    	var reco = this.recommended;
+        var ti = this.title;
+        var thumb = this.thumbnail;
+        var desc = this.description;
+        var epiFiles = this.episodeFiles;
         var cYear = this.year;
         var cDirectors = this.directors;
         var cActors = this.actors;
