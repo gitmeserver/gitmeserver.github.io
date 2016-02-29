@@ -415,6 +415,8 @@ $.extend({
 		
 		$.cookie("deckList", deckList);
 		
+		console.log($.cookie("deckList"));
+		
 		$.modal("감상중인 콘텐츠로 등록되었습니다.");
 	},
 	
@@ -443,6 +445,8 @@ $.extend({
 		console.log(temp);
 		
 		$.cookie("deckList", temp);
+		
+		console.log($.cookie("deckList"));
 	},
 	
 	addWatchAfter : function(contentsId){
