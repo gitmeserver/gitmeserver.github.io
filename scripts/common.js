@@ -442,7 +442,7 @@ $.extend({
 			}
 		}
 		
-		console.log(temp);
+		console.log(temp.match(""));
 		
 		$.cookie("deckList", temp);
 		
