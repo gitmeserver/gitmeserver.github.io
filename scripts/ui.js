@@ -245,7 +245,7 @@ function requestContentsEpisode(page){
 
 function onCreateContents(page){
 	
-	var deck = $.getDeck(selectedContents.getChanneldId(), selectedContents.getContentsId());
+	var deck = $.getDeck(selectedContents.getChannelId(), selectedContents.getContentsId());
 	if(deck != undefined){
 		var selectedContentsEpisodeList = episodeMap[selectedContents.getContentsId()];
 		for(var i=0; i<selectedContentsEpisodeList.length; i++){
