@@ -417,22 +417,28 @@ $.extend({
 	removeDeck : function(channelId, contentsId){
 		var key = channelId + "_" + contentsId + "_";
 		var deckList = $.cookie("deckList");
+		var temp;
 		
 		// 삭제할 덱이 없음. 
 		if(deckList == undefined){
 			return;
 		}
 		
-		// 맨 앞의 덱 제거  
-		deckList = deckList.replace(value + ",", "");
+		deckList = deckList.split(",");
 		
-		// 중간 부분 덱 제거 
-		deckList = deckList.replace("," + value + ",", "");
+		for(var i=0; i<deckList.length; i++){
+			if(deckList[i].indexOf(key) == -1){
+				temp = temp + deckList[i];
+			}
+			
+			if(i < deckList.length - 1){
+				temp = temp + ",";
+			}
+		}
 		
-		// 맨 뒤의 덱 제거 
-		deckList = deckList.replace("," + value, "");
+		console.log(temp);
 		
-		$.cookie("deckList", deckList);
+		$.cookie("deckList", temp);
 	},
 	
 	addWatchAfter : function(contentsId){
