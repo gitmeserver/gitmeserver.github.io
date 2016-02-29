@@ -168,7 +168,7 @@ function onDeck(){
 	}
 	
 	for(var i=0; i<contentsList.length; i++){
-		var key = contentsList[i].getChannelId() + "_" + contentsList[i].getChannelId() + "_";
+		var key = contentsList[i].getChannelId() + "_" + contentsList[i].getContentsId() + "_";
 		if(-1 < deckList.indexOf(key)){
 			$("#deck").append(contentsList[i].makeDeck());
 		}
