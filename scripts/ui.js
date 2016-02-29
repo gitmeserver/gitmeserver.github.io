@@ -424,18 +424,17 @@ function video(){
 }
 
 function isDeck(){
-	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
 	
-	if($.cookie(key) != undefined){
-		var deck = $.jsonToDeck($.cookie(key));
-		
-		if(deck != undefined){
-			var dEpisode = deck.getEpisode();
-			if(selectedEpisode.getEpisodeTitle().match(dEpisode.getEpisodeTitle())){
-				$("#previous").show();
-			}
+	var channelId = selectedContents.getChannelId();
+	var contentsId = selectedContents.getContentsId();
+	var episodeTitle = selectedEpisode.getEpisodeTitle();
+	
+	var deck = $.getDeck(selectedContents.getChannelId(), selectedContents.getContentsId());
+	if(deck != undefined){
+		if(-1 < deck.indexOf(channelId + "_" + contentsId + "_" + episodeTitle + "_")){
+			$("#previous").show();
 		}else{
-			$("#previous").hide();
+			$("#previous").hide();	
 		}
 	}
 	
