@@ -379,7 +379,7 @@ $.extend({
 		return prefixDeck + "_" + channelId + "_" + contentsId;
 	},
 	
-	getDeck : function(channeldId, contentsId){
+	getDeck : function(channelId, contentsId){
 		var deckList = $.cookie("deckList").split(",");
 		for(var i=0; i<deckList.length; i++){
 			console.log(deckList[i]);
