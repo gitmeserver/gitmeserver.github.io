@@ -245,6 +245,17 @@ function requestContentsEpisode(page){
 
 function onCreateContents(page){
 	
+	var deck = $.getDeck(selectedContents.getChanneldId(), selectedContents.getContentsId());
+	if(deck != undefined){
+		var selectedContentsEpisodeList = episodeMap[selectedContents.getContentsId()];
+		for(var i=0; i<selectedContentsEpisodeList.length; i++){
+			var episodeTitle = selectedContentsEpisodeList[i].getEpisodeTitle();
+			if(-1 < deck.indexOf(selectedContents.getChannelId() + "_" + selectedContents.getContentsId() + "_" + episodeTitle + "_")){
+				selectedEpisode = selectedContentsEpisodeList[i];
+			}
+		}
+	}
+	
 	$("#spinner").remove();
 	
 	$("#contentsArea").append("<div id='detail'></div>");

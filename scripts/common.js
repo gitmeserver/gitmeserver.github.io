@@ -379,6 +379,17 @@ $.extend({
 		return prefixDeck + "_" + channelId + "_" + contentsId;
 	},
 	
+	getDeck : function(channeldId, contentsId){
+		var deckList = $.cookie("deckList").split(",");
+		for(var i=0; i<deckList.length; i++){
+			if(-1 < deckList[i].indexOf(channelId + "_" + contentsId + "_")){
+				return deckList[i];
+			}
+		}
+		
+		return undefined;
+	},
+	
 	addDeck : function(channelId, contentsId, episodeTitle, currentTime){
 		var value = channelId + "_" + contentsId + "_" + episodeTitle + "_" + currentTime;
 		var deckList = $.cookie("deckList");
