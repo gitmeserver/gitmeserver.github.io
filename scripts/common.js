@@ -437,7 +437,7 @@ $.extend({
 				temp = temp + deckList[i];
 			}
 			
-			if(i < deckList.length - 1){
+			if(i < deckList.length - 2){
 				temp = temp + ",";
 			}
 		}
