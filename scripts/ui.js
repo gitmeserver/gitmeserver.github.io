@@ -243,8 +243,7 @@ function requestContentsEpisode(page){
 	
 }
 
-function onCreateContents(page){
-	
+function getSavedEpisode(){
 	var deck = $.getDeck(selectedContents.getChannelId(), selectedContents.getContentsId());
 	
 	console.log(deck);
@@ -254,10 +253,17 @@ function onCreateContents(page){
 		for(var i=0; i<selectedContentsEpisodeList.length; i++){
 			var episodeTitle = selectedContentsEpisodeList[i].getEpisodeTitle();
 			if(-1 < deck.indexOf(selectedContents.getChannelId() + "_" + selectedContents.getContentsId() + "_" + episodeTitle + "_")){
-				selectedEpisode = selectedContentsEpisodeList[i];
+				return selectedContentsEpisodeList[i];
 			}
 		}
 	}
+	
+	return undefined;
+}
+
+function onCreateContents(page){
+	
+	selectedEpisode = getSavedEpisode();
 	
 	$("#spinner").remove();
 	
@@ -448,14 +454,7 @@ function list(page){
 	
 	$("#list").attr("title", page);
 	
-	var savedEpisode;
-	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
-	
-	if($.cookie(key) != undefined){
-		deck = $.jsonToDeck($.cookie(key));
-		savedEpisode = deck.getEpisode();
-	}
-	
+	var savedEpisode = getSavedEpisode();
 	var episodeTotalSize = episodeMap[selectedContents.getContentsId()].length;
 	
 	var end = page * itemSize;
