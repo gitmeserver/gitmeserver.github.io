@@ -287,6 +287,8 @@ function onCreateContents(page){
 
 function details(){
 	
+	selectedEpisode = undefined;
+	
 	var moreCount = 0;
 	
 	var thumbUrl = selectedContents.getThumbnail();
