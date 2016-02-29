@@ -405,18 +405,24 @@ $.extend({
 		var value = channelId + "_" + contentsId + "_" + episodeTitle + "_" + currentTime;
 		var deckList = $.cookie("deckList");
 		
+		// 삭제할 덱이 없음. 
+		if(deckList == undefined){
+			return;
+		}
+		
+		// 덱이 하나만 있을 경우 쿠키를 삭제한다.
 		if(deckList.indexOf(",") < 0){
 			$.removeCookie("deckList");
 			return;
 		}
 		
-		// 맨 앞의 contentsId 제거  
+		// 맨 앞의 덱 제거  
 		deckList = deckList.replace(value + ",", "");
 		
-		// 중간 부분 contentsId 제거 
+		// 중간 부분 덱 제거 
 		deckList = deckList.replace("," + value + ",", "");
 		
-		// 맨 뒤의 contentsId 제거 
+		// 맨 뒤의 덱 제거 
 		deckList = deckList.replace("," + value, "");
 		
 		$.cookie("deckList", deckList);
