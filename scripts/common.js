@@ -442,10 +442,12 @@ $.extend({
 			}
 		}
 		
-		console.log(temp.length == 0);
-		
-		$.cookie("deckList", temp);
-		
+		if(temp.length == 0){
+			$.removeCookie("deckList");
+		}else{
+			$.cookie("deckList", temp);
+		}
+
 		console.log($.cookie("deckList"));
 	},
 	
