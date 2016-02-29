@@ -395,8 +395,10 @@ $.extend({
 		var deckList = $.cookie("deckList");
 		
 		if(deckList == undefined){
+			console.log("1");
 			deckList = value;
 		}else{
+			console.log("2");
 			var list = deckList.split(",");
 			for(var i=0; i<list.length; i++){
 				if(list[i] == value){
