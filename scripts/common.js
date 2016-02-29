@@ -417,7 +417,7 @@ $.extend({
 	removeDeck : function(channelId, contentsId){
 		var key = channelId + "_" + contentsId + "_";
 		var deckList = $.cookie("deckList");
-		var temp;
+		var temp = "";
 		
 		// 삭제할 덱이 없음. 
 		if(deckList == undefined){
