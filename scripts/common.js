@@ -380,7 +380,13 @@ $.extend({
 	},
 	
 	getDeck : function(channelId, contentsId){
-		var deckList = $.cookie("deckList").split(",");
+		var deckList = $.cookie("deckList");
+		
+		if(deckList == undefined){
+			return;
+		}
+		
+		deckList = deckList.split(",");
 		for(var i=0; i<deckList.length; i++){
 			if(-1 < deckList[i].indexOf(channelId + "_" + contentsId + "_")){
 				return deckList[i];
