@@ -160,23 +160,20 @@ function onDeck(){
 	
 	$("#deck").empty();
 	
-	var deckList = document.cookie.split(";");
-	var deckSize = 0;
+	var deckList = $.cookie("deckList");
+	
+	if(deckList == undefined){
+		$("#deck").append("<p style='text-align:center; padding:30px 0px;'>감상중인 콘텐츠가 없습니다.</p>");
+		return;
+	}
 	
 	for(var i=0; i<contentsList.length; i++){
-		var key = $.deckKey(contentsList[i].getChannelId(), contentsList[i].getContentsId());
-		if($.cookie(key) != undefined){
-			deckSize = deckSize + 1;
-			var json = $.cookie(key);
-			var deck = $.jsonToDeck(json);
-			$("#deck").append(deck.makeDeck());
+		var key = contentsList[i].getChannelId() + "_" + contentsList[i].getChannelId() + "_";
+		if(-1 < deckList.indexOf(key)){
+			$("#deck").append(contentsList[i].makeDeck());
 		}
 	}
 
-	if(deckSize == 0){
-		$("#deck").append("<p style='text-align:center; padding:30px 0px;'>감상중인 콘텐츠가 없습니다.</p>");
-	}
-	
 }
 
 function onWatchAfter(){

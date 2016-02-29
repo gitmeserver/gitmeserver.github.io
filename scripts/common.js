@@ -379,6 +379,49 @@ $.extend({
 		return prefixDeck + "_" + channelId + "_" + contentsId;
 	},
 	
+	addDeck : function(channelId, contentsId, episodeTitle, currentTime){
+		var value = channelId + "_" + contentsId + "_" + episodeTitle + "_" + currentTime;
+		var deckList = $.cookie("deckList");
+		
+		if(deckList == undefined){
+			deckList = value;
+		}else{
+			var list = deckList.split(",");
+			for(var i=0; i<list.length; i++){
+				if(list[i] == value){
+					$.modal("이미 감상중인 콘텐츠에 등록되었습니다.");
+					return;
+				}
+			}
+			deckList = deckList + "," + value;
+		}
+		
+		$.cookie("deckList", deckList);
+		
+		$.modal("감상중인 콘텐츠로 등록되었습니다.");
+	},
+	
+	removeDeck : function(channelId, contentsId, episodeTitle, currentTime){
+		var value = channelId + "_" + contentsId + "_" + episodeTitle + "_" + currentTime;
+		var deckList = $.cookie("deckList");
+		
+		if(deckList.indexOf(",") < 0){
+			$.removeCookie("deckList");
+			return;
+		}
+		
+		// 맨 앞의 contentsId 제거  
+		deckList = deckList.replace(value + ",", "");
+		
+		// 중간 부분 contentsId 제거 
+		deckList = deckList.replace("," + value + ",", "");
+		
+		// 맨 뒤의 contentsId 제거 
+		deckList = deckList.replace("," + value, "");
+		
+		$.cookie("deckList", deckList);
+	},
+	
 	addWatchAfter : function(contentsId){
 		var watchAfterList = $.cookie("watchAfterList");
 		if(watchAfterList == undefined){

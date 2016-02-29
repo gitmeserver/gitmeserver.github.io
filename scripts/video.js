@@ -45,32 +45,9 @@ function save(){
 	var src = v.src;
 	var currentTime = v.currentTime;
 	
-	var key = $.deckKey(selectedContents.getChannelId(), selectedContents.getContentsId());
-	
-	var deck = new Deck(selectedContents, selectedEpisode, currentTime);
-	var json = $.deckToJson(deck);
-	
-	var dSize = 0;
-	var c = document.cookie.split(";");
-	
-	for(var i=0; i<c.length; i++){
-		if(-1 < c[i].indexOf(prefixDeck)){
-			dSize = dSize + 1; 
-		}
-	}
-	
-	if(dSize < totalDeck){
-		if($.cookie(key) != undefined){
-			$.removeCookie(key);
-		}
-		$.cookie(key, json, { expires: d });
-		$.modal("감상중인 콘텐츠에 등록되었습니다.");
-		
-		isDeck();
-	}else{
-		$.modal(totalDeck + "개이하만 저장가능합니다.");
-	}
-	
+	$.removeDeck(selectedContents.getChannelId(), selectedContents.getContentsId());
+	$.addDeck(selectedContents.getChannelId(), selectedContents.getContentsId(), selectedEpisode.getEpisodeTitle(), currentTime);
+	isDeck();
 }
 
 function previous(){

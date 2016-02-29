@@ -256,6 +256,80 @@ var Contents = $Class({
     	return th;
     },
     
+makeDeck : function(){
+    	
+    	var chId = this.contents.getChannelId();
+    	var contId = this.contents.getContentsId();
+    	var reco = this.contents.isRecommended();
+        var ti = this.contents.getTitle();
+        var thumb = this.contents.getThumbnail();
+        var desc = this.contents.getDescription();
+        var epiFiles = this.contents.getEpisodeFiles();
+        var cYear = this.year;
+        var cDirectors = this.directors;
+        var cActors = this.actors;
+        var cRunningTime = this.runningTime;
+        var cSubtitle = this.subtitle;
+        var cAudioLang = this.audioLang;
+        var cGenre = this.genre;
+        var cNation = this.nation;
+        
+        if(!(-1 < thumb.indexOf("http://")) && !(-1 < thumb.indexOf("https://"))){
+        	thumb = THUMBNAIL_URL.replace("{thumbnail_file_path}", thumb); 
+        }
+        
+    	var th = $.parseHTML("<div class='cont col-xs-4 col-sm-3 col-lg-2'></div>");
+    	$(th).attr("style", "text-align:center; padding-bottom:10px;");
+    	
+    	var imgA = $.parseHTML("<a href='#'></a>");
+    	var img = $.parseHTML("<img class='img-responsive' />");
+    	$(img).attr("src", thumb);
+    	$(img).attr("style", "margin-left:auto; margin-right:auto; margin-bottom:5px;");
+    	$(imgA).append(img);
+    	
+    	var ended = $.parseHTML("<a class='ended glyphicon glyphicon-remove' href='#'></a>");
+    	$(ended).click(function(){
+    		$.removeDeck(chId, contId);
+    		$(this).parent().detach();
+    		onDeck();
+    	});
+    	
+    	var t = $.parseHTML("<a href='#'></a>");
+    	$(t).append($.cutStr(ti, 12));
+    	$(t).attr("style", "display:block;");
+    	
+    	var clickFunc = function(){
+    		selectedContents = new Contents(
+    				chId, 
+    				contId, 
+    				reco, 
+    				ti, 
+    				thumb, 
+    				desc, 
+    				epiFiles, 
+    				cYear, 
+    				cDirectors, 
+    				cActors, 
+    				cRunningTime, 
+    				cSubtitle, 
+    				cAudioLang, 
+    				cGenre, 
+    				cNation
+    			);
+    		requestContentsEpisode("video");
+    		return false;
+    	};
+    	
+    	$(imgA).click(clickFunc);
+    	$(t).click(clickFunc);
+
+    	$(th).append(ended);
+    	$(th).append(imgA);
+    	$(th).append(t);
+    	
+    	return th;
+    },
+    
     makeWatchAfter : function(){
     	var chId = this.channelId;
     	var contId = this.contentsId;
