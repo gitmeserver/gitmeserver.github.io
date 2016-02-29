@@ -394,6 +394,8 @@ $.extend({
 		var value = channelId + "_" + contentsId + "_" + episodeTitle + "_" + currentTime;
 		var deckList = $.cookie("deckList");
 		
+		console.log(deckList);
+		
 		if(deckList == undefined){
 			console.log("1");
 			deckList = value;
