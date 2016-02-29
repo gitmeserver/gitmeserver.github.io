@@ -397,10 +397,8 @@ $.extend({
 		console.log(deckList);
 		
 		if(deckList == undefined){
-			console.log("1");
 			deckList = value;
 		}else{
-			console.log("2");
 			var list = deckList.split(",");
 			for(var i=0; i<list.length; i++){
 				if(list[i] == value){
@@ -416,18 +414,12 @@ $.extend({
 		$.modal("감상중인 콘텐츠로 등록되었습니다.");
 	},
 	
-	removeDeck : function(channelId, contentsId, episodeTitle, currentTime){
-		var value = channelId + "_" + contentsId + "_" + episodeTitle + "_" + currentTime;
+	removeDeck : function(channelId, contentsId){
+		var key = channelId + "_" + contentsId + "_";
 		var deckList = $.cookie("deckList");
 		
 		// 삭제할 덱이 없음. 
 		if(deckList == undefined){
-			return;
-		}
-		
-		// 덱이 하나만 있을 경우 쿠키를 삭제한다.
-		if(deckList.indexOf(",") < 0){
-			$.removeCookie("deckList");
 			return;
 		}
 		
