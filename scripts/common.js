@@ -378,7 +378,7 @@ $.extend({
 		}
 		
 		if(temp[temp.length-1] == ","){
-			temp = temp.substring(temp.length-3, temp.length-2);
+			temp = temp.substring(0, temp.length-2);
 		}
 		
 		
