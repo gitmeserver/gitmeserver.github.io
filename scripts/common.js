@@ -377,7 +377,7 @@ $.extend({
 			}
 		}
 		
-		if(temp.indexOf(",") == temp.length-1){
+		if(temp.lastIndexOf(",") == temp.length-1){
 			temp = temp.substring(0, temp.length-2);
 		}
 		
