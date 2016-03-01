@@ -399,13 +399,9 @@ function video(){
 	subtitle();
 	
 	// Entering fullscreen mode
-	$('#video video').bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+	$('#video video').on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
 	    var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
 	    var event = state ? 'FullscreenOn' : 'FullscreenOff';
-
-	    document.fullScreen = false;
-	    document.mozFullScreen = false;
-	    document.webkitIsFullScreen = false;
 	    
 	    // Now do something interesting
 	    alert('Event: ' + event + " , state " + state);    
