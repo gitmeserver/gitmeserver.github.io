@@ -92,7 +92,8 @@ body {
 
 .srt {
 	position:absolute;
-	float:left;
-    background-color:#000;
+	/* float:left;
+    background-color:#000; */
     z-index:300000;
+    text-align:center;
 }
