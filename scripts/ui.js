@@ -404,7 +404,7 @@ function video(){
 	    var event = state ? 'FullscreenOn' : 'FullscreenOff';
 
 	    // Now do something interesting
-	    alert('Event: ' + event);    
+	    alert('Event: ' + event + " , state " + state);    
 	});
 	
 	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button>");
