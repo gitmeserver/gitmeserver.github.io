@@ -50,10 +50,6 @@ function save(){
 		return;
 	}
 	
-	if(currentTime.match("")){
-		$.modal("콘텐츠가 아직 재생준비중입니다.");
-	}
-	
 	$.removeDeck(selectedContents.getChannelId(), selectedContents.getContentsId());
 	$.addDeck(selectedContents.getChannelId(), selectedContents.getContentsId(), selectedEpisode.getEpisodeTitle(), currentTime);
 	isDeck();
