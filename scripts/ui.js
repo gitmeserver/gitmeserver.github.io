@@ -405,6 +405,8 @@ function video(){
 	    
 	    // Now do something interesting
 	    alert('Event: ' + event + " , state " + state);    
+	    
+	    return false;
 	});
 	
 	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button>");
