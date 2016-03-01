@@ -46,12 +46,11 @@ function save(){
 	var currentTime = v.currentTime;
 	
 	if(currentTime == undefined){
-		console.log("currentTime >> " + currentTime);
 		$.modal("콘텐츠가 아직 재생준비중입니다.");
 		return;
 	}
 	
-	
+	console.log("currentTime > " + currentTime);
 	
 	$.removeDeck(selectedContents.getChannelId(), selectedContents.getContentsId());
 	$.addDeck(selectedContents.getChannelId(), selectedContents.getContentsId(), selectedEpisode.getEpisodeTitle(), currentTime);
