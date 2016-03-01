@@ -11,7 +11,6 @@ function getSubtitle(){
 		, success: function(data) {
 			document = $.parseHTML(data);
 			var syncs = $(document).find("SYNC");
-			
 			console.log(syncs.length);
 		}
 		, error: function(xhr, status, error) {
