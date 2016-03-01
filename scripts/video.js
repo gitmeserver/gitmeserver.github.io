@@ -50,8 +50,6 @@ function save(){
 		return;
 	}
 	
-	console.log("currentTime > " + currentTime);
-	
 	$.removeDeck(selectedContents.getChannelId(), selectedContents.getContentsId());
 	$.addDeck(selectedContents.getChannelId(), selectedContents.getContentsId(), selectedEpisode.getEpisodeTitle(), currentTime);
 	isDeck();
