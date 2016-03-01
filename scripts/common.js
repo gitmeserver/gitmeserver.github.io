@@ -377,11 +377,7 @@ $.extend({
 			}
 		}
 		
-		console.log(temp.lastIndexOf(","));
-		
-		if(temp.lastIndexOf(",") == temp.length-1){
-			temp = temp.substring(0, temp.length-2);
-		}
+		console.log(temp[temp.length-1]);
 		
 		if(temp.length == 0){
 			$.removeCookie("deckList");
