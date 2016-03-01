@@ -52,7 +52,7 @@ function subtitle(){
 		return s;
 	}
 	function strip(s) {
-		return encode_utf8(s.replace(/^\s+|\s+$/g,""));
+		return decode_utf8(s.replace(/^\s+|\s+$/g,""));
 	}
 	function playSubtitles(subtitleElement) {
 		var videoId = subtitleElement.attr('data-video');
