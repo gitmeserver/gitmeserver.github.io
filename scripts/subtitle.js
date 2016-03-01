@@ -10,6 +10,7 @@ function getSubtitle(){
 		, url: "http://devys.github.io/subtitle/kungfu.ko.srt"
 		, success: function(data) {
 			data = data.replace("<SYNC", "</SYNC><SYNC");
+			console.log(data);
 			document = $.parseHTML(data);
 			var syncs = $(document).find("SYNC");
 			console.log(syncs.length);
