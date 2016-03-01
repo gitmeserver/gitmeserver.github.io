@@ -433,13 +433,15 @@ $.extend({
 		deckList = deckList.split(",");
 		
 		for(var i=0; i<deckList.length; i++){
-			if(deckList[i].indexOf(key) == -1){
+			// 비삭제대상 
+			if(deckList[i].indexOf(key) < 0){
 				temp = temp + deckList[i] + ",";
 			}
 			
-			if(i < deckList.length - 2 && i != 0){
-				temp = temp + ",";
-			}
+			// 삭제대상 
+//			if(i < deckList.length - 2 && i != 0){
+//				temp = temp + ",";
+//			}
 		}
 		
 		if(temp.length == 0){
