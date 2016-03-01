@@ -393,11 +393,11 @@ function video(){
 	$("#info").detach();
 	$("#info_line").detach();
 
-	$("#video").append("<div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt' />");
+	$("#detail").append("<div id='video'><div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt' /><div id='subject'><h3></h3><span></span></div><div class='embed-responsive embed-responsive-16by9'><video id='player' controls='true' autoplay='true' class='embed-responsive-item'></video></div><div id='controll'><div class='float-right'></div><span></span></div></div>");
+
+//	$("#subject").append("<div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt' />");
 	subtitle();
 	
-	$("#detail").append("<div id='video'><div id='subject'><h3></h3><span></span></div><div class='embed-responsive embed-responsive-16by9'><video id='player' controls='true' autoplay='true' class='embed-responsive-item'></video></div><div id='controll'><div class='float-right'></div><span></span></div></div>");
-
 	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button>");
 	$("#controll div").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default btn-lg'></button>");
 	$("#controll span").append("<button id='backward' class='glyphicon glyphicon-step-backward btn btn-default btn-lg' type='button'></button>");
