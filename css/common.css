@@ -93,8 +93,6 @@ body {
 .srt {
 	position:absolute;
 	float:left;
-    width:640px;
-    min-height:370px;
     background-color:#000;
     z-index:300000;
 }
