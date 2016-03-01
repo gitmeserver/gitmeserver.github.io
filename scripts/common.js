@@ -319,68 +319,6 @@ $.extend({
 		$(".modal").modal();
 	},
 	
-	deckToJson : function(deck){
-		return $.toJSON(deck);
-	},
-	
-	jsonToDeck : function(json){
-		
-		var d = $.evalJSON(json);
-		
-		// Contents
-		this.channelId = d.contents.channelId;
-		this.contentsId = d.contents.contentsId;
-		this.recommended = d.contents.recommended;
-        this.title = d.contents.title;
-        this.thumbnail = d.contents.thumbnail;
-        this.description = d.contents.description;
-        this.episodeFiles = d.contents.episodeFiles;
-        this.year = d.contents.year;
-        this.directors = d.contents.directors;
-        this.actors = d.contents.actors;
-        this.runningTime = d.contents.runningTime;
-        this.subtitle = d.contents.subtitle;
-        this.audioLang = d.contents.audioLang;
-        this.genre = d.contents.genre;
-        this.nation = d.contents.nation;
-        
-        var contents = new Contents(
-        		this.channelId, 
-        		this.contentsId, 
-        		this.recommended, 
-        		this.title, 
-        		this.thumbnail, 
-        		this.description, 
-        		this.episodeFiles,
-        		this.year,
-        		this.directors,
-        		this.actors,
-        		this.runningTime,
-        		this.subtitle,
-        		this.audioLang,
-        		this.genre,
-        		this.nation
-        );
-        
-        // Episode
-        this.episodeTitle = d.episode.episodeTitle;
-		this.episodeUrl = d.episode.episodeUrl;
-		
-		var episode = new Episode(this.episodeTitle, this.episodeUrl);
-		
-		// currentTime
-		this.currentTime = d.currentTime;
-		
-		var deck = new Deck(contents, episode, this.currentTime);
-		
-		return deck;
-		
-	},
-	
-	deckKey : function(channelId, contentsId){
-		return prefixDeck + "_" + channelId + "_" + contentsId;
-	},
-	
 	getDeck : function(channelId, contentsId){
 		var deckList = $.cookie("deckList");
 		
@@ -437,11 +375,10 @@ $.extend({
 			if(deckList[i].indexOf(key) < 0){
 				temp = temp + deckList[i] + ",";
 			}
-			
-			// 삭제대상 
-//			if(i < deckList.length - 2 && i != 0){
-//				temp = temp + ",";
-//			}
+		}
+		
+		if(temp[temp.length-1].match(",")){
+			temp = temp.substring(0, temp.length-2);
 		}
 		
 		if(temp.length == 0){
