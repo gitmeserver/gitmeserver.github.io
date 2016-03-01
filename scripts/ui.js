@@ -428,6 +428,8 @@ function video(){
 	
 	isDeck();
 	
+	subtitle();
+	
 	return false;
 }
 
