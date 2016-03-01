@@ -432,7 +432,7 @@ $.extend({
 		
 		for(var i=0; i<deckList.length; i++){
 			if(deckList[i].indexOf(key) == -1){
-				temp = temp + deckList[i];
+				temp = temp + deckList[i] + ",";
 			}
 			
 			if(i < deckList.length - 2 && i != 0){
