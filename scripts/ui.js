@@ -403,6 +403,10 @@ function video(){
 	    var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
 	    var event = state ? 'FullscreenOn' : 'FullscreenOff';
 
+	    document.fullScreen = false;
+	    document.mozFullScreen = false;
+	    document.webkitIsFullScreen = false;
+	    
 	    // Now do something interesting
 	    alert('Event: ' + event + " , state " + state);    
 	});
