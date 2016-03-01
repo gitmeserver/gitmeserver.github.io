@@ -377,7 +377,9 @@ $.extend({
 			}
 		}
 		
-		console.log(temp[temp.length-1]);
+		if(temp[temp.length-1] == ","){
+			console.log(temp[temp.length-1]);
+		}
 		
 		if(temp.length == 0){
 			$.removeCookie("deckList");
