@@ -52,7 +52,7 @@ function subtitle(){
 		return s;
 	}
 	function strip(s) {
-		return decode_utf8(s.replace(/^\s+|\s+$/g,""));
+		return s.replace(/^\s+|\s+$/g,"");
 	}
 	function playSubtitles(subtitleElement) {
 		var videoId = subtitleElement.attr('data-video');
@@ -109,14 +109,6 @@ function subtitle(){
 			playSubtitles(subtitleElement);
 		}
 	});
-}
-
-function encode_utf8(s) {
-	return unescape(encodeURIComponent(s));
-}
-
-function decode_utf8(s) {
-	return decodeURIComponent(escape(s));
 }
 
 
