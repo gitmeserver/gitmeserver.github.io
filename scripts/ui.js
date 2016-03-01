@@ -399,6 +399,8 @@ function video(){
 	$("#controll span").append("<button id='backward' class='glyphicon glyphicon-step-backward btn btn-default btn-lg' type='button'></button>");
 	$("#controll span").append("<button id='forward' class='glyphicon glyphicon-step-forward btn btn-default btn-lg' type='button'></button>");
 	
+	$("#video").append("<div class='srt' data-video='video' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt' />");
+	
 	var title = $("#video #subject h3");
 	var subTitle = $("#video #subject span");
 	var videoSrc = $("#video video");
