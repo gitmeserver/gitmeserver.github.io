@@ -62,4 +62,8 @@ function previous(){
 	v.currentTime = deck[deck.length - 1];
 }
 
+function fullscreen(){
+	console.log("fullscreen");
+}
+
 

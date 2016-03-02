@@ -431,6 +431,10 @@ function video(){
 		previous();
 	});
 	
+	$("#fullscreen").click(function(){
+		fullscreen();
+	});
+	
 	isDeck();
 	
 	return false;
