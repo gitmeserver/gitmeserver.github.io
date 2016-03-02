@@ -63,7 +63,7 @@ function previous(){
 }
 
 function fullscreen(){
-	$(".embed-responsive embed-responsive-16by9").addClass("fullscreen");
+	$(".embed-responsive").addClass("fullscreen");
 }
 
 
