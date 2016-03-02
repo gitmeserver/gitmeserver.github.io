@@ -64,6 +64,7 @@ function previous(){
 
 function fullscreen(){
 	$(".embed-responsive").addClass("fullscreen");
+	$(".row-offcanvas").css("position", "inheirt");
 }
 
 
