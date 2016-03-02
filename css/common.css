@@ -94,6 +94,7 @@ body {
 	position:absolute;
     z-index:2147483647;
     text-align:center;
+    
 }
 
 video::-webkit-media-text-track-container {
