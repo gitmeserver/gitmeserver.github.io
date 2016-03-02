@@ -103,10 +103,6 @@ body {
 }
 
 
-#player {
-	z-index:1 !important;
-}
-
 .fullscreen {
 	position:fixed !important;
 	top:0;
@@ -114,6 +110,7 @@ body {
 	width:100% !important;
 	height:100% !important;
 	background-color:#000;
+	z-index:1040;
 }
 
 video::-webkit-media-controls-fullscreen-button {
