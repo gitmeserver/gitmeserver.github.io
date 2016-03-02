@@ -63,9 +63,3 @@ function previous(){
 }
 
 
-$(document).ready(function(){
-	$("#player::-webkit-media-controls-fullscreen-button").click(function(){
-		console.log("click full screen");
-	});
-});
-
