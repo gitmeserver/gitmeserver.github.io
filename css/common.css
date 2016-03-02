@@ -112,6 +112,8 @@ body {
 	top:0;
 	left:0;
 	width:100% !important;
+	height:100% !important;
+	background-color:#000;
 }
 
 video::-webkit-media-controls-fullscreen-button {
