@@ -97,6 +97,10 @@ body {
     
 }
 
+#video video {
+	z-index:1;
+}
+
 video::-webkit-media-text-track-container {
 	display:none;
 }
