@@ -102,21 +102,18 @@ body {
 	padding: 10px 0;
 }
 
-@media (min-aspect-ratio: 16/9) {
-	.fullscreen {
-		position:fixed !important;
-		top:0;
-		left:0;
-		width:100% !important;
-		height:100% !important;
-		background-color:#000;
-		z-index:1040;
-	}	
-}
-
+.fullscreen {
+	position:fixed !important;
+	top:0;
+	left:0;
+	width:100% !important;
+	height:100% !important;
+	background-color:#000;
+	z-index:1040;
+}	
 
 video::-webkit-media-controls-fullscreen-button {
-    display: none;
+    /* display: none; */
 }
 video::-webkit-media-controls-play-button {}
 video::-webkit-media-controls-timeline {}
