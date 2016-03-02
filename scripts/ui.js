@@ -400,19 +400,9 @@ function video(){
 //	$("#subject").append("<div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt' />");
 	subtitle();
 	
-	// Entering fullscreen mode
-//	$('#video video').on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
-//	    var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
-//	    var event = state ? 'FullscreenOn' : 'FullscreenOff';
-//	    
-//	    // Now do something interesting
-//	    alert('Event: ' + event + " , state " + state);    
-//	    
-//	    return false;
-//	});
-	
 	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button>");
 	$("#controll div").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default btn-lg'></button>");
+	$("#controll div").append("<button id='fullscreen' type='button' class='glyphicon glyphicon-resize-full btn btn-default btn-lg'></button>");
 	$("#controll span").append("<button id='backward' class='glyphicon glyphicon-step-backward btn btn-default btn-lg' type='button'></button>");
 	$("#controll span").append("<button id='forward' class='glyphicon glyphicon-step-forward btn btn-default btn-lg' type='button'></button>");
 	
