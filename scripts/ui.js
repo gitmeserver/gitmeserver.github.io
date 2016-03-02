@@ -401,15 +401,15 @@ function video(){
 	subtitle();
 	
 	// Entering fullscreen mode
-	$('#video video').on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
-	    var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
-	    var event = state ? 'FullscreenOn' : 'FullscreenOff';
-	    
-	    // Now do something interesting
-	    alert('Event: ' + event + " , state " + state);    
-	    
-	    return false;
-	});
+//	$('#video video').on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+//	    var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+//	    var event = state ? 'FullscreenOn' : 'FullscreenOff';
+//	    
+//	    // Now do something interesting
+//	    alert('Event: ' + event + " , state " + state);    
+//	    
+//	    return false;
+//	});
 	
 	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button>");
 	$("#controll div").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default btn-lg'></button>");
