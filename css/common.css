@@ -95,20 +95,7 @@ body {
 }
 
 .fullscreen {
-	position:fixed !important;
-	top:0;
-	left:0;
 	width:100% !important;
-	height:100% !important;
-	background-color:#000;
-	z-index:1040;
-	flex: 1 1 0% !important;
-	object-fit: contain;
-	
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
 }	
 
 video::-webkit-media-controls-fullscreen-button {

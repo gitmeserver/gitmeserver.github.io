@@ -71,6 +71,9 @@ function fullscreenOn(){
 	$("#embed").removeClass("embed-responsive");
 	$("#embed").removeClass("embed-responsive-16by9");
 	
+	$("#embed").addClass("fullscreen");
+	$("#video").addClass("fullscreen");
+	
 //	$(".embed-responsive").addClass("fullscreen");
 //	$("#offCanvas").css("position", "none");
 //	$(".embed-responsive")[0].requestFullscreen();
