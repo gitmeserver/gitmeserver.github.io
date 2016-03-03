@@ -67,15 +67,6 @@ function fullscreenOn(){
 	var f = $("#embed")[0];
 	
 	screenfull.request(f);
-	screenfull.onchange = function(e){
-		
-		console.log("isFullscreen > " + screenfull.isFullscreen);
-		
-		if(!screenfull.isFullscreen){
-			fullscreenOff();
-		}	
-	};
-	
 	$("#embed").removeClass("embed-responsive");
 	$("#embed").removeClass("embed-responsive-16by9");
 	$("#embed").addClass("fullscreen");
@@ -89,6 +80,8 @@ function fullscreenOff(){
 	$("#embed").addClass("embed-responsive-16by9");
 	
 	$("#player").removeClass("fullscreen");
-	
-	screenfull.exit(f);
 }
+
+$(document).on(screenfull.raw.fullscreenchange, function () {
+    console.log('Fullscreen change');
+});
