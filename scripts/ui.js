@@ -399,8 +399,8 @@ function video(){
 	$("#video").append("<div id='subject'></div>");
 	$("#subject").append("<h3></h3><span></span>");
 	$("#video").append("<div id='embed' class='embed-responsive embed-responsive-16by9'></div>");
-	$("#embed").append("<div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt'></div>");
 	$("#embed").append("<video id='player' controls='true' autoplay='true' class='embed-responsive-item'></video>");
+	$("#embed").append("<div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt'></div>");
 	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
 //	$("#subject").append("<div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt' />");
