@@ -64,7 +64,7 @@ function previous(){
 
 function fullscreen(){
 	
-	var f = $(".embed-responsive")[0];
+	var f = $(".embed-responsive video")[0];
 	
 	screenfull.request(f);
 	
