@@ -69,7 +69,7 @@ function fullscreenOn(){
 	screenfull.request(f);
 	
 	$(document).on(screenfull.raw.fullscreenchange, function () {
-	    console.log('Fullscreen change');
+		console.log(screenfull.isFullscreen);
 	});
 	
 	$("#embed").removeClass("embed-responsive");
