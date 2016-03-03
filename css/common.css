@@ -90,6 +90,10 @@ body {
     float: right;
 }
 
+#player {
+	float:left;
+}
+
 .srt {
 	z-index: 2147483647 !important;
 	position:absolute;
