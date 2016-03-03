@@ -82,6 +82,11 @@ function fullscreenOn(){
 }
 
 function fullscreenOff(){
+	
+	var f = $("#embed")[0];
+	
+	screenfull.exit(f);
+	
 	$("#embed").removeClass("fullscreen");
 	$("#embed").addClass("embed-responsive");
 	$("#embed").addClass("embed-responsive-16by9");

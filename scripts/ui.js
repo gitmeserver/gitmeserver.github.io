@@ -442,6 +442,10 @@ function video(){
 		fullscreenOn();
 	});
 	
+	$("#fullscreenOff").click(function(){
+		fullscreenOff();
+	});
+	
 	isDeck();
 	
 	return false;
