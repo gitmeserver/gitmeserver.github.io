@@ -88,6 +88,9 @@ function fullscreenOff(){
 $(document).ready(function(){
 	
 	screenfull.onchange = function(e){
+		
+		console.log("isFullscreen > " + screenfull.isFullscreen);
+		
 		if(!screenfull.isFullscreen){
 			fullscreenOff();
 		}	
