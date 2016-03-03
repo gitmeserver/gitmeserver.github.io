@@ -92,15 +92,6 @@ body {
 
 .srt {
 	z-index: 2147483647 !important;
-	
-	/* position: absolute;
-	text-align: center;
-	top: 100px;
-	color: #FFF;
-	font-size: 20px;
-	background-color: rgba(221, 221, 221, 0.3);
-	width: 640px;
-	padding: 10px 0; */
 }
 
 .fullscreen {
