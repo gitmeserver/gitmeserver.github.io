@@ -63,9 +63,14 @@ function previous(){
 }
 
 function fullscreen(){
-	$(".embed-responsive").addClass("fullscreen");
+	
+	var f = $(".embed-responsive")
+	
+	Fullscreen.on(f, function(){}, function(){});
+	
+//	$(".embed-responsive").addClass("fullscreen");
 //	$("#offCanvas").css("position", "none");
-	$(".embed-responsive")[0].requestFullscreen();
+//	$(".embed-responsive")[0].requestFullscreen();
 }
 
 
