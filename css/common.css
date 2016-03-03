@@ -112,6 +112,11 @@ body {
 	z-index:1040;
 	flex: 1 1 0% !important;
 	object-fit: contain;
+	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }	
 
 video::-webkit-media-controls-fullscreen-button {
