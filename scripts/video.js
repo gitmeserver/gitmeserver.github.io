@@ -73,10 +73,6 @@ function fullscreenOn(){
 	$("#embed").addClass("fullscreen");
 	
 	$("#player").addClass("fullscreen");
-	
-//	$(".embed-responsive").addClass("fullscreen");
-//	$("#offCanvas").css("position", "none");
-//	$(".embed-responsive")[0].requestFullscreen();
 }
 
 function fullscreenOff(){
@@ -87,5 +83,4 @@ function fullscreenOff(){
 	$("#player").removeClass("fullscreen");
 	
 	screenfull.exit(f);
-	
 }
