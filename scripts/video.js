@@ -66,7 +66,7 @@ function fullscreen(){
 	
 	var f = $(".embed-responsive")
 	
-	Fullscreen.on(f, function(){}, function(){});
+	screenfull.request(f);
 	
 //	$(".embed-responsive").addClass("fullscreen");
 //	$("#offCanvas").css("position", "none");
