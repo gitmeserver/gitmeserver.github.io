@@ -104,7 +104,8 @@ body {
 }	
 
 #fullscreenOff{
-	float:right;
+	z-index: 2147483647 !important;
+	position:absolute;
 	margin:10px;
 }
 
