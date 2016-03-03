@@ -62,7 +62,7 @@ function previous(){
 	v.currentTime = deck[deck.length - 1];
 }
 
-function fullscreen(){
+function fullscreenOn(){
 	
 	var f = $("#embed")[0];
 	
@@ -77,4 +77,6 @@ function fullscreen(){
 //	$(".embed-responsive")[0].requestFullscreen();
 }
 
-
+function fullscreenOff(){
+	
+}

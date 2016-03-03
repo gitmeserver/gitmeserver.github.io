@@ -438,7 +438,7 @@ function video(){
 	});
 	
 	$("#fullscreen").click(function(){
-		fullscreen();
+		fullscreenOn();
 	});
 	
 	isDeck();
