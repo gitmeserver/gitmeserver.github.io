@@ -67,6 +67,11 @@ function fullscreenOn(){
 	var f = $("#embed")[0];
 	
 	screenfull.request(f);
+	
+	$(document).on(screenfull.raw.fullscreenchange, function () {
+	    console.log('Fullscreen change');
+	});
+	
 	$("#embed").removeClass("embed-responsive");
 	$("#embed").removeClass("embed-responsive-16by9");
 	$("#embed").addClass("fullscreen");
@@ -81,7 +86,3 @@ function fullscreenOff(){
 	
 	$("#player").removeClass("fullscreen");
 }
-
-$(document).on(screenfull.raw.fullscreenchange, function () {
-    console.log('Fullscreen change');
-});
