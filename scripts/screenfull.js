@@ -3,13 +3,3 @@ return ret;}}
 return false;})();var screenfull={request:function(elem){var request=fn.requestFullscreen;elem=elem||document.documentElement;if(/5\.1[\.\d]* Safari/.test(navigator.userAgent)){elem[request]();}else{elem[request](keyboardAllowed&&Element.ALLOW_KEYBOARD_INPUT);}},exit:function(){document[fn.exitFullscreen]();},toggle:function(elem){if(this.isFullscreen){this.exit();}else{this.request(elem);}},raw:fn};if(!fn){if(isCommonjs){module.exports=false;}else{window.screenfull=false;}
 return;}
 Object.defineProperties(screenfull,{isFullscreen:{get:function(){return Boolean(document[fn.fullscreenElement]);}},element:{enumerable:true,get:function(){return document[fn.fullscreenElement];}},enabled:{enumerable:true,get:function(){return Boolean(document[fn.fullscreenEnabled]);}}});if(isCommonjs){module.exports=screenfull;}else{window.screenfull=screenfull;}})();
-
-$(document).ready(function(){
-	
-	screenfull.onchange = function(e){
-		if(!screenfull.isFullscreen){
-			fullscreenOff();
-		}	
-	};
-	
-});

@@ -84,3 +84,13 @@ function fullscreenOff(){
 	
 	screenfull.exit(f);
 }
+
+$(document).ready(function(){
+	
+	screenfull.onchange = function(e){
+		if(!screenfull.isFullscreen){
+			fullscreenOff();
+		}	
+	};
+	
+});
