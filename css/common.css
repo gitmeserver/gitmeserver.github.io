@@ -105,6 +105,7 @@ body {
 
 #fullscreenOff{
 	float:right;
+	margin:10px;
 }
 
 video::-webkit-media-controls-fullscreen-button {
