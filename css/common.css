@@ -103,6 +103,10 @@ body {
 	width:100% !important;
 }	
 
+#fullscreenOff{
+	float:right;
+}
+
 video::-webkit-media-controls-fullscreen-button {
     display: none;
 }
