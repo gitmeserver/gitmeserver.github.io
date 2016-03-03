@@ -67,6 +67,14 @@ function fullscreenOn(){
 	var f = $("#embed")[0];
 	
 	screenfull.request(f);
+	screenfull.onchange = function(e){
+		
+		console.log("isFullscreen > " + screenfull.isFullscreen);
+		
+		if(!screenfull.isFullscreen){
+			fullscreenOff();
+		}	
+	};
 	
 	$("#embed").removeClass("embed-responsive");
 	$("#embed").removeClass("embed-responsive-16by9");
@@ -84,16 +92,3 @@ function fullscreenOff(){
 	
 	screenfull.exit(f);
 }
-
-$(document).ready(function(){
-	
-	screenfull.onchange = function(e){
-		
-		console.log("isFullscreen > " + screenfull.isFullscreen);
-		
-		if(!screenfull.isFullscreen){
-			fullscreenOff();
-		}	
-	};
-	
-});
