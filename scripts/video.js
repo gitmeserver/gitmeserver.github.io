@@ -70,8 +70,8 @@ function fullscreenOn(){
 	
 	$("#embed").removeClass("embed-responsive");
 	$("#embed").removeClass("embed-responsive-16by9");
-	
 	$("#embed").addClass("fullscreen");
+	
 	$("#player").addClass("fullscreen");
 	
 //	$(".embed-responsive").addClass("fullscreen");
@@ -80,5 +80,12 @@ function fullscreenOn(){
 }
 
 function fullscreenOff(){
+	$("#embed").removeClass("fullscreen");
+	$("#embed").addClass("embed-responsive");
+	$("#embed").addClass("embed-responsive-16by9");
+	
+	$("#player").removeClass("fullscreen");
+	
+	screenfull.exit(f);
 	
 }
