@@ -395,13 +395,13 @@ function video(){
 	$("#info").detach();
 	$("#info_line").detach();
 
-	$("#detail").append("<div id='video'><div id='subject'><h3></h3><span></span></div><div class='embed-responsive embed-responsive-16by9'><video id='player' controls='true' autoplay='true' class='embed-responsive-item'></video><div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt'></div></div><div id='controll'><div class='float-right'></div><span></span></div></div>");
+	$("#detail").append("<div id='video'></div><div id='controll'><div class='float-right'></div><span></span></div></div>");
 	$("#video").append("<div id='subject'></div>");
 	$("#subject").append("<h3></h3><span></span>");
 	$("#video").append("<div id='embed' class='embed-responsive embed-responsive-16by9'></div>");
 	$("#embed").append("<video id='player' controls='true' autoplay='true' class='embed-responsive-item'></video>");
 	$("#embed").append("<div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt'></div>");
-	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
+//	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
 //	$("#subject").append("<div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt' />");
 	subtitle();
