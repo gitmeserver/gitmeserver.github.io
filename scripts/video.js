@@ -69,7 +69,7 @@ function fullscreenOn(){
 	screenfull.request(f);
 	
 	$(document).on(screenfull.raw.fullscreenchange, function () {
-		if(screenfull.isFullscreen){
+		if(!screenfull.isFullscreen){
 			fullscreenOff();
 		}
 	});
