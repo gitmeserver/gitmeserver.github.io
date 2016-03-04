@@ -110,28 +110,20 @@ function subtitle(){
 		if(!videoId) return;
 		var srtUrl = subtitleElement.attr('data-srt');
 		if(srtUrl) {
-			
+
+			/**
+			 * TODO 자막 호출전 인코딩 조정 
+			 */
 			$.ajaxSetup({
 			    'beforeSend' : function(xhr) {
 			        xhr.overrideMimeType('text/html; charset=EUC-KR');
 			    },
 			});
 			
-//			$.ajax({
-//		        type: "GET",
-//		        url: srtUrl,
-//		        timeout: 20000,
-//		        contentType: "application/x-www-form-urlencoded;charset=EUC-KR",
-//		        dataType: 'text',
-//		        success: function(responseText, textStatus, req){
-//		        	console.log(responseText);
-//		        	playSubtitles(subtitleElement);
-//		        }
-//			});
-			
 			$(this).load(srtUrl, function (responseText, textStatus, req) { 
 				playSubtitles(subtitleElement);
 				
+				// 자막 호출 완료 후 인코딩 초기화 
 				$.ajaxSetup({
 				    'beforeSend' : function(xhr) {
 				        xhr.overrideMimeType('text/html; charset=UTF-8');
