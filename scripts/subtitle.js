@@ -130,7 +130,13 @@ function subtitle(){
 //			});
 			
 			$(this).load(srtUrl, function (responseText, textStatus, req) { 
-				playSubtitles(subtitleElement)
+				playSubtitles(subtitleElement);
+				
+				$.ajaxSetup({
+				    'beforeSend' : function(xhr) {
+				        xhr.overrideMimeType('text/html; charset=UTF-8');
+				    },
+				});
 			});
 		} else {
 			playSubtitles(subtitleElement);
