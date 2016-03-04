@@ -103,7 +103,12 @@ body {
 	width:100% !important;
 }	
 
-#fullscreenOff{
+#fullscreenOff {
+	width:100%;
+	text-align:right;
+}
+
+#fullscreenOff button {
 	z-index: 2147483647 !important;
 	position:absolute;
 	margin:10px;
