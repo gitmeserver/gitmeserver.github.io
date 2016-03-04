@@ -121,7 +121,7 @@ function subtitle(){
 		        type: "GET",
 		        url: srtUrl,
 		        timeout: 20000,
-		        contentType: "application/x-www-form-urlencoded;charset=ISO-8859-1",
+		        contentType: "application/x-www-form-urlencoded;charset=UTF-8",
 		        dataType: 'text',
 		        success: function(responseText, textStatus, req){
 		        	console.log(responseText);
