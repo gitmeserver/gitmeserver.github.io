@@ -464,7 +464,10 @@ function subtitleLocationChange(){
 	
 	console.log("palyerHeight >> " + playerHeight);
 	
-//	$(".srt");
+	var srtMarginTop = playerHeight * 0.1;
+	
+	$(".srt").css("marginTop", srtMarginTop);
+	
 }
 
 function isDeck(){
