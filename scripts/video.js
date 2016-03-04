@@ -109,3 +109,20 @@ function fullscreenOffButton(){
 		}, 200);
 	}
 }
+
+function subtitleLocationChange(){
+	var playerHeight = $("#player").css("height");
+	var srtMarginTop = ( parseInt(playerHeight) / 100 ) * 80;
+	
+	var fontSize = ( parseInt(playerHeight) / 100 ) + 8;
+	
+	$(".srt").css("marginTop", srtMarginTop);
+	$(".srt").css("fontSize", fontSize);
+	
+}
+
+$(document).ready(function(){
+	window.orientationchange = function(){
+		console.log("orientationchange");
+	};
+});
