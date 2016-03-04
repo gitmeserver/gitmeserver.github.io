@@ -105,19 +105,15 @@ function subtitle(){
 		var srtUrl = subtitleElement.attr('data-srt');
 		if(srtUrl) {
 			
-			$.ajax({  
-                type: 'get',  
-                url: srtUrl,  
-                contentType: "application/x-www-form-urlencoded; charset=UTF-8",  
-                timeout: 10000,  
-                success: function (responseText, textStatus, req) {  
-                	playSubtitles(subtitleElement)
-                }  
+			$.ajaxSetup({
+			    'beforeSend' : function(xhr) {
+			        xhr.overrideMimeType('text/html; charset=ISO-8859-1');
+			    },
 			});
 			
-//			$(this).load(srtUrl, function (responseText, textStatus, req) { 
-//				
-//			});
+			$(this).load(srtUrl, function (responseText, textStatus, req) { 
+				playSubtitles(subtitleElement)
+			});
 		} else {
 			playSubtitles(subtitleElement);
 		}
