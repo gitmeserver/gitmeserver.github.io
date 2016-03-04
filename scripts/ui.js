@@ -466,7 +466,7 @@ function subtitleLocationChange(){
 	var fontSize = ( parseInt(playerHeight) / 100 ) + 8;
 	
 	$(".srt").css("marginTop", srtMarginTop);
-	$(".srt").css("marginTop", srtMarginTop);
+	$(".srt").css("fontSize", fontSize);
 	
 }
 
