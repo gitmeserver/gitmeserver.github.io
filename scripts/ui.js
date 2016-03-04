@@ -461,13 +461,11 @@ function video(){
 
 function subtitleLocationChange(){
 	var playerHeight = $("#player").css("height");
-	
-	console.log("palyerHeight >> " + playerHeight);
-	
 	var srtMarginTop = ( parseInt(playerHeight) / 100 ) * 80;
 	
-	console.log("srtMarginTop > " + srtMarginTop);
+	var fontSize = ( parseInt(playerHeight) / 100 ) + 8;
 	
+	$(".srt").css("marginTop", srtMarginTop);
 	$(".srt").css("marginTop", srtMarginTop);
 	
 }
