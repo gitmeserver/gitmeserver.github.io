@@ -447,15 +447,7 @@ function video(){
 	});
 	
 	$("#video video").click(function(){
-		if(screenfull.isFullscreen){
-			$("#fullscreenOff").show();
-		}else{
-			if(screenfull.isFullscreen){
-				setTimeout(function(){
-					$("#fullscreenOff").fadeOut(500);
-				}, 200);
-			}
-		}
+		$("#fullscreenOff").toggle();
 	});
 	
 	$("#video video").mouseout(function(){
