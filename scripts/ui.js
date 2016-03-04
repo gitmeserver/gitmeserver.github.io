@@ -464,7 +464,7 @@ function subtitleLocationChange(){
 	
 	console.log("palyerHeight >> " + playerHeight);
 	
-	var srtMarginTop = ( Number(playerHeight) / 100 ) * 10;
+	var srtMarginTop = ( parseInt(playerHeight) / 100 ) * 10;
 	
 	console.log("srtMarginTop > " + srtMarginTop);
 	
