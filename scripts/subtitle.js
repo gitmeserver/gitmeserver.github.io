@@ -107,7 +107,7 @@ function subtitle(){
 			
 			$.ajaxSetup({
 			    'beforeSend' : function(xhr) {
-			        xhr.overrideMimeType('text/html; charset=UTF-8');
+			        xhr.overrideMimeType('text/html; charset=EUC-KR');
 			    },
 			});
 			
