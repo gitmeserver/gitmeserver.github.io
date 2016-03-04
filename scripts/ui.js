@@ -447,7 +447,7 @@ function video(){
 		fullscreenOff();
 	});
 	
-	$("#video video").mouseover(function(){
+	$("#video video").blur(function(){
 		fullscreenOffButton();
 	});
 	
