@@ -440,6 +440,8 @@ function video(){
 	
 	$("#fullscreen").click(function(){
 		fullscreenOn();
+		$("#fullscreenOff").show();
+		$("#fullscreenOff").fadeout(10 * 1000);
 	});
 	
 	$("#fullscreenOff").click(function(){
