@@ -440,11 +440,11 @@ function video(){
 	
 	$("#fullscreen").click(function(){
 		fullscreenOn();
+		fullscreenOffButton();
 	});
 	
 	$("#fullscreenOff").click(function(){
 		fullscreenOff();
-		fullscreenOffButton();
 	});
 	
 	isDeck();
