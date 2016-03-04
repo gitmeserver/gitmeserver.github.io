@@ -447,7 +447,9 @@ function video(){
 	});
 	
 	$("#video video").click(function(){
-		$("#fullscreenOff").toggle();
+		if(screenfull.isFullscreen){
+			$("#fullscreenOff").toggle();
+		}
 	});
 	
 	$("#video video").mouseout(function(){
