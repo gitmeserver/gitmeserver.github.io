@@ -90,7 +90,9 @@ function subtitle(){
 			}
 			if(subtitle > 0) {
 				if(subtitle != currentSubtitle) {
-					subtitleElement.html(subtitles[subtitle].t);
+//					unescape(encodeURIComponent(s));
+//					subtitleElement.html(subtitles[subtitle].t);
+					subtitleElement.html(unescape(encodeURIComponent(subtitles[subtitle].t)));
 					currentSubtitle=subtitle;
 				} else if(subtitles[subtitle].o < currentTime) {
 					subtitleElement.html('');
@@ -105,11 +107,11 @@ function subtitle(){
 		var srtUrl = subtitleElement.attr('data-srt');
 		if(srtUrl) {
 			
-			$.ajaxSetup({
-			    'beforeSend' : function(xhr) {
-			        xhr.overrideMimeType('text/html; charset=UTF-8');
-			    },
-			});
+//			$.ajaxSetup({
+//			    'beforeSend' : function(xhr) {
+//			        xhr.overrideMimeType('text/html; charset=UTF-8');
+//			    },
+//			});
 			
 			$(this).load(srtUrl, function (responseText, textStatus, req) { 
 				playSubtitles(subtitleElement)
