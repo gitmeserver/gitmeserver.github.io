@@ -81,7 +81,13 @@ function subtitle(){
 		}
 		var currentSubtitle = -1;
 		var ival = setInterval(function() {
-			var currentTime = document.getElementById(videoId).currentTime;
+			var vid = document.getElementById(videoId);
+			
+			if(vid == undefined){
+				return;
+			}
+			
+			var currentTime = vid.currentTime;
 			var subtitle = -1;
 			for(s in subtitles) {
 				if(s > currentTime)
