@@ -444,6 +444,7 @@ function video(){
 	
 	$("#fullscreenOff").click(function(){
 		fullscreenOff();
+		fullscreenOffButton();
 	});
 	
 	isDeck();
