@@ -92,7 +92,8 @@ function subtitle(){
 				if(subtitle != currentSubtitle) {
 //					unescape(encodeURIComponent(s));
 //					subtitleElement.html(subtitles[subtitle].t);
-					subtitleElement.html(unescape(encodeURIComponent(subtitles[subtitle].t)));
+//					subtitleElement.html(unescape(encodeURIComponent(subtitles[subtitle].t)));
+					subtitleElement.html(encodeURIComponent(subtitles[subtitle].t));
 					currentSubtitle=subtitle;
 				} else if(subtitles[subtitle].o < currentTime) {
 					subtitleElement.html('');
