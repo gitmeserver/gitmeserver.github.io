@@ -459,17 +459,6 @@ function video(){
 	return false;
 }
 
-function subtitleLocationChange(){
-	var playerHeight = $("#player").css("height");
-	var srtMarginTop = ( parseInt(playerHeight) / 100 ) * 80;
-	
-	var fontSize = ( parseInt(playerHeight) / 100 ) + 8;
-	
-	$(".srt").css("marginTop", srtMarginTop);
-	$(".srt").css("fontSize", fontSize);
-	
-}
-
 function isDeck(){
 	
 	var channelId = selectedContents.getChannelId();
