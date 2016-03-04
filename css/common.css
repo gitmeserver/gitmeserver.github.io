@@ -106,12 +106,12 @@ body {
 #fullscreenOff {
 	width:100%;
 	text-align:right;
-}
-
-#fullscreenOff button {
 	z-index: 2147483647 !important;
 	position:absolute;
 	margin:10px;
+}
+
+#fullscreenOff button {
 }
 
 video::-webkit-media-controls-fullscreen-button {
