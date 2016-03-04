@@ -97,6 +97,8 @@ body {
 .srt {
 	z-index: 2147483647 !important;
 	position:absolute;
+	width:100%;
+	text-align:center;
 }
 
 .fullscreen {

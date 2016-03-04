@@ -69,6 +69,9 @@ function fullscreenOn(){
 	screenfull.request(f);
 	
 	$(document).on(screenfull.raw.fullscreenchange, function () {
+		
+		subtitleLocationChange();
+		
 		if(!screenfull.isFullscreen){
 			fullscreenOff();
 			$("#fullscreenOff").hide();

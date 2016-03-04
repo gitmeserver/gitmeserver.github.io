@@ -407,6 +407,8 @@ function video(){
 //	$("#subject").append("<div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt' />");
 	subtitle();
 	
+	subtitleLocationChange();
+	
 	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button>");
 	$("#controll div").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default btn-lg'></button>");
 	$("#controll div").append("<button id='fullscreen' type='button' class='glyphicon glyphicon-resize-full btn btn-default btn-lg'></button>");
@@ -452,12 +454,17 @@ function video(){
 		}
 	});
 	
-	$("#video video").mouseout(function(){
-	});
-	
 	isDeck();
 	
 	return false;
+}
+
+function subtitleLocationChange(){
+	var playerHeight = $("#player").css("height");
+	
+	console.log("palyerHeight >> " + playerHeight);
+	
+//	$(".srt");
 }
 
 function isDeck(){
