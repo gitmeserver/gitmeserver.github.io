@@ -464,9 +464,9 @@ function subtitleLocationChange(){
 	
 	console.log("palyerHeight >> " + playerHeight);
 	
-	var srtMarginTop = playerHeight * 0.1;
+	var srtMarginTop = ( playerHeight / 100 ) * 10;
 	
-	$(".srt").css("margin-top", srtMarginTop);
+	$(".srt").css("marginTop", srtMarginTop);
 	
 }
 
