@@ -461,8 +461,7 @@ function fullscreenOffButton(){
 	
 	setTimeout(function(){
 		$("#fullscreenOff").fadeOut(500);
-	}, 1000 * 1);
-	
+	}, 500);
 	
 }
 
