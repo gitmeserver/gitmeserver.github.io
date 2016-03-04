@@ -447,8 +447,19 @@ function video(){
 		fullscreenOff();
 	});
 	
-	$("#video video").blur(function(){
-		fullscreenOffButton();
+	$("#video video").mouseover(function(){
+		if(screenfull.isFullscreen){
+			$("#fullscreenOff").show();
+		}
+	});
+	
+	$("#video video").mouseout(function(){
+		if(screenfull.isFullscreen){
+			setTimeout(function(){
+				$("#fullscreenOff").fadeOut(500);
+			}, 200);
+		}
+		
 	});
 	
 	isDeck();
