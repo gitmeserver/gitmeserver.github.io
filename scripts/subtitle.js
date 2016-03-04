@@ -117,21 +117,21 @@ function subtitle(){
 			    },
 			});
 			
-			$.ajax({
-		        type: "GET",
-		        url: srtUrl,
-		        timeout: 20000,
-		        contentType: "application/x-www-form-urlencoded;charset=EUC-KR",
-		        dataType: 'text',
-		        success: function(responseText, textStatus, req){
-		        	console.log(responseText);
-		        	playSubtitles(subtitleElement);
-		        }
-			});
-			
-//			$(this).load(srtUrl, function (responseText, textStatus, req) { 
-//				playSubtitles(subtitleElement)
+//			$.ajax({
+//		        type: "GET",
+//		        url: srtUrl,
+//		        timeout: 20000,
+//		        contentType: "application/x-www-form-urlencoded;charset=EUC-KR",
+//		        dataType: 'text',
+//		        success: function(responseText, textStatus, req){
+//		        	console.log(responseText);
+//		        	playSubtitles(subtitleElement);
+//		        }
 //			});
+			
+			$(this).load(srtUrl, function (responseText, textStatus, req) { 
+				playSubtitles(subtitleElement)
+			});
 		} else {
 			playSubtitles(subtitleElement);
 		}
