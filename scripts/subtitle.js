@@ -117,9 +117,20 @@ function subtitle(){
 			    },
 			});
 			
-			$(this).load(srtUrl, function (responseText, textStatus, req) { 
-				playSubtitles(subtitleElement)
+			$.ajax({
+		        type: "GET",
+		        url: srtUrl,
+		        timeout: 20000,
+		        contentType: "application/x-www-form-urlencoded;charset=ISO-8859-1",
+		        dataType: 'text',
+		        success: function(responseText, textStatus, req){
+		        	playSubtitles(subtitleElement);
+		        }
 			});
+			
+//			$(this).load(srtUrl, function (responseText, textStatus, req) { 
+//				playSubtitles(subtitleElement)
+//			});
 		} else {
 			playSubtitles(subtitleElement);
 		}
