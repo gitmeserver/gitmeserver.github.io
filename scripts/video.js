@@ -79,6 +79,7 @@ function fullscreenOn(){
 	$("#embed").addClass("fullscreen");
 	
 	$("#player").addClass("fullscreen");
+	
 }
 
 function fullscreenOff(){
@@ -92,4 +93,15 @@ function fullscreenOff(){
 	$("#embed").addClass("embed-responsive-16by9");
 	
 	$("#player").removeClass("fullscreen");
+	
+	fullscreenOffButton();
+}
+
+function fullscreenOffButton(){
+	if(screenfull.isFullscreen){
+		$("#fullscreenOff").show();
+		setTimeout(function(){
+			$("#fullscreenOff").fadeOut(500);
+		}, 200);
+	}
 }

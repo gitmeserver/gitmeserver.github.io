@@ -440,7 +440,6 @@ function video(){
 	
 	$("#fullscreen").click(function(){
 		fullscreenOn();
-		fullscreenOffButton();
 	});
 	
 	$("#fullscreenOff").click(function(){
@@ -465,15 +464,6 @@ function video(){
 	isDeck();
 	
 	return false;
-}
-
-function fullscreenOffButton(){
-//	if(screenfull.isFullscreen){
-//		$("#fullscreenOff").show();
-//		setTimeout(function(){
-//			$("#fullscreenOff").fadeOut(500);
-//		}, 200);
-//	}
 }
 
 function isDeck(){
