@@ -71,6 +71,7 @@ function fullscreenOn(){
 	$(document).on(screenfull.raw.fullscreenchange, function () {
 		if(!screenfull.isFullscreen){
 			fullscreenOff();
+			$("#fullscreenOff").hide();
 		}
 	});
 	
