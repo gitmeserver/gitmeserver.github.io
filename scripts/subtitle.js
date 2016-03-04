@@ -104,7 +104,20 @@ function subtitle(){
 		if(!videoId) return;
 		var srtUrl = subtitleElement.attr('data-srt');
 		if(srtUrl) {
-			$(this).load(srtUrl, function (responseText, textStatus, req) { playSubtitles(subtitleElement)})
+			
+			$.ajax({  
+                type: 'get',  
+                url: srtUrl,  
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",  
+                timeout: 10000,  
+                success: function (responseText, textStatus, req) {  
+                	playSubtitles(subtitleElement)
+                }  
+			});
+			
+//			$(this).load(srtUrl, function (responseText, textStatus, req) { 
+//				
+//			});
 		} else {
 			playSubtitles(subtitleElement);
 		}
