@@ -447,6 +447,10 @@ function video(){
 		fullscreenOff();
 	});
 	
+	$("#video video").mouseover(function(){
+		fullscreenOffButton();
+	});
+	
 	isDeck();
 	
 	return false;
