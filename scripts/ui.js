@@ -441,7 +441,7 @@ function video(){
 	$("#fullscreen").click(function(){
 		fullscreenOn();
 		$("#fullscreenOff").show();
-		$("#fullscreenOff").fadeOut(10 * 200);
+		$("#fullscreenOff").fadeOut(1 * 1000);
 	});
 	
 	$("#fullscreenOff").click(function(){
