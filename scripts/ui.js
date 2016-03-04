@@ -457,12 +457,12 @@ function video(){
 }
 
 function fullscreenOffButton(){
-	$("#fullscreenOff").show();
-	
-	setTimeout(function(){
-		$("#fullscreenOff").fadeOut(500);
-	}, 200);
-	
+	if(screenfull.isFullscreen){
+		$("#fullscreenOff").show();
+		setTimeout(function(){
+			$("#fullscreenOff").fadeOut(500);
+		}, 200);
+	}
 }
 
 function isDeck(){
