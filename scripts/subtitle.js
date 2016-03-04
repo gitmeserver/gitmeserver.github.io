@@ -124,6 +124,7 @@ function subtitle(){
 		        contentType: "application/x-www-form-urlencoded;charset=ISO-8859-1",
 		        dataType: 'text',
 		        success: function(responseText, textStatus, req){
+		        	console.log(responseText);
 		        	playSubtitles(subtitleElement);
 		        }
 			});
