@@ -113,7 +113,7 @@ function subtitle(){
 			
 			$.ajaxSetup({
 			    'beforeSend' : function(xhr) {
-			        xhr.overrideMimeType('text/html; charset=UTF-8');
+			        xhr.overrideMimeType('text/html; charset=ISO-8859-1');
 			    },
 			});
 			
@@ -121,7 +121,7 @@ function subtitle(){
 		        type: "GET",
 		        url: srtUrl,
 		        timeout: 20000,
-		        contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+		        contentType: "application/x-www-form-urlencoded;charset=ISO-8859-1",
 		        dataType: 'text',
 		        success: function(responseText, textStatus, req){
 		        	console.log(responseText);
