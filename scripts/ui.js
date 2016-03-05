@@ -410,7 +410,8 @@ function video(){
 		$(".srt").attr("data-srt", sub);
 		
 		if(-1 < sub.indexOf(".srt")){
-			subtitleSrt();
+//			subtitleSrt();
+			subtitleSmi();
 		}else if(-1 < sub.indexOf(".smi")){
 			subtitleSmi();
 		}

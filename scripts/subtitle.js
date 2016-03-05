@@ -97,11 +97,6 @@ function subtitleSrt(){
 		if(srtUrl) {
 
 			/**
-			 * test
-			 */
-			srtUrl = "http://devys.github.com/subtitle/kungfu.ko.smi";
-			
-			/**
 			 * TODO 자막 호출전 인코딩 조정 
 			 */
 			$.ajaxSetup({
@@ -148,18 +143,27 @@ function subtitleSmi(){
 			    },
 			});
 			
-			
-			
-			$(this).load(srtUrl, function (responseText, textStatus, req) {
-				playSrtSubtitles(subtitleElement);
-				
-				// 자막 호출 완료 후 인코딩 초기화 
-				$.ajaxSetup({
-				    'beforeSend' : function(xhr) {
-				        xhr.overrideMimeType('text/html; charset=UTF-8');
-				    },
-				});
+			$.ajax({
+				type: 'get'
+				, dataType: "text"
+				, url: srtUrl
+				, success: function(data) {
+					
+					console.log(data);
+					
+					// 자막 호출 완료 후 인코딩 초기화 
+					$.ajaxSetup({
+					    'beforeSend' : function(xhr) {
+					        xhr.overrideMimeType('text/html; charset=UTF-8');
+					    },
+					});
+					
+				}
+				, error: function(xhr, status, error) {
+					console.log("error");
+				}
 			});
+			
 		} else {
 			playSrtSubtitles(subtitleElement);
 		}
