@@ -200,7 +200,6 @@ function subtitleSrt(){
 		var subtitles = {};
 		
 		for(var i=0; i<srt.length; i++){
-			console.log(srt[i].content);
 			subtitles[srt[i].startTime] = srt[i].content;
 		}
 		
@@ -215,6 +214,7 @@ function subtitleSrt(){
 			var currentTime = vid.currentTime;
 			var subtitle = -1;
 			for(s in subtitles) {
+				console.log(s);
 				if(s > currentTime)
 					break
 					subtitle = s;
