@@ -203,8 +203,8 @@ function subtitleSrt(){
 			var c = srt[i].content;
 			c = c.replace("&nbsp;", "");
 			c = c.replace("&nbsp", "");
-			
-			subtitles[t] = $(c).text();
+			c = c.replace(/(<([^>]+)>)/gi, "");
+			subtitles[t] = c;
 		}
 		
 		var ival = setInterval(function() {
