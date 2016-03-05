@@ -200,7 +200,7 @@ function subtitleSrt(){
 		var subtitles = {};
 		
 		for(var i=0; i<srt.length; i++){
-			console.log(srt.content);
+			console.log(srt);
 			subtitles[srt.startTime] = srt.content;
 		}
 		
