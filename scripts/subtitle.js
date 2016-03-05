@@ -2,6 +2,109 @@
  * 
  */
 
+(function(window) {
+	var regexSyncSearch = /<sync/i;
+	var regexSyncClose = /<sync|<\/body|<\/sami/i;
+	var regexSyncTime = /<sync[^>]+?start=(\d+)[^>]+?>/i;
+	var regexLineEnding = /[\r\n]/g;
+	var regexExtractColor = /<[^>]+?color=(#?[^>]+?)(?:\s[^>]+?)?>(.+?)<\/[^>]+?>/gi;
+	var regexBrTag = /<br\s?\/?>/gi;
+	var regexTags = /(<([^>]+)>)/ig;
+
+	window.Smi = Smi;
+	function Smi() {}
+
+	/**
+	 * 파싱
+	 */
+	Smi.prototype.parse = function parse(data) {
+		var self = this;
+		
+		if (typeof data !== 'string') {
+			data = data.toString();
+			// Buffer 등등...
+		}
+		
+		var elements = self.splitBySync(data);
+		
+		for (var i = 0; i < elements.length; i++) {
+			elements[i].content = self.replace(elements[i].content);
+		}
+		
+		return elements;
+	}
+
+	/**
+	 * <SYNC> 태그로 자름
+	 */
+	Smi.prototype.splitBySync = function splitBySync(data) {
+		var elements = [];
+		
+		while (true) {
+			var syncTagIdx = data.search(regexSyncSearch);
+			if (syncTagIdx < 0) {
+				break;
+			}
+			 
+			var syncCloseTagIdx = data.slice(syncTagIdx + 1).search(regexSyncClose) + 1;
+			var element = '';
+			if (syncCloseTagIdx > 0) {
+				element = data.slice(syncTagIdx, syncTagIdx + syncCloseTagIdx)
+				data = data.slice(syncTagIdx + syncCloseTagIdx);
+			} else {
+				// 망가진 파일이지만 대충 보정
+				element = data.slice(syncTagIdx);
+				data = '';
+			}
+				
+			var matches = regexSyncTime.exec(element);
+			if (matches === null) {
+				continue;
+			}
+			
+			var startTime = Number.parseInt(matches[1]);
+			element = element.replace(regexSyncTime, '').replace(regexLineEnding, '');		
+			elements.push({
+				'content': element,
+				'startTime': startTime
+			});
+		}
+		
+		return elements;
+	}
+
+	/**
+	 * 태그들을 잘 처리해줌.
+	 */
+	Smi.prototype.replace = function replace(content) {
+		var self = this;
+		
+		if (typeof content !== 'string') {
+			return content;
+		}
+		
+		content = content.replace(regexBrTag, '\n');
+		
+		content = content.replace(regexExtractColor, function(match, color, content) {
+			return '::lt;span style="color:' + color.trim() + '"::gt;' + content + '::lt;/span::gt;';
+		});
+		
+		content = content.replace(regexTags, '');
+		
+		content = self.fixTag(content);
+		
+		return content.trim();
+	}
+	Smi.prototype.fixTag = function fixTag(content) {
+		if (typeof content !== 'string') {
+			return content;
+		}
+		
+		return content.replace(/::lt;/gi, '<').replace(/::gt;/gi, '>');
+	}
+})(window);
+
+
 /*
  * jQuery srt
  *
@@ -149,15 +252,19 @@ function subtitleSmi(){
 				, url: srtUrl
 				, success: function(data) {
 					
+					var d = Smi.parse(data);
+					
+					console.log(d);
+					
 					var pattern = "^[<SYNC].[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$gm";
 					var regExp = new RegExp(pattern);
 					var syncList = regExp.exec(data);
 
-					console.log(syncList);
-					
-					for(var i=0; i<syncList.length; i++){
-						console.log(syncList[i]);
-					}
+//					console.log(syncList);
+//					
+//					for(var i=0; i<syncList.length; i++){
+//						console.log(syncList[i]);
+//					}
 					
 					// 자막 호출 완료 후 인코딩 초기화 
 					$.ajaxSetup({
