@@ -413,10 +413,10 @@ function video(){
 		
 		console.log("no undefined");
 		
-		if(-1 < sub.indexOf(".srt'")){
+		if(-1 < sub.indexOf(".srt")){
 			console.log("subtitle srt");
 			subtitleSrt();
-		}else if(-1 < sub.indexOf(".smi'")){
+		}else if(-1 < sub.indexOf(".smi")){
 			console.log("subtitle smi");
 			subtitleSmi();
 		}
