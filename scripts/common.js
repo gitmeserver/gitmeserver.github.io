@@ -232,6 +232,7 @@ function requestEpisode(episodeFileNo, page){
 				
 				if(episodeSubtitle != undefined){
 					console.log("" + $(episodeSubtitle).text());
+					episodeSubtitle = $(episodeSubtitle).text();
 				}
 				
 				var epi = new Episode(episodeTitle, episodeUrl, episodeSubtitle);
