@@ -134,8 +134,6 @@ function subtitleSmi(){
 		var srtUrl = subtitleElement.attr('data-srt');
 		if(srtUrl) {
 
-			srtUrl = "http://devys.github.io/subtitle/kungfu.ko.smi";
-			
 			/**
 			 * TODO 자막 호출전 인코딩 조정 
 			 */
