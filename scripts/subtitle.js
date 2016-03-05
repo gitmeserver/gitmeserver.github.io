@@ -212,6 +212,8 @@ function subtitleSrt(){
 				return;
 			}
 			
+			console.log(vid.currentTime + " > " subtitles[vid.currentTime]);
+			
 			$(".srt").text(subtitles[vid.currentTime]);
 			
 //			var currentTime = vid.currentTime;
