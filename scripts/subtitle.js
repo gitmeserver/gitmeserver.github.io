@@ -226,6 +226,58 @@ function subtitleSrt(){
 
 
 function subtitleSmi(){
+	
+	function playSrtSubtitles(subtitleElement) {
+		var videoId = subtitleElement.attr('data-video');
+		var srt = subtitleElement.text();
+		subtitleElement.text('');
+		srt = srt.replace(/\r\n|\r|\n/g, '\n')
+
+		var subtitles = {};
+		srt = strip(srt);
+		var srt_ = srt.split('\n\n');
+		for(s in srt_) {
+			st = srt_[s].split('\n');
+			if(st.length >=2) {
+				n = st[0];
+				i = strip(st[1].split(' --> ')[0]);
+				o = strip(st[1].split(' --> ')[1]);
+				t = st[2];
+				if(st.length > 2) {
+					for(j=3; j<st.length;j++)
+						t += '\n'+st[j];
+				}
+				is = toSeconds(i);
+				os = toSeconds(o);
+				subtitles[is] = {i:i, o: o, t: t};
+			}
+		}
+		var currentSubtitle = -1;
+		var ival = setInterval(function() {
+			var vid = document.getElementById(videoId);
+			
+			if(vid == undefined){
+				return;
+			}
+			
+			var currentTime = vid.currentTime;
+			var subtitle = -1;
+			for(s in subtitles) {
+				if(s > currentTime)
+					break
+					subtitle = s;
+			}
+			if(subtitle > 0) {
+				if(subtitle != currentSubtitle) {
+					subtitleElement.html(subtitles[subtitle].t);
+					currentSubtitle=subtitle;
+				} else if(subtitles[subtitle].o < currentTime) {
+					subtitleElement.html('');
+				}
+			}
+		}, 100);
+	}
+	
 	$('.srt').each(function() {
 		var subtitleElement = $(this);
 		var videoId = subtitleElement.attr('data-video');
