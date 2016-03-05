@@ -193,7 +193,7 @@ function subtitleSrt(){
 	
 	function playSmiSubtitles(subtitleElement, srt){
 		
-		var videoId = $(subtitleElement).attr('data-video');
+		var videoId = subtitleElement.attr('data-video');
 		var subtitles = {};
 		
 		for(var i=0; i<srt.length; i++){
@@ -271,7 +271,7 @@ function subtitleSrt(){
 						
 						console.log(srt.length);
 						
-						playSmiSubtitles(srt);
+						playSmiSubtitles(subtitleElement, srt);
 						
 						// 자막 호출 완료 후 인코딩 초기화 
 						$.ajaxSetup({
