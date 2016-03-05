@@ -231,7 +231,6 @@ function requestEpisode(episodeFileNo, page){
 				var episodeSubtitle = $(data[i]).find("episodeSubtitle");
 				
 				if(episodeSubtitle != undefined && 0 < $(episodeSubtitle).text().length){
-					console.log("" + $(episodeSubtitle).text());
 					episodeSubtitle = $(episodeSubtitle).text();
 					
 					if(episodeSubtitle.indexOf("http://") < 0 || episodeSubtitle.indexOf("https://")){
