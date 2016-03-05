@@ -206,13 +206,13 @@ function subtitleSrt(){
 		
 		var currentSubtitle = -1;
 		var ival = setInterval(function() {
-			var vid = $("#player")[0];
+			var vid = $("#player");
 			
 			if(vid == undefined){
 				return;
 			}
 			
-			subtitleElement.html(subtitles[vid.currentTime]);
+			$(".srt").text(subtitles[vid.currentTime]);
 			
 //			var currentTime = vid.currentTime;
 //			var subtitle = -1;
