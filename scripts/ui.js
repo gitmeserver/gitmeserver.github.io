@@ -409,9 +409,13 @@ function video(){
 	if(sub != undefined){
 		$(".srt").attr("data-srt", sub);
 		
+		console.log("no undefined");
+		
 		if(-1 < sub.indexOf(".srt'")){
+			console.log("subtitle srt");
 			subtitleSrt();
 		}else if(-1 < sub.indexOf(".smi'")){
+			console.log("subtitle smi");
 			subtitleSmi();
 		}
 		
