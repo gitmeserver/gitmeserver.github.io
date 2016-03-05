@@ -153,6 +153,8 @@ function subtitleSmi(){
 					var regExp = new RegExp(pattern);
 					var syncList = regExp.exec(data);
 
+					 console.log(syncList);
+					
 					for(var i=0; i<syncList.length; i++){
 						console.log(syncList[i]);
 					}
