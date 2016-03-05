@@ -205,7 +205,7 @@ function subtitleSrt(){
 		
 		var currentSubtitle = -1;
 		var ival = setInterval(function() {
-			var vid = $("#player");
+			var vid = $("#video video")[0];
 			
 			if(vid == undefined){
 				return;
