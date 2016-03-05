@@ -193,7 +193,7 @@ function subtitleSrt(){
 	
 	function playSmiSubtitles(subtitleElement, srt){
 		
-		var videoId = subtitleElement.attr('data-video');
+		var videoId = $(subtitleElement).attr('data-video');
 		var subtitles = {};
 		
 		for(var i=0; i<srt.length; i++){
