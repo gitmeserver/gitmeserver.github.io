@@ -519,8 +519,11 @@ function list(page){
 		var item = $(listItem).clone();
 		$(item).attr("title", episode.getEpisodeTitle());
 		$(item).attr("href", episode.getEpisodeUrl());
-		$(item).attr("episode-subtitle", episode.getEpisodeSubtitle());
 		$(item).text(episode.getEpisodeTitle());
+		
+		if(episode.getEpisodeSubtitle() != undefined){
+			$(item).attr("episode-subtitle", episode.getEpisodeSubtitle());
+		}
 		
 		// 현재 시청중인 에피소드를 표시 
 		if(selectedEpisode != undefined){
