@@ -195,12 +195,12 @@ function subtitleSrt(){
 		
 		var smiParser = new Smi();
 		var srt = smiParser.parse(data);
-		console.log(srt.length);
 		
 		var videoId = subtitleElement.attr('data-video');
 		var subtitles = {};
 		
 		for(var i=0; i<srt.length; i++){
+			console.log(srt.content);
 			subtitles[srt.startTime] = srt.content;
 		}
 		
