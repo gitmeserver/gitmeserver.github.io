@@ -521,7 +521,7 @@ function list(page){
 		$(item).attr("href", episode.getEpisodeUrl());
 		$(item).text(episode.getEpisodeTitle());
 		
-		if(episode.getEpisodeSubtitle() != undefined){
+		if(episode.getEpisodeSubtitle() != undefined && 0 < episode.getEpisodeSubtitle().length){
 			$(item).attr("episode-subtitle", episode.getEpisodeSubtitle());
 		}
 		
