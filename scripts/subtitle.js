@@ -191,20 +191,18 @@ function subtitleSrt(){
 		}, 100);
 	}
 	
-	function playSmiSubtitles(subtitleElement, data){
+	function playSmiSubtitles(data){
 		
 		var smiParser = new Smi();
 		var srt = smiParser.parse(data);
 		
-		var videoId = subtitleElement.attr('data-video');
 		var subtitles = {};
 		
 		for(var i=0; i<srt.length; i++){
 			var t = Math.floor(srt[i].startTime / 100);
-			subtitles[t] = srt[i].content;
+			subtitles[t] = $(srt[i].content).text();
 		}
 		
-		var currentSubtitle = -1;
 		var ival = setInterval(function() {
 			var vid = $("#video video")[0];
 			
@@ -212,28 +210,11 @@ function subtitleSrt(){
 				return;
 			}
 			
-//			console.log(vid.currentTime.toString().split(".")[0] + " > " + (subtitles[vid.currentTime] / 10));
-			
 			var ss = vid.currentTime.toString().split(".")[0];
 			
 			$(".srt").text(subtitles[ss]);
-			
-//			var currentTime = vid.currentTime;
-//			var subtitle = -1;
-//			for(var j=0; j<subtitles.length; j++) {
-//				console.log(subtitles[j]);
-//				if(subtitles[j] > currentTime)
-//					break
-//					subtitle = subtitles[j];
-//			}
-//			if(subtitle > 0) {
-//				if(subtitle != currentSubtitle) {
-//					subtitleElement.html(subtitles[subtitle]);
-//					currentSubtitle=subtitle;
-//				}
-//			}
+
 		}, 100);
-		
 		
 	}
 	
@@ -273,7 +254,7 @@ function subtitleSrt(){
 					, dataType: "text"
 					, url: srtUrl
 					, success: function(data) {
-						playSmiSubtitles(subtitleElement, data);
+						playSmiSubtitles(data);
 						
 						// 자막 호출 완료 후 인코딩 초기화 
 						$.ajaxSetup({
