@@ -214,6 +214,7 @@ function subtitleSrt(){
 			var currentTime = vid.currentTime;
 			var subtitle = -1;
 			for(var j=0; j<subtitles.length; j++) {
+				console.log(subtitles[j]);
 				if(subtitles[j] > currentTime)
 					break
 					subtitle = subtitles[j];
