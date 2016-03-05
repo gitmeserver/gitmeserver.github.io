@@ -36,8 +36,6 @@ var selectedEpisode;
  */
 $(document).ready(function(){
 	
-	getSubtitle();
-	
 	// 채널 정보 초기화 
 	channels = [];
 	
