@@ -256,7 +256,7 @@ function subtitleSmi(){
 					
 					var d = smiParser.parse(data);
 					
-					console.log(d);
+//					console.log(d);
 					
 					for(var i=0; i<d.length; i++){
 						console.log(d);
