@@ -256,6 +256,9 @@ function subtitleSmi(){
 					
 					var d = smiParser.parse(data);
 					
+					$(".srt").append(d);
+					playSrtSubtitles(subtitleElement);
+					
 //					console.log(d);
 					
 					for(var i=0; i<d.length; i++){
