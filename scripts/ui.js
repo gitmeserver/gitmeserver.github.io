@@ -408,12 +408,7 @@ function video(){
 	
 	if(sub != undefined){
 		$(".srt").attr("data-srt", sub);
-		
-		if(-1 < sub.indexOf(".srt")){
-			subtitleSrt();
-		}else if(-1 < sub.indexOf(".smi")){
-			subtitleSmi();
-		}
+		subtitleSrt();
 	}
 	
 	subtitleLocationChange();
