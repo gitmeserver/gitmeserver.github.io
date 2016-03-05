@@ -120,7 +120,11 @@ function subtitle(){
 			    },
 			});
 			
-			$(this).load(srtUrl, function (responseText, textStatus, req) { 
+			$(this).load(srtUrl, function (responseText, textStatus, req) {
+				
+				console.log("srtUrl >> " + srtUrl);
+				console.log(subtitleElement);
+				
 				playSubtitles(subtitleElement);
 				
 				// 자막 호출 완료 후 인코딩 초기화 
