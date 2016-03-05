@@ -539,7 +539,7 @@ function list(page){
 		$(item).click(function(){
 			$("#list .list-group-item .glyphicon-eye-open").detach();
 			$(this).append("<span style='margin-left:5px;' class='glyphicon glyphicon-eye-open'></span>");
-			selectedEpisode = new Episode($(this).attr("title"), $(this).attr("href"));
+			selectedEpisode = new Episode($(this).attr("title"), $(this).attr("href"), episode.getSubtitle());
 			video();
 			return false;
 		});
