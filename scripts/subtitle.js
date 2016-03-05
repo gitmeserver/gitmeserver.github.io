@@ -200,6 +200,7 @@ function subtitleSrt(){
 		var subtitles = {};
 		
 		for(var i=0; i<srt.length; i++){
+			console.log(srt[i].startTime / 1000);
 			subtitles[srt[i].startTime / 1000] = srt[i].content;
 		}
 		
@@ -211,7 +212,7 @@ function subtitleSrt(){
 				return;
 			}
 			
-			console.log(vid.currentTime.toString().split(".")[0] + " > " + (subtitles[vid.currentTime] / 10));
+//			console.log(vid.currentTime.toString().split(".")[0] + " > " + (subtitles[vid.currentTime] / 10));
 			
 			var ss = vid.currentTime.toString().split(".")[0];
 			
