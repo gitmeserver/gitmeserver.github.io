@@ -191,6 +191,46 @@ function subtitleSrt(){
 		}, 100);
 	}
 	
+	function playSmiSubtitles(subtitleElement, data){
+		
+		var smiParser = new Smi();
+		
+		var srt = smiParser.parse(data);
+		
+		var videoId = subtitleElement.attr('data-video');
+		var subtitles = {};
+		
+		for(var i=0; i<srt.length; i++){
+			subtitles[srt.startTime] = srt.content;
+		}
+		
+		var currentSubtitle = -1;
+		var ival = setInterval(function() {
+			var vid = document.getElementById(videoId);
+			
+			if(vid == undefined){
+				return;
+			}
+			
+			var currentTime = vid.currentTime;
+			var subtitle = -1;
+			for(s in subtitles) {
+				if(s > currentTime)
+					break
+					subtitle = s;
+			}
+			if(subtitle > 0) {
+				if(subtitle != currentSubtitle) {
+					subtitleElement.html(subtitles[subtitle].t);
+					currentSubtitle=subtitle;
+				} else if(subtitles[subtitle].o < currentTime) {
+					subtitleElement.html('');
+				}
+			}
+		}, 100);
+		
+		
+	}
 	
 	$('.srt').each(function() {
 		var subtitleElement = $(this);
@@ -229,14 +269,7 @@ function subtitleSrt(){
 					, url: srtUrl
 					, success: function(data) {
 						
-						var smiParser = new Smi();
-						
-						var d = smiParser.parse(data);
-						
-						for(var i=0; i<d.length; i++){
-							console.log(d[i].startTime);
-						}
-						
+						playSrtSubtitles(data);
 						
 						// 자막 호출 완료 후 인코딩 초기화 
 						$.ajaxSetup({
