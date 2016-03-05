@@ -228,9 +228,9 @@ function requestEpisode(episodeFileNo, page){
 			for(var i=0; i<size; i++){
 				var episodeTitle = $(data[i]).find("episodeTitle").text();
 				var episodeUrl = $(data[i]).find("episodeUrl").text();
-				var subtitle = $(data[i]).find("subtitle").text();
+				var episodeSubtitle = $(data[i]).find("episodeSubtitle").text();
 				
-				var epi = new Episode(episodeTitle, episodeUrl, subtitle);
+				var epi = new Episode(episodeTitle, episodeUrl, episodeSubtitle);
 				episodeMap[selectedContents.getContentsId()].push(epi);
 			}
 			

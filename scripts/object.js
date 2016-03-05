@@ -420,10 +420,10 @@ var Contents = $Class({
 
 var Episode = $Class({
     
-	$init : function(episodeTitle, episodeUrl, subtitle){ 
+	$init : function(episodeTitle, episodeUrl, episodeSubtitle){ 
         this.episodeTitle = episodeTitle;
 		this.episodeUrl = episodeUrl;
-		this.subtitle = subtitle;
+		this.episodeSubtitle = episodeSubtitle;
     }, 
     
     getEpisodeTitle : function(){
@@ -442,12 +442,12 @@ var Episode = $Class({
     	this.episodeUrl = episodeUrl;
     },
     
-    getSubtitle : function(){
-    	return this.subtitle;
+    getEpisodeSubtitle : function(){
+    	return this.episodeSubtitle;
     },
     
-    setSubtitle : function(subtitle){
-    	this.subtitle = subtitle;
+    setEpisodeSubtitle : function(episodeSubtitle){
+    	this.episodeSubtitle = episodeSubtitle;
     }
     
 });
