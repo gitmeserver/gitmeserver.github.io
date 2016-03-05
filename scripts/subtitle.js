@@ -204,6 +204,7 @@ function subtitleSrt(){
 			c = c.replace("&nbsp;", "");
 			c = c.replace("&nbsp", "");
 			c = c.replace(/(<([^>]+)>)/gi, "");
+			c = c.replace(/(<\/([^>]+)>)/gi, "");
 			subtitles[t] = c;
 		}
 		
