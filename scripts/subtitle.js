@@ -259,7 +259,7 @@ function subtitleSmi(){
 //					console.log(d);
 					
 					for(var i=0; i<d.length; i++){
-						console.log(d);
+						console.log(d[i]);
 					}
 					
 					// 자막 호출 완료 후 인코딩 초기화 
