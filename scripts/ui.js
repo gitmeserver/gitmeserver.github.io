@@ -404,7 +404,7 @@ function video(){
 	$("#embed").append("<div class='srt' data-video='player'></div>");
 	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
-	var sub = selectedEpisode.getSubUrl;
+	var sub = selectedEpisode.getSubUrl();
 	
 	if(sub != undefined){
 		$(".srt").attr("data-srt", sub);
@@ -415,7 +415,6 @@ function video(){
 			subtitleSmi();
 		}
 		
-		return false;
 	}
 	
 	subtitleLocationChange();
