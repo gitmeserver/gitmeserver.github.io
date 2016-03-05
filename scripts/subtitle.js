@@ -269,7 +269,7 @@ function subtitleSrt(){
 					, url: srtUrl
 					, success: function(data) {
 						
-						playSrtSubtitles(data);
+						playSmiSubtitles(data);
 						
 						// 자막 호출 완료 후 인코딩 초기화 
 						$.ajaxSetup({
