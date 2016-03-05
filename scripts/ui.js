@@ -519,7 +519,7 @@ function list(page){
 		var item = $(listItem).clone();
 		$(item).attr("title", episode.getEpisodeTitle());
 		$(item).attr("href", episode.getEpisodeUrl());
-		$(item).attr("episodeSubtitle", episode.getEpisodeSubtitle());
+		$(item).attr("episode-subtitle", episode.getEpisodeSubtitle());
 		$(item).text(episode.getEpisodeTitle());
 		
 		// 현재 시청중인 에피소드를 표시 
@@ -540,7 +540,7 @@ function list(page){
 		$(item).click(function(){
 			$("#list .list-group-item .glyphicon-eye-open").detach();
 			$(this).append("<span style='margin-left:5px;' class='glyphicon glyphicon-eye-open'></span>");
-			selectedEpisode = new Episode($(this).attr("title"), $(this).attr("href"), $(this).attr("episodeSubtitle"));
+			selectedEpisode = new Episode($(this).attr("title"), $(this).attr("href"), $(this).attr("episode-subtitle"));
 			video();
 			return false;
 		});
