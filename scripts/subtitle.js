@@ -227,6 +227,20 @@ function subtitleSrt(){
 
 function subtitleSmi(){
 	
+	function toSeconds(t) {
+		var s = 0.0
+		if(t) {
+			var p = t.split(':');
+			for(i=0;i<p.length;i++)
+				s = s * 60 + parseFloat(p[i].replace(',', '.'))
+		}
+		return s;
+	}
+	
+	function strip(s) {
+		return s.replace(/^\s+|\s+$/g,"");
+	}
+	
 	function playSrtSubtitles(subtitleElement) {
 		var videoId = subtitleElement.attr('data-video');
 		var srt = subtitleElement.text();
