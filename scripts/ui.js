@@ -409,9 +409,9 @@ function video(){
 	if(sub != undefined){
 		$(".srt").attr("data-srt", sub);
 		
-		if(-1 < subtitle.indexOf(".srt'")){
+		if(-1 < sub.indexOf(".srt'")){
 			subtitleSrt();
-		}else if(-1 < subtitle.indexOf(".smi'")){
+		}else if(-1 < sub.indexOf(".smi'")){
 			subtitleSmi();
 		}
 	}
