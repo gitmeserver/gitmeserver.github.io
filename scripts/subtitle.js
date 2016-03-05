@@ -213,18 +213,15 @@ function subtitleSrt(){
 			
 			var currentTime = vid.currentTime;
 			var subtitle = -1;
-			for(s in subtitles) {
-				console.log(s);
-				if(s > currentTime)
+			for(var j=0; j<subtitles.length; j++) {
+				if(subtitles[j] > currentTime)
 					break
-					subtitle = s;
+					subtitle = subtitles[j];
 			}
 			if(subtitle > 0) {
 				if(subtitle != currentSubtitle) {
-					subtitleElement.html(subtitles[subtitle].t);
+					subtitleElement.html(subtitles[subtitle]);
 					currentSubtitle=subtitle;
-				} else if(subtitles[subtitle].o < currentTime) {
-					subtitleElement.html('');
 				}
 			}
 		}, 100);
