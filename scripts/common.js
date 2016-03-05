@@ -233,6 +233,11 @@ function requestEpisode(episodeFileNo, page){
 				if(episodeSubtitle != undefined){
 					console.log("" + $(episodeSubtitle).text());
 					episodeSubtitle = $(episodeSubtitle).text();
+					
+					if(episodeSubtitle.indexOf("http://") < 0 || episodeSubtitle.indexOf("https://")){
+						episodeSubtitle = DOMAIN_URL + episodeSubtitle;
+					}
+					
 				}
 				
 				var epi = new Episode(episodeTitle, episodeUrl, episodeSubtitle);
