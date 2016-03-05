@@ -222,7 +222,7 @@ function subtitleSrt(){
 				});
 		
 			// smi 자막 처리  
-			}else if(-1 < sub.indexOf(".smi")){
+			}else if(-1 < srtUrl.indexOf(".smi")){
 				$.ajax({
 					type: 'get'
 					, dataType: "text"
