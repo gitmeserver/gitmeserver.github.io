@@ -406,7 +406,7 @@ function video(){
 	
 	var sub = selectedEpisode.getSubUrl;
 	
-	if(subt != undefined){
+	if(sub != undefined){
 		$(".srt").attr("data-srt", sub);
 		
 		if(-1 < subtitle.indexOf(".srt'")){
