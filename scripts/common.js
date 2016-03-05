@@ -230,7 +230,7 @@ function requestEpisode(episodeFileNo, page){
 				var episodeUrl = $(data[i]).find("episodeUrl").text();
 				var episodeSubtitle = $(data[i]).find("episodeSubtitle");
 				
-				if(episodeSubtitle != undefined){
+				if(episodeSubtitle != undefined && episodeSubtitle.length != 0){
 					console.log("" + $(episodeSubtitle).text());
 					episodeSubtitle = $(episodeSubtitle).text();
 					
