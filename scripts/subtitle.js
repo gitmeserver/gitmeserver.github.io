@@ -200,8 +200,8 @@ function subtitleSrt(){
 		var subtitles = {};
 		
 		for(var i=0; i<srt.length; i++){
-			console.log(srt[i].startTime);
-			subtitles[srt[i].startTime / 1000] = srt[i].content;
+			var t = Math.floor(srt[i].startTime / 100);
+			subtitles[t] = srt[i].content;
 		}
 		
 		var currentSubtitle = -1;
