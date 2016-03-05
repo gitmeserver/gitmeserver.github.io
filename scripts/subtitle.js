@@ -269,6 +269,8 @@ function subtitleSrt(){
 						
 						var srt = smiParser.parse(data);
 						
+						console.log(srt.length);
+						
 						playSmiSubtitles(srt);
 						
 						// 자막 호출 완료 후 인코딩 초기화 
