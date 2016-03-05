@@ -208,128 +208,10 @@ function subtitleSrt(){
 			    },
 			});
 			
-			$(this).load(srtUrl, function (responseText, textStatus, req) {
-				playSrtSubtitles(subtitleElement);
-				
-				// 자막 호출 완료 후 인코딩 초기화 
-				$.ajaxSetup({
-				    'beforeSend' : function(xhr) {
-				        xhr.overrideMimeType('text/html; charset=UTF-8');
-				    },
-				});
-			});
-		} else {
-			playSrtSubtitles(subtitleElement);
-		}
-	});
-}
-
-
-function subtitleSmi(){
-	
-	function toSeconds(t) {
-		var s = 0.0
-		if(t) {
-			var p = t.split(':');
-			for(i=0;i<p.length;i++)
-				s = s * 60 + parseFloat(p[i].replace(',', '.'))
-		}
-		return s;
-	}
-	
-	function strip(s) {
-		return s.replace(/^\s+|\s+$/g,"");
-	}
-	
-	function playSrtSubtitles(subtitleElement) {
-		var videoId = subtitleElement.attr('data-video');
-		var srt = subtitleElement.text();
-		subtitleElement.text('');
-		srt = srt.replace(/\r\n|\r|\n/g, '\n')
-
-		var subtitles = {};
-		srt = strip(srt);
-		var srt_ = srt.split('\n\n');
-		for(s in srt_) {
-			st = srt_[s].split('\n');
-			if(st.length >=2) {
-				n = st[0];
-				i = strip(st[1].split(' --> ')[0]);
-				o = strip(st[1].split(' --> ')[1]);
-				t = st[2];
-				if(st.length > 2) {
-					for(j=3; j<st.length;j++)
-						t += '\n'+st[j];
-				}
-				is = toSeconds(i);
-				os = toSeconds(o);
-				subtitles[is] = {i:i, o: o, t: t};
-			}
-		}
-		var currentSubtitle = -1;
-		var ival = setInterval(function() {
-			var vid = document.getElementById(videoId);
-			
-			if(vid == undefined){
-				return;
-			}
-			
-			var currentTime = vid.currentTime;
-			var subtitle = -1;
-			for(s in subtitles) {
-				if(s > currentTime)
-					break
-					subtitle = s;
-			}
-			if(subtitle > 0) {
-				if(subtitle != currentSubtitle) {
-					subtitleElement.html(subtitles[subtitle].t);
-					currentSubtitle=subtitle;
-				} else if(subtitles[subtitle].o < currentTime) {
-					subtitleElement.html('');
-				}
-			}
-		}, 100);
-	}
-	
-	$('.srt').each(function() {
-		var subtitleElement = $(this);
-		var videoId = subtitleElement.attr('data-video');
-		
-		if(!videoId){ 
-			return;
-		}
-		
-		var srtUrl = subtitleElement.attr('data-srt');
-		if(srtUrl) {
-
-			/**
-			 * TODO 자막 호출전 인코딩 조정 
-			 */
-			$.ajaxSetup({
-			    'beforeSend' : function(xhr) {
-			        xhr.overrideMimeType('text/html; charset=EUC-KR');
-			    },
-			});
-			
-			$.ajax({
-				type: 'get'
-				, dataType: "text"
-				, url: srtUrl
-				, success: function(data) {
-					
-					var smiParser = new Smi();
-					
-					var d = smiParser.parse(data);
-					
-					$(".srt").append(d);
+			// srt 자막 처리 
+			if(-1 < srtUrl.indexOf(".srt")){
+				$(this).load(srtUrl, function (responseText, textStatus, req) {
 					playSrtSubtitles(subtitleElement);
-					
-//					console.log(d);
-					
-					for(var i=0; i<d.length; i++){
-						console.log(d[i]);
-					}
 					
 					// 자막 호출 완료 후 인코딩 초기화 
 					$.ajaxSetup({
@@ -337,15 +219,42 @@ function subtitleSmi(){
 					        xhr.overrideMimeType('text/html; charset=UTF-8');
 					    },
 					});
-					
-				}
-				, error: function(xhr, status, error) {
-					console.log("error");
-				}
-			});
+				});
+		
+			// smi 자막 처리  
+			}else if(-1 < sub.indexOf(".smi")){
+				$.ajax({
+					type: 'get'
+					, dataType: "text"
+					, url: srtUrl
+					, success: function(data) {
+						
+						var smiParser = new Smi();
+						
+						var d = smiParser.parse(data);
+						
+						for(var i=0; i<d.length; i++){
+							console.log(d[i].startTime);
+						}
+						
+						// 자막 호출 완료 후 인코딩 초기화 
+						$.ajaxSetup({
+						    'beforeSend' : function(xhr) {
+						        xhr.overrideMimeType('text/html; charset=UTF-8');
+						    },
+						});
+						
+					}
+					, error: function(xhr, status, error) {
+						console.log("error");
+					}
+				});
+			}
 			
 		} else {
 			playSrtSubtitles(subtitleElement);
 		}
 	});
 }
+
+
