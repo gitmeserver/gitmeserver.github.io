@@ -420,10 +420,10 @@ var Contents = $Class({
 
 var Episode = $Class({
     
-	$init : function(episodeTitle, episodeUrl, subUrl){ 
+	$init : function(episodeTitle, episodeUrl, subtitle){ 
         this.episodeTitle = episodeTitle;
 		this.episodeUrl = episodeUrl;
-		this.subUrl = subUrl;
+		this.subtitle = subtitle;
     }, 
     
     getEpisodeTitle : function(){
@@ -442,12 +442,12 @@ var Episode = $Class({
     	this.episodeUrl = episodeUrl;
     },
     
-    getSubUrl : function(){
-    	return this.subUr;
+    getSubtitle : function(){
+    	return this.subtitle;
     },
     
-    setSubUrl : function(subUrl){
-    	this.subUrl = subUrl;
+    setSubtitle : function(subtitle){
+    	this.subtitle = subtitle;
     }
     
 });
@@ -504,7 +504,7 @@ var Deck = $Class({
         
         var eTitle = this.episode.getEpisodeTitle();
 		var eUrl = this.episode.getEpisodeUrl();
-    	var eSubUrl = this.episode.getSubUrl();
+    	var eSubtitle = this.episode.getSubtitle();
 		
         if(!(-1 < thumb.indexOf("http://")) && !(-1 < thumb.indexOf("https://"))){
         	thumb = THUMBNAIL_URL.replace("{thumbnail_file_path}", thumb); 
@@ -549,7 +549,7 @@ var Deck = $Class({
     				cGenre, 
     				cNation
     			);
-    		selectedEpisode = new Episode(eTitle, eUrl, eSubUrl);
+    		selectedEpisode = new Episode(eTitle, eUrl, eSubtitle);
     		requestContentsEpisode("video");
     		return false;
     	};
