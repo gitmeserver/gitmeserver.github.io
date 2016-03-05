@@ -149,7 +149,7 @@ function subtitleSmi(){
 				, url: srtUrl
 				, success: function(data) {
 					
-					var pattern = \^\<[a-z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]$gm\
+					var pattern = "^<[a-z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]$gm";
 					var regExp = new RegExp(pattern);
 					var syncList = regExp.exec(data);
 
