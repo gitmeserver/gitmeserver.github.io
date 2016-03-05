@@ -211,7 +211,7 @@ function subtitleSrt(){
 				return;
 			}
 			
-			console.log(vid.currentTime.toString().split(".")[0] + " > " + subtitles[vid.currentTime]);
+			console.log(vid.currentTime.toString().split(".")[0] + " > " + (subtitles[vid.currentTime] / 10));
 			
 			$(".srt").text(subtitles[vid.currentTime]);
 			
