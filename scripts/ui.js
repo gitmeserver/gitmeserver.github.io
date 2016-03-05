@@ -401,11 +401,20 @@ function video(){
 	$("#video").append("<div id='embed' class='embed-responsive embed-responsive-16by9'></div>");
 	$("#embed").append("<div id='fullscreenOff' style='display:none;'><button type='button' class='glyphicon glyphicon-resize-small btn btn-default btn-lg'></button><div>");
 	$("#embed").append("<video id='player' controls='true' autoplay='true' class='embed-responsive-item'></video>");
-	$("#embed").append("<div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.smi'></div>");
+	$("#embed").append("<div class='srt' data-video='player'></div>");
 	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
-//	$("#subject").append("<div class='srt' data-video='player' data-srt='http://devys.github.io/subtitle/kungfu.ko.srt' />");
-	subtitle();
+	var sub = selectedEpisode.getSubUrl;
+	
+	if(subt != undefined){
+		$(".srt").attr("data-srt", sub);
+		
+		if(-1 < subtitle.indexOf(".srt'")){
+			subtitleSrt();
+		}else if(-1 < subtitle.indexOf(".smi'")){
+			subtitleSmi();
+		}
+	}
 	
 	subtitleLocationChange();
 	
