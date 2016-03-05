@@ -200,7 +200,11 @@ function subtitleSrt(){
 		
 		for(var i=0; i<srt.length; i++){
 			var t = Math.floor(srt[i].startTime / 100);
-			subtitles[t] = $(srt[i].content).text();
+			var c = srt[i].content;
+			c = c.replace("&nbsp;", "");
+			c = c.replace("&nbsp", "");
+			
+			subtitles[t] = $(c).text();
 		}
 		
 		var ival = setInterval(function() {
