@@ -125,7 +125,13 @@ function subtitle(){
 				console.log("srtUrl >> " + srtUrl);
 				console.log(subtitleElement);
 				
-				playSubtitles(subtitleElement);
+				if(-1 < srtUrl.indexOf(".srt")){
+					console.log("srt subtitle");
+					playSubtitles(subtitleElement);
+				}else if(-1 < srtUrl.indexOf(".smi")){
+					console.log("smi subtitle");
+					
+				}
 				
 				// 자막 호출 완료 후 인코딩 초기화 
 				$.ajaxSetup({
