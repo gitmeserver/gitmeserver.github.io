@@ -191,11 +191,7 @@ function subtitleSrt(){
 		}, 100);
 	}
 	
-	function playSmiSubtitles(subtitleElement, data){
-		
-		var smiParser = new Smi();
-		
-		var srt = smiParser.parse(data);
+	function playSmiSubtitles(subtitleElement, srt){
 		
 		var videoId = subtitleElement.attr('data-video');
 		var subtitles = {};
@@ -269,7 +265,11 @@ function subtitleSrt(){
 					, url: srtUrl
 					, success: function(data) {
 						
-						playSmiSubtitles(data);
+						var smiParser = new Smi();
+						
+						var srt = smiParser.parse(data);
+						
+						playSmiSubtitles(srt);
 						
 						// 자막 호출 완료 후 인코딩 초기화 
 						$.ajaxSetup({
