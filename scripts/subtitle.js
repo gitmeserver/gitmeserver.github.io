@@ -252,7 +252,9 @@ function subtitleSmi(){
 				, url: srtUrl
 				, success: function(data) {
 					
-					var d = window.Smi.parse(data);
+					var smiParser = new Smi();
+					
+					var d = smiParser.parse(data);
 					
 					console.log(d);
 					
