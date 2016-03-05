@@ -258,15 +258,9 @@ function subtitleSmi(){
 					
 					console.log(d);
 					
-					var pattern = "^[<SYNC].[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$gm";
-					var regExp = new RegExp(pattern);
-					var syncList = regExp.exec(data);
-
-//					console.log(syncList);
-//					
-//					for(var i=0; i<syncList.length; i++){
-//						console.log(syncList[i]);
-//					}
+					for(var i=0; i<d.length; i++){
+						console.log(d);
+					}
 					
 					// 자막 호출 완료 후 인코딩 초기화 
 					$.ajaxSetup({
