@@ -234,7 +234,7 @@ function subtitleSrt(){
 						var d = smiParser.parse(data);
 						
 						for(var i=0; i<d.length; i++){
-							console.log(d[i].content);
+							console.log(d[i].startTime);
 						}
 						
 						
