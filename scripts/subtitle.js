@@ -149,7 +149,13 @@ function subtitleSmi(){
 				, url: srtUrl
 				, success: function(data) {
 					
-					console.log(data);
+					var pattern = "^\<";
+					var regExp = new RegExp(pattern);
+					var syncList = regExp.exec(data);
+
+					for(var i=0; i<syncList.length; i++){
+						console.log(syncList[i]);
+					}
 					
 					// 자막 호출 완료 후 인코딩 초기화 
 					$.ajaxSetup({
