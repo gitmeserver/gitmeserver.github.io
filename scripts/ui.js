@@ -414,6 +414,8 @@ function video(){
 		}else if(-1 < sub.indexOf(".smi'")){
 			subtitleSmi();
 		}
+		
+		return false;
 	}
 	
 	subtitleLocationChange();
