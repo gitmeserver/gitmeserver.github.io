@@ -233,7 +233,7 @@ function subtitleSrt(){
 						
 						var d = smiParser.parse(data);
 						
-						console.log(d.length);
+						console.log(d.toString());
 						
 						// 자막 호출 완료 후 인코딩 초기화 
 						$.ajaxSetup({
