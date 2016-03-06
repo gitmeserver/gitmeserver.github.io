@@ -458,14 +458,9 @@ function video(){
 		}
 	});
 	
-//	$(window).on("orientationchange", function(){
-//		console.log("1");
-//	});
-	
 	// Listen for resize changes
 	window.addEventListener("resize", function() {
-	    console.log("resize");
-
+		subtitleLocationChange(); 
 	}, false);
 	
 	isDeck();
