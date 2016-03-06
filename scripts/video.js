@@ -111,6 +111,11 @@ function fullscreenOffButton(){
 }
 
 function subtitleLocationChange(){
+	
+	$(window).on("orientationchange", function(){
+		console.log("1");
+	}); 
+	
 	var playerHeight = $("#player").css("height");
 	var srtMarginTop = ( parseInt(playerHeight) / 100 ) * 80;
 	
