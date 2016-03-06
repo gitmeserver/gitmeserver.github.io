@@ -406,13 +406,13 @@ function video(){
 	
 	console.log(sub);
 	
-	if(sub.indexOf("http://") < 0 && sub.indexOf("https://") < 0){
-		sub = SUBTITLE_URL + $.removeFirstSlush(sub);
-	}
-	
 	if(sub != undefined){
-		$(".srt").attr("data-srt", sub);
-		subtitleSrt();
+		if(sub.indexOf("http://") < 0 && sub.indexOf("https://") < 0){
+			sub = SUBTITLE_URL + $.removeFirstSlush(sub);
+			
+			$(".srt").attr("data-srt", sub);
+			subtitleSrt();
+		}
 	}
 	
 	subtitleLocationChange();
