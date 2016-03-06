@@ -463,6 +463,12 @@ function video(){
 		subtitleLocationChange(); 
 	}, false);
 	
+	// Listen for orientation changes      
+	window.addEventListener("orientationchange", function() {
+	    // Announce the new orientation number
+		subtitleLocationChange();
+	}, false);
+	
 	isDeck();
 	
 	return false;
