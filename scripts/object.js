@@ -443,7 +443,21 @@ var Episode = $Class({
     },
     
     getEpisodeSubtitle : function(){
-    	return this.episodeSubtitle;
+
+    	var sub = this.episodeSubtitle;
+    	
+    	console.log(sub);
+    	
+    	if(sub != undefined){
+    		console.log("sub is defined");
+    		if(sub.indexOf("http://") < 0 && sub.indexOf("https://") < 0){
+    			console.log("sub is no url");
+    			sub = SUBTITLE_URL + $.removeFirstSlush(sub);
+    		}
+    		console.log("4");
+    	}
+    	
+    	return sub;
     },
     
     setEpisodeSubtitle : function(episodeSubtitle){

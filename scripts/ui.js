@@ -403,21 +403,8 @@ function video(){
 	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
-	
-	console.log(sub);
-	
-	if(sub != undefined){
-		console.log("sub is defined");
-		if(sub.indexOf("http://") < 0 && sub.indexOf("https://") < 0){
-			console.log("sub is no url");
-			sub = SUBTITLE_URL + $.removeFirstSlush(sub);
-		}
-		
-		console.log("4");
-		
-		$(".srt").attr("data-srt", sub);
-		subtitleSrt();
-	}
+	$(".srt").attr("data-srt", sub);
+	subtitleSrt();
 	
 	subtitleLocationChange();
 	
