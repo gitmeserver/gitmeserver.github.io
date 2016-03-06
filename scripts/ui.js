@@ -162,8 +162,6 @@ function onDeck(){
 	
 	var deckList = $.cookie("deckList");
 	
-	console.log(deckList);
-	
 	if(deckList == undefined){
 		$("#deck").append("<p style='text-align:center; padding:30px 0px;'>감상중인 콘텐츠가 없습니다.</p>");
 		return;
