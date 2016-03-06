@@ -448,7 +448,7 @@ var Episode = $Class({
     	
     	console.log(sub);
     	
-    	if(sub != undefined){
+    	if(this.episodeSubtitle != undefined){
     		console.log("sub is defined");
     		if(sub.indexOf("http://") < 0 && sub.indexOf("https://") < 0){
     			console.log("sub is no url");
