@@ -458,6 +458,10 @@ function video(){
 		}
 	});
 	
+	$(window).on("orientationchange", function(){
+		console.log("1");
+	});
+	
 	isDeck();
 	
 	return false;
