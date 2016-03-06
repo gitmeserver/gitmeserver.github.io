@@ -458,9 +458,9 @@ function video(){
 		}
 	});
 	
-	$(window).on("orientationchange", function(){
-		console.log("1");
-	});
+//	$(window).on("orientationchange", function(){
+//		console.log("1");
+//	});
 	
 	isDeck();
 	
