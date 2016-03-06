@@ -233,7 +233,7 @@ function requestEpisode(episodeFileNo, page){
 				if(episodeSubtitle != undefined && 0 < $(episodeSubtitle).text().length){
 					episodeSubtitle = $(episodeSubtitle).text();
 					
-					if(episodeSubtitle.indexOf("http://") < 0 || episodeSubtitle.indexOf("https://")){
+					if(episodeSubtitle.indexOf("http://") < 0 && episodeSubtitle.indexOf("https://") < 0){
 						episodeSubtitle = DOMAIN_URL + episodeSubtitle;
 					}
 					
