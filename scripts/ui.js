@@ -462,6 +462,12 @@ function video(){
 //		console.log("1");
 //	});
 	
+	// Listen for resize changes
+	window.addEventListener("resize", function() {
+	    console.log("resize");
+
+	}, false);
+	
 	isDeck();
 	
 	return false;
