@@ -404,12 +404,12 @@ function video(){
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	
-	console.log("1");
+	console.log(sub);
 	
 	if(sub != undefined){
-		console.log("2");
+		console.log("sub is defined");
 		if(sub.indexOf("http://") < 0 && sub.indexOf("https://") < 0){
-			console.log("3");
+			console.log("sub is no url");
 			sub = SUBTITLE_URL + $.removeFirstSlush(sub);
 		}
 		
