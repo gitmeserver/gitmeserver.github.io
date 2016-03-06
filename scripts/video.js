@@ -125,9 +125,3 @@ function subtitleLocationChange(){
 	$(".srt").css("fontSize", fontSize);
 	
 }
-
-$(document).ready(function(){
-	window.orientationchange = function(){
-		console.log("orientationchange");
-	};
-});
