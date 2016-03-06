@@ -443,7 +443,7 @@ $.extend({
 		if(str.substring(0, 1) == "/"){
 			return str.substring(1, str.length);
 		}else{
-			reutrn str;
+			return str;
 		}
 	}
 	
