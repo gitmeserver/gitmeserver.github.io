@@ -437,6 +437,14 @@ $.extend({
 		watchAfterList = watchAfterList.replace("," + contentsId, "");
 		
 		$.cookie("watchAfterList", watchAfterList);
+	},
+	
+	removeFirstCharSlush : function(str){
+		if(str.substring(0, 1) == "/"){
+			return str.substring(1, str.length);
+		}else{
+			reutrn str;
+		}
 	}
 	
 });  
