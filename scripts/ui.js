@@ -404,6 +404,8 @@ function video(){
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	
+	console.log(sub);
+	
 	if(sub.indexOf("http://") < 0 && sub.indexOf("https://") < 0){
 		sub = SUBTITLE_URL + $.removeFirstSlush(sub);
 	}
