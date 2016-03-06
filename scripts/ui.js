@@ -404,15 +404,13 @@ function video(){
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	
-	console.log(sub);
-	
 	if(sub != undefined){
 		if(sub.indexOf("http://") < 0 && sub.indexOf("https://") < 0){
 			sub = SUBTITLE_URL + $.removeFirstSlush(sub);
-			
-			$(".srt").attr("data-srt", sub);
-			subtitleSrt();
 		}
+		
+		$(".srt").attr("data-srt", sub);
+		subtitleSrt();
 	}
 	
 	subtitleLocationChange();
