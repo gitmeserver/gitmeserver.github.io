@@ -211,6 +211,9 @@ function requestEpisode(episodeFileNo, page){
 		return;
 	}
 
+	console.log(EPISODE_URL);
+	console.log(eFile);
+	
 	var url = EPISODE_URL.replace("{episode_file_path}", eFile);
 	
 	$.ajax({
