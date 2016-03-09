@@ -209,6 +209,8 @@ function onWatchAfter(){
  */
 function onCreateIndex(){
 	
+	var cSize = 0;
+	
 	$("#contentsArea").empty();
 	
 	$("#contentsArea").append("<div id='searching' style='text-align:right; margin-bottom:10px;'></div>");
@@ -224,8 +226,13 @@ function onCreateIndex(){
 	
 	for(var i=0; i<contentsList.length; i++){
 		if(contentsList[i].check(channelId, searchWord)){
+			cSize = cSize + 1;
 			$("#contentsList").append(contentsList[i].makeThumbnail());
 		}
+	}
+	
+	if(cSize == 0){
+		$("#watchAfter").append("<p style='text-align:center; padding:30px 0px;'>검색된 콘텐츠가 없습니다.</p>");
 	}
 	
 	$("#contentsArea").append($.parseHTML("<hr /><footer><p>&copy; Created by DevY</p></footer>"));
