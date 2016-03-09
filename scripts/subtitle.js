@@ -196,7 +196,8 @@ function subtitleSrt(){
 		var smiParser = new Smi();
 		var srt = smiParser.parse(data);
 		
-		var subtitles = {};
+		var subtitles = null;
+		subtitles = {};
 		
 		for(var i=0; i<srt.length; i++){
 			var t = Math.floor(srt[i].startTime / 100);
