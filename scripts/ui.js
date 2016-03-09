@@ -228,9 +228,6 @@ function onCreateIndex(){
 		}
 	}
 	
-	console.log("cont size : " + $("#contentsList .cont").size());
-	console.log("cont length : " + $("#contentsList .cont").length);
-	
 	if($("#contentsList .cont").size() == 0){
 		$("#contentsList").append("<p style='text-align:center; padding:30px 0px;'>검색된 콘텐츠가 없습니다.</p>");
 	}
@@ -550,6 +547,10 @@ function list(page){
 		});
 		
 		$("#list").append(item);
+	}
+	
+	if($("#list .list-group-item").size() == 0){
+		$("#list").append("<p style='text-align:center; padding:30px 0px;'>준비중입니다...</p>");
 	}
 	
 }
