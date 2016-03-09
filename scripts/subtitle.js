@@ -191,13 +191,14 @@ function subtitleSrt(){
 		}, 100);
 	}
 	
+	var smiSubtitles = {};
+	
 	function playSmiSubtitles(data){
 		
 		var smiParser = new Smi();
 		var srt = smiParser.parse(data);
 		
-		var subtitles = {};
-		console.log(subtitles.length);
+		smiSubtitles = {};
 		
 		for(var i=0; i<srt.length; i++){
 			var t = Math.floor(srt[i].startTime / 100);
@@ -206,7 +207,7 @@ function subtitleSrt(){
 			c = c.replace("&nbsp", "");
 			c = c.replace(/(<([^>]+)>)/gi, "");
 			c = c.replace(/(<\/([^>]+)>)/gi, "");
-			subtitles[t] = c;
+			smiSubtitles[t] = c;
 		}
 		
 		var ival = setInterval(function() {
@@ -218,7 +219,7 @@ function subtitleSrt(){
 			
 			var ss = vid.currentTime.toString().split(".")[0];
 			
-			$(".srt").text(subtitles[ss]);
+			$(".srt").text(smiSubtitles[ss]);
 
 		}, 100);
 		
