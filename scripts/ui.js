@@ -228,6 +228,9 @@ function onCreateIndex(){
 		}
 	}
 	
+	console.log("cont size : " + $("#contentsList .cont").size());
+	console.log("cont length : " + $("#contentsList .cont").length);
+	
 	if($("#contentsList .cont").size() == 0){
 		$("#watchAfter").append("<p style='text-align:center; padding:30px 0px;'>검색된 콘텐츠가 없습니다.</p>");
 	}
