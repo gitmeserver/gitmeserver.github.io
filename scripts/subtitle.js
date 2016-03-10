@@ -137,6 +137,7 @@ function subtitleSrt(){
 	}
 	
 	function strip(s) {
+		console.log(s);
 		return s.replace(/^\s+|\s+$/g,"");
 	}
 	
