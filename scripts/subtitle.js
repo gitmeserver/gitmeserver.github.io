@@ -204,7 +204,7 @@ function subtitleSrt(){
 			
 			console.log("currentTime > " + currentTime.toString().split(".")[0]);
 			
-			subtitleElement.html(subtitles[currentTime.toString().split(".")[0].t);
+			subtitleElement.html(subtitles[currentTime.toString().split(".")[0].t]);
 			
 //			if(subtitle > 0) {
 //				if(subtitle != currentSubtitle) {
