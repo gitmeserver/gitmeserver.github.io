@@ -154,9 +154,19 @@ function subtitleSrt(){
 			st = srt_[s].split('\n');
 			if(st.length >=2) {
 				n = st[0];
-				i = strip(st[1].split(' --> ')[0]);
-				o = strip(st[1].split(' --> ')[1]);
+				
+				var st0 = st[1].split(' --> ')[0];
+				if(st0 != "" && 0 < st0.length){
+					i = strip(st0);
+				}
+				
+				var st1 = st[1].split(' --> ')[1];
+				if(st1 != "" && 0 < st1.length){
+					o = strip(st1);
+				}
+				
 				t = st[2];
+				
 				if(st.length > 2) {
 					for(j=3; j<st.length;j++)
 						t += '\n'+st[j];
