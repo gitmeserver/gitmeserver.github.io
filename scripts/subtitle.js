@@ -137,7 +137,6 @@ function subtitleSrt(){
 	}
 	
 	function strip(s) {
-		console.log(s);
 		return s.replace(/^\s+|\s+$/g,"");
 	}
 	
@@ -191,6 +190,9 @@ function subtitleSrt(){
 					break
 					subtitle = s;
 			}
+			
+			console.log(subtitle);
+			
 			if(subtitle > 0) {
 				if(subtitle != currentSubtitle) {
 					subtitleElement.html(subtitles[subtitle].t);
