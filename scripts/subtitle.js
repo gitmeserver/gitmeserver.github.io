@@ -179,7 +179,7 @@ function subtitleSrt(){
 //				var t = Math.floor(srt[i].startTime / 100);
 				
 				console.log("is > " + is.toString().split(".")[0]);
-				subtitles[is.toString().split(".")[0]] = {i:i, o: o, t: t};
+				subtitles[is.toString().split(".")[0]] = t;
 //				subtitles[is] = {i:i, o: o, t: t};
 			}
 		}
@@ -204,7 +204,7 @@ function subtitleSrt(){
 			
 			console.log("currentTime > " + currentTime.toString().split(".")[0]);
 			
-			$(".srt").text(subtitles[currentTime.toString().split(".")[0]].t);
+			$(".srt").text(subtitles[currentTime.toString().split(".")[0]]);
 			
 //			if(subtitle > 0) {
 //				if(subtitle != currentSubtitle) {
