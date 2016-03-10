@@ -172,6 +172,8 @@ function subtitleSrt(){
 				}
 				is = toSeconds(i);
 				os = toSeconds(o);
+				
+				console.log(is);
 				subtitles[is] = {i:i, o: o, t: t};
 			}
 		}
@@ -191,7 +193,7 @@ function subtitleSrt(){
 					subtitle = s;
 			}
 			
-			console.log(subtitle);
+			console.log(currentTime + " >>>> " + subtitle);
 			
 			if(subtitle > 0) {
 				if(subtitle != currentSubtitle) {
