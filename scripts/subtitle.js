@@ -175,7 +175,7 @@ function subtitleSrt(){
 				
 //				var t = Math.floor(srt[i].startTime / 100);
 				
-				console.log("is > " + is.split(".")[0]);
+				console.log("is > " + is.toString().split(".")[0]);
 				
 				subtitles[is] = {i:i, o: o, t: t};
 			}
@@ -199,7 +199,7 @@ function subtitleSrt(){
 			
 //			console.log(currentTime + " >>>> " + subtitle);
 			
-			console.log("currentTime > " + currentTime.split(".")[0]);
+			console.log("currentTime > " + currentTime.toString().split(".")[0]);
 			
 			if(subtitle > 0) {
 				if(subtitle != currentSubtitle) {
