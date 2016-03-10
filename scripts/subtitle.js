@@ -176,7 +176,6 @@ function subtitleSrt(){
 				is = toSeconds(i);
 				os = toSeconds(o);
 				
-				console.log("is > " + is.toString().split(".")[0]);
 				subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + is.toString().split(".")[0]] = t;
 			}
 		}
