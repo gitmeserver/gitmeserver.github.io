@@ -157,15 +157,11 @@ function subtitleSrt(){
 				var st0 = st[1].split(' --> ')[0];
 				if(st0 != "" && st0 != undefined){
 					i = strip(st0);
-				}else{
-					i = " ";
 				}
 				
 				var st1 = st[1].split(' --> ')[1];
 				if(st1 != "" && st1 != undefined){
 					o = strip(st1);
-				}else{
-					o = " ";
 				}
 				
 				t = st[2];
@@ -176,6 +172,10 @@ function subtitleSrt(){
 				}
 				is = toSeconds(i);
 				os = toSeconds(o);
+				
+//				var t = Math.floor(srt[i].startTime / 100);
+				
+				console.log("is > " + is);
 				
 				subtitles[is] = {i:i, o: o, t: t};
 			}
@@ -198,6 +198,8 @@ function subtitleSrt(){
 			}
 			
 //			console.log(currentTime + " >>>> " + subtitle);
+			
+			console.log("currentTime > " + currentTime);
 			
 			if(subtitle > 0) {
 				if(subtitle != currentSubtitle) {
