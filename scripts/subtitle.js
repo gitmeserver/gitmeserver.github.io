@@ -176,11 +176,8 @@ function subtitleSrt(){
 				is = toSeconds(i);
 				os = toSeconds(o);
 				
-//				var t = Math.floor(srt[i].startTime / 100);
-				
 				console.log("is > " + is.toString().split(".")[0]);
 				subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + is.toString().split(".")[0]] = t;
-//				subtitles[is] = {i:i, o: o, t: t};
 			}
 		}
 		var currentSubtitle = -1;
@@ -192,28 +189,9 @@ function subtitleSrt(){
 			}
 			
 			var currentTime = vid.currentTime;
-//			var subtitle = -1;
-//			for(s in subtitles) {
-//				console.log(s);
-//				if(s > currentTime)
-//					break
-//					subtitle = s;
-//			}
-			
-//			console.log(currentTime + " >>>> " + subtitle);
-			
-			console.log("currentTime > " + currentTime.toString().split(".")[0]);
 			
 			$(".srt").text(subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + currentTime.toString().split(".")[0]]);
 			
-//			if(subtitle > 0) {
-//				if(subtitle != currentSubtitle) {
-//					subtitleElement.html(subtitles[subtitle].t);
-//					currentSubtitle=subtitle;
-//				} else if(subtitles[subtitle].o < currentTime) {
-//					subtitleElement.html('');
-//				}
-//			}
 		}, 100);
 	}
 	
