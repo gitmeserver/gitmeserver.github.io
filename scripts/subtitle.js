@@ -141,6 +141,9 @@ function subtitleSrt(){
 	}
 	
 	function playSrtSubtitles(subtitleElement) {
+		
+		clearInterval(ival);
+		
 		var videoId = subtitleElement.attr('data-video');
 		var srt = subtitleElement.text();
 		subtitleElement.text('');
@@ -176,8 +179,8 @@ function subtitleSrt(){
 //				var t = Math.floor(srt[i].startTime / 100);
 				
 				console.log("is > " + is.toString().split(".")[0]);
-				
-				subtitles[is] = {i:i, o: o, t: t};
+				subtitles[is.toString().split(".")[0]] = {i:i, o: o, t: t};
+//				subtitles[is] = {i:i, o: o, t: t};
 			}
 		}
 		var currentSubtitle = -1;
@@ -189,26 +192,28 @@ function subtitleSrt(){
 			}
 			
 			var currentTime = vid.currentTime;
-			var subtitle = -1;
-			for(s in subtitles) {
-				console.log(s);
-				if(s > currentTime)
-					break
-					subtitle = s;
-			}
+//			var subtitle = -1;
+//			for(s in subtitles) {
+//				console.log(s);
+//				if(s > currentTime)
+//					break
+//					subtitle = s;
+//			}
 			
 //			console.log(currentTime + " >>>> " + subtitle);
 			
 			console.log("currentTime > " + currentTime.toString().split(".")[0]);
 			
-			if(subtitle > 0) {
-				if(subtitle != currentSubtitle) {
-					subtitleElement.html(subtitles[subtitle].t);
-					currentSubtitle=subtitle;
-				} else if(subtitles[subtitle].o < currentTime) {
-					subtitleElement.html('');
-				}
-			}
+			subtitleElement.html(subtitles[currentTime.toString().split(".")[0]].t)
+			
+//			if(subtitle > 0) {
+//				if(subtitle != currentSubtitle) {
+//					subtitleElement.html(subtitles[subtitle].t);
+//					currentSubtitle=subtitle;
+//				} else if(subtitles[subtitle].o < currentTime) {
+//					subtitleElement.html('');
+//				}
+//			}
 		}, 100);
 	}
 	
