@@ -156,12 +156,12 @@ function subtitleSrt(){
 				n = st[0];
 				
 				var st0 = st[1].split(' --> ')[0];
-				if(st0 != "" && 0 < st0.length){
+				if(st0 != "" && st0 != undefined){
 					i = strip(st0);
 				}
 				
 				var st1 = st[1].split(' --> ')[1];
-				if(st1 != "" && 0 < st1.length){
+				if(st1 != "" && st1 != undefined){
 					o = strip(st1);
 				}
 				
