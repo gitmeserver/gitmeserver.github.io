@@ -2,6 +2,11 @@ var contentsRequestMessage = "콘텐츠 목록을 로딩중입니다...";
 var episodeRequestMessage = "에피소드 목록을 로딩중입니다...";
 
 /**
+ * TODO 자막 싱크, 구간이동, 자막 폰트 크기 조절 
+ */
+
+
+/**
  * 콘텐츠 영역 생성전에 기본 레이아웃을 구성한다. 
  */
 function beforeOnCreateLayout(){
@@ -412,11 +417,11 @@ function video(){
 	
 	subtitleLocationChange();
 	
-	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default btn-lg'></button>");
-	$("#controll div").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default btn-lg'></button>");
-	$("#controll div").append("<button id='fullscreen' type='button' class='glyphicon glyphicon-resize-full btn btn-default btn-lg'></button>");
-	$("#controll span").append("<button id='backward' class='glyphicon glyphicon-step-backward btn btn-default btn-lg' type='button'></button>");
-	$("#controll span").append("<button id='forward' class='glyphicon glyphicon-step-forward btn btn-default btn-lg' type='button'></button>");
+	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default'></button>");
+	$("#controll div").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default'></button>");
+	$("#controll div").append("<button id='fullscreen' type='button' class='glyphicon glyphicon-resize-full btn btn-default'></button>");
+	$("#controll span").append("<button id='backward' class='glyphicon glyphicon-step-backward btn btn-default' type='button'></button>");
+	$("#controll span").append("<button id='forward' class='glyphicon glyphicon-step-forward btn btn-default' type='button'></button>");
 	
 	var title = $("#video #subject h3");
 	var subTitle = $("#video #subject span");
