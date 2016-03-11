@@ -200,8 +200,6 @@ function requestEpisode(episodeFileNo, page){
 	var eFiles = selectedContents.getEpisodeFiles();
 	var eFile = eFiles[episodeFileNo];
 	
-	console.log(episodeFileNo + "/" + eFiles.length);
-
 	$("#episodeRequestMessage").text(episodeRequestMessage + " (" + (episodeFileNo + 1) + "/" + eFiles.length + ")");
 	
 	// 모든 파일을 로드했으면 에피소드 목록 화면을 출력한다. 
