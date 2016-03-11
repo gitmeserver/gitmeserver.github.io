@@ -195,6 +195,8 @@ function requestEpisode(episodeFileNo, page){
 	
 	var eFiles = selectedContents.getEpisodeFiles();
 	var eFile = eFiles[episodeFileNo];
+	
+	console.log(episodeFileNo + "/" + eFiles.length);
 
 	$("#episodeRequestMessage").text(episodeRequestMessage + " (" + (episodeFileNo + 1) + "/" + eFiles.length + ")");
 	
@@ -205,11 +207,11 @@ function requestEpisode(episodeFileNo, page){
 	}
 	
 	// 이미 데이터가 존재하면 다음 에피소드 파일을 로드한다. 
-//	if(episodeMap[selectedContents.getContentsId] != undefined){
-//		episodeFileNo = episodeFileNo + 1;
-//		requestEpisode(episodeFileNo, page);
-//		return;
-//	}
+	if(episodeMap[selectedContents.getContentsId] != undefined){
+		episodeFileNo = episodeFileNo + 1;
+		requestEpisode(episodeFileNo, page);
+		return;
+	}
 
 	var url = EPISODE_URL.replace("{episode_file_path}", eFile);
 	
@@ -223,7 +225,7 @@ function requestEpisode(episodeFileNo, page){
 			data = $(data).find("episode");
 			var size = data.length;
 
-			episodeMap[selectedContents.getContentsId()] = [];
+//			episodeMap[selectedContents.getContentsId()] = [];
 			
 			for(var i=0; i<size; i++){
 				var episodeTitle = $(data[i]).find("episodeTitle").text();
