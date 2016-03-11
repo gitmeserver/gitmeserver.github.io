@@ -225,6 +225,10 @@ function requestEpisode(episodeFileNo, page){
 			data = $(data).find("episode");
 			var size = data.length;
 
+			if(episodeMap[selectedContents.getContentsId()] == undefined){
+				episodeMap[selectedContents.getContentsId()] = [];
+			}
+			
 //			episodeMap[selectedContents.getContentsId()] = [];
 			
 			for(var i=0; i<size; i++){
