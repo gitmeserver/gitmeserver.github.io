@@ -193,6 +193,10 @@ function requestContents(contentsFileNo){
 
 function requestEpisode(episodeFileNo, page){
 	
+	if(episodeFileNo == 0){
+		episodeMap[selectedContents.getContentsId()] = [];
+	}
+	
 	var eFiles = selectedContents.getEpisodeFiles();
 	var eFile = eFiles[episodeFileNo];
 	
@@ -207,11 +211,11 @@ function requestEpisode(episodeFileNo, page){
 	}
 	
 	// 이미 데이터가 존재하면 다음 에피소드 파일을 로드한다. 
-	if(episodeMap[selectedContents.getContentsId] != undefined){
-		episodeFileNo = episodeFileNo + 1;
-		requestEpisode(episodeFileNo, page);
-		return;
-	}
+//	if(episodeMap[selectedContents.getContentsId] != undefined){
+//		episodeFileNo = episodeFileNo + 1;
+//		requestEpisode(episodeFileNo, page);
+//		return;
+//	}
 
 	var url = EPISODE_URL.replace("{episode_file_path}", eFile);
 	
@@ -225,10 +229,6 @@ function requestEpisode(episodeFileNo, page){
 			data = $(data).find("episode");
 			var size = data.length;
 
-			if(episodeMap[selectedContents.getContentsId()] == undefined){
-				episodeMap[selectedContents.getContentsId()] = [];
-			}
-			
 //			episodeMap[selectedContents.getContentsId()] = [];
 			
 			for(var i=0; i<size; i++){
