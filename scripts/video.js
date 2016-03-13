@@ -29,20 +29,18 @@ function initVideoConfig(){
 }
 
 function plusFontSize(){
-	
-	console.log("plusFontSize");
-	
 	if(fontSize <= MAX_FONT_SIZE){
 		fontSize = fontSize + 1;
+		var fs = $(".srt").css("font-size");
+		$(".srt").css("font-size", fs + fontSize);
 	}
 }
 
 function minusFontSize(){
-	
-	console.log("minusFontSize");
-	
 	if(MIN_FONT_SIZE <= fontSize){
 		fontSize = fontSize - 1;
+		var fs = $(".srt").css("font-size");
+		$(".srt").css("font-size", fs - fontSize);
 	}
 }
 
