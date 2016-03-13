@@ -479,24 +479,21 @@ function video(){
 	});
 	
 	$("#video video").click(function(){
-		
 		videoControllLeftOnOff();
 		videoControllRightOnOff();
-		
-//		if(screenfull.isFullscreen){
-//			$("#videoControll #fullscreenOff").toggle();
-//		}
 	});
 	
 	// Listen for resize changes
 	window.addEventListener("resize", function() {
 		subtitleLocationChange(); 
 		
-		if(screenfull.isFullscreen){
-			fullscreenOn();
-		}else{
-			fullscreenOff();
-		}
+		console.log("resize");
+		
+//		if(screenfull.isFullscreen){
+//			fullscreenOn();
+//		}else{
+//			fullscreenOff();
+//		}
 		
 	}, false);
 	
@@ -505,11 +502,13 @@ function video(){
 	    // Announce the new orientation number
 		subtitleLocationChange();
 		
-		if(screenfull.isFullscreen){
-			fullscreenOn();
-		}else{
-			fullscreenOff();
-		}
+		console.log("orientationchange");
+		
+//		if(screenfull.isFullscreen){
+//			fullscreenOn();
+//		}else{
+//			fullscreenOff();
+//		}
 		
 	}, false);
 	
