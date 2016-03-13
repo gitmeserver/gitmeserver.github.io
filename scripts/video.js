@@ -21,7 +21,7 @@ var subSync = 0;
 var cms = 0;
 var css = 0;
 var cfs = 16;
-var cts = 0;
+var cst = 0;
 
 function initVideoConfig(){
 	subSync = 0;
@@ -30,7 +30,7 @@ function initVideoConfig(){
 	cms = 0;
 	css = 0;
 	cfs = 16;
-	cts = 0;
+	cst = 0;
 }
 
 function plusFontSize(){
