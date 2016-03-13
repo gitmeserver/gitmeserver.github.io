@@ -121,3 +121,11 @@ function subtitleLocationChange(){
 	$(".srt").css("fontSize", fontSize);
 	
 }
+
+function videoControllLeftOnOff(){
+	$(".vLeft").toggle();
+}
+
+function videoControllRightOnOff(){
+	$(".vRight").toggle();
+}

@@ -461,6 +461,10 @@ function video(){
 	});
 	
 	$("#video video").click(function(){
+		
+		videoControllLeftOnOff();
+		videoControllRightOnOff();
+		
 		if(screenfull.isFullscreen){
 			$("#videoControll #fullscreenOff").toggle();
 		}
