@@ -176,6 +176,8 @@ function subtitleSrt(){
 				is = toSeconds(i);
 				os = toSeconds(o);
 				
+				console.log(t);
+				
 				subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + is.toString().split(".")[0]] = t;
 			}
 		}
@@ -211,6 +213,9 @@ function subtitleSrt(){
 			c = c.replace("&nbsp", "");
 			c = c.replace(/(<([^>]+)>)/gi, "");
 			c = c.replace(/(<\/([^>]+)>)/gi, "");
+			
+			console.log(c);
+			
 			subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + t] = c;
 		}
 		
