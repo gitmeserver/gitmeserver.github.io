@@ -67,7 +67,7 @@ function plusSubTop(){
 	cst = cst + SUB_TOP_SIZE;
 	if(0 < cst){
 		$("#cst").text("자막위치:+" + cst);
-	}else{
+	}else if(cst < 0){
 		$("#cst").text("자막위치:-" + cst);
 	}
 	
@@ -81,7 +81,7 @@ function minusSubTop(){
 	cst = cst - SUB_TOP_SIZE;
 	if(0 < cst){
 		$("#cst").text("자막위치:+" + cst);
-	}else{
+	}else if(cst < 0){
 		$("#cst").text("자막위치:-" + cst);
 	}
 }
@@ -92,7 +92,7 @@ function plusSubSync(){
 	css = css + SUB_SYNC_SIZE;
 	if(0 < css){
 		$("#css").text("자막싱크:+" + css);
-	}else{
+	}else if(css < 0){
 		$("#css").text("자막싱크:-" + css);
 	}
 	
@@ -104,7 +104,7 @@ function minusSubSync(){
 	css = css - SUB_SYNC_SIZE;
 	if(0 < css){
 		$("#css").text("자막싱크:+" + css);
-	}else{
+	}else if(css < 0){
 		$("#css").text("자막싱크:-" + css);
 	}
 }
