@@ -43,6 +43,7 @@ function plusFontSize(){
 	}
 	
 	cfs = fontSize;
+	$("cfs").text(cfs);
 }
 
 function minusFontSize(){
@@ -55,6 +56,7 @@ function minusFontSize(){
 	}
 	
 	cfs = fontSize;
+	$("cfs").text(cfs);
 }
 
 function plusSubTop(){
@@ -63,6 +65,7 @@ function plusSubTop(){
 	$(".srt").css("margin-top", subTop + "px");
 	
 	cst = cst + SUB_TOP_SIZE;
+	$("cst").text(cst);
 }
 
 function minusSubTop(){
@@ -71,18 +74,21 @@ function minusSubTop(){
 	$(".srt").css("margin-top", subTop + "px");
 	
 	cst = cst - SUB_TOP_SIZE;
+	$("cst").text(cst);
 }
 
 function plusSubSync(){
 	subSync = subSync + SUB_SYNC_SIZE;
 	
 	css = css + SUB_SYNC_SIZE;
+	$("css").text(css);
 }
 
 function minusSubSync(){
 	subSync = subSync - SUB_SYNC_SIZE;
 	
 	css = css - SUB_SYNC_SIZE;
+	$("css").text(css);
 }
 
 function clickPlus(){
@@ -130,6 +136,7 @@ function backward(){
 	v.currentTime = s;
 	
 	cms = cms - SEEK_TIME;
+	$("cms").text(cms);
 }
 
 function forward(){
@@ -143,6 +150,7 @@ function forward(){
 	v.currentTime = s;
 	
 	cms = cms + SEEK_TIME;
+	$("cms").text(cms);
 }
 
 function save(){

@@ -416,10 +416,12 @@ function video(){
 	$("#videoControll").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default'></button>");
 	$("#videoControll").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default'></button>");
 	
-	$("#videoControll").append("<div class='vLeft'></div>");
+	$("#videoControll").append("<div id='controllInfo'></div>");
+	
 	// 영상위치 이동  
 	$("#controll span").append("<button id='moveSeek' type='button' class='glyphicon glyphicon-forward btn btn-default active'></button>");
-
+	$("#controllInfo").append("<span id='cms'></span>");
+	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	if(sub != undefined){
 		$(".srt").attr("data-srt", sub);
@@ -429,10 +431,13 @@ function video(){
 		
 		// 자막 글씨 크기
 		$("#controll span").append("<button id='fontSize' type='button' class='glyphicon glyphicon-text-size btn btn-default'></button>");
+		$("#controllInfo").append("<span id='cfs'></span>");
 		// 자막위치 
 		$("#controll span").append("<button id='subTop' type='button' class='glyphicon glyphicon-sort-by-alphabet btn btn-default'></button>");
+		$("#controllInfo").append("<span id='cst'></span>");
 		// 자막싱크 
 		$("#controll span").append("<button id='subSync' type='button' class='glyphicon glyphicon-text-width btn btn-default'></button>");
+		$("#controllInfo").append("<span id='css'></span>");
 	}
 	
 	$("#controll div").append("<button id='vcMinus' type='button' class='glyphicon glyphicon-minus btn btn-default'></button>");
