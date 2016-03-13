@@ -15,10 +15,13 @@ var MOVE_SEEK_SIZE = 10;
 var SUB_TOP_SIZE = 1;
 var SUB_SYNC_SIZE = 1;
 
-var recentFontSize = 0;
-var recentSubTop = 0;
-var recentMoveSeek = 0;
-var recentSubSync = 0;
+var moveSeek = 0;
+var subSync = 0;
+
+function initVideoConfig(){
+	subSync = 0;
+	moveSeek = 0;
+}
 
 function plusFontSize(){
 	
@@ -28,8 +31,6 @@ function plusFontSize(){
 		fontSize = fontSize + FONT_SIZE;
 		$(".srt").css("font-size", fontSize + "px");
 	}
-	
-	recentFontSize = fontSize;
 }
 
 function minusFontSize(){
@@ -40,34 +41,26 @@ function minusFontSize(){
 		fontSize = fontSize - FONT_SIZE;
 		$(".srt").css("font-size", fontSize + "px");
 	}
-	
-	recentFontSize = fontSize;
 }
 
 function plusSubTop(){
 	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
 	subTop = subTop + SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
-	
-	recentSubTop = recentSubTop + subTop;
 }
 
 function minusSubTop(){
 	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
 	subTop = subTop - SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
-	
-	recentSubTop = recentSubTop - subTop;
 }
 
 function plusSubSync(){
 	subSync = subSync + SUB_SYNC_SIZE;
-	recentSubSync = recentSubSync + SUB_SYNC_SIZE;
 }
 
 function minusSubSync(){
 	subSync = subSync - SUB_SYNC_SIZE;
-	recentSubSync = recentSubSync - SUB_SYNC_SIZE;
 }
 
 function clickPlus(){
@@ -113,8 +106,6 @@ function backward(){
 	}
 	
 	v.currentTime = s;
-	
-	recentMoveSeek = recentMoveSeek - SEEK_TIME;
 }
 
 function forward(){
@@ -126,8 +117,6 @@ function forward(){
 	}
 	
 	v.currentTime = s;
-	
-	recentMoveSeek = recentMoveSeek + SEEK_TIME;
 }
 
 function save(){
@@ -199,10 +188,10 @@ function subtitleLocationChange(){
 	var playerHeight = $("#player").css("height");
 	var srtMarginTop = ( parseInt(playerHeight) / 100 ) * 80;
 	
-	var fs = ( parseInt(playerHeight) / 50 ) + 10;
+	var fontSize = ( parseInt(playerHeight) / 50 ) + 10;
 	
 	$(".srt").css("marginTop", srtMarginTop);
-	$(".srt").css("fontSize", fs);
+	$(".srt").css("fontSize", fontSize);
 	
 }
 
