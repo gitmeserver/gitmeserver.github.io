@@ -398,17 +398,6 @@ function details(){
 
 function video(){
 	
-	if($.getCfs() == undefined){
-		$.setCfs(16);
-	}
-	
-	if($.getCst() == undefined){
-		var playerHeight = $("#player").css("height");
-		var v = ( parseInt(playerHeight) / 100 ) * 80;
-		console.log(v);
-		$.setCst(parseInt(v));
-	}
-	
 	$("#detail").empty();
 	$("#info").detach();
 	$("#info_line").detach();
@@ -432,13 +421,14 @@ function video(){
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	if(sub != undefined){
+		
+		subtitleLocationChange();
+		
 		console.log($.getCfs());
 		$(".srt").css("font-size", $.getCfs() + "px");
 		$(".srt").css("margin-top", $.getCst() + "px");
 		$(".srt").attr("data-srt", sub);
 		subtitleSrt();
-		
-		subtitleLocationChange();
 		
 		// 자막 글씨 크기
 		$("#controll #cButton").append("<button id='fontSize' type='button' class='glyphicon glyphicon-text-size btn btn-default'></button>");
