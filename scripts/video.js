@@ -30,7 +30,6 @@ function plusFontSize(){
 	}
 	
 	recentFontSize = fontSize;
-	console.log("recentFontSize " + recentFontSize);
 }
 
 function minusFontSize(){
@@ -43,7 +42,6 @@ function minusFontSize(){
 	}
 	
 	recentFontSize = fontSize;
-	console.log("recentFontSize " + recentFontSize);
 }
 
 function plusSubTop(){
@@ -201,10 +199,10 @@ function subtitleLocationChange(){
 	var playerHeight = $("#player").css("height");
 	var srtMarginTop = ( parseInt(playerHeight) / 100 ) * 80;
 	
-	var fontSize = ( parseInt(playerHeight) / 50 ) + 10;
+	var fs = ( parseInt(playerHeight) / 50 ) + 10;
 	
 	$(".srt").css("marginTop", srtMarginTop);
-	$(".srt").css("fontSize", fontSize);
+	$(".srt").css("fontSize", fs);
 	
 }
 
