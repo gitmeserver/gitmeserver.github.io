@@ -430,13 +430,13 @@ function video(){
 		
 		// 자막 글씨 크기
 		$("#controll span").append("<button id='fontSize' type='button' class='glyphicon glyphicon-text-size btn btn-default'></button>");
-		$("#controllInfo").append("<div id='cfs'>자막크기:" + cfs + "</div>");
+		$("#controllInfo").append("<div id='cfs'>자막크기 : " + cfs + "</div>");
 		// 자막위치 
 		$("#controll span").append("<button id='subTop' type='button' class='glyphicon glyphicon-sort-by-alphabet btn btn-default'></button>");
-		$("#controllInfo").append("<div id='cst'>자막위치:" + cst + "</div>");
+		$("#controllInfo").append("<div id='cst'>자막위치 : " + cst + "</div>");
 		// 자막싱크 
 		$("#controll span").append("<button id='subSync' type='button' class='glyphicon glyphicon-text-width btn btn-default'></button>");
-		$("#controllInfo").append("<div id='css'>자막싱크:" + css + "</div>");
+		$("#controllInfo").append("<div id='css'>자막싱크 : " + css + "</div>");
 	}
 	
 	$("#controll div").append("<button id='vcMinus' type='button' class='glyphicon glyphicon-minus btn btn-default'></button>");
