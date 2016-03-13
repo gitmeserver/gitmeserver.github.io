@@ -110,7 +110,7 @@ body {
 
 #videoControll {
 	width:100%;
-	text-align:right;
+	text-align:left;
 	z-index: 2147483647 !important;
 	position:absolute;
 	padding:10px;
