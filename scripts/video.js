@@ -136,7 +136,6 @@ function backward(){
 	v.currentTime = s;
 	
 	cms = cms - SEEK_TIME;
-	$("#cms").text("영상위치:" + v.currentTime);
 }
 
 function forward(){
@@ -150,7 +149,6 @@ function forward(){
 	v.currentTime = s;
 	
 	cms = cms + SEEK_TIME;
-	$("#cms").text("영상위치:" + v.currentTime);
 }
 
 function save(){

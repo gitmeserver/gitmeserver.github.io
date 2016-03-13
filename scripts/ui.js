@@ -420,7 +420,6 @@ function video(){
 	
 	// 영상위치 이동  
 	$("#controll span").append("<button id='moveSeek' type='button' class='glyphicon glyphicon-forward btn btn-default active'></button>");
-	$("#controllInfo").append("<div id='cms'>영상위치 : " + $("#video video").currentTime + "</div>");
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	if(sub != undefined){
