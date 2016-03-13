@@ -399,11 +399,11 @@ function details(){
 function video(){
 	
 	if($.getCfs() == undefined){
-		$.setCfs("16");
+		$.setCfs(16);
 	}
 	
 	if($.getCst() == undefined){
-		$.setCst("280");
+		$.setCst(280);
 	}
 	
 	$("#detail").empty();
