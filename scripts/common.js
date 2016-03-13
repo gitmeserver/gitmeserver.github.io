@@ -449,9 +449,7 @@ $.extend({
 	},
 	
 	setCfs : function(cfs){
-		 var date = new Date();
-	     date.setTime(date.getTime() + (365 * 10 * 24 * 60 * 60 * 1000));
-	     $.cookie("cfs", cfs, { expires: date.toGMTString() });
+	     $.cookie("cfs", cfs, { expires: 365 * 10 });
 	},
 	
 	getCst : function(){
@@ -459,9 +457,7 @@ $.extend({
 	},
 	
 	setCst : function(cst){
-		var date = new Date();
-	     date.setTime(date.getTime() + (365 * 10 * 24 * 60 * 60 * 1000));
-	     $.cookie("cst", cst, { expires: date.toGMTString() });
+	     $.cookie("cst", cst, { expires: 365 * 10 });
 	}
 	
 });  
