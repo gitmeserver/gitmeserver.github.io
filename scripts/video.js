@@ -51,7 +51,7 @@ function minusFontSize(){
 	var fontSize = $.getCfs();
 	
 	if(MIN_FONT_SIZE <= fontSize){
-		fontSize = fontSize - FONT_SIZE;
+		fontSize = parseInt(fontSize) - parseInt(FONT_SIZE);
 		$(".srt").css("font-size", fontSize + "px");
 	}
 	
@@ -61,7 +61,7 @@ function minusFontSize(){
 
 function plusSubTop(){
 	var subTop = $.getCst();
-	subTop = subTop + SUB_TOP_SIZE;
+	subTop = parseInt(subTop) + parseInt(SUB_TOP_SIZE);
 	$(".srt").css("margin-top", subTop + "px");
 	
 	$.setCst(subTop);
@@ -75,7 +75,7 @@ function plusSubTop(){
 
 function minusSubTop(){
 	var subTop = $.getCst();
-	subTop = subTop - SUB_TOP_SIZE;
+	subTop = parseInt(subTop) - parseInt(SUB_TOP_SIZE);
 	$(".srt").css("margin-top", subTop + "px");
 	
 	$.setCst(subTop);
