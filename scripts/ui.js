@@ -398,8 +398,6 @@ function details(){
 
 function video(){
 	
-	cfs = ( parseInt(playerHeight) / 50 ) + 10;
-	
 	$("#detail").empty();
 	$("#info").detach();
 	$("#info_line").detach();
