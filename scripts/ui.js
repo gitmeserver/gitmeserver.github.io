@@ -409,14 +409,12 @@ function video(){
 	$("#embed").append("<div id='videoControll' style='display:none;'><div>");
 	$("#embed").append("<video id='player' controls='true' autoplay='true' class='embed-responsive-item'></video>");
 	$("#embed").append("<div class='srt' data-video='player'></div>");
-	$("#detail").append("<div id='controll'><div class='float-right'></div><span id='cButton'></span></div></div>");
+	$("#detail").append("<div id='controll'><div id='controllInfo'></div><div class='float-right'></div><span id='cButton'></span></div></div>");
 	
 	$("#videoControll").append("<button type='button' id='fullscreen' class='glyphicon glyphicon-resize-full btn btn-default'></button>");
 	$("#videoControll").append("<button type='button' id='fullscreenOff' style='display:none;' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
 	$("#videoControll").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default'></button>");
 	$("#videoControll").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default'></button>");
-	
-	$("#controll").append("<div id='controllInfo'></div>");
 	
 	// 영상위치 이동  
 	$("#controll #cButton").append("<button id='moveSeek' type='button' class='glyphicon glyphicon-forward btn btn-default active'></button>");
