@@ -404,7 +404,14 @@ var Contents = $Class({
     },
     
     check : function(ch, searchWord){
-    	if(searchWord == undefined || -1 < this.title.indexOf(searchWord)){
+    	if(searchWord == undefined || 
+    			-1 < this.title.indexOf(searchWord) ||
+    			-1 < this.description.indexOf(searchWord) ||
+    			-1 < this.year.indexOf(searchWord) || 
+    			-1 < this.directors.indexOf(searchWord) || 
+    			-1 < this.actors.indexOf(searchWord) || 
+    			-1 < this.genre.indexOf(searchWord) || 
+    			-1 < this.nation.indexOf(searchWord)){
     		if(ch.match("all") || this.channelId.match(ch)){
     			return true;
     		}else{
