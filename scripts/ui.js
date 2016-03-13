@@ -411,9 +411,12 @@ function video(){
 	$("#embed").append("<div class='srt' data-video='player'></div>");
 	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
-	$("#videoControll").append("<div class='vRight'><button type='button' id='fullscreenOff' style='display:none;' class='glyphicon glyphicon-resize-small btn btn-default'></button></div>");
+	$("#videoControll").append("<div class='vRight'></div>");
+	$(".vRight").append("<button id='fullscreen' type='button' class='glyphicon glyphicon-resize-full btn btn-default'></button>");
+	$(".vRight").append("<button type='button' id='fullscreenOff' style='display:none;' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
 	
-	$("#videoControll").append("<div class='vLeft'><button type='button' class='glyphicon glyphicon-resize-small btn btn-default'></button></div>");
+	$("#videoControll").append("<div class='vLeft'></div>");
+	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	$(".srt").attr("data-srt", sub);
@@ -423,7 +426,6 @@ function video(){
 	
 	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default'></button>");
 	$("#controll div").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default'></button>");
-	$("#controll div").append("<button id='fullscreen' type='button' class='glyphicon glyphicon-resize-full btn btn-default'></button>");
 	$("#controll span").append("<button id='backward' class='glyphicon glyphicon-step-backward btn btn-default' type='button'></button>");
 	$("#controll span").append("<button id='forward' class='glyphicon glyphicon-step-forward btn btn-default' type='button'></button>");
 	
