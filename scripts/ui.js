@@ -416,7 +416,7 @@ function video(){
 	$("#videoControll").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default'></button>");
 	$("#videoControll").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default'></button>");
 	
-	$("#videoControll").append("<span id='controllInfo'></span>");
+	$("#controll").append("<div id='controllInfo'></div>");
 	
 	// 영상위치 이동  
 	$("#controll span").append("<button id='moveSeek' type='button' class='glyphicon glyphicon-forward btn btn-default active'></button>");
