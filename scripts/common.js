@@ -358,7 +358,7 @@ $.extend({
 			deckList = deckList + "," + value;
 		}
 		
-		$.cookie("deckList", deckList);
+		$.cookie("deckList", deckList, { expires: 365 * 10 });
 		
 		$.modal("감상중인 콘텐츠로 등록되었습니다.");
 	},
@@ -390,7 +390,7 @@ $.extend({
 		if(temp.length == 0){
 			$.removeCookie("deckList");
 		}else{
-			$.cookie("deckList", temp);
+			$.cookie("deckList", temp, { expires: 365 * 10 });
 		}
 
 	},
@@ -411,7 +411,7 @@ $.extend({
 			watchAfterList = watchAfterList + "," + contentsId;
 		}
 		
-		$.cookie("watchAfterList", watchAfterList);
+		$.cookie("watchAfterList", watchAfterList, { expires: 365 * 10 });
 		
 		$.modal("나중에보기에 등록되었습니다.");
 	},
@@ -433,7 +433,7 @@ $.extend({
 		// 맨 뒤의 contentsId 제거 
 		watchAfterList = watchAfterList.replace("," + contentsId, "");
 		
-		$.cookie("watchAfterList", watchAfterList);
+		$.cookie("watchAfterList", watchAfterList, { expires: 365 * 10 });
 	},
 	
 	removeFirstCharSlush : function(str){
