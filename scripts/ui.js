@@ -421,6 +421,8 @@ function video(){
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	if(sub != undefined){
+		$(".srt").css("font-size", $.getCfs() + "px");
+		$(".srt").css("margin-top", $.getCst() + "px");
 		$(".srt").attr("data-srt", sub);
 		subtitleSrt();
 		
@@ -428,10 +430,10 @@ function video(){
 		
 		// 자막 글씨 크기
 		$("#controll #cButton").append("<button id='fontSize' type='button' class='glyphicon glyphicon-text-size btn btn-default'></button>");
-		$("#controllInfo").append("<span id='cfs'>자막크기 : " + cfs + "</span>");
+		$("#controllInfo").append("<span id='cfs'>자막크기 : " + $.getCfs() + "</span>");
 		// 자막위치 
 		$("#controll #cButton").append("<button id='subTop' type='button' class='glyphicon glyphicon-sort-by-alphabet btn btn-default'></button>");
-		$("#controllInfo").append("<span id='cst'>자막위치 : " + cst + "</span>");
+		$("#controllInfo").append("<span id='cst'>자막위치 : " + $.getCst() + "</span>");
 		// 자막싱크 
 		$("#controll #cButton").append("<button id='subSync' type='button' class='glyphicon glyphicon-text-width btn btn-default'></button>");
 		$("#controllInfo").append("<span id='css'>자막싱크 : " + css + "초</span>");

@@ -442,6 +442,22 @@ $.extend({
 		}else{
 			return str;
 		}
+	},
+	
+	getCfs : function(){
+		return $.cookie("cfs");
+	},
+	
+	setCfs : function(cfs){
+		$.cookie("cfs", cfs);
+	},
+	
+	getCst : function(){
+		return $.cookie("cst");
+	},
+	
+	setCst : function(cst){
+		$.cookie("cst", cst);
 	}
 	
 });  

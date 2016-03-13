@@ -35,54 +35,54 @@ function initVideoConfig(){
 
 function plusFontSize(){
 	
-	var fontSize = parseInt($(".srt").css("font-size").replace("px", ""));
+	var fontSize = $.getCfs();
 	
 	if(fontSize <= MAX_FONT_SIZE){
 		fontSize = fontSize + FONT_SIZE;
 		$(".srt").css("font-size", fontSize + "px");
 	}
 	
-	cfs = fontSize;
-	$("#cfs").text("자막크기 : " + cfs);
+	$.setCfs(fontSize);
+	$("#cfs").text("자막크기 : " + $.getCfs());
 }
 
 function minusFontSize(){
 	
-	var fontSize = parseInt($(".srt").css("font-size").replace("px", ""));
+	var fontSize = $.getCfs();
 	
 	if(MIN_FONT_SIZE <= fontSize){
 		fontSize = fontSize - FONT_SIZE;
 		$(".srt").css("font-size", fontSize + "px");
 	}
 	
-	cfs = fontSize;
-	$("#cfs").text("자막크기 : " + cfs);
+	$.setCfs(fontSize);
+	$("#cfs").text("자막크기 : " + $.getCfs());
 }
 
 function plusSubTop(){
-	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
+	var subTop = $.getCst();
 	subTop = subTop + SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
 	
-	cst = cst + SUB_TOP_SIZE;
-	if(0 < cst){
-		$("#cst").text("자막위치 : +" + cst);
+	$.setCst(subTop);
+	if(0 < $.getCst()){
+		$("#cst").text("자막위치 : +" + $.getCst());
 	}else{
-		$("#cst").text("자막위치 : " + cst);
+		$("#cst").text("자막위치 : " + $.getCst());
 	}
 	
 }
 
 function minusSubTop(){
-	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
+	var subTop = $.getCst();
 	subTop = subTop - SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
 	
-	cst = cst - SUB_TOP_SIZE;
-	if(0 < cst){
-		$("#cst").text("자막위치 : +" + cst);
+	$.setCst(subTop);
+	if(0 < $.getCst()){
+		$("#cst").text("자막위치 : +" + $.getCst());
 	}else{
-		$("#cst").text("자막위치 : " + cst);
+		$("#cst").text("자막위치 : " + $.getCst());
 	}
 }
 
