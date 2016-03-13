@@ -15,13 +15,10 @@ var MOVE_SEEK_SIZE = 10;
 var SUB_TOP_SIZE = 1;
 var SUB_SYNC_SIZE = 1;
 
-var moveSeek = 0;
-var subSync = 0;
-
-function initVideoConfig(){
-	subSync = 0;
-	moveSeek = 0;
-}
+var recentFontSize = 0;
+var recentSubTop = 0;
+var recentMoveSeek = 0;
+var recentSubSync = 0;
 
 function plusFontSize(){
 	
@@ -29,8 +26,10 @@ function plusFontSize(){
 	
 	if(fontSize <= MAX_FONT_SIZE){
 		fontSize = fontSize + FONT_SIZE;
-		$(".srt").css("font-size", fontSize + "px !important");
+		$(".srt").css("font-size", fontSize + "px");
 	}
+	
+	recentFontSize = fontSize;
 }
 
 function minusFontSize(){
@@ -39,28 +38,36 @@ function minusFontSize(){
 	
 	if(MIN_FONT_SIZE <= fontSize){
 		fontSize = fontSize - FONT_SIZE;
-		$(".srt").css("font-size", fontSize + "px !important");
+		$(".srt").css("font-size", fontSize + "px");
 	}
+	
+	recentFontSize = fontSize;
 }
 
 function plusSubTop(){
 	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
 	subTop = subTop + SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
+	
+	recentSubTop = subTop;
 }
 
 function minusSubTop(){
 	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
 	subTop = subTop - SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
+	
+	recentSubTop = subTop;
 }
 
 function plusSubSync(){
 	subSync = subSync + SUB_SYNC_SIZE;
+	recentSubSync = subSync;
 }
 
 function minusSubSync(){
 	subSync = subSync - SUB_SYNC_SIZE;
+	recentSubSync = subSync;
 }
 
 function clickPlus(){
@@ -106,6 +113,8 @@ function backward(){
 	}
 	
 	v.currentTime = s;
+	
+	recentMoveSeek - SEEK_TIME;
 }
 
 function forward(){
@@ -117,6 +126,8 @@ function forward(){
 	}
 	
 	v.currentTime = s;
+	
+	recentMoveSeek + SEEK_TIME;
 }
 
 function save(){
@@ -161,6 +172,8 @@ function fullscreenOn(){
 			
 			$("#fullscreen").hide();
 			$("#fullscreenOff").show();
+			
+			$(".srt").css("font-size", recentFontSize + "px");
 		}else{
 			$("#embed").removeClass("fullscreen");
 			$("#embed").addClass("embed-responsive");
@@ -170,6 +183,8 @@ function fullscreenOn(){
 			
 			$("#fullscreen").show();
 			$("#fullscreenOff").hide();
+			
+			$(".srt").css("font-size", recentFontSize + "px");
 		}
 	});
 	
