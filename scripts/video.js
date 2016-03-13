@@ -74,7 +74,7 @@ function fullscreenOn(){
 		
 		if(!screenfull.isFullscreen){
 			fullscreenOff();
-			$("#videoControll").hide();
+			$("#videoControll #fullscreenOff").hide();
 		}
 	});
 	
@@ -103,9 +103,9 @@ function fullscreenOff(){
 
 function fullscreenOffButton(){
 	if(screenfull.isFullscreen){
-		$("#videoControll").show();
+		$("#videoControll #fullscreenOff").show();
 		setTimeout(function(){
-			$("#videoControll").fadeOut(500);
+			$("#videoControll #fullscreenOff").fadeOut(500);
 		}, 200);
 	}
 }
