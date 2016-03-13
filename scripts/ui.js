@@ -422,12 +422,12 @@ function video(){
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	if(sub != undefined){
 		
+		$(".srt").attr("data-srt", sub);
+		
 		subtitleLocationChange();
 		
 		console.log($.getCfs());
-		$(".srt").css("font-size", $.getCfs() + "px");
-		$(".srt").css("margin-top", $.getCst() + "px");
-		$(".srt").attr("data-srt", sub);
+
 		subtitleSrt();
 		
 		// 자막 글씨 크기
