@@ -477,10 +477,10 @@ function video(){
 		$("#fullscreenOff").hide();
 	});
 	
-	$("#videoControll .vLeft button").click(){
+	$("#videoControll .vLeft button").click(function(){
 		$("#videoControll .vLeft button").removeClass("active");
 		$(this).addClass("active");
-	}
+	});
 	
 	$("#video video").click(function(){
 		
