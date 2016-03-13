@@ -7,6 +7,87 @@ var prefixDeck = "devy_deck";
 var totalWatchAfter = 10;
 var prefixWatchAfter = "devy_watchafter";
 
+var MAX_FONT_SIZE = 50;
+var MIN_FONT_SIZE = 10;
+
+var MOVE_SEEK_SIZE = 10;
+
+var SUB_TOP_SIZE = 1;
+
+var SUB_SYNC_SIZE = 0.1;
+
+var fontSize = 12;
+var moveSeek = 0;
+var subTop = 0;
+var subSync = 0;
+
+function initVideoConfig(){
+	fontSize = 12;
+	subSync = 0;
+	subTop = 0;
+	moveSeek = 0;
+}
+
+function plusFontSize(){
+	if(fontSize <= MAX_FONT_SIZE){
+		fontSize = fontSize + 1;
+	}
+}
+
+function minusFontSize(){
+	if(MIN_FONT_SIZE <= fontSize){
+		fontSize = fontSize - 1;
+	}
+}
+
+function plusMoveSeek(){
+	moveSeek = moveSeek + MOVE_SEEK_SIZE;
+}
+
+function minusMoveSeek(){
+	moveSeek = moveSeek - MOVE_SEEK_SIZE;
+}
+
+function plusSubTop(){
+	subTop = subTop + SUB_TOP_SIZE;
+}
+
+function minusSubTop(){
+	subTop = subTop - SUB_TOP_SIZE;
+}
+
+function plusMoveSeek(){
+	moveSeek = moveSeek + SUB_SYNC_SIZE;
+}
+
+function minusMoveSeek(){
+	moveSeek = moveSeek - SUB_SYNC_SIZE;
+}
+
+function clickPlus(){
+	if($("#fontSize").hasClass("active")){
+		console.log("#fontSize");
+	}else if($("#subTop").hasClass("active")){
+		console.log("#subTop");
+	}else if($("#subSync").hasClass("active")){
+		console.log("#subSync");
+	}else if($("#moveSeek").hasClass("active")){
+		console.log("#moveSeek");
+	}
+}
+
+function clickMinus(){
+	if($("#fontSize").hasClass("active")){
+		console.log("#fontSize");
+	}else if($("#subTop").hasClass("active")){
+		console.log("#subTop");
+	}else if($("#subSync").hasClass("active")){
+		console.log("#subSync");
+	}else if($("#moveSeek").hasClass("active")){
+		console.log("#moveSeek");
+	}
+}
+
 function play(){
 	var v = $("#video video")[0];
 	v.play();
