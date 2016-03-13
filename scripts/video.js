@@ -38,7 +38,7 @@ function plusFontSize(){
 	var fontSize = $.getCfs();
 	
 	if(fontSize <= MAX_FONT_SIZE){
-		fontSize = fontSize + FONT_SIZE;
+		fontSize = parseInt(fontSize) + parseInt(FONT_SIZE);
 		$(".srt").css("font-size", fontSize + "px");
 	}
 	
