@@ -12,7 +12,7 @@ var MIN_FONT_SIZE = 10;
 
 var FONT_SIZE = 2;
 var MOVE_SEEK_SIZE = 10;
-var SUB_TOP_SIZE = 1;
+var SUB_TOP_SIZE = 2;
 var SUB_SYNC_SIZE = 1;
 
 var moveSeek = 0;
@@ -244,6 +244,8 @@ function subtitleLocationChange(){
 	if($.getCfs() == undefined){
 		$.setCfs(16);
 	}
+	
+	console.log((parseInt(v) + $.getCst()));
 	
 	$(".srt").css("marginTop", (parseInt(v) + $.getCst()) + "px");
 	$(".srt").css("fontSize", $.getCfs() + "px");

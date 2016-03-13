@@ -426,8 +426,6 @@ function video(){
 		
 		subtitleLocationChange();
 		
-		console.log($.getCfs());
-
 		subtitleSrt();
 		
 		// 자막 글씨 크기
