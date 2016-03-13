@@ -456,12 +456,14 @@ function video(){
 	
 	$("#fullscreen").click(function(){
 		fullscreenOn();
-		$("#fullscreenOff").toggle();
+		$("#fullscreen").hide();
+		$("#fullscreenOff").show();
 	});
 	
 	$("#fullscreenOff").click(function(){
 		fullscreenOff();
-		$("#fullscreen").toggle();
+		$("#fullscreen").show();
+		$("#fullscreenOff").hide();
 	});
 	
 	$("#videoControll").click(function(){
