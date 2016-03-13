@@ -91,9 +91,9 @@ function plusSubSync(){
 	
 	css = css + SUB_SYNC_SIZE;
 	if(0 < css){
-		$("#css").text("자막싱크:+" + css);
+		$("#css").text("자막싱크:+" + css + "초");
 	}else{
-		$("#css").text("자막싱크:" + css);
+		$("#css").text("자막싱크:" + css + "초");
 	}
 	
 }
@@ -103,9 +103,9 @@ function minusSubSync(){
 	
 	css = css - SUB_SYNC_SIZE;
 	if(0 < css){
-		$("#css").text("자막싱크:+" + css);
+		$("#css").text("자막싱크:+" + css + "초");
 	}else{
-		$("#css").text("자막싱크:" + css);
+		$("#css").text("자막싱크:" + css + "초");
 	}
 }
 

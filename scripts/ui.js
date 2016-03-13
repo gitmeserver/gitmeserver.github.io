@@ -434,7 +434,7 @@ function video(){
 		$("#controllInfo").append("<span id='cst'>자막위치:" + cst + "</span>");
 		// 자막싱크 
 		$("#controll #cButton").append("<button id='subSync' type='button' class='glyphicon glyphicon-text-width btn btn-default'></button>");
-		$("#controllInfo").append("<span id='css'>자막싱크:" + css + "</span>");
+		$("#controllInfo").append("<span id='css'>자막싱크:" + css + "초</span>");
 	}
 	
 	$("#controll .float-right").append("<button id='vcMinus' type='button' class='glyphicon glyphicon-minus btn btn-default'></button>");
