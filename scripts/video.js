@@ -98,16 +98,6 @@ function fullscreenOff(){
 	
 	$("#player").removeClass("fullscreen");
 	
-//	fullscreenOffButton();
-}
-
-function fullscreenOffButton(){
-//	if(screenfull.isFullscreen){
-//		$("#videoControll #fullscreenOff").show();
-//		setTimeout(function(){
-//			$("#videoControll #fullscreenOff").fadeOut(500);
-//		}, 200);
-//	}
 }
 
 function subtitleLocationChange(){

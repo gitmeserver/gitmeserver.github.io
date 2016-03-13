@@ -413,7 +413,7 @@ function video(){
 	
 	$("#videoControll").append("<div class='vRight'></div>");
 	$(".vRight").append("<button type='button' id='fullscreen' class='glyphicon glyphicon-resize-full btn btn-default'></button>");
-	$(".vRight").append("<button type='button' id='fullscreenOff' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
+	$(".vRight").append("<button type='button' id='fullscreenOff' style='display:none;' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
 	
 	$("#videoControll").append("<div class='vLeft'></div>");
 	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
@@ -456,10 +456,12 @@ function video(){
 	
 	$("#fullscreen").click(function(){
 		fullscreenOn();
+		$("#fullscreenOff").toggle();
 	});
 	
 	$("#fullscreenOff").click(function(){
 		fullscreenOff();
+		$("#fullscreen").toggle();
 	});
 	
 	$("#videoControll").click(function(){
