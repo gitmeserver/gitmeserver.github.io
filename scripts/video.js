@@ -16,33 +16,33 @@ var SUB_TOP_SIZE = 1;
 
 var SUB_SYNC_SIZE = 0.1;
 
-var fontSize = 0;
 var moveSeek = 0;
 var subTop = 0;
 var subSync = 0;
 
 function initVideoConfig(){
-	fontSize = 12;
 	subSync = 0;
 	subTop = 0;
 	moveSeek = 0;
 }
 
 function plusFontSize(){
+	
+	var fontSize = parseInt($(".srt").css("font-size").replace("px", ""));
+	
 	if(fontSize <= MAX_FONT_SIZE){
 		fontSize = fontSize + 1;
-		var fs = $(".srt").css("font-size").replace("px", "");
-		var ffss = (parseInt(fs) + parseInt(fontSize)) + "px";
-		console.log(ffss);
-		$(".srt").css("font-size", ffss);
+		$(".srt").css("font-size", fontSize + "px");
 	}
 }
 
 function minusFontSize(){
+	
+	var fontSize = parseInt($(".srt").css("font-size").replace("px", ""));
+	
 	if(MIN_FONT_SIZE <= fontSize){
 		fontSize = fontSize - 1;
-		var fs = $(".srt").css("font-size");
-		$(".srt").css("font-size", fs - fontSize + "px");
+		$(".srt").css("font-size", fontSize + "px");
 	}
 }
 
