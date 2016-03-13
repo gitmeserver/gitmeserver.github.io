@@ -173,7 +173,10 @@ function fullscreenOn(){
 			$("#fullscreen").hide();
 			$("#fullscreenOff").show();
 			
-			$(".srt").css("font-size", recentFontSize + "px");
+			if(0 < recentFontSize){
+				$(".srt").css("font-size", recentFontSize + "px");
+			}
+			
 		}else{
 			$("#embed").removeClass("fullscreen");
 			$("#embed").addClass("embed-responsive");
@@ -184,7 +187,9 @@ function fullscreenOn(){
 			$("#fullscreen").show();
 			$("#fullscreenOff").hide();
 			
-			$(".srt").css("font-size", recentFontSize + "px");
+			if(0 < recentFontSize){
+				$(".srt").css("font-size", recentFontSize + "px");
+			}
 		}
 	});
 	
