@@ -409,7 +409,7 @@ function video(){
 	$("#embed").append("<div id='videoControll' style='display:none;'><div>");
 	$("#embed").append("<video id='player' controls='true' autoplay='true' class='embed-responsive-item'></video>");
 	$("#embed").append("<div class='srt' data-video='player'></div>");
-	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
+	$("#detail").append("<div id='controll'><div class='float-right'></div><span id='cButton'></span></div></div>");
 	
 	$("#videoControll").append("<button type='button' id='fullscreen' class='glyphicon glyphicon-resize-full btn btn-default'></button>");
 	$("#videoControll").append("<button type='button' id='fullscreenOff' style='display:none;' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
@@ -419,7 +419,7 @@ function video(){
 	$("#controll").append("<div id='controllInfo'></div>");
 	
 	// 영상위치 이동  
-	$("#controll span").append("<button id='moveSeek' type='button' class='glyphicon glyphicon-forward btn btn-default active'></button>");
+	$("#controll #cButton").append("<button id='moveSeek' type='button' class='glyphicon glyphicon-forward btn btn-default active'></button>");
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	if(sub != undefined){
@@ -429,13 +429,13 @@ function video(){
 		subtitleLocationChange();
 		
 		// 자막 글씨 크기
-		$("#controll span").append("<button id='fontSize' type='button' class='glyphicon glyphicon-text-size btn btn-default'></button>");
+		$("#controll #cButton").append("<button id='fontSize' type='button' class='glyphicon glyphicon-text-size btn btn-default'></button>");
 		$("#controllInfo").append("<span id='cfs'>자막크기 : " + cfs + "</span>");
 		// 자막위치 
-		$("#controll span").append("<button id='subTop' type='button' class='glyphicon glyphicon-sort-by-alphabet btn btn-default'></button>");
+		$("#controll #cButton").append("<button id='subTop' type='button' class='glyphicon glyphicon-sort-by-alphabet btn btn-default'></button>");
 		$("#controllInfo").append("<span id='cst'>자막위치 : " + cst + "</span>");
 		// 자막싱크 
-		$("#controll span").append("<button id='subSync' type='button' class='glyphicon glyphicon-text-width btn btn-default'></button>");
+		$("#controll #cButton").append("<button id='subSync' type='button' class='glyphicon glyphicon-text-width btn btn-default'></button>");
 		$("#controllInfo").append("<span id='css'>자막싱크 : " + css + "</span>");
 	}
 	
