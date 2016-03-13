@@ -411,7 +411,7 @@ function video(){
 	$("#embed").append("<div class='srt' data-video='player'></div>");
 	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
-	$("#video_controll").append("<button type='button' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
+	$("#videoControll").append("<button type='button' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	$(".srt").attr("data-srt", sub);
