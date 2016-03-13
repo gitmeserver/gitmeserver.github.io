@@ -108,6 +108,14 @@ body {
 	width:100% !important;
 }	
 
+#contoller span button {
+	margin-right:5px;
+}
+
+#controller .float-right {
+	margin-left:5px;
+}
+
 #videoControll {
 	width:100%;
 	text-align:left;
@@ -116,16 +124,12 @@ body {
 	padding:10px;
 }
 
-#videoControll .vLeft button {
+#videoControll button {
 	margin-right:5px;
 }
 
 #videoControll .vLeft button.active {
 	color: #33F !important;
-}
-
-#videoControll .vRight {
-	float:right;
 }
 
 video::-webkit-media-controls-fullscreen-button {
