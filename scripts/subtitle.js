@@ -225,7 +225,7 @@ function subtitleSrt(){
 			var currentTime = vid.currentTime;
 			currentTime = parseInt(currentTime) + parseInt(subSync);
 			
-			console.log(sybSync + " >> " + currentTime);
+			console.log(subSync + " >> " + currentTime);
 			
 			var ss = vid.currentTime.toString().split(".")[0];
 			$(".srt").text(subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + ss]);
