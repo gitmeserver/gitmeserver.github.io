@@ -473,7 +473,7 @@ function video(){
 		fullscreenOff();
 	});
 	
-	$("#videoControll .vLeft button").click(function(){
+	$("#videoControll .vLeft > button").click(function(){
 		$("#videoControll .vLeft button").removeClass("active");
 		$(this).addClass("active");
 	});
