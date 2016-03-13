@@ -120,6 +120,10 @@ body {
 	margin-right:5px;
 }
 
+#videoControll .vLeft button.active {
+	color: #33F !important;
+}
+
 #videoControll .vRight {
 	float:right;
 }
