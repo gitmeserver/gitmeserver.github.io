@@ -429,6 +429,7 @@ function video(){
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	if(sub != undefined){
+		console.log($.getCfs());
 		$(".srt").css("font-size", $.getCfs() + "px");
 		$(".srt").css("margin-top", (parseInt($(".srt").css("margin-top")) + parseInt($.getCst())) + "px");
 		$(".srt").attr("data-srt", sub);
