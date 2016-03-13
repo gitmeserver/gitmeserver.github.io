@@ -45,42 +45,24 @@ function minusFontSize(){
 
 function plusSubTop(){
 	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
-	subTop = subTop + 1;
+	subTop = subTop + SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
 }
 
 function minusSubTop(){
 	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
-	subTop = subTop - 1;
+	subTop = subTop - SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
 }
 
 function plusSubSync(){
-	
-	console.log("plusSubSync");
-	
 	subSync = subSync + SUB_SYNC_SIZE;
+	console.log(subSync);
 }
 
 function minusSubSync(){
-	
-	console.log("minusSubSync");
-	
 	subSync = subSync - SUB_SYNC_SIZE;
-}
-
-function plusMoveSeek(){
-	
-	
-	
-	moveSeek = moveSeek + SUB_SYNC_SIZE;
-}
-
-function minusMoveSeek(){
-	
-	console.log("minusMoveSeek");
-	
-	moveSeek = moveSeek - SUB_SYNC_SIZE;
+	console.log(subSync);
 }
 
 function clickPlus(){
