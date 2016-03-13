@@ -32,7 +32,8 @@ function plusFontSize(){
 	if(fontSize <= MAX_FONT_SIZE){
 		fontSize = fontSize + 1;
 		var fs = $(".srt").css("font-size");
-		var ffss = fs + fontSize + "px";
+		var ffss = (fs + fontSize) + "px";
+		console.log(ffss);
 		$(".srt").css("font-size", ffss);
 	}
 }
