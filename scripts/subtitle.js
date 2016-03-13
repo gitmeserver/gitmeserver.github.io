@@ -189,9 +189,7 @@ function subtitleSrt(){
 			
 			var currentTime = vid.currentTime;
 			currentTime = parseInt(currentTime) + parseInt(subSync);
-			
-			var ss = vid.currentTime.toString().split(".")[0];
-			$(".srt").text(subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + ss]);
+			$(".srt").text(subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + currentTime]);
 			
 		}, 100);
 	}
@@ -224,11 +222,7 @@ function subtitleSrt(){
 			
 			var currentTime = vid.currentTime;
 			currentTime = parseInt(currentTime) + parseInt(subSync);
-			
-			console.log(subSync + " >> " + currentTime);
-			
-			var ss = vid.currentTime.toString().split(".")[0];
-			$(".srt").text(subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + ss]);
+			$(".srt").text(subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + currentTime]);
 
 		}, 100);
 		
