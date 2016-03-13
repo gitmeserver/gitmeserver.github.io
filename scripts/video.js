@@ -57,14 +57,10 @@ function minusSubTop(){
 
 function plusSubSync(){
 	subSync = subSync + SUB_SYNC_SIZE;
-	console.log(subSync);
 }
 
 function minusSubSync(){
-	if(0 < subSync){
-		subSync = subSync - SUB_SYNC_SIZE;
-	}
-	console.log(subSync);
+	subSync = subSync - SUB_SYNC_SIZE;
 }
 
 function clickPlus(){
