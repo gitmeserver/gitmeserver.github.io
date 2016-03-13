@@ -491,9 +491,6 @@ function video(){
 	
 	isDeck();
 	
-	videoControllLeftOnOff();
-	videoControllRightOnOff()
-	
 	return false;
 }
 
