@@ -403,7 +403,7 @@ function video(){
 	}
 	
 	if($.getCst() == undefined){
-		$.setCst(280);
+		$.setCst(0);
 	}
 	
 	$("#detail").empty();
@@ -430,7 +430,7 @@ function video(){
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	if(sub != undefined){
 		$(".srt").css("font-size", $.getCfs() + "px");
-		$(".srt").css("margin-top", $.getCst() + "px");
+		$(".srt").css("margin-top", (parseInt($(".srt").css("margin-top")) + parseInt($.getCst())) + "px");
 		$(".srt").attr("data-srt", sub);
 		subtitleSrt();
 		

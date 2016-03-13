@@ -62,7 +62,7 @@ function minusFontSize(){
 function plusSubTop(){
 	var subTop = $.getCst();
 	subTop = parseInt(subTop) + parseInt(SUB_TOP_SIZE);
-	$(".srt").css("margin-top", subTop + "px");
+	$(".srt").css("margin-top", parseInt($(".srt").css("margin-top")) + parseInt(subTop) + "px");
 	
 	$.setCst(subTop);
 	if(0 < $.getCst()){
@@ -76,7 +76,7 @@ function plusSubTop(){
 function minusSubTop(){
 	var subTop = $.getCst();
 	subTop = parseInt(subTop) - parseInt(SUB_TOP_SIZE);
-	$(".srt").css("margin-top", subTop + "px");
+	$(".srt").css("margin-top", (parseInt($(".srt").css("margin-top")) + parseInt(subTop)) + "px");
 	
 	$.setCst(subTop);
 	if(0 < $.getCst()){
