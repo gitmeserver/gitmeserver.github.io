@@ -65,7 +65,12 @@ function plusSubTop(){
 	$(".srt").css("margin-top", subTop + "px");
 	
 	cst = cst + SUB_TOP_SIZE;
-	$("#cst").text("자막위치:" + cst);
+	if(0 < cst){
+		$("#cst").text("자막위치:+" + cst);
+	}else{
+		$("#cst").text("자막위치:-" + cst);
+	}
+	
 }
 
 function minusSubTop(){
@@ -74,21 +79,34 @@ function minusSubTop(){
 	$(".srt").css("margin-top", subTop + "px");
 	
 	cst = cst - SUB_TOP_SIZE;
-	$("#cst").text("자막위치:" + cst);
+	if(0 < cst){
+		$("#cst").text("자막위치:+" + cst);
+	}else{
+		$("#cst").text("자막위치:-" + cst);
+	}
 }
 
 function plusSubSync(){
 	subSync = subSync + SUB_SYNC_SIZE;
 	
 	css = css + SUB_SYNC_SIZE;
-	$("#css").text("자막싱크:" + css);
+	if(0 < css){
+		$("#css").text("자막싱크:+" + css);
+	}else{
+		$("#css").text("자막싱크:-" + css);
+	}
+	
 }
 
 function minusSubSync(){
 	subSync = subSync - SUB_SYNC_SIZE;
 	
 	css = css - SUB_SYNC_SIZE;
-	$("#css").text("자막싱크:" + css);
+	if(0 < css){
+		$("#css").text("자막싱크:+" + css);
+	}else{
+		$("#css").text("자막싱크:-" + css);
+	}
 }
 
 function clickPlus(){
