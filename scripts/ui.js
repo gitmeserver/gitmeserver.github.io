@@ -408,7 +408,7 @@ function video(){
 	$("#video").append("<div id='embed' class='embed-responsive embed-responsive-16by9'></div>");
 	$("#embed").append("<div id='fullscreenOff' style='display:none;'><button type='button' class='glyphicon glyphicon-resize-small btn btn-default btn-lg'></button><div>");
 	$("#embed").append("<video id='player' controls='true' autoplay='true' class='embed-responsive-item'></video>");
-	$("#embed").append("<div class='srt' data-video='player'></div>");
+	$("#embed").append("<div class='srt_wrap'><div class='srt' data-video='player'></div></div>");
 	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
