@@ -416,18 +416,18 @@ function video(){
 	$(".vRight").append("<button type='button' id='fullscreenOff' style='display:none;' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
 	
 	$("#videoControll").append("<div class='vLeft'></div>");
-	
 	// 자막 글씨 크기
 	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-text-size btn btn-default'></button>");
-	
 	// 자막위치 
 	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-sort-by-alphabet btn btn-default'></button>");
-	
 	// 자막싱크 
 	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-text-width btn btn-default'></button>");
-	
 	// 영상위치 이동  
 	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-forward btn btn-default'></button>");
+
+	$(".vLeft").append("<div></div>");
+	$(".vLeft div").append("<button type='button' class='glyphicon glyphicon-plus btn btn-default'></button>");
+	$(".vLeft div").append("<button type='button' class='glyphicon glyphicon-minus btn btn-default'></button>");
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	$(".srt").attr("data-srt", sub);
@@ -486,35 +486,12 @@ function video(){
 	// Listen for resize changes
 	window.addEventListener("resize", function() {
 		subtitleLocationChange(); 
-		
-		$(document).on(screenfull.raw.fullscreenchange, function () {
-			subtitleLocationChange();
-		});
-		
-		$("#embed").removeClass("embed-responsive");
-		$("#embed").removeClass("embed-responsive-16by9");
-		$("#embed").addClass("fullscreen");
-		
-		$("#player").addClass("fullscreen");
-		
-		$("#fullscreen").hide();
-		$("#fullscreenOff").show();
-		
 	}, false);
 	
 	// Listen for orientation changes      
 	window.addEventListener("orientationchange", function() {
 	    // Announce the new orientation number
 		subtitleLocationChange();
-		
-		console.log("orientationchange");
-		
-//		if(screenfull.isFullscreen){
-//			fullscreenOn();
-//		}else{
-//			fullscreenOff();
-//		}
-		
 	}, false);
 	
 	isDeck();
