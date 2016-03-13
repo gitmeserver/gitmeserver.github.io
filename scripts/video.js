@@ -29,7 +29,7 @@ function plusFontSize(){
 	
 	if(fontSize <= MAX_FONT_SIZE){
 		fontSize = fontSize + FONT_SIZE;
-		$(".srt").css("font-size", fontSize + "px");
+		$(".srt").css("font-size", fontSize + "px !important");
 	}
 }
 
@@ -39,7 +39,7 @@ function minusFontSize(){
 	
 	if(MIN_FONT_SIZE <= fontSize){
 		fontSize = fontSize - FONT_SIZE;
-		$(".srt").css("font-size", fontSize + "px");
+		$(".srt").css("font-size", fontSize + "px !important");
 	}
 }
 
