@@ -406,10 +406,12 @@ function video(){
 	$("#video").append("<div id='subject'></div>");
 	$("#subject").append("<h3></h3><span></span>");
 	$("#video").append("<div id='embed' class='embed-responsive embed-responsive-16by9'></div>");
-	$("#embed").append("<div id='fullscreenOff' style='display:none;'><button type='button' class='glyphicon glyphicon-resize-small btn btn-default btn-lg'></button><div>");
+	$("#embed").append("<div id='fullscreenOff' style='display:none;'><div>");
 	$("#embed").append("<video id='player' controls='true' autoplay='true' class='embed-responsive-item'></video>");
 	$("#embed").append("<div class='srt' data-video='player'></div>");
 	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
+	
+	$("#fullscreenOff").append("<button type='button' class='glyphicon glyphicon-resize-small btn btn-default btn-lg'></button>");
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	$(".srt").attr("data-srt", sub);
