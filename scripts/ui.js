@@ -487,13 +487,18 @@ function video(){
 	window.addEventListener("resize", function() {
 		subtitleLocationChange(); 
 		
-		console.log("resize");
+		$(document).on(screenfull.raw.fullscreenchange, function () {
+			subtitleLocationChange();
+		});
 		
-//		if(screenfull.isFullscreen){
-//			fullscreenOn();
-//		}else{
-//			fullscreenOff();
-//		}
+		$("#embed").removeClass("embed-responsive");
+		$("#embed").removeClass("embed-responsive-16by9");
+		$("#embed").addClass("fullscreen");
+		
+		$("#player").addClass("fullscreen");
+		
+		$("#fullscreen").hide();
+		$("#fullscreenOff").show();
 		
 	}, false);
 	

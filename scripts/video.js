@@ -68,25 +68,6 @@ function fullscreenOn(){
 	
 	screenfull.request(f);
 	
-	$(document).on(screenfull.raw.fullscreenchange, function () {
-		
-		subtitleLocationChange();
-		
-//		if(!screenfull.isFullscreen){
-//			fullscreenOff();
-//			$("#videoControll #fullscreenOff").hide();
-//		}
-	});
-	
-	$("#embed").removeClass("embed-responsive");
-	$("#embed").removeClass("embed-responsive-16by9");
-	$("#embed").addClass("fullscreen");
-	
-	$("#player").addClass("fullscreen");
-	
-	$("#fullscreen").hide();
-	$("#fullscreenOff").show();
-	
 }
 
 function fullscreenOff(){
