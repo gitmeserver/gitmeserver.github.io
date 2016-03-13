@@ -467,14 +467,10 @@ function video(){
 	
 	$("#fullscreen").click(function(){
 		fullscreenOn();
-		$("#fullscreen").hide();
-		$("#fullscreenOff").show();
 	});
 	
 	$("#fullscreenOff").click(function(){
 		fullscreenOff();
-		$("#fullscreen").show();
-		$("#fullscreenOff").hide();
 	});
 	
 	$("#videoControll .vLeft button").click(function(){
@@ -496,10 +492,10 @@ function video(){
 	window.addEventListener("resize", function() {
 		subtitleLocationChange(); 
 		
-		if(!screenfull.isFullscreen){
+		if(screenfull.isFullscreen){
+			fullscreenOn();
+		}else{
 			fullscreenOff();
-			$("#fullscreen").show();
-			$("#fullscreenOff").hide();
 		}
 		
 	}, false);
@@ -509,10 +505,10 @@ function video(){
 	    // Announce the new orientation number
 		subtitleLocationChange();
 		
-		if(!screenfull.isFullscreen){
+		if(screenfull.isFullscreen){
+			fullscreenOn();
+		}else{
 			fullscreenOff();
-			$("#fullscreen").show();
-			$("#fullscreenOff").hide();
 		}
 		
 	}, false);

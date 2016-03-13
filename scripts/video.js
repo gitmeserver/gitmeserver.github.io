@@ -84,6 +84,9 @@ function fullscreenOn(){
 	
 	$("#player").addClass("fullscreen");
 	
+	$("#fullscreen").hide();
+	$("#fullscreenOff").show();
+	
 }
 
 function fullscreenOff(){
@@ -97,6 +100,9 @@ function fullscreenOff(){
 	$("#embed").addClass("embed-responsive-16by9");
 	
 	$("#player").removeClass("fullscreen");
+	
+	$("#fullscreen").show();
+	$("#fullscreenOff").hide();
 	
 }
 
