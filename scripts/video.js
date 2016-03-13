@@ -112,10 +112,6 @@ function subtitleLocationChange(){
 	
 }
 
-function videoControllLeftOnOff(){
-	$(".vLeft").toggle();
-}
-
-function videoControllRightOnOff(){
-	$(".vRight").toggle();
+function videoControllOnOff(){
+	$("#videoControll").toggle();
 }

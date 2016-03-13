@@ -475,8 +475,7 @@ function video(){
 	});
 	
 	$("#video video").click(function(){
-		videoControllLeftOnOff();
-		videoControllRightOnOff();
+		videoControllOnOff();
 	});
 	
 	// Listen for resize changes
