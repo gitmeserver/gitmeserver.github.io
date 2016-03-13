@@ -406,12 +406,11 @@ function video(){
 	$("#video").append("<div id='subject'></div>");
 	$("#subject").append("<h3></h3><span></span>");
 	$("#video").append("<div id='embed' class='embed-responsive embed-responsive-16by9'></div>");
-	$("#embed").append("<div id='videoControll'><div>");
+	$("#embed").append("<div id='videoControll' style='display:none;'><div>");
 	$("#embed").append("<video id='player' controls='true' autoplay='true' class='embed-responsive-item'></video>");
 	$("#embed").append("<div class='srt' data-video='player'></div>");
 	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
-	$("#videoControll").append("<div class='vRight'></div>");
 	$("#videoControll").append("<button type='button' id='fullscreen' class='glyphicon glyphicon-resize-full btn btn-default'></button>");
 	$("#videoControll").append("<button type='button' id='fullscreenOff' style='display:none;' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
 	$("#videoControll").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default'></button>");
