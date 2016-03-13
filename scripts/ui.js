@@ -492,7 +492,6 @@ function video(){
 	// Listen for resize changes
 	window.addEventListener("resize", function() {
 		subtitleLocationChange();
-		console.log(screenfull.isFullscreen);
 	}, false);
 	
 	// Listen for orientation changes      

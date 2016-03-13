@@ -150,6 +150,7 @@ function fullscreenOn(){
 	
 	$(document).on(screenfull.raw.fullscreenchange, function () {
 		subtitleLocationChange();
+		console.log(screenfull.isFullscreen);
 	});
 	
 	$("#embed").removeClass("embed-responsive");
