@@ -10,7 +10,7 @@ var prefixWatchAfter = "devy_watchafter";
 var MAX_FONT_SIZE = 50;
 var MIN_FONT_SIZE = 10;
 
-var FONT_SIZE = 1;
+var FONT_SIZE = 2;
 var MOVE_SEEK_SIZE = 10;
 var SUB_TOP_SIZE = 1;
 var SUB_SYNC_SIZE = 1;
