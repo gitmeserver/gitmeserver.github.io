@@ -17,12 +17,10 @@ var SUB_TOP_SIZE = 1;
 var SUB_SYNC_SIZE = 0.1;
 
 var moveSeek = 0;
-var subTop = 0;
 var subSync = 0;
 
 function initVideoConfig(){
 	subSync = 0;
-	subTop = 0;
 	moveSeek = 0;
 }
 
@@ -47,17 +45,15 @@ function minusFontSize(){
 }
 
 function plusSubTop(){
-	
-	console.log("plusSubTop");
-	
-	subTop = subTop + SUB_TOP_SIZE;
+	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
+	subTop = subTop + 1;
+	$(".srt").css("margin-top", subTop + "px");
 }
 
 function minusSubTop(){
-	
-	console.log("minusSubTop");
-	
-	subTop = subTop - SUB_TOP_SIZE;
+	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
+	subTop = subTop - 1;
+	$(".srt").css("margin-top", subTop + "px");
 }
 
 function plusSubSync(){
