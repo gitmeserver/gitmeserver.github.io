@@ -189,7 +189,6 @@ function subtitleSrt(){
 			
 			var currentTime = vid.currentTime;
 			currentTime = parseInt(currentTime) + parseInt(subSync);
-			console.log(subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + currentTime]);
 			$(".srt").text(subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + currentTime]);
 			
 		}, 100);
@@ -224,7 +223,6 @@ function subtitleSrt(){
 			
 			var currentTime = vid.currentTime;
 			currentTime = parseInt(currentTime) + parseInt(subSync);
-			console.log(subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + currentTime]);
 			$(".srt").text(subtitles[selectedContents.getContentsId() + "_" + selectedEpisode.getEpisodeTitle() + "_" + currentTime]);
 
 		}, 100);
