@@ -439,8 +439,8 @@ function video(){
 		$("#controllInfo").append("<span id='css'>자막싱크 : " + css + "</span>");
 	}
 	
-	$("#controll div").append("<button id='vcMinus' type='button' class='glyphicon glyphicon-minus btn btn-default'></button>");
-	$("#controll div").append("<button id='vcPlus' type='button' class='glyphicon glyphicon-plus btn btn-default'></button>");
+	$("#controll .float-right").append("<button id='vcMinus' type='button' class='glyphicon glyphicon-minus btn btn-default'></button>");
+	$("#controll .float-right").append("<button id='vcPlus' type='button' class='glyphicon glyphicon-plus btn btn-default'></button>");
 	
 	var title = $("#video #subject h3");
 	var epTitle = $("#video #subject span");
