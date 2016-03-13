@@ -67,6 +67,8 @@ function plusSubTop(){
 		$("#cst").text("자막위치 : " + $.getCst());
 	}
 	
+	subtitleLocationChange();
+	
 }
 
 function minusSubTop(){
@@ -80,6 +82,7 @@ function minusSubTop(){
 	}else{
 		$("#cst").text("자막위치 : " + $.getCst());
 	}
+	subtitleLocationChange();
 }
 
 function plusSubSync(){
@@ -231,20 +234,18 @@ function fullscreenOff(){
 
 function subtitleLocationChange(){
 	
+	var playerHeight = $("#player").css("height");
+	var v = ( parseInt(playerHeight) / 100 ) * 80;
+	
 	if($.getCst() == undefined){
-		var playerHeight = $("#player").css("height");
-		var v = ( parseInt(playerHeight) / 100 ) * 80;
-		console.log(v);
-		$.setCst(parseInt(v));
+		$.setCst(0);
 	}
 	
 	if($.getCfs() == undefined){
 		$.setCfs(16);
 	}
 	
-	console.log(screenfull.isFullscreen);
-	
-	$(".srt").css("marginTop", $.getCst() + "px");
+	$(".srt").css("marginTop", (parseInt(v) + $.getCst()) + "px");
 	$(".srt").css("fontSize", $.getCfs() + "px");
 	
 }
