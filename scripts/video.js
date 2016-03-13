@@ -31,7 +31,7 @@ function initVideoConfig(){
 function plusFontSize(){
 	if(fontSize <= MAX_FONT_SIZE){
 		fontSize = fontSize + 1;
-		var fs = $(".srt").css("font-size");
+		var fs = $(".srt").css("font-size").replace("px", "");
 		var ffss = (fs + fontSize) + "px";
 		console.log(ffss);
 		$(".srt").css("font-size", ffss);
