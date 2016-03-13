@@ -20,7 +20,6 @@ var subSync = 0;
 
 var cms = 0;
 var css = 0;
-var cfs = 16;
 var cst = 0;
 
 function initVideoConfig(){
@@ -29,7 +28,6 @@ function initVideoConfig(){
 	
 	cms = 0;
 	css = 0;
-	cfs = 16;
 	cst = 0;
 }
 
@@ -76,7 +74,7 @@ function plusSubTop(){
 function minusSubTop(){
 	var subTop = $.getCst();
 	subTop = parseInt(subTop) - parseInt(SUB_TOP_SIZE);
-	$(".srt").css("margin-top", (parseInt($(".srt").css("margin-top")) + parseInt(subTop)) + "px");
+	$(".srt").css("margin-top", (parseInt($(".srt").css("margin-top")) + parseInt($.getCst())) + "px");
 	
 	$.setCst(subTop);
 	if(0 < $.getCst()){
@@ -238,8 +236,12 @@ function subtitleLocationChange(){
 	var playerHeight = $("#player").css("height");
 	var srtMarginTop = ( parseInt(playerHeight) / 100 ) * 80;
 	
+	if($.getCfs() == undefined){
+		$.setCfs(16);
+	}
+	
 	$(".srt").css("marginTop", srtMarginTop);
-	$(".srt").css("fontSize", cfs);
+	$(".srt").css("fontSize", $.getCfs() + "px");
 	
 }
 
