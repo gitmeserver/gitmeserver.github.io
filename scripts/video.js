@@ -247,7 +247,7 @@ function subtitleLocationChange(){
 	
 	console.log((parseInt(v) + $.getCst()));
 	
-	$(".srt").css("marginTop", (parseInt(v) + $.getCst()) + "px");
+	$(".srt").css("marginTop", (parseInt(v) + parseInt($.getCst())) + "px");
 	$(".srt").css("fontSize", $.getCfs() + "px");
 	
 }
