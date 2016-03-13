@@ -10,10 +10,9 @@ var prefixWatchAfter = "devy_watchafter";
 var MAX_FONT_SIZE = 50;
 var MIN_FONT_SIZE = 10;
 
+var FONT_SIZE = 1;
 var MOVE_SEEK_SIZE = 10;
-
 var SUB_TOP_SIZE = 1;
-
 var SUB_SYNC_SIZE = 0.1;
 
 var moveSeek = 0;
@@ -29,7 +28,7 @@ function plusFontSize(){
 	var fontSize = parseInt($(".srt").css("font-size").replace("px", ""));
 	
 	if(fontSize <= MAX_FONT_SIZE){
-		fontSize = fontSize + 1;
+		fontSize = fontSize + FONT_SIZE;
 		$(".srt").css("font-size", fontSize + "px");
 	}
 }
@@ -39,7 +38,7 @@ function minusFontSize(){
 	var fontSize = parseInt($(".srt").css("font-size").replace("px", ""));
 	
 	if(MIN_FONT_SIZE <= fontSize){
-		fontSize = fontSize - 1;
+		fontSize = fontSize - FONT_SIZE;
 		$(".srt").css("font-size", fontSize + "px");
 	}
 }
@@ -72,7 +71,7 @@ function minusSubSync(){
 
 function plusMoveSeek(){
 	
-	console.log("plusMoveSeek");
+	
 	
 	moveSeek = moveSeek + SUB_SYNC_SIZE;
 }
@@ -88,11 +87,11 @@ function clickPlus(){
 	if($("#fontSize").hasClass("active")){
 		plusFontSize();
 	}else if($("#subTop").hasClass("active")){
-		plusSubTop()
+		plusSubTop();
 	}else if($("#subSync").hasClass("active")){
 		plusSubSync();
 	}else if($("#moveSeek").hasClass("active")){
-		plusMoveSeek();
+		forward();
 	}
 }
 
@@ -100,11 +99,11 @@ function clickMinus(){
 	if($("#fontSize").hasClass("active")){
 		minusFontSize();
 	}else if($("#subTop").hasClass("active")){
-		minusSubTop()
+		minusSubTop();
 	}else if($("#subSync").hasClass("active")){
 		minusSubSync();
 	}else if($("#moveSeek").hasClass("active")){
-		minusMoveSeek();
+		backward();
 	}
 }
 
