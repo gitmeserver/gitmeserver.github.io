@@ -242,6 +242,8 @@ function subtitleLocationChange(){
 		$.setCfs(16);
 	}
 	
+	console.log(screenfull.isFullscreen);
+	
 	$(".srt").css("marginTop", $.getCst() + "px");
 	$(".srt").css("fontSize", $.getCfs() + "px");
 	
