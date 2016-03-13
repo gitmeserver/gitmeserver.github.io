@@ -43,7 +43,7 @@ function plusFontSize(){
 	}
 	
 	cfs = fontSize;
-	$("#cfs").text(cfs);
+	$("#cfs").text("자막크기:" + cfs);
 }
 
 function minusFontSize(){
@@ -56,7 +56,7 @@ function minusFontSize(){
 	}
 	
 	cfs = fontSize;
-	$("#cfs").text(cfs);
+	$("#cfs").text("자막크기:" + cfs);
 }
 
 function plusSubTop(){
@@ -65,7 +65,7 @@ function plusSubTop(){
 	$(".srt").css("margin-top", subTop + "px");
 	
 	cst = cst + SUB_TOP_SIZE;
-	$("#cst").text(cst);
+	$("#cst").text("자막위치:" + cst);
 }
 
 function minusSubTop(){
@@ -74,21 +74,21 @@ function minusSubTop(){
 	$(".srt").css("margin-top", subTop + "px");
 	
 	cst = cst - SUB_TOP_SIZE;
-	$("#cst").text(cst);
+	$("#cst").text("자막위치:" + cst);
 }
 
 function plusSubSync(){
 	subSync = subSync + SUB_SYNC_SIZE;
 	
 	css = css + SUB_SYNC_SIZE;
-	$("#css").text(css);
+	$("#css").text("자막싱크:" + css);
 }
 
 function minusSubSync(){
 	subSync = subSync - SUB_SYNC_SIZE;
 	
 	css = css - SUB_SYNC_SIZE;
-	$("#css").text(css);
+	$("#css").text("자막싱크:" + css);
 }
 
 function clickPlus(){
@@ -136,7 +136,7 @@ function backward(){
 	v.currentTime = s;
 	
 	cms = cms - SEEK_TIME;
-	$("#cms").text(cms);
+	$("#cms").text("영상위치:" + v.currentTime);
 }
 
 function forward(){
@@ -150,7 +150,7 @@ function forward(){
 	v.currentTime = s;
 	
 	cms = cms + SEEK_TIME;
-	$("#cms").text(cms);
+	$("#cms").text("영상위치:" + v.currentTime);
 }
 
 function save(){
