@@ -18,9 +18,19 @@ var SUB_SYNC_SIZE = 1;
 var moveSeek = 0;
 var subSync = 0;
 
+var cms = 0;
+var css = 0;
+var cfs = 12;
+var cts = 0;
+
 function initVideoConfig(){
 	subSync = 0;
 	moveSeek = 0;
+	
+	cms = 0;
+	css = 0;
+	cfs = 12;
+	cts = 0;
 }
 
 function plusFontSize(){
@@ -31,6 +41,8 @@ function plusFontSize(){
 		fontSize = fontSize + FONT_SIZE;
 		$(".srt").css("font-size", fontSize + "px");
 	}
+	
+	cfs = fontSize;
 }
 
 function minusFontSize(){
@@ -41,26 +53,36 @@ function minusFontSize(){
 		fontSize = fontSize - FONT_SIZE;
 		$(".srt").css("font-size", fontSize + "px");
 	}
+	
+	cfs = fontSize;
 }
 
 function plusSubTop(){
 	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
 	subTop = subTop + SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
+	
+	cst = cst + SUB_TOP_SIZE;
 }
 
 function minusSubTop(){
 	var subTop = parseInt($(".srt").css("margin-top").replace("px", ""));
 	subTop = subTop - SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
+	
+	cst = cst - SUB_TOP_SIZE;
 }
 
 function plusSubSync(){
 	subSync = subSync + SUB_SYNC_SIZE;
+	
+	css = css + SUB_SYNC_SIZE;
 }
 
 function minusSubSync(){
 	subSync = subSync - SUB_SYNC_SIZE;
+	
+	css = css - SUB_SYNC_SIZE;
 }
 
 function clickPlus(){
@@ -106,6 +128,8 @@ function backward(){
 	}
 	
 	v.currentTime = s;
+	
+	cms = cms - SEEK_TIME;
 }
 
 function forward(){
@@ -117,6 +141,8 @@ function forward(){
 	}
 	
 	v.currentTime = s;
+	
+	cms = cms + SEEK_TIME;
 }
 
 function save(){
@@ -188,10 +214,10 @@ function subtitleLocationChange(){
 	var playerHeight = $("#player").css("height");
 	var srtMarginTop = ( parseInt(playerHeight) / 100 ) * 80;
 	
-	var fontSize = ( parseInt(playerHeight) / 50 ) + 10;
+//	var fontSize = ( parseInt(playerHeight) / 50 ) + 10;
 	
 	$(".srt").css("marginTop", srtMarginTop);
-	$(".srt").css("fontSize", fontSize);
+	$(".srt").css("fontSize", cfs);
 	
 }
 
