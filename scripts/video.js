@@ -49,7 +49,7 @@ function plusSubTop(){
 	subTop = subTop + SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
 	
-	recentSubTop = subTop;
+	recentSubTop = recentSubTop + subTop;
 }
 
 function minusSubTop(){
@@ -57,17 +57,17 @@ function minusSubTop(){
 	subTop = subTop - SUB_TOP_SIZE;
 	$(".srt").css("margin-top", subTop + "px");
 	
-	recentSubTop = subTop;
+	recentSubTop = recentSubTop - subTop;
 }
 
 function plusSubSync(){
 	subSync = subSync + SUB_SYNC_SIZE;
-	recentSubSync = subSync;
+	recentSubSync = recentSubSync + SUB_SYNC_SIZE;
 }
 
 function minusSubSync(){
 	subSync = subSync - SUB_SYNC_SIZE;
-	recentSubSync = subSync;
+	recentSubSync = recentSubSync - SUB_SYNC_SIZE;
 }
 
 function clickPlus(){
@@ -114,7 +114,7 @@ function backward(){
 	
 	v.currentTime = s;
 	
-	recentMoveSeek - SEEK_TIME;
+	recentMoveSeek = recentMoveSeek - SEEK_TIME;
 }
 
 function forward(){
@@ -127,7 +127,7 @@ function forward(){
 	
 	v.currentTime = s;
 	
-	recentMoveSeek + SEEK_TIME;
+	recentMoveSeek = recentMoveSeek + SEEK_TIME;
 }
 
 function save(){
@@ -172,11 +172,6 @@ function fullscreenOn(){
 			
 			$("#fullscreen").hide();
 			$("#fullscreenOff").show();
-			
-			if(0 < recentFontSize){
-				$(".srt").css("font-size", recentFontSize + "px");
-			}
-			
 		}else{
 			$("#embed").removeClass("fullscreen");
 			$("#embed").addClass("embed-responsive");
@@ -186,10 +181,6 @@ function fullscreenOn(){
 			
 			$("#fullscreen").show();
 			$("#fullscreenOff").hide();
-			
-			if(0 < recentFontSize){
-				$(".srt").css("font-size", recentFontSize + "px");
-			}
 		}
 	});
 	
