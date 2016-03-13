@@ -417,7 +417,7 @@ function video(){
 	
 	$("#videoControll").append("<div class='vLeft'></div>");
 	// 자막 글씨 크기
-	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-text-size btn btn-default'></button>");
+	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-text-size btn btn-default active'></button>");
 	// 자막위치 
 	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-sort-by-alphabet btn btn-default'></button>");
 	// 자막싱크 
@@ -425,9 +425,9 @@ function video(){
 	// 영상위치 이동  
 	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-forward btn btn-default'></button>");
 
-	$(".vLeft").append("<div></div>");
-	$(".vLeft div").append("<button type='button' class='glyphicon glyphicon-plus btn btn-default'></button>");
+	$(".vLeft").append("<div style='margin-left:45px; margin-top:10px;'></div>");
 	$(".vLeft div").append("<button type='button' class='glyphicon glyphicon-minus btn btn-default'></button>");
+	$(".vLeft div").append("<button type='button' class='glyphicon glyphicon-plus btn btn-default'></button>");
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	$(".srt").attr("data-srt", sub);
