@@ -433,7 +433,14 @@ function video(){
 		$("#controllInfo").append("<span id='cfs'>자막크기 : " + $.getCfs() + "</span>");
 		// 자막위치 
 		$("#controll #cButton").append("<button id='subTop' type='button' class='glyphicon glyphicon-sort-by-alphabet btn btn-default'></button>");
-		$("#controllInfo").append("<span id='cst'>자막위치 : " + $.getCst() + "</span>");
+		
+		if(0 < $.getCst()){
+			$("#controllInfo").append("<span id='cst'>자막위치 : +" + $.getCst() + "</span>");
+		}else{
+			$("#controllInfo").append("<span id='cst'>자막위치 : " + $.getCst() + "</span>");
+		}
+		
+		
 		// 자막싱크 
 		$("#controll #cButton").append("<button id='subSync' type='button' class='glyphicon glyphicon-text-width btn btn-default'></button>");
 		$("#controllInfo").append("<span id='css'>자막싱크 : " + css + "초</span>");
