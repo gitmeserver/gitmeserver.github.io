@@ -412,22 +412,10 @@ function video(){
 	$("#detail").append("<div id='controll'><div class='float-right'></div><span></span></div></div>");
 	
 	$("#videoControll").append("<div class='vRight'></div>");
-	$(".vRight").append("<button type='button' id='fullscreen' class='glyphicon glyphicon-resize-full btn btn-default'></button>");
-	$(".vRight").append("<button type='button' id='fullscreenOff' style='display:none;' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
-	
-	$("#videoControll").append("<div class='vLeft'></div>");
-	// 자막 글씨 크기
-	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-text-size btn btn-default active'></button>");
-	// 자막위치 
-	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-sort-by-alphabet btn btn-default'></button>");
-	// 자막싱크 
-	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-text-width btn btn-default'></button>");
-	// 영상위치 이동  
-	$(".vLeft").append("<button type='button' class='glyphicon glyphicon-forward btn btn-default'></button>");
-
-	$(".vLeft").append("<div style='margin-left:45px; margin-top:10px;'></div>");
-	$(".vLeft div").append("<button type='button' class='glyphicon glyphicon-minus btn btn-default'></button>");
-	$(".vLeft div").append("<button type='button' class='glyphicon glyphicon-plus btn btn-default'></button>");
+	$("#videoControll").append("<button type='button' id='fullscreen' class='glyphicon glyphicon-resize-full btn btn-default'></button>");
+	$("#videoControll").append("<button type='button' id='fullscreenOff' style='display:none;' class='glyphicon glyphicon-resize-small btn btn-default'></button>");
+	$("#videoControll").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default'></button>");
+	$("#videoControll").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default'></button>");
 	
 	var sub = selectedEpisode.getEpisodeSubtitle();
 	$(".srt").attr("data-srt", sub);
@@ -435,10 +423,19 @@ function video(){
 	
 	subtitleLocationChange();
 	
-	$("#controll div").append("<button id='save' type='button' class='glyphicon glyphicon-floppy-disk btn btn-default'></button>");
-	$("#controll div").append("<button id='previous' type='button' style='display:none;' class='glyphicon glyphicon-facetime-video btn btn-default'></button>");
-	$("#controll span").append("<button id='backward' class='glyphicon glyphicon-step-backward btn btn-default' type='button'></button>");
-	$("#controll span").append("<button id='forward' class='glyphicon glyphicon-step-forward btn btn-default' type='button'></button>");
+	$("#videoControll").append("<div class='vLeft'></div>");
+	// 자막 글씨 크기
+	$("#controll").append("<button type='button' class='glyphicon glyphicon-text-size btn btn-default active'></button>");
+	// 자막위치 
+	$("#controll").append("<button type='button' class='glyphicon glyphicon-sort-by-alphabet btn btn-default'></button>");
+	// 자막싱크 
+	$("#controll").append("<button type='button' class='glyphicon glyphicon-text-width btn btn-default'></button>");
+	// 영상위치 이동  
+	$("#controll").append("<button type='button' class='glyphicon glyphicon-forward btn btn-default'></button>");
+	
+	$("#controll div").append("<button type='button' class='glyphicon glyphicon-minus btn btn-default'></button>");
+	$("#controll div").append("<button type='button' class='glyphicon glyphicon-plus btn btn-default'></button>");
+	
 	
 	var title = $("#video #subject h3");
 	var subTitle = $("#video #subject span");
