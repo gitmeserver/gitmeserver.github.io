@@ -108,7 +108,7 @@ body {
 	width:100% !important;
 }	
 
-#fullscreenOff {
+#videoControll {
 	width:100%;
 	text-align:right;
 	z-index: 2147483647 !important;
@@ -116,7 +116,7 @@ body {
 	padding:10px;
 }
 
-#fullscreenOff button {
+#videoControll button {
 }
 
 video::-webkit-media-controls-fullscreen-button {
