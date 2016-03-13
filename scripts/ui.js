@@ -403,6 +403,7 @@ function video(){
 	}
 	
 	if($.getCst() == undefined){
+		var playerHeight = $("#player").css("height");
 		$.setCst(( parseInt(playerHeight) / 100 ) * 80);
 	}
 	
