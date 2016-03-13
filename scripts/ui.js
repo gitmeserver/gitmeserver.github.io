@@ -398,6 +398,15 @@ function details(){
 
 function video(){
 	
+	if($.getCfs() == undefined){
+		$.setCfs("cfs", "16");
+	}
+	
+	if($.getCst() == undefined){
+		$.setCst("cst", "280");
+	}
+	
+	
 	$("#detail").empty();
 	$("#info").detach();
 	$("#info_line").detach();
