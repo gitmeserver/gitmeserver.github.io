@@ -132,6 +132,15 @@ body {
 	color: #33F !important;
 }
 
+#controllInfo {
+	text-align:center;
+	padding:3px 0px;
+}
+
+#controllInfo span {
+	padding:0px 3px;
+}
+
 video::-webkit-media-controls-fullscreen-button {
     display: none;
 }
