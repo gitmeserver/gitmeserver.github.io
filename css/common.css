@@ -133,12 +133,12 @@ body {
 }
 
 #controllInfo {
-	text-align:center;
+	text-align:left;
 	padding:3px 0px;
 }
 
 #controllInfo span {
-	padding:0px 12px;
+	padding-right:12px;
 }
 
 video::-webkit-media-controls-fullscreen-button {
