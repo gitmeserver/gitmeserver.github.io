@@ -13,7 +13,7 @@ var MIN_FONT_SIZE = 10;
 var FONT_SIZE = 1;
 var MOVE_SEEK_SIZE = 10;
 var SUB_TOP_SIZE = 1;
-var SUB_SYNC_SIZE = 0.1;
+var SUB_SYNC_SIZE = 1;
 
 var moveSeek = 0;
 var subSync = 0;
@@ -61,7 +61,9 @@ function plusSubSync(){
 }
 
 function minusSubSync(){
-	subSync = subSync - SUB_SYNC_SIZE;
+	if(0 < subSync){
+		subSync = subSync - SUB_SYNC_SIZE;
+	}
 	console.log(subSync);
 }
 
