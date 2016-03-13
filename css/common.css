@@ -117,11 +117,11 @@ body {
 }
 
 #videoControll .vLeft {
-	
+	display:none;	
 }
 
 #videoControll .vRight {
-	float:right;	
+	float:right;
 }
 
 video::-webkit-media-controls-fullscreen-button {
