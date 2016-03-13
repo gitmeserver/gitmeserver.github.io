@@ -404,7 +404,9 @@ function video(){
 	
 	if($.getCst() == undefined){
 		var playerHeight = $("#player").css("height");
-		$.setCst(( parseInt(playerHeight) / 100 ) * 80);
+		var v = ( parseInt(playerHeight) / 100 ) * 80;
+		console.log(v);
+		$.setCst(parseInt(v));
 	}
 	
 	$("#detail").empty();
