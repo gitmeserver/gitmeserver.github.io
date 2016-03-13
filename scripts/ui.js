@@ -403,7 +403,7 @@ function video(){
 	}
 	
 	if($.getCst() == undefined){
-		$.setCst(0);
+		$.setCst(( parseInt(playerHeight) / 100 ) * 80);
 	}
 	
 	$("#detail").empty();
@@ -431,7 +431,7 @@ function video(){
 	if(sub != undefined){
 		console.log($.getCfs());
 		$(".srt").css("font-size", $.getCfs() + "px");
-		$(".srt").css("margin-top", (parseInt($(".srt").css("margin-top")) + parseInt($.getCst())) + "px");
+		$(".srt").css("margin-top", $.getCst() + "px");
 		$(".srt").attr("data-srt", sub);
 		subtitleSrt();
 		

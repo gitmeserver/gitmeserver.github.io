@@ -60,7 +60,7 @@ function minusFontSize(){
 function plusSubTop(){
 	var subTop = $.getCst();
 	subTop = parseInt(subTop) + parseInt(SUB_TOP_SIZE);
-	$(".srt").css("margin-top", parseInt($(".srt").css("margin-top")) + parseInt(subTop) + "px");
+	$(".srt").css("margin-top", subTop + "px");
 	
 	$.setCst(subTop);
 	if(0 < $.getCst()){
@@ -74,7 +74,7 @@ function plusSubTop(){
 function minusSubTop(){
 	var subTop = $.getCst();
 	subTop = parseInt(subTop) - parseInt(SUB_TOP_SIZE);
-	$(".srt").css("margin-top", (parseInt($(".srt").css("margin-top")) + parseInt($.getCst())) + "px");
+	$(".srt").css("margin-top", subTop + "px");
 	
 	$.setCst(subTop);
 	if(0 < $.getCst()){
@@ -234,13 +234,16 @@ function fullscreenOff(){
 function subtitleLocationChange(){
 	
 	var playerHeight = $("#player").css("height");
-	var srtMarginTop = ( parseInt(playerHeight) / 100 ) * 80;
+	
+	if($.getCst() == undefined){
+		$.setCst(( parseInt(playerHeight) / 100 ) * 80);
+	}
 	
 	if($.getCfs() == undefined){
 		$.setCfs(16);
 	}
 	
-	$(".srt").css("marginTop", srtMarginTop);
+	$(".srt").css("marginTop", $.getCst() + "px");
 	$(".srt").css("fontSize", $.getCfs() + "px");
 	
 }
