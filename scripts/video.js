@@ -30,6 +30,7 @@ function plusFontSize(){
 	}
 	
 	recentFontSize = fontSize;
+	console.log("recentFontSize " + recentFontSize);
 }
 
 function minusFontSize(){
@@ -42,6 +43,7 @@ function minusFontSize(){
 	}
 	
 	recentFontSize = fontSize;
+	console.log("recentFontSize " + recentFontSize);
 }
 
 function plusSubTop(){
