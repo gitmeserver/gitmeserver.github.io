@@ -96,17 +96,12 @@ body {
 	background-color:#000;
 }
 
-.srt_wrap {
+.srt {
 	z-index: 2147483647 !important;
 	position:absolute;
 	width:100%;
 	text-align:center;
 	padding:0px 10px;
-	opacity:0.1;
-}
-
-.srt {
-	opacity:1.0 !important;
 }
 
 .fullscreen {
