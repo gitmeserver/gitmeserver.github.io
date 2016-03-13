@@ -116,8 +116,8 @@ body {
 	padding:10px;
 }
 
-#videoControll .vLeft {
-	
+#videoControll .vLeft button {
+	margin-right:5px;
 }
 
 #videoControll .vRight {
