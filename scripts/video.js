@@ -72,10 +72,10 @@ function fullscreenOn(){
 		
 		subtitleLocationChange();
 		
-		if(!screenfull.isFullscreen){
-			fullscreenOff();
-			$("#videoControll #fullscreenOff").hide();
-		}
+//		if(!screenfull.isFullscreen){
+//			fullscreenOff();
+//			$("#videoControll #fullscreenOff").hide();
+//		}
 	});
 	
 	$("#embed").removeClass("embed-responsive");
@@ -98,16 +98,16 @@ function fullscreenOff(){
 	
 	$("#player").removeClass("fullscreen");
 	
-	fullscreenOffButton();
+//	fullscreenOffButton();
 }
 
 function fullscreenOffButton(){
-	if(screenfull.isFullscreen){
-		$("#videoControll #fullscreenOff").show();
-		setTimeout(function(){
-			$("#videoControll #fullscreenOff").fadeOut(500);
-		}, 200);
-	}
+//	if(screenfull.isFullscreen){
+//		$("#videoControll #fullscreenOff").show();
+//		setTimeout(function(){
+//			$("#videoControll #fullscreenOff").fadeOut(500);
+//		}, 200);
+//	}
 }
 
 function subtitleLocationChange(){
