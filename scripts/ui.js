@@ -470,7 +470,7 @@ function video(){
 	});
 	
 	$("#controll span > button").click(function(){
-		$("#videoControll .vLeft button").removeClass("active");
+		$("#controll span > button").removeClass("active");
 		$(this).addClass("active");
 	});
 	
