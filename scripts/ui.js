@@ -495,12 +495,26 @@ function video(){
 	// Listen for resize changes
 	window.addEventListener("resize", function() {
 		subtitleLocationChange(); 
+		
+		if(!screenfull.isFullscreen){
+			fullscreenOff();
+			$("#fullscreen").show();
+			$("#fullscreenOff").hide();
+		}
+		
 	}, false);
 	
 	// Listen for orientation changes      
 	window.addEventListener("orientationchange", function() {
 	    // Announce the new orientation number
 		subtitleLocationChange();
+		
+		if(!screenfull.isFullscreen){
+			fullscreenOff();
+			$("#fullscreen").show();
+			$("#fullscreenOff").hide();
+		}
+		
 	}, false);
 	
 	isDeck();
