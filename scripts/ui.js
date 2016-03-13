@@ -487,24 +487,20 @@ function video(){
 		videoControllLeftOnOff();
 		videoControllRightOnOff();
 		
-		if(screenfull.isFullscreen){
-			$("#videoControll #fullscreenOff").toggle();
-		}
+//		if(screenfull.isFullscreen){
+//			$("#videoControll #fullscreenOff").toggle();
+//		}
 	});
 	
 	// Listen for resize changes
 	window.addEventListener("resize", function() {
 		subtitleLocationChange(); 
-		$("#fullscreen").show();
-		$("#fullscreenOff").hide();
 	}, false);
 	
 	// Listen for orientation changes      
 	window.addEventListener("orientationchange", function() {
 	    // Announce the new orientation number
 		subtitleLocationChange();
-		$("#fullscreen").show();
-		$("#fullscreenOff").hide();
 	}, false);
 	
 	isDeck();
