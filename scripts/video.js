@@ -29,62 +29,86 @@ function initVideoConfig(){
 }
 
 function plusFontSize(){
+	
+	console.log("plusFontSize");
+	
 	if(fontSize <= MAX_FONT_SIZE){
 		fontSize = fontSize + 1;
 	}
 }
 
 function minusFontSize(){
+	
+	console.log("minusFontSize");
+	
 	if(MIN_FONT_SIZE <= fontSize){
 		fontSize = fontSize - 1;
 	}
 }
 
-function plusMoveSeek(){
-	moveSeek = moveSeek + MOVE_SEEK_SIZE;
-}
-
-function minusMoveSeek(){
-	moveSeek = moveSeek - MOVE_SEEK_SIZE;
-}
-
 function plusSubTop(){
+	
+	console.log("plusSubTop");
+	
 	subTop = subTop + SUB_TOP_SIZE;
 }
 
 function minusSubTop(){
+	
+	console.log("minusSubTop");
+	
 	subTop = subTop - SUB_TOP_SIZE;
 }
 
+function plusSubSync(){
+	
+	console.log("plusSubSync");
+	
+	subSync = subSync + SUB_SYNC_SIZE;
+}
+
+function minusSubSync(){
+	
+	console.log("minusSubSync");
+	
+	subSync = subSync - SUB_SYNC_SIZE;
+}
+
 function plusMoveSeek(){
+	
+	console.log("plusMoveSeek");
+	
 	moveSeek = moveSeek + SUB_SYNC_SIZE;
 }
 
 function minusMoveSeek(){
+	
+	console.log("minusMoveSeek");
+	
 	moveSeek = moveSeek - SUB_SYNC_SIZE;
 }
 
 function clickPlus(){
 	if($("#fontSize").hasClass("active")){
-		console.log("#fontSize");
+		plusFontSize();
 	}else if($("#subTop").hasClass("active")){
-		console.log("#subTop");
+		plusSubTop()
 	}else if($("#subSync").hasClass("active")){
-		console.log("#subSync");
+		plusSubSync();
 	}else if($("#moveSeek").hasClass("active")){
-		console.log("#moveSeek");
+		plusMoveSeek();
 	}
 }
 
 function clickMinus(){
 	if($("#fontSize").hasClass("active")){
-		console.log("#fontSize");
+		minusFontSize();
 	}else if($("#subTop").hasClass("active")){
-		console.log("#subTop");
+		minusSubTop()
 	}else if($("#subSync").hasClass("active")){
-		console.log("#subSync");
+		minusSubSync();
 	}else if($("#moveSeek").hasClass("active")){
-		console.log("#moveSeek");
+		minusMoveSeek();
 	}
 }
 
