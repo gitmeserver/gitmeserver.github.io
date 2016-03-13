@@ -7,7 +7,7 @@ var prefixDeck = "devy_deck";
 var totalWatchAfter = 10;
 var prefixWatchAfter = "devy_watchafter";
 
-var MAX_FONT_SIZE = 50;
+var MAX_FONT_SIZE = 80;
 var MIN_FONT_SIZE = 10;
 
 var FONT_SIZE = 2;
