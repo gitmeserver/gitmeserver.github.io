@@ -151,16 +151,27 @@ function fullscreenOn(){
 	$(document).on(screenfull.raw.fullscreenchange, function () {
 		subtitleLocationChange();
 		console.log(screenfull.isFullscreen);
+		
+		if(screenfull.isFullscreen){
+			$("#embed").removeClass("embed-responsive");
+			$("#embed").removeClass("embed-responsive-16by9");
+			$("#embed").addClass("fullscreen");
+			
+			$("#player").addClass("fullscreen");
+			
+			$("#fullscreen").hide();
+			$("#fullscreenOff").show();
+		}else{
+			$("#embed").removeClass("fullscreen");
+			$("#embed").addClass("embed-responsive");
+			$("#embed").addClass("embed-responsive-16by9");
+			
+			$("#player").removeClass("fullscreen");
+			
+			$("#fullscreen").show();
+			$("#fullscreenOff").hide();
+		}
 	});
-	
-	$("#embed").removeClass("embed-responsive");
-	$("#embed").removeClass("embed-responsive-16by9");
-	$("#embed").addClass("fullscreen");
-	
-	$("#player").addClass("fullscreen");
-	
-	$("#fullscreen").hide();
-	$("#fullscreenOff").show();
 	
 }
 
@@ -169,15 +180,6 @@ function fullscreenOff(){
 	var f = $("#embed")[0];
 	
 	screenfull.exit(f);
-	
-	$("#embed").removeClass("fullscreen");
-	$("#embed").addClass("embed-responsive");
-	$("#embed").addClass("embed-responsive-16by9");
-	
-	$("#player").removeClass("fullscreen");
-	
-	$("#fullscreen").show();
-	$("#fullscreenOff").hide();
 	
 }
 
